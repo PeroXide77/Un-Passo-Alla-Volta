@@ -1,13 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://ptqrj4k5y5ru"]
 
 [ext_resource type="Script" uid="uid://b8w6n4o3tlsyh" path="res://scripts/tutorial.gd" id="1_ckkxd"]
-[ext_resource type="FontFile" uid="uid://dmwtstgnkr0oc" path="res://fonts/Anton/Anton-Regular.ttf" id="3_4eaws"]
+[ext_resource type="FontFile" uid="uid://dmwtstgnkr0oc" path="res://assets/fonts/Anton/Anton-Regular.ttf" id="3_4eaws"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rrjlg"]
-load_path = "res://.godot/imported/Screenshot 2024-12-12 155839.png-a4c31a1c02eb9da3356cde8f23a83c15.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7sa14"]
-load_path = "res://.godot/imported/Screenshot 2025-01-22 171029.png-adc2c5e3c00eca8fd792555d0dacf7ac.ctex"
 
 [node name="Node2D" type="Node2D"]
 

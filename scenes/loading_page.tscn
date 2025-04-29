@@ -21,34 +21,47 @@ script = SubResource("GDScript_3k6gu")
 
 [node name="loading_scene" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 1896.0
-offset_bottom = 1014.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 900.0
+offset_bottom = 600.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
 script = ExtResource("1_nhl7f")
 
 [node name="TextureRect" type="TextureRect" parent="loading_scene"]
-layout_mode = 0
-offset_left = -12.0
-offset_top = -8.0
-offset_right = 1918.0
-offset_bottom = 1012.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = SubResource("GradientTexture2D_3sth5")
+expand_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="loading_scene"]
-layout_mode = 0
-offset_left = 434.0
-offset_top = 291.0
-offset_right = 1484.0
-offset_bottom = 510.0
-theme_override_font_sizes/normal_font_size = 100
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 274.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 80
 text = "Caricamento in corso"
+fit_content = true
+horizontal_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="loading_scene"]
-layout_mode = 0
-offset_left = 603.0
-offset_top = 523.0
-offset_right = 1283.0
-offset_bottom = 634.0
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -33.5
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 45

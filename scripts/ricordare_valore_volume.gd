@@ -6,5 +6,15 @@ extends Node
 var volume = 100
 
 #per caricare la scena successiva
-var loading_screen = preload("res://scenes/loading_page.tscn")
-var next_scene : String = ""
+#var loading_screen = preload("res://scenes/loading_page.tscn")
+var loading_screen = "res://scenes/loading_page.tscn"
+var next_scene
+var size = Vector2(1920,1080)
+
+func _apply_global_size(node):
+	DisplayServer.window_set_size(size)
+	DisplayServer.window_set_position(Vector2(0,0))
+	if node is Control:
+		node.set_deferred("size", size)
+	for child in node.get_children():
+		_apply_global_size(child)

@@ -2,6 +2,7 @@ extends Control
 
 var next_scene = coseDaRicordare.next_scene
 func _ready():
+	coseDaRicordare._apply_global_size(get_tree().root)
 	ResourceLoader.load_threaded_request(next_scene)
 	_progress()
 # in maniera asincrona salviamo la prossima scena in background
