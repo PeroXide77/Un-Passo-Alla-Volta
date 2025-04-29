@@ -9,12 +9,15 @@ var volume = 100
 #var loading_screen = preload("res://scenes/loading_page.tscn")
 var loading_screen = "res://scenes/loading_page.tscn"
 var next_scene
-var size = Vector2(1920,1080)
+var size = Vector2(1300,750)
 
 func _apply_global_size(node):
 	DisplayServer.window_set_size(size)
-	DisplayServer.window_set_position(Vector2(0,0))
+	DisplayServer.window_set_position(Vector2(300,200))
 	if node is Control:
 		node.set_deferred("size", size)
 	for child in node.get_children():
-		_apply_global_size(child)
+		if child is ProgressBar:
+			pass
+		else: 
+			_apply_global_size(child)
