@@ -1,7 +1,7 @@
 extends Control
 
 func _on_nuova_partita_pressed() -> void:
-	coseDaRicordare.next_scene = "res://scene/Tutorial.tscn"
+	coseDaRicordare.next_scene = "res://scenes/Tutorial.tscn"
 	get_tree().change_scene_to_packed(coseDaRicordare.loading_screen);
 
 

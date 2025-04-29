@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ctu3on2mh2e0j"
-path="res://.godot/imported/CHANDELIER LIGHT_red.png-bd6333e2ec515e2aac4a018dbd23f04a.ctex"
+path="res://.godot/imported/CHANDELIER LIGHT_red.png-d5f77e576422ee6067c4894ff06b61d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icons/CHANDELIER LIGHT_red.png"
-dest_files=["res://.godot/imported/CHANDELIER LIGHT_red.png-bd6333e2ec515e2aac4a018dbd23f04a.ctex"]
+source_file="res://assets/icons/CHANDELIER LIGHT_red.png"
+dest_files=["res://.godot/imported/CHANDELIER LIGHT_red.png-d5f77e576422ee6067c4894ff06b61d0.ctex"]
 
 [params]
 

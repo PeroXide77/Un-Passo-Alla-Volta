@@ -6,5 +6,5 @@ extends Node
 var volume = 100
 
 #per caricare la scena successiva
-var loading_screen = preload("res://scene/loading_page.tscn")
+var loading_screen = preload("res://scenes/loading_page.tscn")
 var next_scene : String = ""
