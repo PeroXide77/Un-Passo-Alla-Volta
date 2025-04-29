@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://di5xpmx77tnki"]
+
+[ext_resource type="Script" uid="uid://dw5i4iap6mks8" path="res://scripts/logo_animation.gd" id="1_hffep"]
+[ext_resource type="VideoStream" uid="uid://ci48sdv2fc5fk" path="res://icons/Animazione Chandelier Light - Bianco.ogv" id="2_m5opr"]
+[ext_resource type="Script" uid="uid://l0bx0qxndy2e" path="res://scripts/video_stream_player.gd" id="3_m5opr"]
+
+[sub_resource type="GDScript" id="GDScript_vhwtc"]
+script/source = "extends Control
+func _ready():
+	var timer = Timer.new()
+	timer.wait_time = 5
+	timer.one_shot = true
+	add_child(timer)
+	timer.connect(\"timeout\", _change_scene)
+
+func _change_scene():
+	get_tree().change_scene_to_file(\"res://path/to/mainmenu.tscn\")
+"
+
+[node name="Animation_Team" type="Node2D"]
+script = ExtResource("1_hffep")
+
+[node name="Logo_Iniziale" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1921.0
+offset_bottom = 1096.0
+script = SubResource("GDScript_vhwtc")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Logo_Iniziale"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_m5opr")
+autoplay = true
+expand = true
+script = ExtResource("3_m5opr")
+
+[connection signal="finished" from="Logo_Iniziale/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

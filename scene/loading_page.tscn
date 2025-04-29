@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://u13a45a6qcpv"]
+
+[ext_resource type="Script" uid="uid://bn2rfbt7yptkc" path="res://scripts/loading_scene.gd" id="1_nhl7f"]
+
+[sub_resource type="GDScript" id="GDScript_3k6gu"]
+script/source = "extends Node2D
+"
+
+[sub_resource type="Gradient" id="Gradient_3k6gu"]
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0, 0.42, 0.573333, 0.806667, 0.913333, 0.9625)
+colors = PackedColorArray(0.917647, 0, 0, 1, 0.947966, 0.446052, 0.704402, 1, 0.658824, 0.658824, 0.905882, 1, 0.856365, 0.826776, 0.941606, 1, 0.930938, 0.930938, 0.930938, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3sth5"]
+gradient = SubResource("Gradient_3k6gu")
+fill_from = Vector2(0.831776, 0.168224)
+fill_to = Vector2(0.602804, 0.990654)
+
+[node name="Loading_page" type="Node2D"]
+script = SubResource("GDScript_3k6gu")
+
+[node name="loading_scene" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1896.0
+offset_bottom = 1014.0
+script = ExtResource("1_nhl7f")
+
+[node name="TextureRect" type="TextureRect" parent="loading_scene"]
+layout_mode = 0
+offset_left = -12.0
+offset_top = -8.0
+offset_right = 1918.0
+offset_bottom = 1012.0
+texture = SubResource("GradientTexture2D_3sth5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="loading_scene"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 291.0
+offset_right = 1484.0
+offset_bottom = 510.0
+theme_override_font_sizes/normal_font_size = 100
+text = "Caricamento in corso"
+
+[node name="ProgressBar" type="ProgressBar" parent="loading_scene"]
+layout_mode = 0
+offset_left = 603.0
+offset_top = 523.0
+offset_right = 1283.0
+offset_bottom = 634.0
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 45
+step = 1.0

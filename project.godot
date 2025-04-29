@@ -10,6 +10,18 @@ config_version=5
 
 [application]
 
-config/name="NewGame"
+config/name="The-game"
+run/main_scene="uid://di5xpmx77tnki"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+coseDaRicordare="*res://scripts/ricordare_valore_volume.gd"
+
+[display]
+
+window/size/viewport_width=1900
+window/size/viewport_height=1000
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"

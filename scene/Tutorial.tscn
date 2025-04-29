@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://ptqrj4k5y5ru"]
+
+[ext_resource type="Script" uid="uid://b8w6n4o3tlsyh" path="res://scripts/tutorial.gd" id="1_ckkxd"]
+[ext_resource type="FontFile" uid="uid://dmwtstgnkr0oc" path="res://fonts/Anton/Anton-Regular.ttf" id="3_4eaws"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rrjlg"]
+load_path = "res://.godot/imported/Screenshot 2024-12-12 155839.png-a4c31a1c02eb9da3356cde8f23a83c15.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7sa14"]
+load_path = "res://.godot/imported/Screenshot 2025-01-22 171029.png-adc2c5e3c00eca8fd792555d0dacf7ac.ctex"
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Tutorial" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ckkxd")
+
+[node name="Background" type="TextureRect" parent="Tutorial"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 28.975
+anchor_bottom = 16.85
+offset_left = -11.0
+offset_top = -4.0
+offset_right = -0.00012207
+texture = SubResource("CompressedTexture2D_rrjlg")
+stretch_mode = 3
+
+[node name="Ritorna Indietro" type="Button" parent="Tutorial"]
+layout_mode = 0
+offset_left = 990.0
+offset_top = 526.0
+offset_right = 1148.0
+offset_bottom = 632.0
+theme_override_colors/font_color = Color(0.827315, 0.799741, 0.989417, 1)
+theme_override_constants/outline_size = 14
+theme_override_constants/h_separation = 7
+theme_override_constants/icon_max_width = 510
+theme_override_constants/align_to_largest_stylebox = 32
+theme_override_constants/line_spacing = 7
+theme_override_fonts/font = ExtResource("3_4eaws")
+theme_override_font_sizes/font_size = 50
+text = "Ritorna Indietro"
+icon = SubResource("CompressedTexture2D_7sa14")
+flat = true
+text_overrun_behavior = 2
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="Tutorial/Ritorna Indietro" to="Tutorial" method="_on_ritorna_indietro_pressed"]
