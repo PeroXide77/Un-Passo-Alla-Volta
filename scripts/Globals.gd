@@ -24,7 +24,7 @@ func loading_bar_fix(barra):
 		pass
 
 func menu_buttons_fix(container):
-	if container is HBoxContainer:
+	if container is VBoxContainer:
 		for child in container.get_children():
 			if child is BaseButton:
 				child.set_deferred("size", Vector2(resolution[0]/4, resolution[1]/3))
