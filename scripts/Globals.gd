@@ -23,10 +23,17 @@ func loading_bar_fix(barra):
 	else:
 		pass
 
+func menu_buttons_fix(container):
+	if container is HBoxContainer:
+		for child in container.get_children():
+			if child is BaseButton:
+				child.set_deferred("size", Vector2(resolution[0]/4, resolution[1]/3))
+
+
 #da sistemare sicuramente
 func _apply_global_size(node):
 	DisplayServer.window_set_size(resolution)
-	DisplayServer.window_set_position(Vector2(300,200))
+	DisplayServer.window_set_position(Vector2(50,50))
 	if node is Control:
 		node.set_deferred("size", resolution)
 	for child in node.get_children():
