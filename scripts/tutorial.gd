@@ -1,4 +1,3 @@
 extends Control
 func _on_ritorna_indietro_pressed() -> void:
-	coseDaRicordare.next_scene = "res://scenes/mainmenu.tscn"
-	get_tree().change_scene_to_packed(coseDaRicordare.loading_screen);
+	Globals.goto_scene("res://scenes/mainmenu.tscn")
