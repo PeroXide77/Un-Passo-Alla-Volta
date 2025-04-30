@@ -23,6 +23,7 @@ func loading_bar_fix(barra):
 	else:
 		pass
 
+#da sistemare sicuramente
 func _apply_global_size(node):
 	DisplayServer.window_set_size(resolution)
 	DisplayServer.window_set_position(Vector2(300,200))
