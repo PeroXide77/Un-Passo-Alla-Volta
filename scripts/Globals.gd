@@ -16,20 +16,27 @@ func _ready():
 	current_scene = root.get_child(-1)
 	
 
+func loading_bar_fix(barra):
+	if barra is ProgressBar:
+		barra.set_deferred("size", Vector2(resolution[0]/1.5, resolution[1]/8))
+		barra.set_anchor_and_offset((SIDE_LEFT), 0.5, -resolution[0]/3)
+	else:
+		pass
+
 func _apply_global_size(node):
 	DisplayServer.window_set_size(resolution)
 	DisplayServer.window_set_position(Vector2(300,200))
 	if node is Control:
 		node.set_deferred("size", resolution)
 	for child in node.get_children():
-		if child is ProgressBar:
-			child.set_deferred("size", Vector2(Globals.resolution[0]/1.5, Globals.resolution[1]/8))
-			child.set_anchor_and_offset((SIDE_LEFT), 0.5, -Globals.resolution[0]/3)
+		if child is Control:
+			if child.get_tooltip().match("escludi"):
+				child.set_deferred("size", resolution)
+				break
+			else:
+				child.set_deferred("size", resolution)
 		else: 
-			if child is BaseButton: 
-				child.set_deferred("size", Vector2(Globals.resolution[0]/5, Globals.resolution[1]/2.5))
-			else: 
-				_apply_global_size(child)
+			_apply_global_size(child)
 
 func goto_scene(path):
 	# This function will usually be called from a signal callback,

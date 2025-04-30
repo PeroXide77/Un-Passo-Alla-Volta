@@ -2,7 +2,7 @@ extends Control
 
 func _on_nuova_partita_pressed() -> void:
 	Globals.next_scene = "res://scenes/Tutorial.tscn"
-	get_tree().change_scene_to_packed(load(Globals.loading_screen));
+	Globals.goto_scene(Globals.loading_screen)
 
 
 func _on_esci_pressed() -> void:
