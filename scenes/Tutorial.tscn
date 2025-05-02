@@ -1,13 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://ptqrj4k5y5ru"]
+[gd_scene load_steps=8 format=3 uid="uid://ptqrj4k5y5ru"]
 
+[ext_resource type="Script" uid="uid://cutl82pf4txyi" path="res://scenes/tutorial.gd" id="1_288ch"]
 [ext_resource type="Script" uid="uid://b8w6n4o3tlsyh" path="res://scripts/tutorial.gd" id="1_ckkxd"]
 [ext_resource type="FontFile" uid="uid://dmwtstgnkr0oc" path="res://assets/fonts/Anton/Anton-Regular.ttf" id="3_4eaws"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rrjlg"]
+[ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="3_twv1b"]
+[ext_resource type="FontFile" uid="uid://b6rxc2cd3gq82" path="res://assets/fonts/Indie_Flower/IndieFlower-Regular.ttf" id="5_y0w3d"]
+[ext_resource type="Texture2D" uid="uid://dx1micry2vq1h" path="res://icons/scribble1.png" id="6_twv1b"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7sa14"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_288ch")
 
 [node name="Tutorial" type="Control" parent="."]
 layout_mode = 3
@@ -15,6 +18,8 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_ckkxd")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="Tutorial"]
 
 [node name="Background" type="TextureRect" parent="Tutorial"]
 layout_mode = 1
@@ -24,15 +29,17 @@ anchor_bottom = 16.85
 offset_left = -11.0
 offset_top = -4.0
 offset_right = -0.00012207
-texture = SubResource("CompressedTexture2D_rrjlg")
-stretch_mode = 3
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_twv1b")
+expand_mode = 1
 
 [node name="Ritorna Indietro" type="Button" parent="Tutorial"]
 layout_mode = 0
-offset_left = 990.0
-offset_top = 526.0
-offset_right = 1148.0
-offset_bottom = 632.0
+offset_left = 5.0
+offset_top = -17.0
+offset_right = 163.0
+offset_bottom = 89.0
 theme_override_colors/font_color = Color(0.827315, 0.799741, 0.989417, 1)
 theme_override_constants/outline_size = 14
 theme_override_constants/h_separation = 7
@@ -48,4 +55,41 @@ text_overrun_behavior = 2
 icon_alignment = 1
 expand_icon = true
 
+[node name="Label" type="Label" parent="Tutorial"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 66.0
+offset_top = 269.0
+offset_right = 1048.0
+offset_bottom = 549.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_y0w3d")
+theme_override_font_sizes/font_size = 70
+text = "cioa"
+
+[node name="LineEdit" type="LineEdit" parent="Tutorial"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 113.0
+offset_right = 1120.0
+offset_bottom = 224.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_y0w3d")
+theme_override_font_sizes/font_size = 50
+placeholder_text = "Scrivi qui"
+
+[node name="Button" type="Button" parent="Tutorial"]
+layout_mode = 0
+offset_left = 855.0
+offset_top = 16.0
+offset_right = 951.0
+offset_bottom = 88.0
+text = "VAI"
+icon = ExtResource("6_twv1b")
+
 [connection signal="pressed" from="Tutorial/Ritorna Indietro" to="Tutorial" method="_on_ritorna_indietro_pressed"]
+[connection signal="pressed" from="Tutorial/Button" to="." method="_on_button_pressed"]
