@@ -1,0 +1,88 @@
+extends Node2D
+
+var npc_dataset = []
+var current_level = 1
+var npc_name = ""
+var personality = ""
+var stop_word_v = ""
+var stop_word_p = ""
+var conversation_history = []
+
+@onready var http_request: HTTPRequest = $Tutorial/HTTPRequest
+@onready var user_input_box: LineEdit = $Tutorial/LineEdit
+@onready var response_label: Label = $Tutorial/Label
+@onready var send_button: Button = $Tutorial/Button
+
+func _ready():
+	dataset_caricamento()
+	npc_caricamento(current_level)
+	#http_request.connect("request_completed", self, "_on_HTTPRequest_request_completed")
+
+func dataset_caricamento():
+	var file_path := "res://assets/sprites/first_dataset_UnPassoAllaVolta.json"
+	if not FileAccess.file_exists(file_path):
+		push_error("Il file NPC non esiste: " + file_path)
+		return
+
+	var file := FileAccess.open(file_path, FileAccess.READ)
+	var content := file.get_as_text()
+	file.close()
+
+	var parsed = JSON.parse_string(content)
+	if parsed is Array:
+		npc_dataset = parsed
+	else:
+		push_error("Errore nel parsing del JSON.")
+
+func npc_caricamento(level: int):
+	if level >= 0 and level < npc_dataset.size():
+		var npc_data = npc_dataset[level]
+		npc_name = npc_data.get("name", "Sconosciuto")
+		personality = npc_data.get("personality", "")
+		stop_word_v = npc_data.get("stop_word_v", "")
+		stop_word_p = npc_data.get("stop_word_p", "")
+		conversation_history.clear()
+		conversation_history.append({"role": "system", "content": personality})
+		$Tutorial/Label.text = "Parli con: " + npc_name
+	else:
+		push_error("Livello fuori dal range del dataset.")
+
+func send_message_to_npc():
+	var url = "https://lucielle1234-chatbot-unpassoallavolta.hf.space/run/predict"
+	var headers = ["Content-Type: application/json"]
+	
+	var latest_input = user_input_box.text.strip_edges()
+	var data = {
+		"data": [latest_input, personality, stop_word_v, stop_word_p]
+	}
+	var json_data = JSON.stringify(data)
+	var error = http_request.request(url, headers, HTTPClient.METHOD_POST, json_data)
+	
+	if error != OK:
+		print("Errore nella richiesta HTTP: ", error)
+	else:
+		print("Tutto okke")
+
+func _on_HTTPRequest_request_completed(result, response_code, headers, body):
+	print("Risposta ricevuta: ", body.get_string_from_utf8())
+	if response_code != 200:
+		print("Errore nella risposta: codice ", response_code)
+		response_label.text = "Errore di rete"
+		return
+
+	var response = JSON.parse_string(body.get_string_from_utf8())
+	if response and "data" in response:
+		var npc_reply = response["data"][0]
+		conversation_history.append({"role": "assistant", "content": npc_reply})
+		response_label.text = npc_reply
+	else:
+		response_label.text = "Risposta non valida"
+
+func _on_button_pressed() -> void:
+	var user_message = user_input_box.text.strip_edges()
+	if user_message == "":
+		return
+	
+	conversation_history.append({"role": "user", "content": user_message})
+	send_message_to_npc()
+	user_input_box.text = ""
