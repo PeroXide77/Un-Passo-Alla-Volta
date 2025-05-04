@@ -10,13 +10,12 @@ var conversation_history = []
 
 @onready var http_request: HTTPRequest = $Tutorial/HTTPRequest
 @onready var user_input_box: LineEdit = $Tutorial/LineEdit
-@onready var response_label: Label = $Tutorial/Label
+@onready var response_label: RichTextLabel = $Tutorial/Label
 @onready var send_button: Button = $Tutorial/Button
 
 func _ready():
 	dataset_caricamento()
 	npc_caricamento(current_level)
-	#http_request.connect("request_completed", self, "_on_HTTPRequest_request_completed")
 
 func dataset_caricamento():
 	var file_path := "res://assets/sprites/first_dataset_UnPassoAllaVolta.json"
@@ -48,35 +47,21 @@ func npc_caricamento(level: int):
 		push_error("Livello fuori dal range del dataset.")
 
 func send_message_to_npc():
-	var url = "https://lucielle1234-chatbot-unpassoallavolta.hf.space/run/predict"
+	var url = "https://lucielle1234-unpassoallavolta-chatbot.hf.space/chat"
 	var headers = ["Content-Type: application/json"]
 	
 	var latest_input = user_input_box.text.strip_edges()
 	var data = {
-		"data": [latest_input, personality, stop_word_v, stop_word_p]
+		"user_input": latest_input,
+		"personality": personality,
+		"stop_word_v": stop_word_v,
+		"stop_word_p": stop_word_p
 	}
 	var json_data = JSON.stringify(data)
 	var error = http_request.request(url, headers, HTTPClient.METHOD_POST, json_data)
 	
 	if error != OK:
 		print("Errore nella richiesta HTTP: ", error)
-	else:
-		print("Tutto okke")
-
-func _on_HTTPRequest_request_completed(result, response_code, headers, body):
-	print("Risposta ricevuta: ", body.get_string_from_utf8())
-	if response_code != 200:
-		print("Errore nella risposta: codice ", response_code)
-		response_label.text = "Errore di rete"
-		return
-
-	var response = JSON.parse_string(body.get_string_from_utf8())
-	if response and "data" in response:
-		var npc_reply = response["data"][0]
-		conversation_history.append({"role": "assistant", "content": npc_reply})
-		response_label.text = npc_reply
-	else:
-		response_label.text = "Risposta non valida"
 
 func _on_button_pressed() -> void:
 	var user_message = user_input_box.text.strip_edges()
@@ -86,3 +71,18 @@ func _on_button_pressed() -> void:
 	conversation_history.append({"role": "user", "content": user_message})
 	send_message_to_npc()
 	user_input_box.text = ""
+
+
+func _on_http_request_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
+	if response_code != 200:
+		print("Errore nella risposta: codice ", response_code)
+		response_label.text = "Errore di rete"
+		return
+
+	var response = JSON.parse_string(body.get_string_from_utf8())
+	if response and "response" in response:
+		var npc_reply = response["response"]
+		conversation_history.append({"role": "assistant", "content": npc_reply})
+		response_label.text = npc_reply
+	else:
+		response_label.text = "Risposta non valida"

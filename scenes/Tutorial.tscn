@@ -55,22 +55,6 @@ text_overrun_behavior = 2
 icon_alignment = 1
 expand_icon = true
 
-[node name="Label" type="Label" parent="Tutorial"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 66.0
-offset_top = 269.0
-offset_right = 1048.0
-offset_bottom = 549.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_y0w3d")
-theme_override_font_sizes/font_size = 70
-text = "cioa"
-
 [node name="LineEdit" type="LineEdit" parent="Tutorial"]
 layout_mode = 0
 offset_left = 24.0
@@ -91,5 +75,19 @@ offset_bottom = 88.0
 text = "VAI"
 icon = ExtResource("6_twv1b")
 
+[node name="Label" type="RichTextLabel" parent="Tutorial"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 260.0
+offset_right = 1111.0
+offset_bottom = 620.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -5
+theme_override_fonts/normal_font = ExtResource("5_y0w3d")
+theme_override_font_sizes/normal_font_size = 45
+text = "giao
+fiao"
+
+[connection signal="request_completed" from="Tutorial/HTTPRequest" to="." method="_on_http_request_request_completed"]
 [connection signal="pressed" from="Tutorial/Ritorna Indietro" to="Tutorial" method="_on_ritorna_indietro_pressed"]
 [connection signal="pressed" from="Tutorial/Button" to="." method="_on_button_pressed"]
