@@ -55,7 +55,7 @@ text_overrun_behavior = 2
 icon_alignment = 1
 expand_icon = true
 
-[node name="LineEdit" type="LineEdit" parent="Tutorial"]
+[node name="Input" type="LineEdit" parent="Tutorial"]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 113.0
@@ -66,7 +66,7 @@ theme_override_fonts/font = ExtResource("5_y0w3d")
 theme_override_font_sizes/font_size = 50
 placeholder_text = "Scrivi qui"
 
-[node name="Button" type="Button" parent="Tutorial"]
+[node name="Invio" type="Button" parent="Tutorial"]
 layout_mode = 0
 offset_left = 855.0
 offset_top = 16.0
@@ -75,7 +75,7 @@ offset_bottom = 88.0
 text = "VAI"
 icon = ExtResource("6_twv1b")
 
-[node name="Label" type="RichTextLabel" parent="Tutorial"]
+[node name="Risposta" type="RichTextLabel" parent="Tutorial"]
 layout_mode = 0
 offset_left = 38.0
 offset_top = 260.0
@@ -90,4 +90,4 @@ fiao"
 
 [connection signal="request_completed" from="Tutorial/HTTPRequest" to="." method="_on_http_request_request_completed"]
 [connection signal="pressed" from="Tutorial/Ritorna Indietro" to="Tutorial" method="_on_ritorna_indietro_pressed"]
-[connection signal="pressed" from="Tutorial/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Tutorial/Invio" to="." method="_on_button_pressed"]

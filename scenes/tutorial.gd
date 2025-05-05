@@ -9,9 +9,9 @@ var stop_word_p = ""
 var conversation_history = []
 
 @onready var http_request: HTTPRequest = $Tutorial/HTTPRequest
-@onready var user_input_box: LineEdit = $Tutorial/LineEdit
-@onready var response_label: RichTextLabel = $Tutorial/Label
-@onready var send_button: Button = $Tutorial/Button
+@onready var user_input: LineEdit = $Tutorial/Input
+@onready var response_label: RichTextLabel = $Tutorial/Risposta
+@onready var send_button: Button = $Tutorial/Invio
 
 func _ready():
 	dataset_caricamento()
@@ -42,15 +42,15 @@ func npc_caricamento(level: int):
 		stop_word_p = npc_data.get("stop_word_p", "")
 		conversation_history.clear()
 		conversation_history.append({"role": "system", "content": personality})
-		$Tutorial/Label.text = "Parli con: " + npc_name
+		$Tutorial/Risposta.text = "Parli con: " + npc_name
 	else:
 		push_error("Livello fuori dal range del dataset.")
 
-func send_message_to_npc():
+func request_chat_npc():
 	var url = "https://lucielle1234-unpassoallavolta-chatbot.hf.space/chat"
 	var headers = ["Content-Type: application/json"]
 	
-	var latest_input = user_input_box.text.strip_edges()
+	var latest_input = user_input.text.strip_edges()
 	var data = {
 		"user_input": latest_input,
 		"personality": personality,
@@ -64,13 +64,13 @@ func send_message_to_npc():
 		print("Errore nella richiesta HTTP: ", error)
 
 func _on_button_pressed() -> void:
-	var user_message = user_input_box.text.strip_edges()
+	var user_message = user_input.text.strip_edges()
 	if user_message == "":
 		return
 	
 	conversation_history.append({"role": "user", "content": user_message})
-	send_message_to_npc()
-	user_input_box.text = ""
+	request_chat_npc()
+	user_input.text = ""
 
 
 func _on_http_request_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
