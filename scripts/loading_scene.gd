@@ -16,3 +16,5 @@ func _process(_delta): #delta è il tempo trascorso durante un frame
 		$ProgressBar.value = progress[0]*100
 		await get_tree().create_timer(1.0).timeout
 		Globals.goto_scene(next_scene)
+	
+	
