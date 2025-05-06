@@ -1,23 +1,26 @@
 [gd_scene load_steps=8 format=3 uid="uid://ptqrj4k5y5ru"]
 
-[ext_resource type="Script" uid="uid://cutl82pf4txyi" path="res://scenes/tutorial.gd" id="1_288ch"]
-[ext_resource type="Script" uid="uid://b8w6n4o3tlsyh" path="res://scripts/tutorial.gd" id="1_ckkxd"]
-[ext_resource type="FontFile" uid="uid://dmwtstgnkr0oc" path="res://assets/fonts/Anton/Anton-Regular.ttf" id="3_4eaws"]
-[ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="3_twv1b"]
-[ext_resource type="FontFile" uid="uid://b6rxc2cd3gq82" path="res://assets/fonts/Indie_Flower/IndieFlower-Regular.ttf" id="5_y0w3d"]
-[ext_resource type="Texture2D" uid="uid://dx1micry2vq1h" path="res://icons/scribble1.png" id="6_twv1b"]
+[ext_resource type="Script" uid="uid://bji87yhdq6now" path="res://scripts/tutorial.gd" id="1_cq4me"]
+[ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="2_6yjpi"]
+[ext_resource type="FontFile" uid="uid://dmwtstgnkr0oc" path="res://assets/fonts/Anton/Anton-Regular.ttf" id="3_gbqnl"]
+[ext_resource type="FontFile" uid="uid://b6rxc2cd3gq82" path="res://assets/fonts/Indie_Flower/IndieFlower-Regular.ttf" id="4_ckvwl"]
+[ext_resource type="Texture2D" uid="uid://dx1micry2vq1h" path="res://icons/scribble1.png" id="5_nlqja"]
+
+[sub_resource type="GDScript" id="GDScript_288ch"]
+script/source = "extends Node2D
+"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7sa14"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_288ch")
+script = SubResource("GDScript_288ch")
 
 [node name="Tutorial" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_ckkxd")
+script = ExtResource("1_cq4me")
 
 [node name="HTTPRequest" type="HTTPRequest" parent="Tutorial"]
 
@@ -31,7 +34,7 @@ offset_top = -4.0
 offset_right = -0.00012207
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_twv1b")
+texture = ExtResource("2_6yjpi")
 expand_mode = 1
 
 [node name="Ritorna Indietro" type="Button" parent="Tutorial"]
@@ -46,7 +49,7 @@ theme_override_constants/h_separation = 7
 theme_override_constants/icon_max_width = 510
 theme_override_constants/align_to_largest_stylebox = 32
 theme_override_constants/line_spacing = 7
-theme_override_fonts/font = ExtResource("3_4eaws")
+theme_override_fonts/font = ExtResource("3_gbqnl")
 theme_override_font_sizes/font_size = 50
 text = "Ritorna Indietro"
 icon = SubResource("CompressedTexture2D_7sa14")
@@ -62,7 +65,7 @@ offset_top = 113.0
 offset_right = 1120.0
 offset_bottom = 224.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_y0w3d")
+theme_override_fonts/font = ExtResource("4_ckvwl")
 theme_override_font_sizes/font_size = 50
 placeholder_text = "Scrivi qui"
 
@@ -73,7 +76,7 @@ offset_top = 16.0
 offset_right = 951.0
 offset_bottom = 88.0
 text = "VAI"
-icon = ExtResource("6_twv1b")
+icon = ExtResource("5_nlqja")
 
 [node name="Risposta" type="RichTextLabel" parent="Tutorial"]
 layout_mode = 0
@@ -83,11 +86,11 @@ offset_right = 1111.0
 offset_bottom = 620.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -5
-theme_override_fonts/normal_font = ExtResource("5_y0w3d")
+theme_override_fonts/normal_font = ExtResource("4_ckvwl")
 theme_override_font_sizes/normal_font_size = 45
 text = "giao
 fiao"
 
-[connection signal="request_completed" from="Tutorial/HTTPRequest" to="." method="_on_http_request_request_completed"]
-[connection signal="pressed" from="Tutorial/Ritorna Indietro" to="Tutorial" method="_on_ritorna_indietro_pressed"]
-[connection signal="pressed" from="Tutorial/Invio" to="." method="_on_button_pressed"]
+[connection signal="request_completed" from="Tutorial/HTTPRequest" to="Tutorial" method="_on_http_request_request_completed"]
+[connection signal="pressed" from="Tutorial/Ritorna Indietro" to="." method="_on_ritorna_indietro_pressed"]
+[connection signal="pressed" from="Tutorial/Invio" to="Tutorial" method="_on_invio_pressed"]
