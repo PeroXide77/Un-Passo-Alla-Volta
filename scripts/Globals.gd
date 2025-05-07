@@ -5,47 +5,25 @@ extends Node
 
 
 const loading_screen = "res://scenes/loading_page.tscn"
+const resolutions = {
+	"1920x1080": Vector2i(1920,1080),
+	"1280x720": Vector2i(1280,720),
+	"854x480": Vector2i(854,480)
+}
 var current_scene = null
 var next_scene = null
 var volume = 100
-var resolution = Vector2(1300,750)
 
 func _ready():
 	var root = get_tree().root
 	# Using a negative index counts from the end, so this gets the last child node of `root`.
 	current_scene = root.get_child(-1)
-	
 
-func loading_bar_fix(barra):
-	if barra is ProgressBar:
-		barra.set_deferred("size", Vector2(resolution[0]/1.5, resolution[1]/8))
-		barra.set_anchor_and_offset((SIDE_LEFT), 0.5, -resolution[0]/3)
-	else:
-		pass
+func goto_load_scene(scena):
+	next_scene = scena
+	goto_scene(Globals.loading_screen)
 
-func menu_buttons_fix(container):
-	if container is VBoxContainer:
-		for child in container.get_children():
-			if child is BaseButton:
-				child.set_deferred("size", Vector2(resolution[0]/4, resolution[1]/3))
-
-
-#da sistemare sicuramente
-func _apply_global_size(node):
-	DisplayServer.window_set_size(resolution)
-	DisplayServer.window_set_position(Vector2(50,50))
-	if node is Control:
-		node.set_deferred("size", resolution)
-	for child in node.get_children():
-		if child is Control:
-			if child.get_tooltip().match("escludi"):
-				child.set_deferred("size", resolution)
-				break
-			else:
-				child.set_deferred("size", resolution)
-		else: 
-			_apply_global_size(child)
-
+		
 func goto_scene(path):
 	# This function will usually be called from a signal callback,
 	# or some other function in the current scene.

@@ -1,15 +1,14 @@
 extends Control
 
 func _ready() -> void:
-	Globals._apply_global_size(get_tree().root)
+	DisplayServer.window_set_size(Vector2(1280,720))
+	DisplayServer.window_set_position(Vector2(30,30))
 
 func _on_video_stream_player_finished() -> void:
-	Globals.next_scene = "res://scenes/mainmenu.tscn"
-	Globals.goto_scene(Globals.loading_screen)
+	Globals.goto_load_scene("res://scenes/mainmenu.tscn")
 	
 func _input(event):
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_SPACE:
 			$VideoStreamPlayer.stop()
-			Globals.next_scene = "res://scenes/mainmenu.tscn"
-			Globals.goto_scene(Globals.loading_screen)
+			Globals.goto_load_scene("res://scenes/mainmenu.tscn")

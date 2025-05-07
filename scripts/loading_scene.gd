@@ -2,8 +2,6 @@ extends Control
 
 var next_scene = Globals.next_scene
 func _ready():
-	Globals._apply_global_size(get_tree().root)
-	Globals.loading_bar_fix($ProgressBar)
 	ResourceLoader.load_threaded_request(next_scene)
 # in maniera asincrona salviamo la prossima scena in background
 

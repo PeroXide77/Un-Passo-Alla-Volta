@@ -13,6 +13,7 @@ config_version=5
 config/name="The-game"
 run/main_scene="uid://di5xpmx77tnki"
 config/features=PackedStringArray("4.4", "Forward Plus")
+boot_splash/bg_color=Color(0.663804, 0.604621, 0.396768, 1)
 config/icon="res://icon.svg"
 
 [autoload]
@@ -22,6 +23,8 @@ Chatbot="*res://scripts/Chatbot.gd"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/size/initial_position_type=0
 window/size/resizable=false
-window/stretch/aspect="expand"
+window/stretch/mode="viewport"
