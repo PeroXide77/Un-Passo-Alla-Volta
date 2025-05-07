@@ -6,9 +6,9 @@ extends Node
 
 const loading_screen = "res://scenes/loading_page.tscn"
 const resolutions = {
-	"1920x1080": Vector2(1920,1080),
-	"1280x720": Vector2(1280,720),
-	"854x480": Vector2(854,480)
+	"1920x1080": Vector2i(1920,1080),
+	"1280x720": Vector2i(1280,720),
+	"854x480": Vector2i(854,480)
 }
 var current_scene = null
 var next_scene = null
