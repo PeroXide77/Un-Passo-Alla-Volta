@@ -1,13 +1,12 @@
 extends Control
 
-@onready var checkNG = $VBoxContainer/NuovaPartita/CheckNG
+@onready var checkLvl = $VBoxContainer/SelezioneLivelli/CheckLvl
 @onready var checkImp = $VBoxContainer/Impostazioni/CheckImp
-@onready var checkLoad = $VBoxContainer/Loading/CheckLoad
 @onready var checkExit = $VBoxContainer/Exit/CheckExit
 @onready var impPopUp = $Impostazioni
 
-func _on_nuova_partita_pressed() -> void:
-	checkNG.set_visible(true)
+func _on_selezione_livelli_pressed() -> void:
+	checkLvl.set_visible(true)
 	await get_tree().create_timer(0.5).timeout
 	Globals.goto_load_scene("res://scenes/Tutorial.tscn")
 
