@@ -7,7 +7,7 @@ func _on_esci_pressed() -> void:
 	get_tree().quit();
 
 func _on_impostazioni_pressed() -> void:
-	$Escludi/FinestraImpostazione.popup_centered()
+	$Impostazioni.popup()
 	
 func _on_volume_value_changed(value: float) -> void:
 	Globals.volume = value;

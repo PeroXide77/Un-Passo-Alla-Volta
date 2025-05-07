@@ -18,6 +18,7 @@ func _on_invio_pressed() -> void:
 		return
 	
 	Chatbot.conversation_history.append({"role": "user", "content": user_message})
+	#Chatbot.add_new_conversation(parametri)
 	Chatbot.request_chat_npc(user_input, http_request)
 	user_input.text = ""
 

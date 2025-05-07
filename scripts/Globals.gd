@@ -5,21 +5,25 @@ extends Node
 
 
 const loading_screen = "res://scenes/loading_page.tscn"
+const resolutions = {
+	"1920x1080": Vector2(1920,1080),
+	"1280x720": Vector2(1280,720),
+	"854x480": Vector2(854,480)
+}
 var current_scene = null
 var next_scene = null
 var volume = 100
-var resolution = Vector2(1300,750)
 
 func _ready():
 	var root = get_tree().root
 	# Using a negative index counts from the end, so this gets the last child node of `root`.
 	current_scene = root.get_child(-1)
-	
 
 func goto_load_scene(scena):
 	next_scene = scena
 	goto_scene(Globals.loading_screen)
 
+		
 func goto_scene(path):
 	# This function will usually be called from a signal callback,
 	# or some other function in the current scene.
