@@ -8,7 +8,7 @@ extends Control
 func _on_selezione_livelli_pressed() -> void:
 	checkLvl.set_visible(true)
 	await get_tree().create_timer(0.5).timeout
-	Globals.goto_load_scene("res://scenes/Tutorial.tscn")
+	Globals.goto_load_scene("res://scenes/selezione_livelli.tscn")
 
 func _on_esci_pressed() -> void:
 	checkExit.set_visible(true)

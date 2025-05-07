@@ -1,0 +1,554 @@
+[gd_scene load_steps=25 format=3 uid="uid://bwl2p13to885n"]
+
+[ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="1_g78a7"]
+[ext_resource type="Script" uid="uid://c3aw0y1jo1l53" path="res://scenes/selezione.gd" id="1_jvqic"]
+[ext_resource type="Texture2D" uid="uid://dqr44kkgua7qk" path="res://icons/scribble3.png" id="2_qcxsp"]
+[ext_resource type="FontFile" uid="uid://b6rxc2cd3gq82" path="res://assets/fonts/Indie_Flower/IndieFlower-Regular.ttf" id="3_jvqic"]
+[ext_resource type="FontFile" uid="uid://dmwtstgnkr0oc" path="res://assets/fonts/Anton/Anton-Regular.ttf" id="4_qcxsp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ypfnb"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iayb8"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_etslg"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_osl04"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3spg2"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcxsp"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2vvsa"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_74q7a"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jmhxh"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvqic"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_niv7q"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4oupi"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hcfbj"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8cy15"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_131la"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ie5wk"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77leg"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_402k4"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5k8eg"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[node name="Selezione_livelli" type="Node2D"]
+
+[node name="Selezione" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jvqic")
+
+[node name="Background" type="TextureRect" parent="Selezione"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_g78a7")
+expand_mode = 1
+
+[node name="Scribble3" type="TextureRect" parent="Selezione/Background"]
+layout_mode = 1
+offset_right = 566.0
+offset_bottom = 441.0
+texture = ExtResource("2_qcxsp")
+
+[node name="Title" type="RichTextLabel" parent="Selezione"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -0.5
+offset_top = 50.0
+offset_right = 0.5
+offset_bottom = 250.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_jvqic")
+theme_override_font_sizes/normal_font_size = 165
+text = "Selezione Livello"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Ritorna Indietro" type="Button" parent="Selezione"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 59.0
+offset_top = -2.0
+offset_right = 159.0
+offset_bottom = 196.0
+grow_horizontal = 0
+rotation = 1.5708
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 14
+theme_override_constants/h_separation = 7
+theme_override_constants/icon_max_width = 510
+theme_override_constants/align_to_largest_stylebox = 32
+theme_override_constants/line_spacing = 7
+theme_override_fonts/font = ExtResource("4_qcxsp")
+theme_override_font_sizes/font_size = 125
+text = "⤴"
+flat = true
+text_overrun_behavior = 2
+icon_alignment = 1
+expand_icon = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Selezione"]
+layout_mode = 1
+offset_left = 6.0
+offset_top = 284.0
+offset_right = 1926.0
+offset_bottom = 1084.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Selezione/ScrollContainer"]
+custom_minimum_size = Vector2(1920, 1780)
+layout_mode = 2
+
+[node name="Spazio1" type="TextureRect" parent="Selezione/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Livello0Button" type="Button" parent="Selezione/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1290, 230)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jvqic")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxFlat_ypfnb")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_iayb8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_etslg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_osl04")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3spg2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qcxsp")
+text = "Livello 0 - Tutorial"
+
+[node name="Spazio2" type="TextureRect" parent="Selezione/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Livello1Button" type="Button" parent="Selezione/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1290, 230)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jvqic")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxFlat_2vvsa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jvqic")
+text = "Livello 1"
+
+[node name="Spazio3" type="TextureRect" parent="Selezione/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Livello2Button" type="Button" parent="Selezione/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1290, 230)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jvqic")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxFlat_2vvsa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_niv7q")
+text = "Livello 2"
+
+[node name="Spazio4" type="TextureRect" parent="Selezione/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Livello3Button" type="Button" parent="Selezione/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1290, 230)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jvqic")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxFlat_2vvsa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4oupi")
+text = "Livello 3"
+
+[node name="Spazio 5" type="TextureRect" parent="Selezione/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Livello4Button" type="Button" parent="Selezione/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1290, 230)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jvqic")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxFlat_2vvsa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hcfbj")
+text = "Livello 4"
+
+[node name="Spazio5" type="TextureRect" parent="Selezione/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Livello5Button" type="Button" parent="Selezione/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1290, 230)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jvqic")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxFlat_2vvsa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8cy15")
+text = "Livello 5"
+
+[node name="Spazio6" type="TextureRect" parent="Selezione/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Livello6Button" type="Button" parent="Selezione/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1290, 230)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jvqic")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxFlat_2vvsa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_131la")
+text = "Livello 6"
+
+[node name="Spazio7" type="TextureRect" parent="Selezione/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Livello7Button" type="Button" parent="Selezione/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1290, 230)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jvqic")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxFlat_2vvsa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ie5wk")
+text = "Livello 7"
+
+[node name="Spazio8" type="TextureRect" parent="Selezione/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Livello8Button" type="Button" parent="Selezione/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1290, 230)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jvqic")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxFlat_2vvsa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_77leg")
+text = "Livello 8"
+
+[node name="Spazio9" type="TextureRect" parent="Selezione/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Livello9Button" type="Button" parent="Selezione/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1290, 230)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jvqic")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxFlat_2vvsa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_402k4")
+text = "Livello 9"
+
+[node name="Spazio10" type="TextureRect" parent="Selezione/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Livello10Button" type="Button" parent="Selezione/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1290, 230)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jvqic")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxFlat_2vvsa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5k8eg")
+text = "Livello 10"
+
+[connection signal="pressed" from="Selezione/Ritorna Indietro" to="Selezione" method="_on_ritorna_indietro_pressed"]
+[connection signal="pressed" from="Selezione/ScrollContainer/VBoxContainer/Livello0Button" to="Selezione" method="_on_livello_0_button_pressed"]
