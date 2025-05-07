@@ -16,35 +16,9 @@ func _ready():
 	current_scene = root.get_child(-1)
 	
 
-func loading_bar_fix(barra):
-	if barra is ProgressBar:
-		barra.set_deferred("size", Vector2(resolution[0]/1.5, resolution[1]/8))
-		barra.set_anchor_and_offset((SIDE_LEFT), 0.5, -resolution[0]/3)
-	else:
-		pass
-
-func menu_buttons_fix(container):
-	if container is VBoxContainer:
-		for child in container.get_children():
-			if child is BaseButton:
-				child.set_deferred("size", Vector2(resolution[0]/4, resolution[1]/3))
-
-
-#da sistemare sicuramente
-func _apply_global_size(node):
-	DisplayServer.window_set_size(resolution)
-	DisplayServer.window_set_position(Vector2(50,50))
-	if node is Control:
-		node.set_deferred("size", resolution)
-	for child in node.get_children():
-		if child is Control:
-			if child.get_tooltip().match("escludi"):
-				child.set_deferred("size", resolution)
-				break
-			else:
-				child.set_deferred("size", resolution)
-		else: 
-			_apply_global_size(child)
+func goto_load_scene(scena):
+	next_scene = scena
+	goto_scene(Globals.loading_screen)
 
 func goto_scene(path):
 	# This function will usually be called from a signal callback,

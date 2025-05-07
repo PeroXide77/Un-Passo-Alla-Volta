@@ -1,12 +1,7 @@
 extends Control
 
-func _ready():
-	Globals._apply_global_size(get_tree().root)
-	Globals.menu_buttons_fix($"Escludi/VBoxContainer")
-
 func _on_nuova_partita_pressed() -> void:
-	Globals.next_scene = "res://scenes/Tutorial.tscn"
-	Globals.goto_scene(Globals.loading_screen)
+	Globals.goto_load_scene("res://scenes/Tutorial.tscn")
 
 func _on_esci_pressed() -> void:
 	get_tree().quit();
