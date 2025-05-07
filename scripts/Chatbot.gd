@@ -1,7 +1,7 @@
 extends Node
 
 var npc_dataset = []
-var current_level = 1
+var current_level = 0
 var npc_name = ""
 var personality = ""
 var stop_word_v = ""
@@ -53,3 +53,7 @@ func request_chat_npc(user_input : LineEdit, http_request : HTTPRequest):
 	
 	if error != OK:
 		print("Errore nella richiesta HTTP: ", error)
+
+func append_conversation(role : String, content : Variant):
+	conversation_history.append({"role": role, "content": content})
+	print(conversation_history)

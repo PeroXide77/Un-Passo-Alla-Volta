@@ -17,8 +17,7 @@ func _on_invio_pressed() -> void:
 	if user_message == "":
 		return
 	
-	Chatbot.conversation_history.append({"role": "user", "content": user_message})
-	#Chatbot.add_new_conversation(parametri)
+	Chatbot.append_conversation("user", user_message)
 	Chatbot.request_chat_npc(user_input, http_request)
 	user_input.text = ""
 
@@ -34,5 +33,5 @@ func _on_http_request_request_completed(result: int, response_code: int, headers
 		npc_reply = parsed["response"]
 	else:
 		npc_reply = body_string
-	Chatbot.conversation_history.append({"role": "assistant", "content": npc_reply})
+	Chatbot.append_conversation("assistant", npc_reply)
 	response_label.text = npc_reply
