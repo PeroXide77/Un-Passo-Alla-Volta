@@ -5,9 +5,12 @@ extends Popup
 @onready var fullScreen = $SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen
 @onready var checkFS = $SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen/CheckFS
 
-func _ready(): ##appena si apre il container
+func _ready():
 	volume.value = Globals.volume;
 	add_resolutions()
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		resolutionMenu.set_disabled(true)
+		checkFS.set_visible(true)
 	
 func _on_volume_value_changed(value: float) -> void:
 	Globals.volume = value;
