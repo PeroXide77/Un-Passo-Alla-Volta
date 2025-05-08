@@ -26,12 +26,16 @@ func _on_http_request_request_completed(result: int, response_code: int, headers
 		print("Errore nella risposta: codice ", response_code)
 		response_label.text = "Errore di rete"
 		return
+
 	var body_string = body.get_string_from_utf8()
 	var parsed = JSON.parse_string(body_string)
-	var npc_reply
+	var npc_reply: String
+
 	if typeof(parsed) == TYPE_DICTIONARY and "response" in parsed:
 		npc_reply = parsed["response"]
 	else:
 		npc_reply = body_string
-	Chatbot.append_conversation("assistant", npc_reply)
+
 	response_label.text = npc_reply
+	var clean_reply := npc_reply.replace("[LIVELLO COMPLETATO]", "").replace("[LIVELLO PERSO]", "").strip_edges()
+	Chatbot.append_conversation("assistant", clean_reply)

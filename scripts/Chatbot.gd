@@ -1,7 +1,7 @@
 extends Node
 
 var npc_dataset = []
-var current_level = 0
+var current_level = 1
 var npc_name = ""
 var personality = ""
 var stop_word_v = ""
@@ -45,6 +45,7 @@ func request_chat_npc(user_input : LineEdit, http_request : HTTPRequest):
 	var data = {
 		"user_input": latest_input,
 		"personality": personality,
+		"conversation_history": conversation_history,
 		"stop_word_v": stop_word_v,
 		"stop_word_p": stop_word_p
 	}
@@ -56,4 +57,3 @@ func request_chat_npc(user_input : LineEdit, http_request : HTTPRequest):
 
 func append_conversation(role : String, content : Variant):
 	conversation_history.append({"role": role, "content": content})
-	print(conversation_history)
