@@ -4,6 +4,14 @@ extends Control
 @onready var checkImp = $VBoxContainer/Impostazioni/CheckImp
 @onready var checkExit = $VBoxContainer/Exit/CheckExit
 @onready var impPopUp = $Impostazioni
+@onready var lvSelect = $VBoxContainer/SelezioneLivelli
+@onready var imp = $VBoxContainer/Impostazioni
+@onready var exit = $VBoxContainer/Exit
+
+func _process(delta: float) -> void:
+	Globals.btn_hover(lvSelect)
+	Globals.btn_hover(imp)
+	Globals.btn_hover(exit)
 
 func _on_selezione_livelli_pressed() -> void:
 	checkLvl.set_visible(true)

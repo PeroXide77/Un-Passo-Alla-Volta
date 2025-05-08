@@ -37,6 +37,11 @@ func goto_scene(path):
 
 	_deferred_goto_scene.call_deferred(path)
 
+func btn_hover(b: Button):
+	if b.is_hovered():
+		b.set_flat(false)
+	else:
+		b.set_flat(true)
 
 func _deferred_goto_scene(path):
 	# It is now safe to remove the current scene.

@@ -5,6 +5,9 @@ extends Popup
 @onready var fullScreen = $SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen
 @onready var checkFS = $SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen/CheckFS
 
+func _process(delta: float) -> void:
+	Globals.btn_hover(fullScreen)
+
 func _ready():
 	volume.value = Globals.volume;
 	add_resolutions()
