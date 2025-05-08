@@ -13,6 +13,7 @@ const resolutions = {
 var current_scene = null
 var next_scene = null
 var volume = 100
+var resIndex = 0
 
 func _ready():
 	var root = get_tree().root

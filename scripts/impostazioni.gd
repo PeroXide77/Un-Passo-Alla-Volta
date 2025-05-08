@@ -8,6 +8,7 @@ extends Popup
 func _ready():
 	volume.value = Globals.volume;
 	add_resolutions()
+	resolutionMenu.select(Globals.resIndex)
 	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
 		resolutionMenu.set_disabled(true)
 		checkFS.set_visible(true)
@@ -22,7 +23,7 @@ func add_resolutions():
 	for r in Globals.resolutions:
 		resolutionMenu.add_item(r)
 		if now == Globals.resolutions[r]:
-			resolutionMenu.select(resolutionMenu.item_count - 1)
+			Globals.resIndex = resolutionMenu.item_count - 1
 
 func _on_option_button_item_selected(index: int) -> void:
 	var key = resolutionMenu.get_item_text(index)
