@@ -1,7 +1,7 @@
 extends Node
 
 var npc_dataset = []
-var current_level = 1
+var current_level : int
 var npc_name = ""
 var personality = ""
 var stop_word_v = ""
@@ -18,11 +18,8 @@ func dataset_caricamento():
 	var content := file.get_as_text()
 	file.close()
 
-	var parsed = JSON.parse_string(content)
-	if parsed is Array:
-		npc_dataset = parsed
-	else:
-		push_error("Errore nel parsing del JSON.")
+	var parsed: Array = JSON.parse_string(content)
+	npc_dataset = parsed
 
 func npc_caricamento(level: int, label : RichTextLabel):
 	if level >= 0 and level < npc_dataset.size():

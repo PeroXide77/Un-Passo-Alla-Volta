@@ -9,9 +9,6 @@ func _ready():
 	Chatbot.dataset_caricamento()
 	Chatbot.npc_caricamento(Chatbot.current_level, response_label)
 
-func _on_ritorna_indietro_pressed() -> void:
-	Globals.goto_load_scene("res://scenes/mainmenu.tscn")
-
 func _on_invio_pressed() -> void:
 	var user_message = user_input.text.strip_edges()
 	if user_message == "":
@@ -39,3 +36,9 @@ func _on_http_request_request_completed(result: int, response_code: int, headers
 	response_label.text = npc_reply
 	var clean_reply := npc_reply.replace("[LIVELLO COMPLETATO]", "").replace("[LIVELLO PERSO]", "").strip_edges()
 	Chatbot.append_conversation("assistant", clean_reply)
+
+
+
+
+func _on_return_pressed() -> void:
+	Globals.goto_load_scene("res://scenes/selezione_livelli.tscn")
