@@ -1,10 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://bwl2p13to885n"]
+[gd_scene load_steps=26 format=3 uid="uid://bwl2p13to885n"]
 
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="1_g78a7"]
-[ext_resource type="Script" uid="uid://c3aw0y1jo1l53" path="res://scenes/selezione.gd" id="1_jvqic"]
+[ext_resource type="Script" uid="uid://c3aw0y1jo1l53" path="res://scripts/selezione.gd" id="1_jvqic"]
 [ext_resource type="Texture2D" uid="uid://dqr44kkgua7qk" path="res://icons/scribble3.png" id="2_qcxsp"]
 [ext_resource type="FontFile" uid="uid://b6rxc2cd3gq82" path="res://assets/fonts/Indie_Flower/IndieFlower-Regular.ttf" id="3_jvqic"]
 [ext_resource type="FontFile" uid="uid://dmwtstgnkr0oc" path="res://assets/fonts/Anton/Anton-Regular.ttf" id="4_qcxsp"]
+[ext_resource type="ButtonGroup" uid="uid://c3y33hcc07awi" path="res://assets/bg/levels.tres" id="6_niv7q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ypfnb"]
 bg_color = Color(1, 1, 1, 1)
@@ -244,6 +245,7 @@ offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jvqic")
+levelGroup = ExtResource("6_niv7q")
 
 [node name="Background" type="TextureRect" parent="Selezione"]
 layout_mode = 1
@@ -257,8 +259,12 @@ expand_mode = 1
 
 [node name="Scribble3" type="TextureRect" parent="Selezione/Background"]
 layout_mode = 1
-offset_right = 566.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -566.0
 offset_bottom = 441.0
+grow_horizontal = 0
 texture = ExtResource("2_qcxsp")
 
 [node name="Title" type="RichTextLabel" parent="Selezione"]
@@ -281,15 +287,10 @@ horizontal_alignment = 1
 
 [node name="Ritorna Indietro" type="Button" parent="Selezione"]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 59.0
-offset_top = -2.0
-offset_right = 159.0
-offset_bottom = 196.0
-grow_horizontal = 0
-rotation = 1.5708
+offset_top = 100.0
+offset_right = 100.0
+offset_bottom = 298.0
+rotation = -1.5708
 focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 14
@@ -312,15 +313,15 @@ offset_top = 284.0
 offset_right = 1926.0
 offset_bottom = 1084.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Selezione/ScrollContainer"]
+[node name="LevelSelect" type="VBoxContainer" parent="Selezione/ScrollContainer"]
 custom_minimum_size = Vector2(1920, 1780)
 layout_mode = 2
 
-[node name="Spazio1" type="TextureRect" parent="Selezione/ScrollContainer/VBoxContainer"]
+[node name="Spazio1" type="TextureRect" parent="Selezione/ScrollContainer/LevelSelect"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="Livello0Button" type="Button" parent="Selezione/ScrollContainer/VBoxContainer"]
+[node name="Livello0Button" type="Button" parent="Selezione/ScrollContainer/LevelSelect"]
 custom_minimum_size = Vector2(1290, 230)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -338,13 +339,16 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_etslg")
 theme_override_styles/hover = SubResource("StyleBoxFlat_osl04")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3spg2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_qcxsp")
+toggle_mode = true
+button_group = ExtResource("6_niv7q")
 text = "Livello 0 - Tutorial"
+metadata/lv = 0
 
-[node name="Spazio2" type="TextureRect" parent="Selezione/ScrollContainer/VBoxContainer"]
+[node name="Spazio2" type="TextureRect" parent="Selezione/ScrollContainer/LevelSelect"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="Livello1Button" type="Button" parent="Selezione/ScrollContainer/VBoxContainer"]
+[node name="Livello1Button" type="Button" parent="Selezione/ScrollContainer/LevelSelect"]
 custom_minimum_size = Vector2(1290, 230)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -359,13 +363,16 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_2vvsa")
 theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jvqic")
+toggle_mode = true
+button_group = ExtResource("6_niv7q")
 text = "Livello 1"
+metadata/lv = 1
 
-[node name="Spazio3" type="TextureRect" parent="Selezione/ScrollContainer/VBoxContainer"]
+[node name="Spazio3" type="TextureRect" parent="Selezione/ScrollContainer/LevelSelect"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="Livello2Button" type="Button" parent="Selezione/ScrollContainer/VBoxContainer"]
+[node name="Livello2Button" type="Button" parent="Selezione/ScrollContainer/LevelSelect"]
 custom_minimum_size = Vector2(1290, 230)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -380,13 +387,16 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_2vvsa")
 theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_niv7q")
+toggle_mode = true
+button_group = ExtResource("6_niv7q")
 text = "Livello 2"
+metadata/lv = 2
 
-[node name="Spazio4" type="TextureRect" parent="Selezione/ScrollContainer/VBoxContainer"]
+[node name="Spazio4" type="TextureRect" parent="Selezione/ScrollContainer/LevelSelect"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="Livello3Button" type="Button" parent="Selezione/ScrollContainer/VBoxContainer"]
+[node name="Livello3Button" type="Button" parent="Selezione/ScrollContainer/LevelSelect"]
 custom_minimum_size = Vector2(1290, 230)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -401,13 +411,16 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_2vvsa")
 theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_4oupi")
+toggle_mode = true
+button_group = ExtResource("6_niv7q")
 text = "Livello 3"
+metadata/lv = 3
 
-[node name="Spazio 5" type="TextureRect" parent="Selezione/ScrollContainer/VBoxContainer"]
+[node name="Spazio 5" type="TextureRect" parent="Selezione/ScrollContainer/LevelSelect"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="Livello4Button" type="Button" parent="Selezione/ScrollContainer/VBoxContainer"]
+[node name="Livello4Button" type="Button" parent="Selezione/ScrollContainer/LevelSelect"]
 custom_minimum_size = Vector2(1290, 230)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -422,13 +435,16 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_2vvsa")
 theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_hcfbj")
+toggle_mode = true
+button_group = ExtResource("6_niv7q")
 text = "Livello 4"
+metadata/lv = 4
 
-[node name="Spazio5" type="TextureRect" parent="Selezione/ScrollContainer/VBoxContainer"]
+[node name="Spazio5" type="TextureRect" parent="Selezione/ScrollContainer/LevelSelect"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="Livello5Button" type="Button" parent="Selezione/ScrollContainer/VBoxContainer"]
+[node name="Livello5Button" type="Button" parent="Selezione/ScrollContainer/LevelSelect"]
 custom_minimum_size = Vector2(1290, 230)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -443,13 +459,16 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_2vvsa")
 theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8cy15")
+toggle_mode = true
+button_group = ExtResource("6_niv7q")
 text = "Livello 5"
+metadata/lv = 5
 
-[node name="Spazio6" type="TextureRect" parent="Selezione/ScrollContainer/VBoxContainer"]
+[node name="Spazio6" type="TextureRect" parent="Selezione/ScrollContainer/LevelSelect"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="Livello6Button" type="Button" parent="Selezione/ScrollContainer/VBoxContainer"]
+[node name="Livello6Button" type="Button" parent="Selezione/ScrollContainer/LevelSelect"]
 custom_minimum_size = Vector2(1290, 230)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -464,13 +483,16 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_2vvsa")
 theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_131la")
+toggle_mode = true
+button_group = ExtResource("6_niv7q")
 text = "Livello 6"
+metadata/lv = 6
 
-[node name="Spazio7" type="TextureRect" parent="Selezione/ScrollContainer/VBoxContainer"]
+[node name="Spazio7" type="TextureRect" parent="Selezione/ScrollContainer/LevelSelect"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="Livello7Button" type="Button" parent="Selezione/ScrollContainer/VBoxContainer"]
+[node name="Livello7Button" type="Button" parent="Selezione/ScrollContainer/LevelSelect"]
 custom_minimum_size = Vector2(1290, 230)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -485,13 +507,16 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_2vvsa")
 theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ie5wk")
+toggle_mode = true
+button_group = ExtResource("6_niv7q")
 text = "Livello 7"
+metadata/lv = 7
 
-[node name="Spazio8" type="TextureRect" parent="Selezione/ScrollContainer/VBoxContainer"]
+[node name="Spazio8" type="TextureRect" parent="Selezione/ScrollContainer/LevelSelect"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="Livello8Button" type="Button" parent="Selezione/ScrollContainer/VBoxContainer"]
+[node name="Livello8Button" type="Button" parent="Selezione/ScrollContainer/LevelSelect"]
 custom_minimum_size = Vector2(1290, 230)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -506,13 +531,16 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_2vvsa")
 theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77leg")
+toggle_mode = true
+button_group = ExtResource("6_niv7q")
 text = "Livello 8"
+metadata/lv = 8
 
-[node name="Spazio9" type="TextureRect" parent="Selezione/ScrollContainer/VBoxContainer"]
+[node name="Spazio9" type="TextureRect" parent="Selezione/ScrollContainer/LevelSelect"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="Livello9Button" type="Button" parent="Selezione/ScrollContainer/VBoxContainer"]
+[node name="Livello9Button" type="Button" parent="Selezione/ScrollContainer/LevelSelect"]
 custom_minimum_size = Vector2(1290, 230)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -527,13 +555,16 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_2vvsa")
 theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_402k4")
+toggle_mode = true
+button_group = ExtResource("6_niv7q")
 text = "Livello 9"
+metadata/lv = 9
 
-[node name="Spazio10" type="TextureRect" parent="Selezione/ScrollContainer/VBoxContainer"]
+[node name="Spazio10" type="TextureRect" parent="Selezione/ScrollContainer/LevelSelect"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="Livello10Button" type="Button" parent="Selezione/ScrollContainer/VBoxContainer"]
+[node name="Livello10Button" type="Button" parent="Selezione/ScrollContainer/LevelSelect"]
 custom_minimum_size = Vector2(1290, 230)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -548,7 +579,13 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_2vvsa")
 theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_5k8eg")
+toggle_mode = true
+button_group = ExtResource("6_niv7q")
 text = "Livello 10"
+metadata/lv = 10
+
+[node name="Spazio11" type="TextureRect" parent="Selezione/ScrollContainer/LevelSelect"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
 
 [connection signal="pressed" from="Selezione/Ritorna Indietro" to="Selezione" method="_on_ritorna_indietro_pressed"]
-[connection signal="pressed" from="Selezione/ScrollContainer/VBoxContainer/Livello0Button" to="Selezione" method="_on_livello_0_button_pressed"]

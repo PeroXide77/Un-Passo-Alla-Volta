@@ -1,12 +1,18 @@
 extends Node
 
 var npc_dataset = []
-var current_level = 1
+var currentLevel : int
 var npc_name = ""
 var personality = ""
 var stop_word_v = ""
 var stop_word_p = ""
 var conversation_history = []
+
+func get_currentLevel() -> int:
+	return currentLevel
+
+func set_currentLevel(lv: int):
+	currentLevel = lv
 
 func dataset_caricamento():
 	var file_path := "res://assets/sprites/first_dataset_UnPassoAllaVolta.json"
@@ -18,11 +24,8 @@ func dataset_caricamento():
 	var content := file.get_as_text()
 	file.close()
 
-	var parsed = JSON.parse_string(content)
-	if parsed is Array:
-		npc_dataset = parsed
-	else:
-		push_error("Errore nel parsing del JSON.")
+	var parsed: Array = JSON.parse_string(content)
+	npc_dataset = parsed
 
 func npc_caricamento(level: int, label : RichTextLabel):
 	if level >= 0 and level < npc_dataset.size():

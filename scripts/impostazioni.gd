@@ -5,11 +5,11 @@ extends Popup
 @onready var fullScreen = $SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen
 @onready var checkFS = $SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen/CheckFS
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	Globals.btn_hover(fullScreen)
 
 func _ready():
-	volume.value = Globals.volume;
+	volume.value = Globals.get_volume();
 	add_resolutions()
 	resolutionMenu.select(Globals.resIndex)
 	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
@@ -19,7 +19,7 @@ func _ready():
 		
 	
 func _on_volume_value_changed(value: float) -> void:
-	Globals.volume = value;
+	Globals.set_volume(value);
 
 func add_resolutions():
 	var now = DisplayServer.window_get_size()

@@ -1,0 +1,86 @@
+[gd_scene load_steps=6 format=3 uid="uid://cw0ac88cyi2si"]
+
+[ext_resource type="Script" uid="uid://bji87yhdq6now" path="res://scripts/game.gd" id="1_iywne"]
+[ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="2_p57ef"]
+[ext_resource type="FontFile" uid="uid://dmwtstgnkr0oc" path="res://assets/fonts/Anton/Anton-Regular.ttf" id="3_u5sy4"]
+[ext_resource type="FontFile" uid="uid://b6rxc2cd3gq82" path="res://assets/fonts/Indie_Flower/IndieFlower-Regular.ttf" id="4_gee14"]
+[ext_resource type="Texture2D" uid="uid://dx1micry2vq1h" path="res://icons/scribble1.png" id="5_0tnpc"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Tutorial" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("1_iywne")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="Tutorial"]
+
+[node name="Background" type="TextureRect" parent="Tutorial"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_p57ef")
+expand_mode = 1
+
+[node name="Input" type="LineEdit" parent="Tutorial"]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 877.0
+offset_right = 1326.0
+offset_bottom = 995.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gee14")
+theme_override_font_sizes/font_size = 50
+placeholder_text = "Scrivi qui"
+
+[node name="Invio" type="Button" parent="Tutorial"]
+layout_mode = 0
+offset_left = 1636.0
+offset_top = 883.0
+offset_right = 1809.0
+offset_bottom = 994.0
+text = "VAI"
+icon = ExtResource("5_0tnpc")
+
+[node name="Risposta" type="RichTextLabel" parent="Tutorial"]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 209.0
+offset_right = 1818.0
+offset_bottom = 826.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -5
+theme_override_fonts/normal_font = ExtResource("4_gee14")
+theme_override_font_sizes/normal_font_size = 45
+text = "giao
+fiao"
+
+[node name="Return" type="Button" parent="Tutorial"]
+layout_mode = 0
+offset_top = 100.0
+offset_right = 100.0
+offset_bottom = 298.0
+rotation = -1.5708
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 14
+theme_override_constants/h_separation = 7
+theme_override_constants/icon_max_width = 510
+theme_override_constants/align_to_largest_stylebox = 32
+theme_override_constants/line_spacing = 7
+theme_override_fonts/font = ExtResource("3_u5sy4")
+theme_override_font_sizes/font_size = 125
+text = "⤴"
+flat = true
+text_overrun_behavior = 2
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="request_completed" from="Tutorial/HTTPRequest" to="Tutorial" method="_on_http_request_request_completed"]
+[connection signal="pressed" from="Tutorial/Invio" to="Tutorial" method="_on_invio_pressed"]
+[connection signal="pressed" from="Tutorial/Return" to="Tutorial" method="_on_return_pressed"]
