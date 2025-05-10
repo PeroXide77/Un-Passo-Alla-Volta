@@ -584,5 +584,8 @@ button_group = ExtResource("6_niv7q")
 text = "Livello 10"
 metadata/lv = 10
 
+[node name="Spazio11" type="TextureRect" parent="Selezione/ScrollContainer/LevelSelect"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
 [connection signal="pressed" from="Selezione/Ritorna Indietro" to="Selezione" method="_on_ritorna_indietro_pressed"]
-[connection signal="pressed" from="Selezione/ScrollContainer/LevelSelect/Livello0Button" to="Selezione" method="_on_livello_0_button_pressed"]

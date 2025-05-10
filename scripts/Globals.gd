@@ -11,9 +11,21 @@ const resolutions = {
 	"854x480": Vector2i(854,480)
 }
 var current_scene = null
-var next_scene = null
-var volume = 100
+var nextScene = null
+var volume: float = 100
 var resIndex = 0
+
+func get_volume() -> float:
+	return volume
+
+func set_volume(v: float):
+	volume = v
+
+func get_nextScene() -> String:
+	return nextScene
+
+func set_nextScene(ns: String):
+	nextScene = ns
 
 func _ready():
 	var root = get_tree().root
@@ -21,8 +33,8 @@ func _ready():
 	current_scene = root.get_child(-1)
 
 func goto_load_scene(scena):
-	next_scene = scena
-	goto_scene(Globals.loading_screen)
+	nextScene = scena
+	goto_scene(loading_screen)
 
 		
 func goto_scene(path):

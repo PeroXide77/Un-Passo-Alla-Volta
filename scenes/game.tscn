@@ -61,6 +61,7 @@ text = "giao
 fiao"
 
 [node name="Return" type="Button" parent="Tutorial"]
+layout_mode = 0
 offset_top = 100.0
 offset_right = 100.0
 offset_bottom = 298.0

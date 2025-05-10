@@ -8,7 +8,7 @@ extends Control
 @onready var imp = $VBoxContainer/Impostazioni
 @onready var exit = $VBoxContainer/Exit
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	Globals.btn_hover(lvSelect)
 	Globals.btn_hover(imp)
 	Globals.btn_hover(exit)

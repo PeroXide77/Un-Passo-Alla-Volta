@@ -1,12 +1,18 @@
 extends Node
 
 var npc_dataset = []
-var current_level : int
+var currentLevel : int
 var npc_name = ""
 var personality = ""
 var stop_word_v = ""
 var stop_word_p = ""
 var conversation_history = []
+
+func get_currentLevel() -> int:
+	return currentLevel
+
+func set_currentLevel(lv: int):
+	currentLevel = lv
 
 func dataset_caricamento():
 	var file_path := "res://assets/sprites/first_dataset_UnPassoAllaVolta.json"

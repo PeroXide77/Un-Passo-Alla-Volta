@@ -7,7 +7,7 @@ extends Control
 
 func _ready():
 	Chatbot.dataset_caricamento()
-	Chatbot.npc_caricamento(Chatbot.current_level, response_label)
+	Chatbot.npc_caricamento(Chatbot.get_currentLevel(), response_label)
 
 func _on_invio_pressed() -> void:
 	var user_message = user_input.text.strip_edges()
@@ -18,7 +18,7 @@ func _on_invio_pressed() -> void:
 	Chatbot.request_chat_npc(user_input, http_request)
 	user_input.text = ""
 
-func _on_http_request_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
+func _on_http_request_request_completed(_result: int, response_code: int, _headers: PackedStringArray, body: PackedByteArray) -> void:
 	if response_code != 200:
 		print("Errore nella risposta: codice ", response_code)
 		response_label.text = "Errore di rete"
@@ -36,9 +36,6 @@ func _on_http_request_request_completed(result: int, response_code: int, headers
 	response_label.text = npc_reply
 	var clean_reply := npc_reply.replace("[LIVELLO COMPLETATO]", "").replace("[LIVELLO PERSO]", "").strip_edges()
 	Chatbot.append_conversation("assistant", clean_reply)
-
-
-
 
 func _on_return_pressed() -> void:
 	Globals.goto_load_scene("res://scenes/selezione_livelli.tscn")
