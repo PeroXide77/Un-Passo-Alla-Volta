@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://q6vbbqpws6j7"
-path="res://.godot/imported/Finta_menu.png-a3eef4c7e8183ddec92fec50a534862c.ctex"
+uid="uid://cuqw0q0lwiugl"
+path="res://.godot/imported/button_send.png-7d8396ae192d640883f3305a78a64997.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/Finta_menu.png"
-dest_files=["res://.godot/imported/Finta_menu.png-a3eef4c7e8183ddec92fec50a534862c.ctex"]
+source_file="res://icons/button_send.png"
+dest_files=["res://.godot/imported/button_send.png-7d8396ae192d640883f3305a78a64997.ctex"]
 
 [params]
 
