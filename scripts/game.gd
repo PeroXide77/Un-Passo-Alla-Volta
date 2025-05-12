@@ -1,8 +1,8 @@
 extends Control
 
 @onready var http_request: HTTPRequest = $HTTPRequest
-@onready var user_input: LineEdit = $Input
-@onready var response_label: RichTextLabel = $Risposta
+@onready var user_input: LineEdit = $"Speech Bubble Input/Input"
+@onready var response_label: RichTextLabel = $"Speech Bubble Output/Risposta"
 @onready var send_button: Button = $Invio
 
 func _ready():
@@ -39,3 +39,6 @@ func _on_http_request_request_completed(_result: int, response_code: int, _heade
 
 func _on_return_pressed() -> void:
 	Globals.goto_load_scene("res://scenes/selezione_livelli.tscn")
+
+func _on_input_text_submitted(new_text: String) -> void:
+	_on_invio_pressed()
