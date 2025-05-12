@@ -14,6 +14,13 @@ var current_scene = null
 var nextScene = null
 var volume: float = 100
 var resIndex = 0
+var gameState: int = 5
+
+func get_gameState() -> int:
+	return gameState
+
+func nextState() -> void:
+	gameState += 1
 
 func get_volume() -> float:
 	return volume
