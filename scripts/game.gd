@@ -32,8 +32,12 @@ func _on_http_request_request_completed(_result: int, response_code: int, _heade
 		npc_reply = parsed["response"]
 	else:
 		npc_reply = body_string
-
-	response_label.text = npc_reply
+	
+	if "[LIVELLO COMPLETATO]" in npc_reply :
+		response_label.text = npc_reply.replace("[LIVELLO COMPLETATO]", "")
+		completed_level()
+	else :
+		response_label.text = npc_reply
 	var clean_reply := npc_reply.replace("[LIVELLO COMPLETATO]", "").replace("[LIVELLO PERSO]", "").strip_edges()
 	Chatbot.append_conversation("assistant", clean_reply)
 
@@ -46,3 +50,11 @@ func _on_input_gui_input(event: InputEvent) -> void:
 			_on_invio_pressed()
 			user_input.clear()
 			get_viewport().set_input_as_handled()
+
+func completed_level() -> void:
+	print("Livello completato")
+	#mettere la visibilità del livello successivo
+	#mettere lo style completato a tutti i bottoni prima di quello nuovo
+	#mettere la visibilità ad un bottone che vada al rinforzo positivo
+	await get_tree().create_timer(0.5).timeout
+	Globals.goto_load_scene("res://scenes/rinforzo_positivo.tscn") #per ora cosi, poi vediamo
