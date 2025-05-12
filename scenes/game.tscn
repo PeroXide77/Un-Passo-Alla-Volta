@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cw0ac88cyi2si"]
+[gd_scene load_steps=9 format=3 uid="uid://cw0ac88cyi2si"]
 
 [ext_resource type="Script" uid="uid://bji87yhdq6now" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="2_p57ef"]
@@ -7,6 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://cuqw0q0lwiugl" path="res://icons/button_send.png" id="4_0tnpc"]
 [ext_resource type="FontFile" uid="uid://b6rxc2cd3gq82" path="res://assets/fonts/Indie_Flower/IndieFlower-Regular.ttf" id="4_gee14"]
 [ext_resource type="Texture2D" uid="uid://brvkr7k82xltp" path="res://icons/speech_bubble.png" id="6_vtaks"]
+
+[sub_resource type="GDScript" id="GDScript_u5sy4"]
+script/source = "extends TextEdit
+"
 
 [node name="Node2D" type="Node2D"]
 
@@ -44,6 +48,7 @@ offset_left = 958.0
 offset_top = 708.0
 offset_right = 1161.0
 offset_bottom = 917.0
+focus_mode = 0
 icon = ExtResource("4_0tnpc")
 flat = true
 icon_alignment = 1
@@ -81,18 +86,37 @@ texture = ExtResource("6_vtaks")
 expand_mode = 1
 flip_h = true
 
-[node name="Input" type="LineEdit" parent="Tutorial/Speech Bubble Input"]
+[node name="Input2" type="LineEdit" parent="Tutorial/Speech Bubble Input"]
 layout_mode = 0
-offset_left = 28.0
-offset_top = 53.0
-offset_right = 674.0
-offset_bottom = 155.0
+offset_left = -659.0
+offset_top = -28.0
+offset_right = -13.0
+offset_bottom = 74.0
 theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_gee14")
 theme_override_font_sizes/font_size = 50
 placeholder_text = "Scrivi qui"
 flat = true
+
+[node name="Input" type="TextEdit" parent="Tutorial/Speech Bubble Input"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 44.0
+offset_right = 662.0
+offset_bottom = 328.0
+theme_override_colors/background_color = Color(1, 1, 1, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/line_spacing = -9
+theme_override_fonts/font = ExtResource("4_gee14")
+theme_override_font_sizes/font_size = 50
+placeholder_text = "Scrivi qui"
+wrap_mode = 1
+autowrap_mode = 2
+script = SubResource("GDScript_u5sy4")
 
 [node name="Speech Bubble Output" type="TextureRect" parent="Tutorial"]
 layout_mode = 0
@@ -119,4 +143,5 @@ fiao"
 [connection signal="request_completed" from="Tutorial/HTTPRequest" to="Tutorial" method="_on_http_request_request_completed"]
 [connection signal="pressed" from="Tutorial/Invio" to="Tutorial" method="_on_invio_pressed"]
 [connection signal="pressed" from="Tutorial/Return" to="Tutorial" method="_on_return_pressed"]
-[connection signal="text_submitted" from="Tutorial/Speech Bubble Input/Input" to="Tutorial" method="_on_input_text_submitted"]
+[connection signal="text_submitted" from="Tutorial/Speech Bubble Input/Input2" to="Tutorial" method="_on_input_text_submitted"]
+[connection signal="gui_input" from="Tutorial/Speech Bubble Input/Input" to="Tutorial" method="_on_input_gui_input"]
