@@ -40,7 +40,7 @@ func npc_caricamento(level: int, label : RichTextLabel):
 	else:
 		push_error("Livello fuori dal range del dataset.")
 
-func request_chat_npc(user_input : LineEdit, http_request : HTTPRequest):
+func request_chat_npc(user_input : TextEdit, http_request : HTTPRequest):
 	var url = "https://lucielle1234-unpassoallavolta-chatbot.hf.space/chat"
 	var headers = ["Content-Type: application/json"]
 	
