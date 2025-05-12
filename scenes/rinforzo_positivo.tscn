@@ -1,0 +1,470 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyo4f21gphae6"]
+
+[ext_resource type="Script" uid="uid://c52fcb01k7si7" path="res://scripts/rinforzo_positivo.gd" id="1_op6lv"]
+[ext_resource type="Texture2D" uid="uid://bg2oj1344ily2" path="res://icons/book_open.png" id="1_p34i8"]
+[ext_resource type="Texture2D" uid="uid://ctnld8wwlelc0" path="res://icons/rinforzo.png" id="2_aioub"]
+[ext_resource type="FontFile" uid="uid://b6rxc2cd3gq82" path="res://assets/fonts/Indie_Flower/IndieFlower-Regular.ttf" id="3_aioub"]
+[ext_resource type="FontFile" uid="uid://dmwtstgnkr0oc" path="res://assets/fonts/Anton/Anton-Regular.ttf" id="4_2dcyo"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Rinforzo_positivo" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_op6lv")
+
+[node name="Background" type="TextureRect" parent="Rinforzo_positivo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_p34i8")
+expand_mode = 1
+
+[node name="Post-It1" type="TextureRect" parent="Rinforzo_positivo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -460.0
+offset_top = -565.0
+offset_right = -52.0
+offset_bottom = -133.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_aioub")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Rinforzo_positivo/Post-It1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.5
+offset_top = -135.0
+offset_right = 157.5
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -10
+theme_override_fonts/normal_font = ExtResource("3_aioub")
+theme_override_font_sizes/normal_font_size = 40
+text = "Hai finito il tutotorial! Ora puoi iniziare a giocare!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Post-It2" type="TextureRect" parent="Rinforzo_positivo"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -898.0
+offset_top = -215.0
+offset_right = -490.0
+offset_bottom = 217.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_aioub")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Rinforzo_positivo/Post-It2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.5
+offset_top = -135.0
+offset_right = 157.5
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -10
+theme_override_fonts/normal_font = ExtResource("3_aioub")
+theme_override_font_sizes/normal_font_size = 40
+text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Post-It3" type="TextureRect" parent="Rinforzo_positivo"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -460.0
+offset_top = -215.0
+offset_right = -52.0
+offset_bottom = 217.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_aioub")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Rinforzo_positivo/Post-It3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.5
+offset_top = -135.0
+offset_right = 157.5
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -10
+theme_override_fonts/normal_font = ExtResource("3_aioub")
+theme_override_font_sizes/normal_font_size = 40
+text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Post-It4" type="TextureRect" parent="Rinforzo_positivo"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -898.0
+offset_top = 137.0
+offset_right = -490.0
+offset_bottom = 569.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_aioub")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Rinforzo_positivo/Post-It4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.5
+offset_top = -135.0
+offset_right = 157.5
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -10
+theme_override_fonts/normal_font = ExtResource("3_aioub")
+theme_override_font_sizes/normal_font_size = 40
+text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Post-It5" type="TextureRect" parent="Rinforzo_positivo"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -460.0
+offset_top = 137.0
+offset_right = -52.0
+offset_bottom = 569.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_aioub")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Rinforzo_positivo/Post-It5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.5
+offset_top = -135.0
+offset_right = 157.5
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -10
+theme_override_fonts/normal_font = ExtResource("3_aioub")
+theme_override_font_sizes/normal_font_size = 40
+text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Post-It6" type="TextureRect" parent="Rinforzo_positivo"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 56.0
+offset_top = -565.0
+offset_right = 464.0
+offset_bottom = -133.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_aioub")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Rinforzo_positivo/Post-It6"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.5
+offset_top = -135.0
+offset_right = 157.5
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -10
+theme_override_fonts/normal_font = ExtResource("3_aioub")
+theme_override_font_sizes/normal_font_size = 40
+text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Post-It7" type="TextureRect" parent="Rinforzo_positivo"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 494.0
+offset_top = -565.0
+offset_right = 902.0
+offset_bottom = -133.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_aioub")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Rinforzo_positivo/Post-It7"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.5
+offset_top = -135.0
+offset_right = 157.5
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -10
+theme_override_fonts/normal_font = ExtResource("3_aioub")
+theme_override_font_sizes/normal_font_size = 40
+text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Post-It8" type="TextureRect" parent="Rinforzo_positivo"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 56.0
+offset_top = -215.0
+offset_right = 464.0
+offset_bottom = 217.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_aioub")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Rinforzo_positivo/Post-It8"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.5
+offset_top = -135.0
+offset_right = 157.5
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -10
+theme_override_fonts/normal_font = ExtResource("3_aioub")
+theme_override_font_sizes/normal_font_size = 40
+text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Post-It9" type="TextureRect" parent="Rinforzo_positivo"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 494.0
+offset_top = -215.0
+offset_right = 902.0
+offset_bottom = 217.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_aioub")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Rinforzo_positivo/Post-It9"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.5
+offset_top = -135.0
+offset_right = 157.5
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -10
+theme_override_fonts/normal_font = ExtResource("3_aioub")
+theme_override_font_sizes/normal_font_size = 40
+text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Post-It10" type="TextureRect" parent="Rinforzo_positivo"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 56.0
+offset_top = 137.0
+offset_right = 464.0
+offset_bottom = 569.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_aioub")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Rinforzo_positivo/Post-It10"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.5
+offset_top = -135.0
+offset_right = 157.5
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -10
+theme_override_fonts/normal_font = ExtResource("3_aioub")
+theme_override_font_sizes/normal_font_size = 40
+text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Post-It11" type="TextureRect" parent="Rinforzo_positivo"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 494.0
+offset_top = 138.0
+offset_right = 902.0
+offset_bottom = 570.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_aioub")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Rinforzo_positivo/Post-It11"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.5
+offset_top = -135.0
+offset_right = 157.5
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -10
+theme_override_fonts/normal_font = ExtResource("3_aioub")
+theme_override_font_sizes/normal_font_size = 40
+text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Return" type="Button" parent="Rinforzo_positivo"]
+offset_left = -64.0
+offset_top = 102.0
+offset_right = 36.0
+offset_bottom = 300.0
+rotation = -1.5708
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 14
+theme_override_constants/h_separation = 7
+theme_override_constants/icon_max_width = 510
+theme_override_constants/align_to_largest_stylebox = 32
+theme_override_constants/line_spacing = 7
+theme_override_fonts/font = ExtResource("4_2dcyo")
+theme_override_font_sizes/font_size = 125
+text = "⤴"
+flat = true
+text_overrun_behavior = 2
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="Rinforzo_positivo/Return" to="Rinforzo_positivo" method="_on_return_pressed"]

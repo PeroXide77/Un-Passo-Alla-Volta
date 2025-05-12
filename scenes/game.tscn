@@ -86,19 +86,6 @@ texture = ExtResource("6_vtaks")
 expand_mode = 1
 flip_h = true
 
-[node name="Input2" type="LineEdit" parent="Tutorial/Speech Bubble Input"]
-layout_mode = 0
-offset_left = -659.0
-offset_top = -28.0
-offset_right = -13.0
-offset_bottom = 74.0
-theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_gee14")
-theme_override_font_sizes/font_size = 50
-placeholder_text = "Scrivi qui"
-flat = true
-
 [node name="Input" type="TextEdit" parent="Tutorial/Speech Bubble Input"]
 layout_mode = 0
 offset_left = 34.0
@@ -143,5 +130,4 @@ fiao"
 [connection signal="request_completed" from="Tutorial/HTTPRequest" to="Tutorial" method="_on_http_request_request_completed"]
 [connection signal="pressed" from="Tutorial/Invio" to="Tutorial" method="_on_invio_pressed"]
 [connection signal="pressed" from="Tutorial/Return" to="Tutorial" method="_on_return_pressed"]
-[connection signal="text_submitted" from="Tutorial/Speech Bubble Input/Input2" to="Tutorial" method="_on_input_text_submitted"]
 [connection signal="gui_input" from="Tutorial/Speech Bubble Input/Input" to="Tutorial" method="_on_input_gui_input"]
