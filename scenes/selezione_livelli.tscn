@@ -310,13 +310,12 @@ expand_icon = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Selezione"]
 layout_mode = 1
-offset_left = 6.0
 offset_top = 284.0
-offset_right = 1926.0
+offset_right = 1920.0
 offset_bottom = 1084.0
 
 [node name="LevelSelect" type="VBoxContainer" parent="Selezione/ScrollContainer"]
-custom_minimum_size = Vector2(1920, 1780)
+custom_minimum_size = Vector2(1920, 796)
 layout_mode = 2
 
 [node name="Spazio1" type="TextureRect" parent="Selezione/ScrollContainer/LevelSelect"]
@@ -372,6 +371,7 @@ text = "Livello 1"
 metadata/lv = 1
 
 [node name="Spazio3" type="TextureRect" parent="Selezione/ScrollContainer/LevelSelect"]
+visible = false
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
@@ -397,6 +397,7 @@ text = "Livello 2"
 metadata/lv = 2
 
 [node name="Spazio4" type="TextureRect" parent="Selezione/ScrollContainer/LevelSelect"]
+visible = false
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
@@ -422,6 +423,7 @@ text = "Livello 3"
 metadata/lv = 3
 
 [node name="Spazio 5" type="TextureRect" parent="Selezione/ScrollContainer/LevelSelect"]
+visible = false
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
@@ -447,6 +449,7 @@ text = "Livello 4"
 metadata/lv = 4
 
 [node name="Spazio5" type="TextureRect" parent="Selezione/ScrollContainer/LevelSelect"]
+visible = false
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
@@ -472,6 +475,7 @@ text = "Livello 5"
 metadata/lv = 5
 
 [node name="Spazio6" type="TextureRect" parent="Selezione/ScrollContainer/LevelSelect"]
+visible = false
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
@@ -497,6 +501,7 @@ text = "Livello 6"
 metadata/lv = 6
 
 [node name="Spazio7" type="TextureRect" parent="Selezione/ScrollContainer/LevelSelect"]
+visible = false
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
@@ -522,6 +527,7 @@ text = "Livello 7"
 metadata/lv = 7
 
 [node name="Spazio8" type="TextureRect" parent="Selezione/ScrollContainer/LevelSelect"]
+visible = false
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
@@ -547,6 +553,7 @@ text = "Livello 8"
 metadata/lv = 8
 
 [node name="Spazio9" type="TextureRect" parent="Selezione/ScrollContainer/LevelSelect"]
+visible = false
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
@@ -572,6 +579,7 @@ text = "Livello 9"
 metadata/lv = 9
 
 [node name="Spazio10" type="TextureRect" parent="Selezione/ScrollContainer/LevelSelect"]
+visible = false
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
@@ -597,6 +605,7 @@ text = "Livello 10"
 metadata/lv = 10
 
 [node name="Spazio11" type="TextureRect" parent="Selezione/ScrollContainer/LevelSelect"]
+visible = false
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
