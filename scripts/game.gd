@@ -4,19 +4,25 @@ extends Control
 @onready var user_input: TextEdit = $"Speech Bubble Input/Input"
 @onready var response_label: RichTextLabel = $"Speech Bubble Output/Risposta"
 @onready var send_button: Button = $Invio
-
+@onready var completedButton: Button = $Completed
+@onready var back: Button = $Return
 func _ready():
 	Chatbot.dataset_caricamento()
 	Chatbot.npc_caricamento(Chatbot.get_currentLevel(), response_label)
+	user_input.grab_focus()
 
 func _on_invio_pressed() -> void:
+	back.set_disabled(true)
+	user_input.release_focus()
+	user_input.set_editable(false)
 	var user_message = user_input.text.strip_edges()
 	if user_message == "":
 		return
 	
 	Chatbot.append_conversation("user", user_message)
+	Chatbot.print_txt("Sto pensando ...", response_label)
 	Chatbot.request_chat_npc(user_input, http_request)
-	user_input.text = ""
+	user_input.set_text("")
 
 func _on_http_request_request_completed(_result: int, response_code: int, _headers: PackedStringArray, body: PackedByteArray) -> void:
 	if response_code != 200:
@@ -33,11 +39,15 @@ func _on_http_request_request_completed(_result: int, response_code: int, _heade
 	else:
 		npc_reply = body_string
 	
+	
 	if "[LIVELLO COMPLETATO]" in npc_reply :
-		response_label.text = npc_reply.replace("[LIVELLO COMPLETATO]", "")
-		completed_level()
+		await Chatbot.print_txt(npc_reply.replace("[LIVELLO COMPLETATO]", ""), response_label)
+		completedButton.set_visible(true)
 	else :
-		response_label.text = npc_reply
+		await Chatbot.print_txt(npc_reply, response_label)
+	back.set_disabled(false)
+	user_input.grab_focus()
+	user_input.set_editable(true)
 	var clean_reply := npc_reply.replace("[LIVELLO COMPLETATO]", "").replace("[LIVELLO PERSO]", "").strip_edges()
 	Chatbot.append_conversation("assistant", clean_reply)
 
@@ -52,11 +62,12 @@ func _on_input_gui_input(event: InputEvent) -> void:
 			get_viewport().set_input_as_handled()
 
 func completed_level() -> void:
-	print("Livello completato")
-	#mettere la visibilità del livello successivo
 	if Chatbot.get_currentLevel() == Globals.get_gameState():
 		Globals.nextState()
-	#mettere lo style completato a tutti i bottoni prima di quello nuovo
-	#mettere la visibilità ad un bottone che vada al rinforzo positivo
-	await get_tree().create_timer(0.5).timeout
-	Globals.goto_load_scene("res://scenes/rinforzo_positivo.tscn") #per ora cosi, poi vediamo
+	completedButton.set_visible(true)
+
+
+func _on_completed_pressed() -> void:
+	if Chatbot.get_currentLevel() == Globals.get_gameState():
+		Globals.nextState()
+	Globals.goto_load_scene("res://scenes/rinforzo_positivo.tscn")

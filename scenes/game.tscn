@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cw0ac88cyi2si"]
+[gd_scene load_steps=10 format=3 uid="uid://cw0ac88cyi2si"]
 
 [ext_resource type="Script" uid="uid://bji87yhdq6now" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="2_p57ef"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cuqw0q0lwiugl" path="res://icons/button_send.png" id="4_0tnpc"]
 [ext_resource type="FontFile" uid="uid://b6rxc2cd3gq82" path="res://assets/fonts/Indie_Flower/IndieFlower-Regular.ttf" id="4_gee14"]
 [ext_resource type="Texture2D" uid="uid://brvkr7k82xltp" path="res://icons/speech_bubble.png" id="6_vtaks"]
+[ext_resource type="Texture2D" uid="uid://bi62iidwpbxsk" path="res://icons/completedButton.png" id="8_gee14"]
 
 [sub_resource type="GDScript" id="GDScript_u5sy4"]
 script/source = "extends TextEdit
@@ -126,8 +127,26 @@ theme_override_fonts/normal_font = ExtResource("4_gee14")
 theme_override_font_sizes/normal_font_size = 45
 text = "giao
 fiao"
+scroll_following = true
+
+[node name="Completed" type="Button" parent="Tutorial"]
+visible = false
+layout_mode = 0
+offset_left = 1280.0
+offset_top = 116.0
+offset_right = 1483.0
+offset_bottom = 325.0
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+icon = ExtResource("8_gee14")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [connection signal="request_completed" from="Tutorial/HTTPRequest" to="Tutorial" method="_on_http_request_request_completed"]
 [connection signal="pressed" from="Tutorial/Invio" to="Tutorial" method="_on_invio_pressed"]
 [connection signal="pressed" from="Tutorial/Return" to="Tutorial" method="_on_return_pressed"]
 [connection signal="gui_input" from="Tutorial/Speech Bubble Input/Input" to="Tutorial" method="_on_input_gui_input"]
+[connection signal="pressed" from="Tutorial/Completed" to="Tutorial" method="_on_completed_pressed"]

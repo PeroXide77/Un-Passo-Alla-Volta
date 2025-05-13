@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cyo4f21gphae6"]
+[gd_scene load_steps=8 format=3 uid="uid://cyo4f21gphae6"]
 
 [ext_resource type="Script" uid="uid://c52fcb01k7si7" path="res://scripts/rinforzo_positivo.gd" id="1_op6lv"]
 [ext_resource type="Texture2D" uid="uid://bg2oj1344ily2" path="res://icons/book_open.png" id="1_p34i8"]
 [ext_resource type="Texture2D" uid="uid://ctnld8wwlelc0" path="res://icons/rinforzo.png" id="2_aioub"]
 [ext_resource type="FontFile" uid="uid://b6rxc2cd3gq82" path="res://assets/fonts/Indie_Flower/IndieFlower-Regular.ttf" id="3_aioub"]
 [ext_resource type="FontFile" uid="uid://dmwtstgnkr0oc" path="res://assets/fonts/Anton/Anton-Regular.ttf" id="4_2dcyo"]
+[ext_resource type="Texture2D" uid="uid://cbrnxsicvif32" path="res://icons/circle.png" id="5_sdo8x"]
+[ext_resource type="Texture2D" uid="uid://bi62iidwpbxsk" path="res://icons/completedButton.png" id="7_t25ix"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -29,23 +31,25 @@ grow_vertical = 2
 texture = ExtResource("1_p34i8")
 expand_mode = 1
 
-[node name="Post-It1" type="TextureRect" parent="Rinforzo_positivo"]
+[node name="Post-It0" type="TextureRect" parent="Rinforzo_positivo" groups=["postIt"]]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -460.0
+offset_left = -898.0
 offset_top = -565.0
-offset_right = -52.0
+offset_right = -490.0
 offset_bottom = -133.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_aioub")
 expand_mode = 1
+metadata/lv = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Rinforzo_positivo/Post-It1"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Rinforzo_positivo/Post-It0"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -66,7 +70,80 @@ text = "Hai finito il tutotorial! Ora puoi iniziare a giocare!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Post-It2" type="TextureRect" parent="Rinforzo_positivo"]
+[node name="Circle0" type="TextureRect" parent="Rinforzo_positivo/Post-It0" groups=["circles"]]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_sdo8x")
+metadata/lv = 0
+
+[node name="Post-It1" type="TextureRect" parent="Rinforzo_positivo" groups=["postIt"]]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -460.0
+offset_top = -565.0
+offset_right = -52.0
+offset_bottom = -133.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_aioub")
+expand_mode = 1
+metadata/lv = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Rinforzo_positivo/Post-It1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.5
+offset_top = -135.0
+offset_right = 157.5
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -10
+theme_override_fonts/normal_font = ExtResource("3_aioub")
+theme_override_font_sizes/normal_font_size = 40
+text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Circle1" type="TextureRect" parent="Rinforzo_positivo/Post-It1" groups=["circles"]]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_sdo8x")
+metadata/lv = 1
+
+[node name="Post-It2" type="TextureRect" parent="Rinforzo_positivo" groups=["postIt"]]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -82,6 +159,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_aioub")
 expand_mode = 1
+metadata/lv = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Rinforzo_positivo/Post-It2"]
 layout_mode = 1
@@ -104,7 +182,24 @@ text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Post-It3" type="TextureRect" parent="Rinforzo_positivo"]
+[node name="Circle2" type="TextureRect" parent="Rinforzo_positivo/Post-It2" groups=["circles"]]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_sdo8x")
+metadata/lv = 2
+
+[node name="Post-It3" type="TextureRect" parent="Rinforzo_positivo" groups=["postIt"]]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -120,6 +215,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_aioub")
 expand_mode = 1
+metadata/lv = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Rinforzo_positivo/Post-It3"]
 layout_mode = 1
@@ -142,7 +238,24 @@ text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Post-It4" type="TextureRect" parent="Rinforzo_positivo"]
+[node name="Circle3" type="TextureRect" parent="Rinforzo_positivo/Post-It3" groups=["circles"]]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_sdo8x")
+metadata/lv = 3
+
+[node name="Post-It4" type="TextureRect" parent="Rinforzo_positivo" groups=["postIt"]]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -158,6 +271,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_aioub")
 expand_mode = 1
+metadata/lv = 4
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Rinforzo_positivo/Post-It4"]
 layout_mode = 1
@@ -180,7 +294,24 @@ text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Post-It5" type="TextureRect" parent="Rinforzo_positivo"]
+[node name="Circle4" type="TextureRect" parent="Rinforzo_positivo/Post-It4" groups=["circles"]]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_sdo8x")
+metadata/lv = 4
+
+[node name="Post-It5" type="TextureRect" parent="Rinforzo_positivo" groups=["postIt"]]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -196,6 +327,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_aioub")
 expand_mode = 1
+metadata/lv = 5
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Rinforzo_positivo/Post-It5"]
 layout_mode = 1
@@ -218,7 +350,24 @@ text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Post-It6" type="TextureRect" parent="Rinforzo_positivo"]
+[node name="Circle5" type="TextureRect" parent="Rinforzo_positivo/Post-It5" groups=["circles"]]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_sdo8x")
+metadata/lv = 5
+
+[node name="Post-It6" type="TextureRect" parent="Rinforzo_positivo" groups=["postIt"]]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -234,6 +383,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_aioub")
 expand_mode = 1
+metadata/lv = 6
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Rinforzo_positivo/Post-It6"]
 layout_mode = 1
@@ -256,7 +406,24 @@ text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Post-It7" type="TextureRect" parent="Rinforzo_positivo"]
+[node name="Circle6" type="TextureRect" parent="Rinforzo_positivo/Post-It6" groups=["circles"]]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_sdo8x")
+metadata/lv = 6
+
+[node name="Post-It7" type="TextureRect" parent="Rinforzo_positivo" groups=["postIt"]]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -272,6 +439,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_aioub")
 expand_mode = 1
+metadata/lv = 7
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Rinforzo_positivo/Post-It7"]
 layout_mode = 1
@@ -294,7 +462,24 @@ text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Post-It8" type="TextureRect" parent="Rinforzo_positivo"]
+[node name="Circle7" type="TextureRect" parent="Rinforzo_positivo/Post-It7" groups=["circles"]]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_sdo8x")
+metadata/lv = 7
+
+[node name="Post-It8" type="TextureRect" parent="Rinforzo_positivo" groups=["postIt"]]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -310,6 +495,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_aioub")
 expand_mode = 1
+metadata/lv = 8
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Rinforzo_positivo/Post-It8"]
 layout_mode = 1
@@ -332,7 +518,24 @@ text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Post-It9" type="TextureRect" parent="Rinforzo_positivo"]
+[node name="Circle8" type="TextureRect" parent="Rinforzo_positivo/Post-It8" groups=["circles"]]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_sdo8x")
+metadata/lv = 8
+
+[node name="Post-It9" type="TextureRect" parent="Rinforzo_positivo" groups=["postIt"]]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -348,6 +551,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_aioub")
 expand_mode = 1
+metadata/lv = 9
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Rinforzo_positivo/Post-It9"]
 layout_mode = 1
@@ -370,7 +574,24 @@ text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Post-It10" type="TextureRect" parent="Rinforzo_positivo"]
+[node name="Circle9" type="TextureRect" parent="Rinforzo_positivo/Post-It9" groups=["circles"]]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_sdo8x")
+metadata/lv = 9
+
+[node name="Post-It10" type="TextureRect" parent="Rinforzo_positivo" groups=["postIt"]]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -379,13 +600,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 56.0
-offset_top = 137.0
+offset_top = 138.0
 offset_right = 464.0
-offset_bottom = 569.0
+offset_bottom = 570.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_aioub")
 expand_mode = 1
+metadata/lv = 10
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Rinforzo_positivo/Post-It10"]
 layout_mode = 1
@@ -408,7 +630,7 @@ text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Post-It11" type="TextureRect" parent="Rinforzo_positivo"]
+[node name="Circle10" type="TextureRect" parent="Rinforzo_positivo/Post-It10" groups=["circles"]]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -416,42 +638,26 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 494.0
-offset_top = 138.0
-offset_right = 902.0
-offset_bottom = 570.0
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_aioub")
-expand_mode = 1
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Rinforzo_positivo/Post-It11"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -157.5
-offset_top = -135.0
-offset_right = 157.5
-offset_bottom = 135.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_constants/line_separation = -10
-theme_override_fonts/normal_font = ExtResource("3_aioub")
-theme_override_font_sizes/normal_font_size = 40
-text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
-horizontal_alignment = 1
-vertical_alignment = 1
+texture = ExtResource("5_sdo8x")
+metadata/lv = 10
 
 [node name="Return" type="Button" parent="Rinforzo_positivo"]
-offset_left = -64.0
-offset_top = 102.0
-offset_right = 36.0
-offset_bottom = 300.0
-rotation = -1.5708
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -180.0
+offset_top = -198.0
+grow_horizontal = 0
+grow_vertical = 0
 focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 14
@@ -461,7 +667,7 @@ theme_override_constants/align_to_largest_stylebox = 32
 theme_override_constants/line_spacing = 7
 theme_override_fonts/font = ExtResource("4_2dcyo")
 theme_override_font_sizes/font_size = 125
-text = "⤴"
+icon = ExtResource("7_t25ix")
 flat = true
 text_overrun_behavior = 2
 icon_alignment = 1
