@@ -60,3 +60,12 @@ func request_chat_npc(user_input : TextEdit, http_request : HTTPRequest):
 
 func append_conversation(role : String, content : Variant):
 	conversation_history.append({"role": role, "content": content})
+
+func print_txt(risposta: String, nuvola: RichTextLabel):
+	nuvola.set_text("")
+	var c: int = 0
+	while c < risposta.length():
+		await get_tree().create_timer(0.03).timeout
+		nuvola.text += risposta[c]
+		c += 1
+	
