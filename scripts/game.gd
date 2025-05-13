@@ -52,11 +52,7 @@ func _on_input_gui_input(event: InputEvent) -> void:
 			get_viewport().set_input_as_handled()
 
 func completed_level() -> void:
-	print("Livello completato")
-	#mettere la visibilità del livello successivo
 	if Chatbot.get_currentLevel() == Globals.get_gameState():
 		Globals.nextState()
-	#mettere lo style completato a tutti i bottoni prima di quello nuovo
-	#mettere la visibilità ad un bottone che vada al rinforzo positivo
 	await get_tree().create_timer(0.5).timeout
-	Globals.goto_load_scene("res://scenes/rinforzo_positivo.tscn") #per ora cosi, poi vediamo
+	Globals.goto_load_scene("res://scenes/rinforzo_positivo.tscn") 
