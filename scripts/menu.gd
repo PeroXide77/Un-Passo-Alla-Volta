@@ -27,11 +27,6 @@ func _on_impostazioni_pressed() -> void:
 	checkImp.set_visible(true)
 	await get_tree().create_timer(0.5).timeout
 	impPopUp.popup()
-	
-func _on_volume_value_changed(value: float) -> void:
-	Globals.volume = value;
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(value / 100));
 
-func _on_ritorna_indietro_pressed() -> void:
+func _on_impostazioni_popup_hide() -> void:
 	checkImp.set_visible(false)
-	impPopUp.hide()

@@ -15,16 +15,16 @@ script/source = "extends TextEdit
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Tutorial" type="Control" parent="."]
+[node name="Game" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 script = ExtResource("1_iywne")
 
-[node name="HTTPRequest" type="HTTPRequest" parent="Tutorial"]
+[node name="HTTPRequest" type="HTTPRequest" parent="Game"]
 
-[node name="Background" type="TextureRect" parent="Tutorial"]
+[node name="Background" type="TextureRect" parent="Game"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,7 +34,7 @@ grow_vertical = 2
 texture = ExtResource("2_p57ef")
 expand_mode = 1
 
-[node name="Personaggio" type="TextureRect" parent="Tutorial"]
+[node name="Personaggio" type="TextureRect" parent="Game"]
 layout_mode = 0
 offset_left = 117.0
 offset_top = 7.0
@@ -43,7 +43,7 @@ offset_bottom = 1080.0
 texture = ExtResource("3_gee14")
 stretch_mode = 5
 
-[node name="Invio" type="Button" parent="Tutorial"]
+[node name="Invio" type="Button" parent="Game"]
 layout_mode = 0
 offset_left = 958.0
 offset_top = 708.0
@@ -55,7 +55,7 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Return" type="Button" parent="Tutorial"]
+[node name="Return" type="Button" parent="Game"]
 layout_mode = 0
 offset_left = -64.0
 offset_top = 102.0
@@ -77,7 +77,7 @@ text_overrun_behavior = 2
 icon_alignment = 1
 expand_icon = true
 
-[node name="Speech Bubble Input" type="TextureRect" parent="Tutorial"]
+[node name="Speech Bubble Input" type="TextureRect" parent="Game"]
 layout_mode = 0
 offset_left = 1172.0
 offset_top = 633.0
@@ -87,7 +87,7 @@ texture = ExtResource("6_vtaks")
 expand_mode = 1
 flip_h = true
 
-[node name="Input" type="TextEdit" parent="Tutorial/Speech Bubble Input"]
+[node name="Input" type="TextEdit" parent="Game/Speech Bubble Input"]
 layout_mode = 0
 offset_left = 34.0
 offset_top = 44.0
@@ -106,7 +106,7 @@ wrap_mode = 1
 autowrap_mode = 2
 script = SubResource("GDScript_u5sy4")
 
-[node name="Speech Bubble Output" type="TextureRect" parent="Tutorial"]
+[node name="Speech Bubble Output" type="TextureRect" parent="Game"]
 layout_mode = 0
 offset_left = 539.0
 offset_top = 39.0
@@ -115,7 +115,7 @@ offset_bottom = 465.0
 texture = ExtResource("6_vtaks")
 expand_mode = 1
 
-[node name="Risposta" type="RichTextLabel" parent="Tutorial/Speech Bubble Output"]
+[node name="Risposta" type="RichTextLabel" parent="Game/Speech Bubble Output"]
 layout_mode = 0
 offset_left = 37.0
 offset_top = 37.0
@@ -129,7 +129,7 @@ text = "giao
 fiao"
 scroll_following = true
 
-[node name="Completed" type="Button" parent="Tutorial"]
+[node name="Completed" type="Button" parent="Game"]
 visible = false
 layout_mode = 0
 offset_left = 1280.0
@@ -145,8 +145,8 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[connection signal="request_completed" from="Tutorial/HTTPRequest" to="Tutorial" method="_on_http_request_request_completed"]
-[connection signal="pressed" from="Tutorial/Invio" to="Tutorial" method="_on_invio_pressed"]
-[connection signal="pressed" from="Tutorial/Return" to="Tutorial" method="_on_return_pressed"]
-[connection signal="gui_input" from="Tutorial/Speech Bubble Input/Input" to="Tutorial" method="_on_input_gui_input"]
-[connection signal="pressed" from="Tutorial/Completed" to="Tutorial" method="_on_completed_pressed"]
+[connection signal="request_completed" from="Game/HTTPRequest" to="Game" method="_on_http_request_request_completed"]
+[connection signal="pressed" from="Game/Invio" to="Game" method="_on_invio_pressed"]
+[connection signal="pressed" from="Game/Return" to="Game" method="_on_return_pressed"]
+[connection signal="gui_input" from="Game/Speech Bubble Input/Input" to="Game" method="_on_input_gui_input"]
+[connection signal="pressed" from="Game/Completed" to="Game" method="_on_completed_pressed"]
