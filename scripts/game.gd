@@ -6,6 +6,7 @@ extends Control
 @onready var send_button: Button = $Invio
 @onready var completedButton: Button = $Completed
 @onready var back: Button = $Return
+
 func _ready():
 	Chatbot.dataset_caricamento()
 	Chatbot.npc_caricamento(Chatbot.get_currentLevel(), response_label)
@@ -13,6 +14,7 @@ func _ready():
 
 func _on_invio_pressed() -> void:
 	back.set_disabled(true)
+	completedButton.set_disabled(true)
 	user_input.release_focus()
 	user_input.set_editable(false)
 	var user_message = user_input.text.strip_edges()
@@ -46,6 +48,7 @@ func _on_http_request_request_completed(_result: int, response_code: int, _heade
 	else :
 		await Chatbot.print_txt(npc_reply, response_label)
 	back.set_disabled(false)
+	completedButton.set_disabled(false)
 	user_input.grab_focus()
 	user_input.set_editable(true)
 	var clean_reply := npc_reply.replace("[LIVELLO COMPLETATO]", "").replace("[LIVELLO PERSO]", "").strip_edges()
