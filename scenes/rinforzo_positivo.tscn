@@ -45,6 +45,7 @@ offset_right = -490.0
 offset_bottom = -133.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 texture = ExtResource("2_aioub")
 expand_mode = 1
 metadata/lv = 0
@@ -62,6 +63,7 @@ offset_right = 157.5
 offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -10
 theme_override_fonts/normal_font = ExtResource("3_aioub")
@@ -71,7 +73,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Circle0" type="TextureRect" parent="Rinforzo_positivo/Post-It0" groups=["circles"]]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -102,6 +103,7 @@ offset_right = -52.0
 offset_bottom = -133.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 texture = ExtResource("2_aioub")
 expand_mode = 1
 metadata/lv = 1
@@ -119,6 +121,7 @@ offset_right = 157.5
 offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -10
 theme_override_fonts/normal_font = ExtResource("3_aioub")
@@ -128,7 +131,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Circle1" type="TextureRect" parent="Rinforzo_positivo/Post-It1" groups=["circles"]]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -159,6 +161,7 @@ offset_right = -490.0
 offset_bottom = 217.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 texture = ExtResource("2_aioub")
 expand_mode = 1
 metadata/lv = 2
@@ -176,6 +179,7 @@ offset_right = 157.5
 offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -10
 theme_override_fonts/normal_font = ExtResource("3_aioub")
@@ -233,6 +237,7 @@ offset_right = 157.5
 offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -10
 theme_override_fonts/normal_font = ExtResource("3_aioub")
@@ -290,6 +295,7 @@ offset_right = 157.5
 offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -10
 theme_override_fonts/normal_font = ExtResource("3_aioub")
@@ -347,6 +353,7 @@ offset_right = 157.5
 offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -10
 theme_override_fonts/normal_font = ExtResource("3_aioub")
@@ -404,6 +411,7 @@ offset_right = 157.5
 offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -10
 theme_override_fonts/normal_font = ExtResource("3_aioub")
@@ -461,6 +469,7 @@ offset_right = 157.5
 offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -10
 theme_override_fonts/normal_font = ExtResource("3_aioub")
@@ -518,6 +527,7 @@ offset_right = 157.5
 offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -10
 theme_override_fonts/normal_font = ExtResource("3_aioub")
@@ -575,6 +585,7 @@ offset_right = 157.5
 offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -10
 theme_override_fonts/normal_font = ExtResource("3_aioub")
@@ -632,6 +643,7 @@ offset_right = 157.5
 offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -10
 theme_override_fonts/normal_font = ExtResource("3_aioub")
@@ -684,4 +696,19 @@ text_overrun_behavior = 2
 icon_alignment = 1
 expand_icon = true
 
+[node name="Popup1" type="Popup" parent="Rinforzo_positivo"]
+initial_position = 2
+size = Vector2i(500, 900)
+
+[connection signal="gui_input" from="Rinforzo_positivo/Post-It0" to="Rinforzo_positivo" method="_on_postIt_gui_input"]
+[connection signal="gui_input" from="Rinforzo_positivo/Post-It1" to="Rinforzo_positivo" method="_on_postIt_gui_input"]
+[connection signal="gui_input" from="Rinforzo_positivo/Post-It2" to="Rinforzo_positivo" method="_on_postIt_gui_input"]
+[connection signal="gui_input" from="Rinforzo_positivo/Post-It3" to="Rinforzo_positivo" method="_on_postIt_gui_input"]
+[connection signal="gui_input" from="Rinforzo_positivo/Post-It4" to="Rinforzo_positivo" method="_on_postIt_gui_input"]
+[connection signal="gui_input" from="Rinforzo_positivo/Post-It5" to="Rinforzo_positivo" method="_on_postIt_gui_input"]
+[connection signal="gui_input" from="Rinforzo_positivo/Post-It6" to="Rinforzo_positivo" method="_on_postIt_gui_input"]
+[connection signal="gui_input" from="Rinforzo_positivo/Post-It7" to="Rinforzo_positivo" method="_on_postIt_gui_input"]
+[connection signal="gui_input" from="Rinforzo_positivo/Post-It8" to="Rinforzo_positivo" method="_on_postIt_gui_input"]
+[connection signal="gui_input" from="Rinforzo_positivo/Post-It9" to="Rinforzo_positivo" method="_on_postIt_gui_input"]
+[connection signal="gui_input" from="Rinforzo_positivo/Post-It10" to="Rinforzo_positivo" method="_on_postIt_gui_input"]
 [connection signal="pressed" from="Rinforzo_positivo/Return" to="Rinforzo_positivo" method="_on_return_pressed"]

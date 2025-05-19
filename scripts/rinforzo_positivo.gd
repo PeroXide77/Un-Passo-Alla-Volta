@@ -19,3 +19,7 @@ func show_postIts() -> void:
 			circle.set_visible(true)
 		else:
 			circle.set_visible(false)
+
+func _on_postIt_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		$"Popup1".show()

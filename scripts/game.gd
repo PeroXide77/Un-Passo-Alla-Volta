@@ -13,13 +13,14 @@ func _ready():
 	user_input.grab_focus()
 
 func _on_invio_pressed() -> void:
+	var user_message = user_input.text.strip_edges()
+	if user_message == "":
+		return
+	
 	back.set_disabled(true)
 	completedButton.set_disabled(true)
 	user_input.release_focus()
 	user_input.set_editable(false)
-	var user_message = user_input.text.strip_edges()
-	if user_message == "":
-		return
 	
 	Chatbot.append_conversation("user", user_message)
 	Chatbot.print_txt("Sto pensando ...", response_label)
@@ -30,6 +31,7 @@ func _on_http_request_request_completed(_result: int, response_code: int, _heade
 	if response_code != 200:
 		print("Errore nella risposta: codice ", response_code)
 		response_label.text = "Errore di rete"
+		back.set_disabled(false)
 		return
 
 	var body_string = body.get_string_from_utf8()
@@ -68,7 +70,6 @@ func completed_level() -> void:
 	if Chatbot.get_currentLevel() == Globals.get_gameState():
 		Globals.nextState()
 	completedButton.set_visible(true)
-
 
 func _on_completed_pressed() -> void:
 	if Chatbot.get_currentLevel() == Globals.get_gameState():
