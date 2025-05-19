@@ -2,10 +2,13 @@ extends Control
 
 @export var levelGroup: ButtonGroup
 @onready var spaces = get_tree().get_nodes_in_group("spaces")
+@onready var popup_end : Panel = $end_game
 
 func _ready():
 	levelGroup.pressed.connect(buttonGroup_pressed)
 	set_completedLevels()
+	if Globals.get_end() == true :
+		popup_end.show()
 
 func _on_ritorna_indietro_pressed() -> void:
 	Globals.goto_load_scene("res://scenes/mainmenu.tscn")
@@ -34,3 +37,8 @@ func set_completedLevels():
 			space.set_visible(true)
 		else:
 			space.set_visible(false)
+
+
+func _on_back_pressed() -> void:
+	popup_end.hide()
+	Globals.is_end(false)
