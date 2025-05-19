@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cw0ac88cyi2si"]
+[gd_scene load_steps=11 format=3 uid="uid://cw0ac88cyi2si"]
 
 [ext_resource type="Script" uid="uid://bji87yhdq6now" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="2_p57ef"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cuqw0q0lwiugl" path="res://icons/button_send.png" id="4_0tnpc"]
 [ext_resource type="FontFile" uid="uid://b6rxc2cd3gq82" path="res://assets/fonts/Indie_Flower/IndieFlower-Regular.ttf" id="4_gee14"]
 [ext_resource type="Texture2D" uid="uid://brvkr7k82xltp" path="res://icons/speech_bubble.png" id="6_vtaks"]
+[ext_resource type="VideoStream" uid="uid://msmqwi28bm25" path="res://assets/videos/loading.ogv" id="8_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://bi62iidwpbxsk" path="res://icons/completedButton.png" id="8_gee14"]
 
 [sub_resource type="GDScript" id="GDScript_u5sy4"]
@@ -128,6 +129,21 @@ theme_override_font_sizes/normal_font_size = 45
 text = "giao
 fiao"
 scroll_following = true
+
+[node name="Loading" type="VideoStreamPlayer" parent="Game/Speech Bubble Output"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -132.0
+offset_top = 51.0
+offset_right = 136.0
+offset_bottom = 306.0
+grow_horizontal = 2
+stream = ExtResource("8_0tnpc")
+autoplay = true
+expand = true
 
 [node name="Completed" type="Button" parent="Game"]
 visible = false
