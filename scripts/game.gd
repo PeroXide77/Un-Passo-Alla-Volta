@@ -13,16 +13,6 @@ func _ready():
 	Chatbot.npc_caricamento(Chatbot.get_currentLevel(), response_label)
 	user_input.grab_focus()
 
-func loading_Chat_start() -> void:
-	response_label.set_visible(false)
-	loading.set_visible(true)
-	loading.play()
-
-func loading_Chat_end() -> void:
-	response_label.set_visible(true)
-	loading.stop()
-	loading.set_visible(false)
-
 func _on_invio_pressed() -> void:
 	var user_message = user_input.text.strip_edges()
 	if user_message == "":
@@ -34,13 +24,13 @@ func _on_invio_pressed() -> void:
 	user_input.set_editable(false)
 	
 	Chatbot.append_conversation("user", user_message)
-	loading_Chat_start()
+	Chatbot.loading_Chat_start(response_label, loading)
 	Chatbot.request_chat_npc(user_input, http_request)
 	user_input.set_text("")
 
 func _on_http_request_request_completed(_result: int, response_code: int, _headers: PackedStringArray, body: PackedByteArray) -> void:
 	if response_code != 200:
-		loading_Chat_end()
+		Chatbot.loading_Chat_end(response_label, loading)
 		print("Errore nella risposta: codice ", response_code)
 		response_label.text = "Errore di rete"
 		back.set_disabled(false)
@@ -55,7 +45,7 @@ func _on_http_request_request_completed(_result: int, response_code: int, _heade
 	else:
 		npc_reply = body_string
 	
-	loading_Chat_end()
+	Chatbot.loading_Chat_end(response_label, loading)
 	if "[LIVELLO COMPLETATO]" in npc_reply :
 		await Chatbot.print_txt(npc_reply.replace("[LIVELLO COMPLETATO]", ""), response_label)
 		completedButton.set_visible(true)

@@ -68,4 +68,13 @@ func print_txt(risposta: String, nuvola: RichTextLabel):
 		await get_tree().create_timer(0.03).timeout
 		nuvola.text += risposta[c]
 		c += 1
-	
+
+func loading_Chat_start(response : RichTextLabel, loading : VideoStreamPlayer) -> void:
+	response.set_visible(false)
+	loading.set_visible(true)
+	loading.play()
+
+func loading_Chat_end(response : RichTextLabel, loading : VideoStreamPlayer) -> void:
+	response.set_visible(true)
+	loading.stop()
+	loading.set_visible(false)
