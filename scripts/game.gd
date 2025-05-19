@@ -6,6 +6,7 @@ extends Control
 @onready var send_button: Button = $Invio
 @onready var completedButton: Button = $Completed
 @onready var back: Button = $Return
+@onready var loading: VideoStreamPlayer = $"Speech Bubble Output/Loading"
 
 func _ready():
 	Chatbot.dataset_caricamento()
@@ -23,12 +24,13 @@ func _on_invio_pressed() -> void:
 	user_input.set_editable(false)
 	
 	Chatbot.append_conversation("user", user_message)
-	Chatbot.print_txt("Sto pensando ...", response_label)
+	Chatbot.loading_Chat_start(response_label, loading)
 	Chatbot.request_chat_npc(user_input, http_request)
 	user_input.set_text("")
 
 func _on_http_request_request_completed(_result: int, response_code: int, _headers: PackedStringArray, body: PackedByteArray) -> void:
 	if response_code != 200:
+		Chatbot.loading_Chat_end(response_label, loading)
 		print("Errore nella risposta: codice ", response_code)
 		response_label.text = "Errore di rete"
 		back.set_disabled(false)
@@ -43,7 +45,7 @@ func _on_http_request_request_completed(_result: int, response_code: int, _heade
 	else:
 		npc_reply = body_string
 	
-	
+	Chatbot.loading_Chat_end(response_label, loading)
 	if "[LIVELLO COMPLETATO]" in npc_reply :
 		await Chatbot.print_txt(npc_reply.replace("[LIVELLO COMPLETATO]", ""), response_label)
 		completedButton.set_visible(true)
