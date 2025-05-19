@@ -4,6 +4,7 @@ extends Popup
 @onready var resolutionMenu = $SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/OptionButton
 @onready var fullScreen = $SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen
 @onready var checkFS = $SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen/CheckFS
+@onready var imp = $"."
 
 func _process(_delta: float) -> void:
 	Globals.btn_hover(fullScreen)
@@ -17,9 +18,10 @@ func _ready():
 		checkFS.set_visible(true)
 		fullScreen.set_pressed_no_signal(true)
 		
-	
+
 func _on_volume_value_changed(value: float) -> void:
-	Globals.set_volume(value);
+	Globals.set_volume(value)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(value / 100));
 
 func add_resolutions():
 	var now = DisplayServer.window_get_size()
@@ -42,3 +44,7 @@ func _on_full_screen_toggled(toggled_on: bool) -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		resolutionMenu.set_disabled(false)
 		checkFS.set_visible(false)
+
+
+func _on_ritorna_indietro_pressed() -> void:
+	imp.hide()
