@@ -9,16 +9,18 @@ extends Control
 @onready var loading: VideoStreamPlayer = $"Speech Bubble Output/Loading"
 @onready var obiettivo: RichTextLabel = $"Obiettivo/Sfondo Opaco/Obiettivo_Panel/Obiettivo"
 @onready var obiettivo_page: Popup = $Obiettivo
+@onready var impost: Popup = $Impostazioni
+@onready var checkGoal: TextureRect = $Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/showGoal/CheckGoal
+@onready var showButt: Button = $Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/showGoal
+
+func _process(_delta: float) -> void:
+	Globals.btn_hover(showButt)
 
 func _ready():
 	Chatbot.dataset_caricamento()
 	Chatbot.npc_caricamento(Chatbot.get_currentLevel(), response_label, obiettivo)
-	obiettivo_page.show()
+	obiettivo_page.popup()
 	user_input.grab_focus()
-
-func _on_x_gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		obiettivo_page.hide()
 
 func _on_invio_pressed() -> void:
 	var user_message = user_input.text.strip_edges()
@@ -84,3 +86,16 @@ func _on_completed_pressed() -> void:
 	if Chatbot.get_currentLevel() == Globals.get_gameState():
 		Globals.nextState()
 	Globals.goto_load_scene("res://scenes/rinforzo_positivo.tscn")
+
+func _on_impostazioni_pressed() -> void:
+	impost.popup()
+
+func _on_exit_pressed() -> void:
+	obiettivo_page.hide()
+
+func _on_showGoal_toggled(toggled_on: bool) -> void:
+	checkGoal.set_visible(true)
+	await get_tree().create_timer(0.5).timeout
+	impost.hide()
+	checkGoal.set_visible(false)
+	obiettivo_page.popup()

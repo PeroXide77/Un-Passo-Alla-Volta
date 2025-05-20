@@ -3,6 +3,7 @@ extends Control
 @export var levelGroup: ButtonGroup
 @onready var spaces = get_tree().get_nodes_in_group("spaces")
 @onready var popup_end : Panel = $end_game
+@onready var popup_imp : Popup = $"../Impostazioni"
 
 func _ready():
 	levelGroup.pressed.connect(buttonGroup_pressed)
@@ -42,3 +43,6 @@ func set_completedLevels():
 func _on_back_pressed() -> void:
 	popup_end.hide()
 	Globals.is_end(false)
+
+func _on_impostazioni_pressed() -> void:
+	popup_imp.popup()
