@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cyo4f21gphae6"]
+[gd_scene load_steps=10 format=3 uid="uid://cyo4f21gphae6"]
 
 [ext_resource type="Script" uid="uid://c52fcb01k7si7" path="res://scripts/rinforzo_positivo.gd" id="1_op6lv"]
 [ext_resource type="Texture2D" uid="uid://bg2oj1344ily2" path="res://icons/book_open.png" id="1_p34i8"]
@@ -7,6 +7,11 @@
 [ext_resource type="FontFile" uid="uid://dmwtstgnkr0oc" path="res://assets/fonts/Anton/Anton-Regular.ttf" id="4_2dcyo"]
 [ext_resource type="Texture2D" uid="uid://cbrnxsicvif32" path="res://icons/circle.png" id="5_sdo8x"]
 [ext_resource type="Texture2D" uid="uid://bi62iidwpbxsk" path="res://icons/completedButton.png" id="7_t25ix"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sdo8x"]
+bg_color = Color(1, 0.921569, 0.803922, 0.941176)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t25ix"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -126,7 +131,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -10
 theme_override_fonts/normal_font = ExtResource("3_aioub")
 theme_override_font_sizes/normal_font_size = 40
-text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
+text = "Che bello fare nuove amicizie! Bravo!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -184,7 +189,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -10
 theme_override_fonts/normal_font = ExtResource("3_aioub")
 theme_override_font_sizes/normal_font_size = 40
-text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
+text = "Condividere con i tuoi cari la propria giornata è importante."
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -242,7 +247,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -10
 theme_override_fonts/normal_font = ExtResource("3_aioub")
 theme_override_font_sizes/normal_font_size = 40
-text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
+text = "Hai ordinato con sicurezza. Ottimo lavoro!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -300,7 +305,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -10
 theme_override_fonts/normal_font = ExtResource("3_aioub")
 theme_override_font_sizes/normal_font_size = 40
-text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
+text = "Hai risposto con impegno. Continuare così è la strada giusta."
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -358,7 +363,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -10
 theme_override_fonts/normal_font = ExtResource("3_aioub")
 theme_override_font_sizes/normal_font_size = 40
-text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
+text = "Prendere decisioni non è sempre facile. Sei stato bravissim*."
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -416,7 +421,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -10
 theme_override_fonts/normal_font = ExtResource("3_aioub")
 theme_override_font_sizes/normal_font_size = 40
-text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
+text = "Chiedere aiuto è un gesto coraggioso. Complimenti!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -474,7 +479,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -10
 theme_override_fonts/normal_font = ExtResource("3_aioub")
 theme_override_font_sizes/normal_font_size = 40
-text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
+text = "Hai gestito la situazione in modo maturo. Ottimo passo avanti."
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -532,7 +537,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -10
 theme_override_fonts/normal_font = ExtResource("3_aioub")
 theme_override_font_sizes/normal_font_size = 40
-text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
+text = "Parlare con gentilezza rende ogni momento più bello. "
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -590,7 +595,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -10
 theme_override_fonts/normal_font = ExtResource("3_aioub")
 theme_override_font_sizes/normal_font_size = 40
-text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
+text = "Mantenere la calma aiuta a risolvere le situazioni difficili."
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -648,7 +653,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -10
 theme_override_fonts/normal_font = ExtResource("3_aioub")
 theme_override_font_sizes/normal_font_size = 40
-text = "Sei stato brav* ad ascoltare tua madre. Continua così!"
+text = "Scegliere ciò che è giusto è sempre la cosa migliore."
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -696,19 +701,82 @@ text_overrun_behavior = 2
 icon_alignment = 1
 expand_icon = true
 
-[node name="Popup1" type="Popup" parent="Rinforzo_positivo"]
-initial_position = 2
-size = Vector2i(500, 900)
+[node name="Tips" type="Panel" parent="Rinforzo_positivo"]
+visible = false
+custom_minimum_size = Vector2(900, 700)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -350.0
+offset_right = 450.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sdo8x")
 
-[connection signal="gui_input" from="Rinforzo_positivo/Post-It0" to="Rinforzo_positivo" method="_on_postIt_gui_input"]
-[connection signal="gui_input" from="Rinforzo_positivo/Post-It1" to="Rinforzo_positivo" method="_on_postIt_gui_input"]
-[connection signal="gui_input" from="Rinforzo_positivo/Post-It2" to="Rinforzo_positivo" method="_on_postIt_gui_input"]
-[connection signal="gui_input" from="Rinforzo_positivo/Post-It3" to="Rinforzo_positivo" method="_on_postIt_gui_input"]
-[connection signal="gui_input" from="Rinforzo_positivo/Post-It4" to="Rinforzo_positivo" method="_on_postIt_gui_input"]
-[connection signal="gui_input" from="Rinforzo_positivo/Post-It5" to="Rinforzo_positivo" method="_on_postIt_gui_input"]
-[connection signal="gui_input" from="Rinforzo_positivo/Post-It6" to="Rinforzo_positivo" method="_on_postIt_gui_input"]
-[connection signal="gui_input" from="Rinforzo_positivo/Post-It7" to="Rinforzo_positivo" method="_on_postIt_gui_input"]
-[connection signal="gui_input" from="Rinforzo_positivo/Post-It8" to="Rinforzo_positivo" method="_on_postIt_gui_input"]
-[connection signal="gui_input" from="Rinforzo_positivo/Post-It9" to="Rinforzo_positivo" method="_on_postIt_gui_input"]
-[connection signal="gui_input" from="Rinforzo_positivo/Post-It10" to="Rinforzo_positivo" method="_on_postIt_gui_input"]
+[node name="Ritorna Indietro" type="Button" parent="Rinforzo_positivo/Tips"]
+offset_left = -50.0
+offset_top = 85.0
+offset_right = 38.0
+offset_bottom = 240.0
+rotation = -1.5708
+focus_mode = 0
+theme_override_constants/outline_size = 14
+theme_override_constants/h_separation = 7
+theme_override_constants/icon_max_width = 510
+theme_override_constants/align_to_largest_stylebox = 32
+theme_override_constants/line_spacing = 7
+theme_override_fonts/font = ExtResource("3_aioub")
+theme_override_font_sizes/font_size = 100
+text = "⤴"
+icon = SubResource("CompressedTexture2D_t25ix")
+flat = true
+text_overrun_behavior = 2
+icon_alignment = 1
+expand_icon = true
+
+[node name="Title" type="RichTextLabel" parent="Rinforzo_positivo/Tips"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 200.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_constants/line_separation = 0
+theme_override_fonts/normal_font = ExtResource("3_aioub")
+theme_override_font_sizes/normal_font_size = 160
+text = "TIPS"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Rinforzo_positivo/Tips"]
+custom_minimum_size = Vector2(800, 500)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_right = 400.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="text" type="RichTextLabel" parent="Rinforzo_positivo/Tips/ScrollContainer"]
+custom_minimum_size = Vector2(800, 1000)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/line_separation = -8
+theme_override_fonts/normal_font = ExtResource("3_aioub")
+theme_override_font_sizes/normal_font_size = 57
+text = "Questo è il tutorial quindi non sono presenti dei consigli. Completa i prossimi livelli per avere consigli sull'interazione svolta nel livello e una struttura d'esempio per quel tipo di interazione!"
+
 [connection signal="pressed" from="Rinforzo_positivo/Return" to="Rinforzo_positivo" method="_on_return_pressed"]
+[connection signal="pressed" from="Rinforzo_positivo/Tips/Ritorna Indietro" to="Rinforzo_positivo" method="_on_ritorna_indietro_pressed"]

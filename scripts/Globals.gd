@@ -14,7 +14,8 @@ var current_scene = null
 var nextScene = null
 var volume: float = 100
 var resIndex = 0
-var gameState: int = 10
+var gameState: int = 11
+var end : bool
 
 func get_gameState() -> int:
 	return gameState
@@ -33,6 +34,12 @@ func get_nextScene() -> String:
 
 func set_nextScene(ns: String):
 	nextScene = ns
+
+func is_end(flag : bool):
+	end = flag
+
+func get_end() -> bool:
+	return end
 
 func _ready():
 	var root = get_tree().root

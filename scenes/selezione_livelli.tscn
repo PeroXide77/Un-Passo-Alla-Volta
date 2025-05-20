@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bwl2p13to885n"]
+[gd_scene load_steps=28 format=3 uid="uid://bwl2p13to885n"]
 
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="1_g78a7"]
 [ext_resource type="Script" uid="uid://c3aw0y1jo1l53" path="res://scripts/selezione.gd" id="1_jvqic"]
@@ -232,6 +232,11 @@ corner_radius_top_left = 90
 corner_radius_top_right = 90
 corner_radius_bottom_right = 90
 corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hhdxh"]
+bg_color = Color(1, 0.921569, 0.803922, 0.941176)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3rg6s"]
 
 [node name="Selezione_livelli" type="Node2D"]
 
@@ -621,4 +626,86 @@ custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 metadata/lv = 10
 
+[node name="end_game" type="Panel" parent="Selezione"]
+visible = false
+custom_minimum_size = Vector2(900, 700)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -350.0
+offset_right = 450.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hhdxh")
+
+[node name="back" type="Button" parent="Selezione/end_game"]
+offset_left = -50.0
+offset_top = 85.0
+offset_right = 38.0
+offset_bottom = 240.0
+rotation = -1.5708
+focus_mode = 0
+theme_override_constants/outline_size = 14
+theme_override_constants/h_separation = 7
+theme_override_constants/icon_max_width = 510
+theme_override_constants/align_to_largest_stylebox = 32
+theme_override_constants/line_spacing = 7
+theme_override_fonts/font = ExtResource("3_jvqic")
+theme_override_font_sizes/font_size = 100
+text = "⤴"
+icon = SubResource("CompressedTexture2D_3rg6s")
+flat = true
+text_overrun_behavior = 2
+icon_alignment = 1
+expand_icon = true
+
+[node name="Title" type="RichTextLabel" parent="Selezione/end_game"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 53.0
+offset_bottom = 191.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 14
+theme_override_constants/line_separation = 0
+theme_override_fonts/normal_font = ExtResource("3_jvqic")
+theme_override_font_sizes/normal_font_size = 100
+text = "HAI FINITO IL GIOCO!"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Selezione/end_game"]
+custom_minimum_size = Vector2(800, 500)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_right = 400.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="text" type="RichTextLabel" parent="Selezione/end_game/ScrollContainer"]
+custom_minimum_size = Vector2(800, 1000)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/line_separation = -8
+theme_override_fonts/normal_font = ExtResource("3_jvqic")
+theme_override_font_sizes/normal_font_size = 57
+text = "Hai completato il gioco, complimenti! Spero che questa avventura ti abbia aiutato ad essere più sicuro nelle tue interazioni sociali! Se hai bisogno, potrai ripetere i livelli tutte le volte che vorrai finché non ti sentirai tranquillo nel coltivare relazioni sociali con le persone. 
+Buona fortuna!"
+horizontal_alignment = 1
+vertical_alignment = 3
+
 [connection signal="pressed" from="Selezione/Ritorna Indietro" to="Selezione" method="_on_ritorna_indietro_pressed"]
+[connection signal="pressed" from="Selezione/end_game/back" to="Selezione" method="_on_back_pressed"]
