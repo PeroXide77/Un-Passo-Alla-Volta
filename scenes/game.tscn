@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://bji87yhdq6now" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="2_p57ef"]
-[ext_resource type="Texture2D" uid="uid://5qqgju17ou5k" path="res://assets/sprites/name.png" id="3_gee14"]
 [ext_resource type="FontFile" uid="uid://dmwtstgnkr0oc" path="res://assets/fonts/Anton/Anton-Regular.ttf" id="3_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://cuqw0q0lwiugl" path="res://icons/button_send.png" id="4_0tnpc"]
 [ext_resource type="FontFile" uid="uid://b6rxc2cd3gq82" path="res://assets/fonts/Indie_Flower/IndieFlower-Regular.ttf" id="4_gee14"]
 [ext_resource type="Texture2D" uid="uid://ivpscjmkosnj" path="res://icons/settings.png" id="4_ir15t"]
+[ext_resource type="Texture2D" uid="uid://cls268hvgtig" path="res://assets/sprites/mamma.png" id="5_trtic"]
 [ext_resource type="Texture2D" uid="uid://brvkr7k82xltp" path="res://icons/speech_bubble.png" id="6_vtaks"]
 [ext_resource type="VideoStream" uid="uid://msmqwi28bm25" path="res://assets/videos/loading.ogv" id="8_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://bi62iidwpbxsk" path="res://icons/completedButton.png" id="8_gee14"]
@@ -168,11 +168,12 @@ expand_icon = true
 
 [node name="Personaggio" type="TextureRect" parent="Game"]
 layout_mode = 0
-offset_left = 117.0
-offset_top = 7.0
-offset_right = 532.0
-offset_bottom = 1080.0
-texture = ExtResource("3_gee14")
+offset_left = 150.0
+offset_top = 1.0
+offset_right = 550.0
+offset_bottom = 1081.0
+texture = ExtResource("5_trtic")
+expand_mode = 4
 stretch_mode = 5
 
 [node name="Invio" type="Button" parent="Game"]
@@ -298,7 +299,6 @@ expand_icon = true
 [node name="Obiettivo" type="Popup" parent="Game"]
 transparent_bg = true
 size = Vector2i(1920, 1080)
-visible = true
 transparent = true
 
 [node name="Sfondo Opaco" type="Panel" parent="Game/Obiettivo"]
