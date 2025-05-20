@@ -7,11 +7,18 @@ extends Control
 @onready var completedButton: Button = $Completed
 @onready var back: Button = $Return
 @onready var loading: VideoStreamPlayer = $"Speech Bubble Output/Loading"
+@onready var obiettivo: RichTextLabel = $"Obiettivo/Sfondo Opaco/Obiettivo_Panel/Obiettivo"
+@onready var obiettivo_page: Popup = $Obiettivo
 
 func _ready():
 	Chatbot.dataset_caricamento()
-	Chatbot.npc_caricamento(Chatbot.get_currentLevel(), response_label)
+	Chatbot.npc_caricamento(Chatbot.get_currentLevel(), response_label, obiettivo)
+	obiettivo_page.show()
 	user_input.grab_focus()
+
+func _on_x_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		obiettivo_page.hide()
 
 func _on_invio_pressed() -> void:
 	var user_message = user_input.text.strip_edges()

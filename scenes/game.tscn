@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cw0ac88cyi2si"]
+[gd_scene load_steps=14 format=3 uid="uid://cw0ac88cyi2si"]
 
 [ext_resource type="Script" uid="uid://bji87yhdq6now" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="2_p57ef"]
@@ -13,6 +13,32 @@
 [sub_resource type="GDScript" id="GDScript_u5sy4"]
 script/source = "extends TextEdit
 "
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tnpc"]
+bg_color = Color(0.85098, 0.6, 0.458824, 0.94902)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtaks"]
+bg_color = Color(0.937255, 0.741176, 0.627451, 0.945098)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvpfn"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
 
 [node name="Node2D" type="Node2D"]
 
@@ -161,8 +187,99 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="Obiettivo" type="Popup" parent="Game"]
+transparent_bg = true
+size = Vector2i(1920, 1080)
+visible = true
+transparent = true
+
+[node name="Sfondo Opaco" type="Panel" parent="Game/Obiettivo"]
+custom_minimum_size = Vector2(1000, 440)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -220.0
+offset_right = 500.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0tnpc")
+
+[node name="Obiettivo_Panel" type="Panel" parent="Game/Obiettivo/Sfondo Opaco"]
+custom_minimum_size = Vector2(900, 340)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -475.0
+offset_top = -195.0
+offset_right = 475.0
+offset_bottom = 195.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vtaks")
+
+[node name="Obiettivo" type="RichTextLabel" parent="Game/Obiettivo/Sfondo Opaco/Obiettivo_Panel"]
+custom_minimum_size = Vector2(950, 300)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_gee14")
+theme_override_font_sizes/normal_font_size = 50
+text = "Testo di prova"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title" type="RichTextLabel" parent="Game/Obiettivo/Sfondo Opaco/Obiettivo_Panel"]
+custom_minimum_size = Vector2(900, 100)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 27.0
+offset_bottom = 127.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_gee14")
+theme_override_font_sizes/normal_font_size = 80
+text = "Obiettivo del Livello:"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="X" type="Label" parent="Game/Obiettivo/Sfondo Opaco/Obiettivo_Panel"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -85.0
+offset_bottom = 85.0
+grow_horizontal = 0
+mouse_filter = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_gee14")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_kvpfn")
+text = "X"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="request_completed" from="Game/HTTPRequest" to="Game" method="_on_http_request_request_completed"]
 [connection signal="pressed" from="Game/Invio" to="Game" method="_on_invio_pressed"]
 [connection signal="pressed" from="Game/Return" to="Game" method="_on_return_pressed"]
 [connection signal="gui_input" from="Game/Speech Bubble Input/Input" to="Game" method="_on_input_gui_input"]
 [connection signal="pressed" from="Game/Completed" to="Game" method="_on_completed_pressed"]
+[connection signal="gui_input" from="Game/Obiettivo/Sfondo Opaco/Obiettivo_Panel/X" to="Game" method="_on_x_gui_input"]

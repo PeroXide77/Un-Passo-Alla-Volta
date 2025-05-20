@@ -32,7 +32,7 @@ func dataset_caricamento():
 	var parsed: Array = JSON.parse_string(content)
 	npc_dataset = parsed
 
-func npc_caricamento(level: int, label : RichTextLabel):
+func npc_caricamento(level: int, label : RichTextLabel, goal : RichTextLabel):
 	if level >= 0 and level < npc_dataset.size():
 		var npc_data = npc_dataset[level]
 		npc_name = npc_data.get("name", "")
@@ -43,6 +43,7 @@ func npc_caricamento(level: int, label : RichTextLabel):
 		conversation_history.append({"role": "system", "content": personality})
 		conversation_history.append({"role": "assistant", "content": npc_data.get("firstLine", "")})
 		label.set_text(npc_data.get("firstLine",""))
+		goal.set_text(npc_data.get("goal", ""))
 	else:
 		push_error("Livello fuori dal range del dataset.")
 

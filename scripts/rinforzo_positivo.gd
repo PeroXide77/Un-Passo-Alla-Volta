@@ -35,6 +35,7 @@ func _on_postIt_gui_input(event: InputEvent, postIt: TextureRect) -> void:
 		Chatbot.dataset_caricamento_TIPS()
 		Chatbot.TIPS_caricamento(lv)
 		text.set_text(Chatbot.tips_txt)
+		text.scroll_to_line(0)
 
 func _on_ritorna_indietro_pressed() -> void:
 	popup.hide()
