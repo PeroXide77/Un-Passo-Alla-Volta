@@ -1,0 +1,452 @@
+[gd_scene load_steps=25 format=3 uid="uid://dh2hdig58w03k"]
+
+[ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="1_7meb8"]
+[ext_resource type="Script" uid="uid://cx81hw77y7bg6" path="res://scripts/minigames.gd" id="1_xakh2"]
+[ext_resource type="Texture2D" uid="uid://dqr44kkgua7qk" path="res://icons/scribble3.png" id="2_xakh2"]
+[ext_resource type="FontFile" uid="uid://b6rxc2cd3gq82" path="res://assets/fonts/Indie_Flower/IndieFlower-Regular.ttf" id="3_4ysqd"]
+[ext_resource type="Texture2D" uid="uid://ivpscjmkosnj" path="res://icons/settings.png" id="4_i714h"]
+[ext_resource type="FontFile" uid="uid://dmwtstgnkr0oc" path="res://assets/fonts/Anton/Anton-Regular.ttf" id="5_xdsn5"]
+[ext_resource type="Texture2D" uid="uid://bxskgmpqg3csl" path="res://icons/giftIcon.png" id="7_xdsn5"]
+[ext_resource type="Texture2D" uid="uid://b6glxqamn8g6m" path="res://icons/eyeIcon.png" id="8_lfhps"]
+[ext_resource type="Texture2D" uid="uid://bxg6b460e4h0i" path="res://icons/rulerPencilIcon.png" id="9_8qxkc"]
+[ext_resource type="Script" uid="uid://bnaqpofnsnbg0" path="res://scripts/impostazioni.gd" id="10_md4tt"]
+[ext_resource type="StyleBox" uid="uid://bvaywvbkfe4rj" path="res://assets/styles/hoverButtons.tres" id="11_78awk"]
+[ext_resource type="Texture2D" uid="uid://bs0ybgvbrdwym" path="res://icons/scribble4 .png" id="11_g2swd"]
+[ext_resource type="Texture2D" uid="uid://ds186uo7s2om3" path="res://icons/box_not_checked.png" id="12_g2swd"]
+[ext_resource type="Texture2D" uid="uid://c6gdl5iv5pqms" path="res://icons/check.png" id="13_78gvy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lfhps"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qxkc"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gyfmp"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_md4tt"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 350
+corner_radius_top_right = 350
+corner_radius_bottom_right = 350
+corner_radius_bottom_left = 350
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_78awk"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 350
+corner_radius_top_right = 350
+corner_radius_bottom_right = 350
+corner_radius_bottom_left = 350
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g2swd"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 350
+corner_radius_top_right = 350
+corner_radius_bottom_right = 350
+corner_radius_bottom_left = 350
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_78gvy"]
+bg_color = Color(1, 0.921569, 0.803922, 0.941176)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lq22x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dcml5"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cqvmh"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="minigames" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xakh2")
+
+[node name="Background" type="TextureRect" parent="minigames"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_7meb8")
+expand_mode = 1
+
+[node name="Scribble3" type="TextureRect" parent="minigames/Background"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -516.0
+offset_right = 50.0
+offset_bottom = 441.0
+grow_horizontal = 0
+texture = ExtResource("2_xakh2")
+
+[node name="Title" type="RichTextLabel" parent="minigames"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -0.5
+offset_top = 50.0
+offset_right = 0.5
+offset_bottom = 295.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_4ysqd")
+theme_override_font_sizes/normal_font_size = 165
+text = "Minigames Extra"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="impostazioni" type="Button" parent="minigames"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -95.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 95.0
+grow_horizontal = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4ysqd")
+theme_override_font_sizes/font_size = 84
+theme_override_styles/hover = SubResource("StyleBoxFlat_lfhps")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8qxkc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gyfmp")
+icon = ExtResource("4_i714h")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Ritorna Indietro" type="Button" parent="minigames"]
+layout_mode = 1
+offset_left = -62.0
+offset_top = 100.0
+offset_right = 38.0
+offset_bottom = 298.0
+rotation = -1.5708
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 14
+theme_override_constants/h_separation = 7
+theme_override_constants/icon_max_width = 510
+theme_override_constants/align_to_largest_stylebox = 32
+theme_override_constants/line_spacing = 7
+theme_override_fonts/font = ExtResource("5_xdsn5")
+theme_override_font_sizes/font_size = 125
+text = "⤴"
+flat = true
+text_overrun_behavior = 2
+icon_alignment = 1
+expand_icon = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="minigames"]
+custom_minimum_size = Vector2(1920, 970)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -800.0
+offset_right = 960.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="minigames/ScrollContainer"]
+custom_minimum_size = Vector2(1920, 400)
+layout_mode = 2
+size_flags_vertical = 6
+alignment = 1
+
+[node name="First_Minigame" type="Button" parent="minigames/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_md4tt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_78awk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_g2swd")
+icon = ExtResource("7_xdsn5")
+
+[node name="Spazio 1" type="TextureRect" parent="minigames/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Second_Minigame" type="Button" parent="minigames/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_md4tt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_78awk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_g2swd")
+icon = ExtResource("8_lfhps")
+
+[node name="Spazio 2" type="TextureRect" parent="minigames/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Third_Minigame" type="Button" parent="minigames/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_md4tt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_78awk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_g2swd")
+icon = ExtResource("9_8qxkc")
+
+[node name="Impostazioni" type="Popup" parent="minigames"]
+auto_translate_mode = 1
+transparent_bg = true
+size = Vector2i(1920, 1080)
+wrap_controls = false
+transparent = true
+script = ExtResource("10_md4tt")
+
+[node name="SfondoTrasparent" type="Panel" parent="minigames/Impostazioni"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BoxImpostazioni" type="Panel" parent="minigames/Impostazioni/SfondoTrasparent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 660.0
+offset_top = 120.0
+offset_right = -660.0
+offset_bottom = -160.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_78gvy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="minigames/Impostazioni/SfondoTrasparent/BoxImpostazioni"]
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VolumeP" type="Panel" parent="minigames/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_lq22x")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="minigames/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP"]
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 14.0
+offset_bottom = 114.0
+grow_horizontal = 2
+theme_override_colors/selection_color = Color(0.962296, 0.733232, 1, 1)
+theme_override_constants/table_v_separation = 4
+theme_override_constants/text_highlight_h_padding = 6
+theme_override_constants/outline_size = 13
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_outline_size = 14
+theme_override_constants/line_separation = 5
+theme_override_fonts/normal_font = ExtResource("3_4ysqd")
+theme_override_font_sizes/bold_italics_font_size = 1
+theme_override_font_sizes/italics_font_size = 1
+theme_override_font_sizes/mono_font_size = 1
+theme_override_font_sizes/normal_font_size = 70
+theme_override_font_sizes/bold_font_size = 1
+text = "VOLUME"
+scroll_active = false
+tab_size = 1
+horizontal_alignment = 1
+justification_flags = 128
+visible_characters_behavior = 2
+
+[node name="volume" type="HSlider" parent="minigames/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP"]
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 4.0
+offset_right = 200.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+ticks_on_borders = true
+
+[node name="Scribble4" type="TextureRect" parent="minigames/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("11_g2swd")
+
+[node name="VideoP" type="Panel" parent="minigames/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dcml5")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="minigames/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 20.0
+offset_bottom = 120.0
+grow_horizontal = 2
+theme_override_colors/selection_color = Color(0.962296, 0.733232, 1, 1)
+theme_override_constants/table_v_separation = 4
+theme_override_constants/text_highlight_h_padding = 6
+theme_override_constants/outline_size = 13
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_outline_size = 14
+theme_override_constants/line_separation = 5
+theme_override_fonts/normal_font = ExtResource("3_4ysqd")
+theme_override_font_sizes/bold_italics_font_size = 1
+theme_override_font_sizes/italics_font_size = 1
+theme_override_font_sizes/mono_font_size = 1
+theme_override_font_sizes/normal_font_size = 70
+theme_override_font_sizes/bold_font_size = 1
+text = "SCHERMO"
+scroll_active = false
+tab_size = 1
+horizontal_alignment = 1
+justification_flags = 128
+visible_characters_behavior = 2
+
+[node name="OptionButton" type="OptionButton" parent="minigames/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -20.0
+offset_right = 150.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("3_4ysqd")
+theme_override_font_sizes/font_size = 50
+
+[node name="FullScreen" type="Button" parent="minigames/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -97.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+theme_override_constants/outline_size = 13
+theme_override_constants/h_separation = 8
+theme_override_constants/icon_max_width = 5000
+theme_override_constants/align_to_largest_stylebox = 2
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("3_4ysqd")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = ExtResource("11_78awk")
+theme_override_styles/pressed = ExtResource("11_78awk")
+toggle_mode = true
+action_mode = 0
+text = "SCHERMO INTERO"
+icon = ExtResource("12_g2swd")
+flat = true
+
+[node name="CheckFS" type="TextureRect" parent="minigames/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen"]
+visible = false
+layout_mode = 0
+offset_left = -2.0
+offset_top = -5.0
+offset_right = 93.0
+offset_bottom = 82.0
+texture = ExtResource("13_78gvy")
+expand_mode = 1
+
+[node name="Ritorna Indietro" type="Button" parent="minigames/Impostazioni/SfondoTrasparent/BoxImpostazioni"]
+layout_mode = 0
+offset_left = -36.0
+offset_top = 88.0
+offset_right = 52.0
+offset_bottom = 243.0
+rotation = -1.5708
+focus_mode = 0
+theme_override_constants/outline_size = 14
+theme_override_constants/h_separation = 7
+theme_override_constants/icon_max_width = 510
+theme_override_constants/align_to_largest_stylebox = 32
+theme_override_constants/line_spacing = 7
+theme_override_fonts/font = ExtResource("3_4ysqd")
+theme_override_font_sizes/font_size = 100
+text = "⤴"
+icon = SubResource("CompressedTexture2D_cqvmh")
+flat = true
+text_overrun_behavior = 2
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="minigames/impostazioni" to="minigames" method="_on_impostazioni_pressed"]
+[connection signal="pressed" from="minigames/Ritorna Indietro" to="minigames" method="_on_ritorna_indietro_pressed"]
+[connection signal="pressed" from="minigames/ScrollContainer/HBoxContainer/First_Minigame" to="minigames" method="_on_first_minigame_pressed"]
+[connection signal="pressed" from="minigames/ScrollContainer/HBoxContainer/Second_Minigame" to="minigames" method="_on_second_minigame_pressed"]
+[connection signal="pressed" from="minigames/ScrollContainer/HBoxContainer/Third_Minigame" to="minigames" method="_on_third_minigame_pressed"]
+[connection signal="item_selected" from="minigames/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/OptionButton" to="minigames/Impostazioni" method="_on_option_button_item_selected"]
+[connection signal="toggled" from="minigames/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen" to="minigames/Impostazioni" method="_on_full_screen_toggled"]
+[connection signal="pressed" from="minigames/Impostazioni/SfondoTrasparent/BoxImpostazioni/Ritorna Indietro" to="minigames/Impostazioni" method="_on_ritorna_indietro_pressed"]
