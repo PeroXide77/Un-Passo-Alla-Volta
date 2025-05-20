@@ -12,6 +12,7 @@ extends Control
 @onready var impost: Popup = $Impostazioni
 @onready var checkGoal: TextureRect = $Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/showGoal/CheckGoal
 @onready var showButt: Button = $Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/showGoal
+@onready var imposButton: Button = $Background/impostazioni
 
 func _process(_delta: float) -> void:
 	Globals.btn_hover(showButt)
@@ -27,6 +28,7 @@ func _on_invio_pressed() -> void:
 	if user_message == "":
 		return
 	
+	imposButton.set_disabled(true)
 	back.set_disabled(true)
 	completedButton.set_disabled(true)
 	user_input.release_focus()
@@ -43,6 +45,7 @@ func _on_http_request_request_completed(_result: int, response_code: int, _heade
 		print("Errore nella risposta: codice ", response_code)
 		response_label.text = "Errore di rete"
 		back.set_disabled(false)
+		imposButton.set_disabled(false)
 		return
 
 	var body_string = body.get_string_from_utf8()
@@ -60,6 +63,7 @@ func _on_http_request_request_completed(_result: int, response_code: int, _heade
 		completedButton.set_visible(true)
 	else :
 		await Chatbot.print_txt(npc_reply, response_label)
+	imposButton.set_disabled(false)
 	back.set_disabled(false)
 	completedButton.set_disabled(false)
 	user_input.grab_focus()
@@ -71,11 +75,14 @@ func _on_return_pressed() -> void:
 	Globals.goto_load_scene("res://scenes/selezione_livelli.tscn")
 
 func _on_input_gui_input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed and event.keycode == KEY_ENTER:
-		if user_input.has_focus():
-			_on_invio_pressed()
-			user_input.clear()
-			get_viewport().set_input_as_handled()
+	if event is InputEventKey and event.pressed :
+		if event.keycode == KEY_ENTER:
+			if user_input.has_focus():
+				_on_invio_pressed()
+				user_input.clear()
+				get_viewport().set_input_as_handled()
+		else : if event.keycode == KEY_ESCAPE:
+			impost.popup()
 
 func completed_level() -> void:
 	if Chatbot.get_currentLevel() == Globals.get_gameState():

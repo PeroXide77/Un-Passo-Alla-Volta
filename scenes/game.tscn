@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cw0ac88cyi2si"]
+[gd_scene load_steps=29 format=3 uid="uid://cw0ac88cyi2si"]
 
 [ext_resource type="Script" uid="uid://bji87yhdq6now" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="2_p57ef"]
@@ -14,6 +14,18 @@
 [ext_resource type="StyleBox" uid="uid://bvaywvbkfe4rj" path="res://assets/styles/hoverButtons.tres" id="12_ca42v"]
 [ext_resource type="Texture2D" uid="uid://ds186uo7s2om3" path="res://icons/box_not_checked.png" id="13_rysoc"]
 [ext_resource type="Texture2D" uid="uid://c6gdl5iv5pqms" path="res://icons/check.png" id="14_ssvqc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trtic"]
+bg_color = Color(0.340339, 0.340339, 0.340339, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ca42v"]
 border_width_left = 3
@@ -146,6 +158,7 @@ focus_mode = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_gee14")
 theme_override_font_sizes/font_size = 84
+theme_override_styles/disabled = SubResource("StyleBoxFlat_trtic")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ca42v")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rysoc")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ssvqc")
@@ -182,6 +195,7 @@ offset_right = 36.0
 offset_bottom = 300.0
 rotation = -1.5708
 focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.341176, 0.341176, 0.341176, 1)
 theme_override_colors/font_hover_color = Color(0.6, 0.6, 0.6, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 14
@@ -263,6 +277,7 @@ grow_horizontal = 2
 stream = ExtResource("8_0tnpc")
 autoplay = true
 expand = true
+loop = true
 
 [node name="Completed" type="Button" parent="Game"]
 visible = false

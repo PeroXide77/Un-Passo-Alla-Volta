@@ -103,6 +103,6 @@ func loading_Chat_start(response : RichTextLabel, loading : VideoStreamPlayer) -
 	loading.play()
 
 func loading_Chat_end(response : RichTextLabel, loading : VideoStreamPlayer) -> void:
-	response.set_visible(true)
 	loading.stop()
 	loading.set_visible(false)
+	response.set_visible(true)
