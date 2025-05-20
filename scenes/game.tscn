@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cw0ac88cyi2si"]
+[gd_scene load_steps=28 format=3 uid="uid://cw0ac88cyi2si"]
 
 [ext_resource type="Script" uid="uid://bji87yhdq6now" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="2_p57ef"]
@@ -6,9 +6,48 @@
 [ext_resource type="FontFile" uid="uid://dmwtstgnkr0oc" path="res://assets/fonts/Anton/Anton-Regular.ttf" id="3_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://cuqw0q0lwiugl" path="res://icons/button_send.png" id="4_0tnpc"]
 [ext_resource type="FontFile" uid="uid://b6rxc2cd3gq82" path="res://assets/fonts/Indie_Flower/IndieFlower-Regular.ttf" id="4_gee14"]
+[ext_resource type="Texture2D" uid="uid://ivpscjmkosnj" path="res://icons/settings.png" id="4_ir15t"]
 [ext_resource type="Texture2D" uid="uid://brvkr7k82xltp" path="res://icons/speech_bubble.png" id="6_vtaks"]
 [ext_resource type="VideoStream" uid="uid://msmqwi28bm25" path="res://assets/videos/loading.ogv" id="8_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://bi62iidwpbxsk" path="res://icons/completedButton.png" id="8_gee14"]
+[ext_resource type="Script" uid="uid://bnaqpofnsnbg0" path="res://scripts/impostazioni.gd" id="10_trtic"]
+[ext_resource type="StyleBox" uid="uid://bvaywvbkfe4rj" path="res://assets/styles/hoverButtons.tres" id="12_ca42v"]
+[ext_resource type="Texture2D" uid="uid://ds186uo7s2om3" path="res://icons/box_not_checked.png" id="13_rysoc"]
+[ext_resource type="Texture2D" uid="uid://c6gdl5iv5pqms" path="res://icons/check.png" id="14_ssvqc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ca42v"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rysoc"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ssvqc"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
 
 [sub_resource type="GDScript" id="GDScript_u5sy4"]
 script/source = "extends TextEdit
@@ -28,19 +67,50 @@ corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvpfn"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ir15t"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
 border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 100
-corner_radius_top_right = 100
-corner_radius_bottom_right = 100
-corner_radius_bottom_left = 100
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kice"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5newe"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_264po"]
+bg_color = Color(1, 0.921569, 0.803922, 0.941176)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1kice"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5newe"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_37s47"]
+
+[node name="Node2D2" type="Node2D"]
 
 [node name="Game" type="Control" parent="."]
 layout_mode = 3
@@ -60,6 +130,28 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_p57ef")
 expand_mode = 1
+
+[node name="impostazioni" type="Button" parent="Game/Background"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -95.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 95.0
+grow_horizontal = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gee14")
+theme_override_font_sizes/font_size = 84
+theme_override_styles/hover = SubResource("StyleBoxFlat_ca42v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rysoc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ssvqc")
+icon = ExtResource("4_ir15t")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Personaggio" type="TextureRect" parent="Game"]
 layout_mode = 0
@@ -90,6 +182,7 @@ offset_right = 36.0
 offset_bottom = 300.0
 rotation = -1.5708
 focus_mode = 0
+theme_override_colors/font_hover_color = Color(0.6, 0.6, 0.6, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 14
 theme_override_constants/h_separation = 7
@@ -257,29 +350,259 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="X" type="Label" parent="Game/Obiettivo/Sfondo Opaco/Obiettivo_Panel"]
-custom_minimum_size = Vector2(50, 50)
+[node name="exit" type="Button" parent="Game/Obiettivo/Sfondo Opaco/Obiettivo_Panel"]
+custom_minimum_size = Vector2(85, 85)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -85.0
-offset_bottom = 85.0
+offset_bottom = 87.0
 grow_horizontal = 0
-mouse_filter = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+focus_mode = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("4_gee14")
 theme_override_font_sizes/font_size = 55
-theme_override_styles/normal = SubResource("StyleBoxFlat_kvpfn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ir15t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1kice")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5newe")
 text = "X"
+
+[node name="Impostazioni" type="Popup" parent="Game"]
+auto_translate_mode = 1
+transparent_bg = true
+size = Vector2i(1920, 1080)
+wrap_controls = false
+transparent = true
+script = ExtResource("10_trtic")
+
+[node name="SfondoTrasparent" type="Panel" parent="Game/Impostazioni"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BoxImpostazioni" type="Panel" parent="Game/Impostazioni/SfondoTrasparent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 660.0
+offset_top = 120.0
+offset_right = -660.0
+offset_bottom = -160.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_264po")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Game/Impostazioni/SfondoTrasparent/BoxImpostazioni"]
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VolumeP" type="Panel" parent="Game/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1kice")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Game/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP"]
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 14.0
+offset_bottom = 114.0
+grow_horizontal = 2
+theme_override_colors/selection_color = Color(0.962296, 0.733232, 1, 1)
+theme_override_constants/table_v_separation = 4
+theme_override_constants/text_highlight_h_padding = 6
+theme_override_constants/outline_size = 13
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_outline_size = 14
+theme_override_constants/line_separation = 5
+theme_override_fonts/normal_font = ExtResource("4_gee14")
+theme_override_font_sizes/bold_italics_font_size = 1
+theme_override_font_sizes/italics_font_size = 1
+theme_override_font_sizes/mono_font_size = 1
+theme_override_font_sizes/normal_font_size = 70
+theme_override_font_sizes/bold_font_size = 1
+text = "VOLUME"
+scroll_active = false
+tab_size = 1
 horizontal_alignment = 1
-vertical_alignment = 1
+justification_flags = 128
+visible_characters_behavior = 2
+
+[node name="volume" type="HSlider" parent="Game/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP"]
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 4.0
+offset_right = 200.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+ticks_on_borders = true
+
+[node name="showGoal" type="Button" parent="Game/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_constants/outline_size = 13
+theme_override_constants/h_separation = 8
+theme_override_constants/icon_max_width = 5000
+theme_override_constants/align_to_largest_stylebox = 2
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("4_gee14")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = ExtResource("12_ca42v")
+theme_override_styles/pressed = ExtResource("12_ca42v")
+toggle_mode = true
+action_mode = 0
+text = "RIVEDI OBIETTIVO"
+icon = ExtResource("13_rysoc")
+flat = true
+
+[node name="CheckGoal" type="TextureRect" parent="Game/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/showGoal"]
+visible = false
+layout_mode = 0
+offset_left = -2.0
+offset_top = -5.0
+offset_right = 93.0
+offset_bottom = 82.0
+texture = ExtResource("14_ssvqc")
+expand_mode = 1
+
+[node name="VideoP" type="Panel" parent="Game/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5newe")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Game/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 20.0
+offset_bottom = 120.0
+grow_horizontal = 2
+theme_override_colors/selection_color = Color(0.962296, 0.733232, 1, 1)
+theme_override_constants/table_v_separation = 4
+theme_override_constants/text_highlight_h_padding = 6
+theme_override_constants/outline_size = 13
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_outline_size = 14
+theme_override_constants/line_separation = 5
+theme_override_fonts/normal_font = ExtResource("4_gee14")
+theme_override_font_sizes/bold_italics_font_size = 1
+theme_override_font_sizes/italics_font_size = 1
+theme_override_font_sizes/mono_font_size = 1
+theme_override_font_sizes/normal_font_size = 70
+theme_override_font_sizes/bold_font_size = 1
+text = "SCHERMO"
+scroll_active = false
+tab_size = 1
+horizontal_alignment = 1
+justification_flags = 128
+visible_characters_behavior = 2
+
+[node name="OptionButton" type="OptionButton" parent="Game/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -20.0
+offset_right = 150.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("4_gee14")
+theme_override_font_sizes/font_size = 50
+
+[node name="FullScreen" type="Button" parent="Game/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -97.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+theme_override_constants/outline_size = 13
+theme_override_constants/h_separation = 8
+theme_override_constants/icon_max_width = 5000
+theme_override_constants/align_to_largest_stylebox = 2
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("4_gee14")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = ExtResource("12_ca42v")
+theme_override_styles/pressed = ExtResource("12_ca42v")
+toggle_mode = true
+action_mode = 0
+text = "SCHERMO INTERO"
+icon = ExtResource("13_rysoc")
+flat = true
+
+[node name="CheckFS" type="TextureRect" parent="Game/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen"]
+visible = false
+layout_mode = 0
+offset_left = -2.0
+offset_top = -5.0
+offset_right = 93.0
+offset_bottom = 82.0
+texture = ExtResource("14_ssvqc")
+expand_mode = 1
+
+[node name="Ritorna Indietro" type="Button" parent="Game/Impostazioni/SfondoTrasparent/BoxImpostazioni"]
+layout_mode = 0
+offset_left = -36.0
+offset_top = 88.0
+offset_right = 52.0
+offset_bottom = 243.0
+rotation = -1.5708
+focus_mode = 0
+theme_override_constants/outline_size = 14
+theme_override_constants/h_separation = 7
+theme_override_constants/icon_max_width = 510
+theme_override_constants/align_to_largest_stylebox = 32
+theme_override_constants/line_spacing = 7
+theme_override_fonts/font = ExtResource("4_gee14")
+theme_override_font_sizes/font_size = 100
+text = "⤴"
+icon = SubResource("CompressedTexture2D_37s47")
+flat = true
+text_overrun_behavior = 2
+icon_alignment = 1
+expand_icon = true
 
 [connection signal="request_completed" from="Game/HTTPRequest" to="Game" method="_on_http_request_request_completed"]
+[connection signal="pressed" from="Game/Background/impostazioni" to="Game" method="_on_impostazioni_pressed"]
 [connection signal="pressed" from="Game/Invio" to="Game" method="_on_invio_pressed"]
 [connection signal="pressed" from="Game/Return" to="Game" method="_on_return_pressed"]
 [connection signal="gui_input" from="Game/Speech Bubble Input/Input" to="Game" method="_on_input_gui_input"]
 [connection signal="pressed" from="Game/Completed" to="Game" method="_on_completed_pressed"]
-[connection signal="gui_input" from="Game/Obiettivo/Sfondo Opaco/Obiettivo_Panel/X" to="Game" method="_on_x_gui_input"]
+[connection signal="pressed" from="Game/Obiettivo/Sfondo Opaco/Obiettivo_Panel/exit" to="Game" method="_on_exit_pressed"]
+[connection signal="toggled" from="Game/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/showGoal" to="Game" method="_on_showGoal_toggled"]
+[connection signal="item_selected" from="Game/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/OptionButton" to="Game/Impostazioni" method="_on_option_button_item_selected"]
+[connection signal="toggled" from="Game/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen" to="Game/Impostazioni" method="_on_full_screen_toggled"]
+[connection signal="pressed" from="Game/Impostazioni/SfondoTrasparent/BoxImpostazioni/Ritorna Indietro" to="Game/Impostazioni" method="_on_ritorna_indietro_pressed"]

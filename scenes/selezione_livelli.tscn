@@ -1,11 +1,51 @@
-[gd_scene load_steps=28 format=3 uid="uid://bwl2p13to885n"]
+[gd_scene load_steps=41 format=3 uid="uid://bwl2p13to885n"]
 
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="1_g78a7"]
 [ext_resource type="Script" uid="uid://c3aw0y1jo1l53" path="res://scripts/selezione.gd" id="1_jvqic"]
 [ext_resource type="Texture2D" uid="uid://dqr44kkgua7qk" path="res://icons/scribble3.png" id="2_qcxsp"]
 [ext_resource type="FontFile" uid="uid://b6rxc2cd3gq82" path="res://assets/fonts/Indie_Flower/IndieFlower-Regular.ttf" id="3_jvqic"]
 [ext_resource type="FontFile" uid="uid://dmwtstgnkr0oc" path="res://assets/fonts/Anton/Anton-Regular.ttf" id="4_qcxsp"]
+[ext_resource type="Texture2D" uid="uid://ivpscjmkosnj" path="res://icons/settings.png" id="6_4oupi"]
 [ext_resource type="ButtonGroup" uid="uid://c3y33hcc07awi" path="res://assets/bg/levels.tres" id="6_niv7q"]
+[ext_resource type="Script" uid="uid://bnaqpofnsnbg0" path="res://scripts/impostazioni.gd" id="8_77leg"]
+[ext_resource type="Texture2D" uid="uid://bs0ybgvbrdwym" path="res://icons/scribble4 .png" id="9_402k4"]
+[ext_resource type="StyleBox" uid="uid://bvaywvbkfe4rj" path="res://assets/styles/hoverButtons.tres" id="10_5k8eg"]
+[ext_resource type="Texture2D" uid="uid://ds186uo7s2om3" path="res://icons/box_not_checked.png" id="11_iayb8"]
+[ext_resource type="Texture2D" uid="uid://c6gdl5iv5pqms" path="res://icons/check.png" id="12_etslg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_orxjh"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_phirj"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3rg6s"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ypfnb"]
 bg_color = Color(1, 1, 1, 1)
@@ -238,6 +278,15 @@ bg_color = Color(1, 0.921569, 0.803922, 0.941176)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3rg6s"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ykf0"]
+bg_color = Color(1, 0.921569, 0.803922, 0.941176)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ddivp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vk3q2"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nlpog"]
+
 [node name="Selezione_livelli" type="Node2D"]
 
 [node name="Selezione" type="Control" parent="."]
@@ -291,6 +340,28 @@ text = "Selezione Livello"
 scroll_active = false
 horizontal_alignment = 1
 
+[node name="impostazioni" type="Button" parent="Selezione"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -95.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 95.0
+grow_horizontal = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jvqic")
+theme_override_font_sizes/font_size = 84
+theme_override_styles/hover = SubResource("StyleBoxFlat_orxjh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_phirj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3rg6s")
+icon = ExtResource("6_4oupi")
+icon_alignment = 1
+expand_icon = true
+
 [node name="Ritorna Indietro" type="Button" parent="Selezione"]
 layout_mode = 1
 offset_left = -62.0
@@ -299,6 +370,7 @@ offset_right = 38.0
 offset_bottom = 298.0
 rotation = -1.5708
 focus_mode = 0
+theme_override_colors/font_hover_color = Color(0.6, 0.6, 0.6, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 14
 theme_override_constants/h_separation = 7
@@ -708,5 +780,210 @@ Buona fortuna!"
 horizontal_alignment = 1
 vertical_alignment = 3
 
+[node name="Impostazioni" type="Popup" parent="."]
+auto_translate_mode = 1
+transparent_bg = true
+size = Vector2i(1920, 1080)
+wrap_controls = false
+transparent = true
+script = ExtResource("8_77leg")
+
+[node name="SfondoTrasparent" type="Panel" parent="Impostazioni"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BoxImpostazioni" type="Panel" parent="Impostazioni/SfondoTrasparent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 660.0
+offset_top = 120.0
+offset_right = -660.0
+offset_bottom = -160.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5ykf0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Impostazioni/SfondoTrasparent/BoxImpostazioni"]
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VolumeP" type="Panel" parent="Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ddivp")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP"]
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 14.0
+offset_bottom = 114.0
+grow_horizontal = 2
+theme_override_colors/selection_color = Color(0.962296, 0.733232, 1, 1)
+theme_override_constants/table_v_separation = 4
+theme_override_constants/text_highlight_h_padding = 6
+theme_override_constants/outline_size = 13
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_outline_size = 14
+theme_override_constants/line_separation = 5
+theme_override_fonts/normal_font = ExtResource("3_jvqic")
+theme_override_font_sizes/bold_italics_font_size = 1
+theme_override_font_sizes/italics_font_size = 1
+theme_override_font_sizes/mono_font_size = 1
+theme_override_font_sizes/normal_font_size = 70
+theme_override_font_sizes/bold_font_size = 1
+text = "VOLUME"
+scroll_active = false
+tab_size = 1
+horizontal_alignment = 1
+justification_flags = 128
+visible_characters_behavior = 2
+
+[node name="volume" type="HSlider" parent="Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP"]
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 4.0
+offset_right = 200.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+ticks_on_borders = true
+
+[node name="Scribble4" type="TextureRect" parent="Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_402k4")
+
+[node name="VideoP" type="Panel" parent="Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vk3q2")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 20.0
+offset_bottom = 120.0
+grow_horizontal = 2
+theme_override_colors/selection_color = Color(0.962296, 0.733232, 1, 1)
+theme_override_constants/table_v_separation = 4
+theme_override_constants/text_highlight_h_padding = 6
+theme_override_constants/outline_size = 13
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_outline_size = 14
+theme_override_constants/line_separation = 5
+theme_override_fonts/normal_font = ExtResource("3_jvqic")
+theme_override_font_sizes/bold_italics_font_size = 1
+theme_override_font_sizes/italics_font_size = 1
+theme_override_font_sizes/mono_font_size = 1
+theme_override_font_sizes/normal_font_size = 70
+theme_override_font_sizes/bold_font_size = 1
+text = "SCHERMO"
+scroll_active = false
+tab_size = 1
+horizontal_alignment = 1
+justification_flags = 128
+visible_characters_behavior = 2
+
+[node name="OptionButton" type="OptionButton" parent="Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -20.0
+offset_right = 150.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("3_jvqic")
+theme_override_font_sizes/font_size = 50
+
+[node name="FullScreen" type="Button" parent="Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -97.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+theme_override_constants/outline_size = 13
+theme_override_constants/h_separation = 8
+theme_override_constants/icon_max_width = 5000
+theme_override_constants/align_to_largest_stylebox = 2
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("3_jvqic")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = ExtResource("10_5k8eg")
+theme_override_styles/pressed = ExtResource("10_5k8eg")
+toggle_mode = true
+action_mode = 0
+text = "SCHERMO INTERO"
+icon = ExtResource("11_iayb8")
+flat = true
+
+[node name="CheckFS" type="TextureRect" parent="Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen"]
+visible = false
+layout_mode = 0
+offset_left = -2.0
+offset_top = -5.0
+offset_right = 93.0
+offset_bottom = 82.0
+texture = ExtResource("12_etslg")
+expand_mode = 1
+
+[node name="Ritorna Indietro" type="Button" parent="Impostazioni/SfondoTrasparent/BoxImpostazioni"]
+layout_mode = 0
+offset_left = -36.0
+offset_top = 88.0
+offset_right = 52.0
+offset_bottom = 243.0
+rotation = -1.5708
+focus_mode = 0
+theme_override_constants/outline_size = 14
+theme_override_constants/h_separation = 7
+theme_override_constants/icon_max_width = 510
+theme_override_constants/align_to_largest_stylebox = 32
+theme_override_constants/line_spacing = 7
+theme_override_fonts/font = ExtResource("3_jvqic")
+theme_override_font_sizes/font_size = 100
+text = "⤴"
+icon = SubResource("CompressedTexture2D_nlpog")
+flat = true
+text_overrun_behavior = 2
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="Selezione/impostazioni" to="Selezione" method="_on_impostazioni_pressed"]
 [connection signal="pressed" from="Selezione/Ritorna Indietro" to="Selezione" method="_on_ritorna_indietro_pressed"]
 [connection signal="pressed" from="Selezione/end_game/back" to="Selezione" method="_on_back_pressed"]
+[connection signal="item_selected" from="Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/OptionButton" to="Impostazioni" method="_on_option_button_item_selected"]
+[connection signal="toggled" from="Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen" to="Impostazioni" method="_on_full_screen_toggled"]
+[connection signal="pressed" from="Impostazioni/SfondoTrasparent/BoxImpostazioni/Ritorna Indietro" to="Impostazioni" method="_on_ritorna_indietro_pressed"]

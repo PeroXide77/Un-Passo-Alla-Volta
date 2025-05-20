@@ -17,7 +17,6 @@ func _ready():
 		resolutionMenu.set_disabled(true)
 		checkFS.set_visible(true)
 		fullScreen.set_pressed_no_signal(true)
-		
 
 func _on_volume_value_changed(value: float) -> void:
 	Globals.set_volume(value)
@@ -44,7 +43,6 @@ func _on_full_screen_toggled(toggled_on: bool) -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		resolutionMenu.set_disabled(false)
 		checkFS.set_visible(false)
-
 
 func _on_ritorna_indietro_pressed() -> void:
 	imp.hide()
