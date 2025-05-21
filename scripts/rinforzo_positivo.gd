@@ -1,10 +1,10 @@
 extends Control
 
 @onready var postIts = get_tree().get_nodes_in_group("postIt")
-@onready var circles = get_tree().get_nodes_in_group("circles")
 @onready var popup : Panel = $Tips
 @onready var text : RichTextLabel = $Tips/ScrollContainer/text
-@onready var circle_end : TextureRect = $"Post-It10/Circle10"
+
+var postItLevel: TextureRect = null
 
 func _ready() -> void:
 	show_postIts()
@@ -12,9 +12,9 @@ func _ready() -> void:
 		postIt.gui_input.connect(_on_postIt_gui_input.bind(postIt))
 
 func _on_return_pressed() -> void:
-	if circle_end.is_visible() :
-		circle_end.set_visible(false)
+	if Chatbot.get_currentLevel() == 10 :
 		Globals.is_end(true)
+	postItLevel.set_self_modulate(Color("ffffff"))
 	Globals.goto_load_scene("res://scenes/selezione_livelli.tscn")
 
 func show_postIts() -> void:
@@ -22,11 +22,9 @@ func show_postIts() -> void:
 	for postIt in postIts:
 		if postIt.get_meta("lv") < gs:
 			postIt.set_visible(true)
-	for circle in circles:
-		if circle.get_meta("lv") == Chatbot.get_currentLevel():
-			circle.set_visible(true)
-		else:
-			circle.set_visible(false)
+		if postIt.get_meta("lv") == Chatbot.get_currentLevel():
+			postIt.set_self_modulate(Color("7fff00"))
+			postItLevel = postIt
 
 func _on_postIt_gui_input(event: InputEvent, postIt: TextureRect) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
