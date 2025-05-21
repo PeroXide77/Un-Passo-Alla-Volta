@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cw0ac88cyi2si"]
+[gd_scene load_steps=32 format=3 uid="uid://cw0ac88cyi2si"]
 
 [ext_resource type="Script" uid="uid://bji87yhdq6now" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="2_p57ef"]
@@ -10,7 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://brvkr7k82xltp" path="res://icons/speech_bubble.png" id="6_vtaks"]
 [ext_resource type="VideoStream" uid="uid://msmqwi28bm25" path="res://assets/videos/loading.ogv" id="8_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://bi62iidwpbxsk" path="res://icons/completedButton.png" id="8_gee14"]
+[ext_resource type="Theme" uid="uid://im1kev326hh2" path="res://assets/styles/VScrollBarHide.tres" id="9_ca42v"]
 [ext_resource type="Script" uid="uid://bnaqpofnsnbg0" path="res://scripts/impostazioni.gd" id="10_trtic"]
+[ext_resource type="Texture2D" uid="uid://bbvm1b4qelxh8" path="res://assets/sounds/RiccioPortaFortuna.png" id="11_ir15t"]
 [ext_resource type="StyleBox" uid="uid://bvaywvbkfe4rj" path="res://assets/styles/hoverButtons.tres" id="12_ca42v"]
 [ext_resource type="Texture2D" uid="uid://ds186uo7s2om3" path="res://icons/box_not_checked.png" id="13_rysoc"]
 [ext_resource type="Texture2D" uid="uid://c6gdl5iv5pqms" path="res://icons/check.png" id="14_ssvqc"]
@@ -60,6 +62,9 @@ corner_radius_top_left = 200
 corner_radius_top_right = 200
 corner_radius_bottom_right = 200
 corner_radius_bottom_left = 200
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ca42v"]
+modulate_color = Color(0.6, 0.6, 0.6, 1)
 
 [sub_resource type="GDScript" id="GDScript_u5sy4"]
 script/source = "extends TextEdit
@@ -183,6 +188,7 @@ offset_top = 708.0
 offset_right = 1161.0
 offset_bottom = 917.0
 focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ca42v")
 icon = ExtResource("4_0tnpc")
 flat = true
 icon_alignment = 1
@@ -298,26 +304,26 @@ expand_icon = true
 
 [node name="Obiettivo" type="Popup" parent="Game"]
 transparent_bg = true
-size = Vector2i(1920, 1080)
+size = Vector2i(1920, 1120)
 transparent = true
 
 [node name="Sfondo Opaco" type="Panel" parent="Game/Obiettivo"]
-custom_minimum_size = Vector2(1000, 440)
+custom_minimum_size = Vector2(1000, 800)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -500.0
-offset_top = -220.0
+offset_top = -400.0
 offset_right = 500.0
-offset_bottom = 220.0
+offset_bottom = 400.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0tnpc")
 
 [node name="Obiettivo_Panel" type="Panel" parent="Game/Obiettivo/Sfondo Opaco"]
-custom_minimum_size = Vector2(900, 340)
+custom_minimum_size = Vector2(950, 730)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -332,30 +338,19 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_vtaks")
 
-[node name="Obiettivo" type="RichTextLabel" parent="Game/Obiettivo/Sfondo Opaco/Obiettivo_Panel"]
-custom_minimum_size = Vector2(950, 300)
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("4_gee14")
-theme_override_font_sizes/normal_font_size = 50
-text = "Testo di prova"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="ScrollContainer" type="ScrollContainer" parent="Game/Obiettivo/Sfondo Opaco/Obiettivo_Panel"]
+custom_minimum_size = Vector2(950, 730)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("9_ca42v")
 
-[node name="Title" type="RichTextLabel" parent="Game/Obiettivo/Sfondo Opaco/Obiettivo_Panel"]
-custom_minimum_size = Vector2(900, 100)
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 27.0
-offset_bottom = 127.0
-grow_horizontal = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="Game/Obiettivo/Sfondo Opaco/Obiettivo_Panel/ScrollContainer"]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="Game/Obiettivo/Sfondo Opaco/Obiettivo_Panel/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(900, 120)
+layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("4_gee14")
@@ -364,6 +359,22 @@ text = "Obiettivo del Livello:"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Obiettivo" type="RichTextLabel" parent="Game/Obiettivo/Sfondo Opaco/Obiettivo_Panel/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(950, 50)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_gee14")
+theme_override_font_sizes/normal_font_size = 50
+text = "Testo di prova"
+fit_content = true
+scroll_active = false
+
+[node name="Vignetta" type="TextureRect" parent="Game/Obiettivo/Sfondo Opaco/Obiettivo_Panel/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 420)
+layout_mode = 2
+texture = ExtResource("11_ir15t")
+expand_mode = 1
 
 [node name="exit" type="Button" parent="Game/Obiettivo/Sfondo Opaco/Obiettivo_Panel"]
 custom_minimum_size = Vector2(85, 85)

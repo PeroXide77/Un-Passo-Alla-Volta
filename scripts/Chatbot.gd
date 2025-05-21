@@ -44,6 +44,7 @@ func npc_caricamento(level: int, label : RichTextLabel, goal : RichTextLabel):
 		conversation_history.append({"role": "assistant", "content": npc_data.get("firstLine", "")})
 		label.set_text(npc_data.get("firstLine",""))
 		goal.set_text(npc_data.get("goal", ""))
+		goal.add_text("\n\nUn esempio di interazione che puoi avere in questo livello:")
 	else:
 		push_error("Livello fuori dal range del dataset.")
 
