@@ -29,6 +29,7 @@ func _on_invio_pressed() -> void:
 		return
 	
 	imposButton.set_disabled(true)
+	response_label.set_scroll_active(false)
 	back.set_disabled(true)
 	completedButton.set_disabled(true)
 	user_input.release_focus()
@@ -63,6 +64,7 @@ func _on_http_request_request_completed(_result: int, response_code: int, _heade
 		completedButton.set_visible(true)
 	else :
 		await Chatbot.print_txt(npc_reply, response_label)
+	response_label.set_scroll_active(true)
 	imposButton.set_disabled(false)
 	back.set_disabled(false)
 	completedButton.set_disabled(false)
