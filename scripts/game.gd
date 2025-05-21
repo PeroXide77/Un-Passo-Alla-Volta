@@ -7,7 +7,7 @@ extends Control
 @onready var completedButton: Button = $Completed
 @onready var back: Button = $Return
 @onready var loading: VideoStreamPlayer = $"Speech Bubble Output/Loading"
-@onready var obiettivo: RichTextLabel = $"Obiettivo/Sfondo Opaco/Obiettivo_Panel/Obiettivo"
+@onready var obiettivo: RichTextLabel = $"Obiettivo/Sfondo Opaco/Obiettivo_Panel/ScrollContainer/VBoxContainer/Obiettivo"
 @onready var obiettivo_page: Popup = $Obiettivo
 @onready var impost: Popup = $Impostazioni
 @onready var checkGoal: TextureRect = $Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/showGoal/CheckGoal
