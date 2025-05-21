@@ -210,36 +210,42 @@ size_flags_vertical = 6
 alignment = 1
 
 [node name="First_Minigame" type="Button" parent="minigames/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
 focus_mode = 0
 theme_override_styles/hover = SubResource("StyleBoxFlat_md4tt")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_78awk")
 theme_override_styles/normal = SubResource("StyleBoxFlat_g2swd")
 icon = ExtResource("7_xdsn5")
+expand_icon = true
 
 [node name="Spazio 1" type="TextureRect" parent="minigames/ScrollContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 
 [node name="Second_Minigame" type="Button" parent="minigames/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
 focus_mode = 0
 theme_override_styles/hover = SubResource("StyleBoxFlat_md4tt")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_78awk")
 theme_override_styles/normal = SubResource("StyleBoxFlat_g2swd")
 icon = ExtResource("8_lfhps")
+expand_icon = true
 
 [node name="Spazio 2" type="TextureRect" parent="minigames/ScrollContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 
 [node name="Third_Minigame" type="Button" parent="minigames/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
 focus_mode = 0
 theme_override_styles/hover = SubResource("StyleBoxFlat_md4tt")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_78awk")
 theme_override_styles/normal = SubResource("StyleBoxFlat_g2swd")
 icon = ExtResource("9_8qxkc")
+expand_icon = true
 
 [node name="Impostazioni" type="Popup" parent="minigames"]
 auto_translate_mode = 1
@@ -343,8 +349,10 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 20.0
-offset_bottom = 120.0
+offset_left = 1.0
+offset_top = 97.0
+offset_right = 1.0
+offset_bottom = 197.0
 grow_horizontal = 2
 theme_override_colors/selection_color = Color(0.962296, 0.733232, 1, 1)
 theme_override_constants/table_v_separation = 4
@@ -363,7 +371,6 @@ theme_override_font_sizes/bold_font_size = 1
 text = "SCHERMO"
 scroll_active = false
 tab_size = 1
-horizontal_alignment = 1
 justification_flags = 128
 visible_characters_behavior = 2
 
@@ -375,10 +382,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -20.0
-offset_right = 150.0
-offset_bottom = 30.0
+offset_left = -10.0
+offset_top = -32.0
+offset_right = 290.0
+offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 13
@@ -391,7 +398,8 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -97.0
+offset_top = -84.0
+offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 0
 focus_mode = 0
