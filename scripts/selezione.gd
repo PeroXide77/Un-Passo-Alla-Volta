@@ -4,9 +4,12 @@ extends Control
 @onready var spaces = get_tree().get_nodes_in_group("spaces")
 @onready var popup_end : Panel = $end_game
 @onready var popup_imp : Popup = $"../Impostazioni"
+@onready var scribble3 : TextureRect = $Scribble3
+@onready var crediti : Popup = $"../Impostazioni/crediti"
 
 func _ready():
 	levelGroup.pressed.connect(buttonGroup_pressed)
+	scribble3.set_self_modulate(Globals.randomizeColor())
 	set_completedLevels()
 	if Globals.get_end() == true :
 		popup_end.show()
@@ -39,10 +42,20 @@ func set_completedLevels():
 		else:
 			space.set_visible(false)
 
-
 func _on_back_pressed() -> void:
 	popup_end.hide()
 	Globals.is_end(false)
 
 func _on_impostazioni_pressed() -> void:
 	popup_imp.popup()
+
+func _on_scribble_3_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		scribble3.set_self_modulate(Globals.randomizeColor())
+
+func _on_scribble_4_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		crediti.popup()
+
+func _on_exit_pressed() -> void:
+	crediti.hide()

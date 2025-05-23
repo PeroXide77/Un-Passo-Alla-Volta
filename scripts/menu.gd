@@ -6,6 +6,9 @@ extends Control
 @onready var checkMng = $VBoxContainer/Minigames/CheckMng
 @onready var impPopUp = $Impostazioni
 @onready var options = get_tree().get_nodes_in_group("options")
+@onready var scribble2_n : TextureRect = $Background/Scribble2
+@onready var scribble2_p : TextureRect = $Background/Scribble2_pressed
+@onready var crediti : Popup = $Impostazioni/crediti
 
 func _process(_delta: float) -> void:
 	for option in options:
@@ -42,3 +45,21 @@ func _on_minigames_pressed() -> void:
 	checkMng.set_visible(true)
 	await get_tree().create_timer(0.5).timeout
 	Globals.goto_load_scene("res://scenes/minigames.tscn")
+
+
+func _on_scribble_2_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		scribble2_n.set_visible(false)
+		scribble2_p.set_visible(true)
+
+func _on_scribble_2_pressed_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		scribble2_p.set_visible(false)
+		scribble2_n.set_visible(true)
+
+func _on_scribble_4_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		crediti.popup()
+
+func _on_exit_pressed() -> void:
+	crediti.hide()
