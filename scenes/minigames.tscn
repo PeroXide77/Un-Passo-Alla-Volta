@@ -258,6 +258,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_78awk")
 theme_override_styles/normal = SubResource("StyleBoxFlat_g2swd")
 icon = ExtResource("7_xdsn5")
 expand_icon = true
+metadata/miniG = 0
 
 [node name="Spazio 1" type="TextureRect" parent="minigames/HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
@@ -272,6 +273,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_78awk")
 theme_override_styles/normal = SubResource("StyleBoxFlat_g2swd")
 icon = ExtResource("8_lfhps")
 expand_icon = true
+metadata/miniG = 1
 
 [node name="Spazio 2" type="TextureRect" parent="minigames/HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
@@ -286,6 +288,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_78awk")
 theme_override_styles/normal = SubResource("StyleBoxFlat_g2swd")
 icon = ExtResource("9_8qxkc")
 expand_icon = true
+metadata/miniG = 2
 
 [node name="Impostazioni" type="Popup" parent="minigames"]
 auto_translate_mode = 1

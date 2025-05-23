@@ -287,7 +287,6 @@ expand = true
 loop = true
 
 [node name="Completed" type="Button" parent="Game"]
-visible = false
 layout_mode = 0
 offset_left = 1280.0
 offset_top = 116.0

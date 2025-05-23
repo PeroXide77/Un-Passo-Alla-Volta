@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://chuwiaogvuibx"]
+[gd_scene load_steps=22 format=3 uid="uid://chuwiaogvuibx"]
 
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="1_cusv3"]
 [ext_resource type="Script" uid="uid://dq6ta158kp0ay" path="res://scripts/minigames_eye_track.gd" id="1_u5qg0"]
@@ -10,6 +10,10 @@
 [ext_resource type="StyleBox" uid="uid://bvaywvbkfe4rj" path="res://assets/styles/hoverButtons.tres" id="7_ft4vf"]
 [ext_resource type="Texture2D" uid="uid://ds186uo7s2om3" path="res://icons/box_not_checked.png" id="8_ryp5d"]
 [ext_resource type="Texture2D" uid="uid://c6gdl5iv5pqms" path="res://icons/check.png" id="9_65phu"]
+[ext_resource type="Script" uid="uid://wsnks8tlquy6" path="res://scripts/pre_minigame.gd" id="11_38vst"]
+[ext_resource type="Texture2D" uid="uid://cls268hvgtig" path="res://assets/sprites/mamma.png" id="11_onpga"]
+[ext_resource type="Texture2D" uid="uid://brvkr7k82xltp" path="res://icons/speech_bubble.png" id="12_38vst"]
+[ext_resource type="Texture2D" uid="uid://bi62iidwpbxsk" path="res://icons/completedButton.png" id="13_ft4vf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnoa5"]
 border_width_left = 3
@@ -343,8 +347,71 @@ text_overrun_behavior = 2
 icon_alignment = 1
 expand_icon = true
 
+[node name="preMinigame" type="Popup" parent="minigames_eyeTrack"]
+auto_translate_mode = 1
+transparent_bg = true
+size = Vector2i(1920, 1080)
+script = ExtResource("11_38vst")
+
+[node name="SfondoTrasparent" type="Panel" parent="minigames_eyeTrack/preMinigame"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Personaggio" type="TextureRect" parent="minigames_eyeTrack/preMinigame/SfondoTrasparent"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 1.0
+offset_right = 550.0
+offset_bottom = 1081.0
+texture = ExtResource("11_onpga")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Speech Bubble Output" type="TextureRect" parent="minigames_eyeTrack/preMinigame/SfondoTrasparent"]
+layout_mode = 0
+offset_left = 539.0
+offset_top = 39.0
+offset_right = 1233.0
+offset_bottom = 465.0
+texture = ExtResource("12_38vst")
+expand_mode = 1
+
+[node name="Speech" type="RichTextLabel" parent="minigames_eyeTrack/preMinigame/SfondoTrasparent/Speech Bubble Output"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 37.0
+offset_right = 656.0
+offset_bottom = 332.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -5
+theme_override_fonts/normal_font = ExtResource("2_u5qg0")
+theme_override_font_sizes/normal_font_size = 45
+text = "giao
+fiao"
+scroll_following = true
+
+[node name="Completed" type="Button" parent="minigames_eyeTrack/preMinigame/SfondoTrasparent"]
+visible = false
+layout_mode = 0
+offset_left = 1278.0
+offset_top = 609.0
+offset_right = 1668.0
+offset_bottom = 958.0
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+icon = ExtResource("13_ft4vf")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
 [connection signal="pressed" from="minigames_eyeTrack/impostazioni" to="minigames_eyeTrack" method="_on_impostazioni_pressed"]
 [connection signal="pressed" from="minigames_eyeTrack/Ritorna Indietro" to="minigames_eyeTrack" method="_on_ritorna_indietro_pressed"]
 [connection signal="item_selected" from="minigames_eyeTrack/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/OptionButton" to="minigames_eyeTrack/Impostazioni" method="_on_option_button_item_selected"]
 [connection signal="toggled" from="minigames_eyeTrack/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen" to="minigames_eyeTrack/Impostazioni" method="_on_full_screen_toggled"]
 [connection signal="pressed" from="minigames_eyeTrack/Impostazioni/SfondoTrasparent/BoxImpostazioni/Ritorna Indietro" to="minigames_eyeTrack/Impostazioni" method="_on_ritorna_indietro_pressed"]
+[connection signal="pressed" from="minigames_eyeTrack/preMinigame/SfondoTrasparent/Completed" to="minigames_eyeTrack/preMinigame" method="_on_completed_pressed"]
