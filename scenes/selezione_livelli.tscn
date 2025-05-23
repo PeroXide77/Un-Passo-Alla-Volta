@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bwl2p13to885n"]
+[gd_scene load_steps=48 format=3 uid="uid://bwl2p13to885n"]
 
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="1_g78a7"]
 [ext_resource type="Script" uid="uid://c3aw0y1jo1l53" path="res://scripts/selezione.gd" id="1_jvqic"]
@@ -12,6 +12,8 @@
 [ext_resource type="StyleBox" uid="uid://bvaywvbkfe4rj" path="res://assets/styles/hoverButtons.tres" id="10_5k8eg"]
 [ext_resource type="Texture2D" uid="uid://ds186uo7s2om3" path="res://icons/box_not_checked.png" id="11_iayb8"]
 [ext_resource type="Texture2D" uid="uid://c6gdl5iv5pqms" path="res://icons/check.png" id="12_etslg"]
+[ext_resource type="Theme" uid="uid://im1kev326hh2" path="res://assets/styles/VScrollBarHide.tres" id="13_5k8eg"]
+[ext_resource type="Texture2D" uid="uid://bbvm1b4qelxh8" path="res://assets/sounds/RiccioPortaFortuna.png" id="14_iayb8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_orxjh"]
 border_width_left = 3
@@ -287,6 +289,54 @@ bg_color = Color(1, 0.921569, 0.803922, 0.941176)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nlpog"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ddivp"]
+bg_color = Color(0.85098, 0.6, 0.458824, 0.94902)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vk3q2"]
+bg_color = Color(0.937255, 0.741176, 0.627451, 0.945098)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlpog"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aeo4r"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_toui6"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+
 [node name="Selezione_livelli" type="Node2D"]
 
 [node name="Selezione" type="Control" parent="."]
@@ -311,17 +361,6 @@ grow_vertical = 2
 texture = ExtResource("1_g78a7")
 expand_mode = 1
 
-[node name="Scribble3" type="TextureRect" parent="Selezione/Background"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -516.0
-offset_right = 50.0
-offset_bottom = 441.0
-grow_horizontal = 0
-texture = ExtResource("2_qcxsp")
-
 [node name="Title" type="RichTextLabel" parent="Selezione"]
 layout_mode = 1
 anchors_preset = 10
@@ -339,6 +378,19 @@ theme_override_font_sizes/normal_font_size = 165
 text = "Selezione Livello"
 scroll_active = false
 horizontal_alignment = 1
+
+[node name="Scribble3" type="TextureRect" parent="Selezione"]
+self_modulate = Color(1, 0.945098, 1, 1)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -396.0
+offset_top = 19.0
+offset_right = -122.0
+offset_bottom = 239.0
+grow_horizontal = 0
+texture = ExtResource("2_qcxsp")
 
 [node name="impostazioni" type="Button" parent="Selezione"]
 custom_minimum_size = Vector2(100, 100)
@@ -983,9 +1035,114 @@ text_overrun_behavior = 2
 icon_alignment = 1
 expand_icon = true
 
+[node name="crediti" type="Popup" parent="Impostazioni"]
+auto_translate_mode = 1
+transparent_bg = true
+size = Vector2i(1920, 1120)
+transparent = true
+
+[node name="Sfondo Opaco" type="Panel" parent="Impostazioni/crediti"]
+custom_minimum_size = Vector2(1000, 800)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -400.0
+offset_right = 500.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ddivp")
+
+[node name="Obiettivo_Panel" type="Panel" parent="Impostazioni/crediti/Sfondo Opaco"]
+custom_minimum_size = Vector2(950, 730)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -475.0
+offset_top = -195.0
+offset_right = 475.0
+offset_bottom = 195.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vk3q2")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel"]
+custom_minimum_size = Vector2(950, 730)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("13_5k8eg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel/ScrollContainer"]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(900, 120)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_jvqic")
+theme_override_font_sizes/normal_font_size = 80
+text = "Credits"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="crediti" type="RichTextLabel" parent="Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(950, 50)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_jvqic")
+theme_override_font_sizes/normal_font_size = 50
+text = " ☆  ☆ Un gioco di Chandelier Light  ☆ ☆ 
+
+Lucia Meliota - programming
+Dario Ungaro - programming
+Natalia Meliota - art
+
+Grazie mille per aver scelto di giocare a questo gioco!"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="immagine" type="TextureRect" parent="Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 420)
+layout_mode = 2
+texture = ExtResource("14_iayb8")
+expand_mode = 1
+
+[node name="exit" type="Button" parent="Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -85.0
+offset_bottom = 87.0
+grow_horizontal = 0
+focus_mode = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_jvqic")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/hover = SubResource("StyleBoxFlat_nlpog")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aeo4r")
+theme_override_styles/normal = SubResource("StyleBoxFlat_toui6")
+text = "X"
+
+[connection signal="gui_input" from="Selezione/Scribble3" to="Selezione" method="_on_scribble_3_gui_input"]
 [connection signal="pressed" from="Selezione/impostazioni" to="Selezione" method="_on_impostazioni_pressed"]
 [connection signal="pressed" from="Selezione/Ritorna Indietro" to="Selezione" method="_on_ritorna_indietro_pressed"]
 [connection signal="pressed" from="Selezione/end_game/back" to="Selezione" method="_on_back_pressed"]
+[connection signal="gui_input" from="Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/Scribble4" to="Selezione" method="_on_scribble_4_gui_input"]
 [connection signal="item_selected" from="Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/OptionButton" to="Impostazioni" method="_on_option_button_item_selected"]
 [connection signal="toggled" from="Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen" to="Impostazioni" method="_on_full_screen_toggled"]
 [connection signal="pressed" from="Impostazioni/SfondoTrasparent/BoxImpostazioni/Ritorna Indietro" to="Impostazioni" method="_on_ritorna_indietro_pressed"]
+[connection signal="pressed" from="Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel/exit" to="Selezione" method="_on_exit_pressed"]

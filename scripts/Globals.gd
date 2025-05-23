@@ -84,3 +84,6 @@ func _deferred_goto_scene(path):
 
 	# Optionally, to make it compatible with the SceneTree.change_scene_to_file() API.
 	get_tree().current_scene = current_scene
+
+func randomizeColor() -> Color:
+	return Color(randf(),randf(),randf())
