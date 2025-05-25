@@ -13,13 +13,14 @@ extends Control
 @onready var checkGoal: TextureRect = $Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/showGoal/CheckGoal
 @onready var showButt: Button = $Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/showGoal
 @onready var imposButton: Button = $Background/impostazioni
+@onready var vignetta: String = "Obiettivo/Sfondo Opaco/Obiettivo_Panel/ScrollContainer/VBoxContainer/Vignetta"
 
 func _process(_delta: float) -> void:
 	Globals.btn_hover(showButt)
 
 func _ready():
 	Chatbot.dataset_caricamento()
-	Chatbot.npc_caricamento(Chatbot.get_currentLevel(), response_label, obiettivo)
+	Chatbot.npc_caricamento(Chatbot.get_currentLevel(), response_label, obiettivo, vignetta)
 	obiettivo_page.popup()
 	user_input.grab_focus()
 

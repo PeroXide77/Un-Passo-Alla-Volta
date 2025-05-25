@@ -32,7 +32,7 @@ func dataset_caricamento():
 	var parsed: Array = JSON.parse_string(content)
 	npc_dataset = parsed
 
-func npc_caricamento(level: int, label : RichTextLabel, goal : RichTextLabel):
+func npc_caricamento(level: int, label : RichTextLabel, goal : RichTextLabel, vignetta : String):
 	if level >= 0 and level < npc_dataset.size():
 		var npc_data = npc_dataset[level]
 		npc_name = npc_data.get("name", "")
