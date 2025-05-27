@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dej2xq7ckhaqt"
-path="res://.godot/imported/riccietto_prova_branch.jpg-81c4bee20a58bf301bcc749e7d854297.ctex"
+uid="uid://cjsn7738ykxna"
+path="res://.godot/imported/Rita.png-6aaf393d87f3a2ec38bc7038b5f91aa7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/riccietto_prova_branch.jpg"
-dest_files=["res://.godot/imported/riccietto_prova_branch.jpg-81c4bee20a58bf301bcc749e7d854297.ctex"]
+source_file="res://assets/sprites/Rita.png"
+dest_files=["res://.godot/imported/Rita.png-6aaf393d87f3a2ec38bc7038b5f91aa7.ctex"]
 
 [params]
 

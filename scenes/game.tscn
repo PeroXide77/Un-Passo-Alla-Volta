@@ -12,8 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://bi62iidwpbxsk" path="res://icons/completedButton.png" id="8_gee14"]
 [ext_resource type="Theme" uid="uid://im1kev326hh2" path="res://assets/styles/VScrollBarHide.tres" id="9_ca42v"]
 [ext_resource type="Script" uid="uid://bnaqpofnsnbg0" path="res://scripts/impostazioni.gd" id="10_trtic"]
-[ext_resource type="Texture2D" uid="uid://bbvm1b4qelxh8" path="res://assets/sounds/RiccioPortaFortuna.png" id="11_ir15t"]
 [ext_resource type="StyleBox" uid="uid://bvaywvbkfe4rj" path="res://assets/styles/hoverButtons.tres" id="12_ca42v"]
+[ext_resource type="Texture2D" uid="uid://cms1xbm5qexg7" path="res://assets/sprites/vignetteGoal/livello1.png" id="12_rysoc"]
 [ext_resource type="Texture2D" uid="uid://ds186uo7s2om3" path="res://icons/box_not_checked.png" id="13_rysoc"]
 [ext_resource type="Texture2D" uid="uid://c6gdl5iv5pqms" path="res://icons/check.png" id="14_ssvqc"]
 
@@ -372,7 +372,7 @@ scroll_active = false
 [node name="Vignetta" type="TextureRect" parent="Game/Obiettivo/Sfondo Opaco/Obiettivo_Panel/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 420)
 layout_mode = 2
-texture = ExtResource("11_ir15t")
+texture = ExtResource("12_rysoc")
 expand_mode = 1
 
 [node name="exit" type="Button" parent="Game/Obiettivo/Sfondo Opaco/Obiettivo_Panel"]
