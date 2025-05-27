@@ -10,12 +10,19 @@ const resolutions = {
 	"1280x720": Vector2i(1280,720),
 	"854x480": Vector2i(854,480)
 }
+const npcTutorials = {
+	"eyeTrack" : "res://assets/sprites/Belle.png",
+	"regali" : "res://assets/sprites/Giuseppe.png",
+	"school" : "res://assets/sprites/Rita.png"
+}
 var current_scene = null
 var nextScene = null
 var volume: float = 100
 var resIndex = 0
 var gameState: int = 10
 var end : bool
+var txtTutorial : String = ""
+var npcTutorial : String = ""
 
 func get_gameState() -> int:
 	return gameState
@@ -40,6 +47,18 @@ func is_end(flag : bool):
 
 func get_end() -> bool:
 	return end
+
+func get_txtTutorial() -> String:
+	return txtTutorial
+
+func set_txtTutorial(s : String) -> void:
+	txtTutorial = s
+
+func get_npcTutorial() -> String:
+	return npcTutorial
+
+func set_npcTutorial(s : String) -> void:
+	npcTutorial = s
 
 func _ready():
 	var root = get_tree().root
