@@ -32,7 +32,7 @@ func dataset_caricamento():
 	var parsed: Array = JSON.parse_string(content)
 	npc_dataset = parsed
 
-func npc_caricamento(level: int, label : RichTextLabel, goal : RichTextLabel, vignetta : String):
+func npc_caricamento(level: int, label : RichTextLabel, goal : RichTextLabel, vignetta : TextureRect, npc : TextureRect):
 	if level >= 0 and level < npc_dataset.size():
 		var npc_data = npc_dataset[level]
 		npc_name = npc_data.get("name", "")
@@ -45,6 +45,8 @@ func npc_caricamento(level: int, label : RichTextLabel, goal : RichTextLabel, vi
 		label.set_text(npc_data.get("firstLine",""))
 		goal.set_text(npc_data.get("goal", ""))
 		goal.add_text("\n\nUn esempio di interazione che puoi avere in questo livello:")
+		vignetta.set_texture(load("res://assets/sprites/vignetteGoal/livello"+str(currentLevel)+".png"))
+		npc.set_texture(load("res://assets/sprites/"+npc_name+".png"))
 	else:
 		push_error("Livello fuori dal range del dataset.")
 

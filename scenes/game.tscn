@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cw0ac88cyi2si"]
+[gd_scene load_steps=33 format=3 uid="uid://cw0ac88cyi2si"]
 
 [ext_resource type="Script" uid="uid://bji87yhdq6now" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="2_p57ef"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cuqw0q0lwiugl" path="res://icons/button_send.png" id="4_0tnpc"]
 [ext_resource type="FontFile" uid="uid://b6rxc2cd3gq82" path="res://assets/fonts/Indie_Flower/IndieFlower-Regular.ttf" id="4_gee14"]
 [ext_resource type="Texture2D" uid="uid://ivpscjmkosnj" path="res://icons/settings.png" id="4_ir15t"]
-[ext_resource type="Texture2D" uid="uid://cls268hvgtig" path="res://assets/sprites/mamma.png" id="5_trtic"]
+[ext_resource type="Texture2D" uid="uid://pbad25jeojds" path="res://assets/sprites/Giuseppe.png" id="5_ca42v"]
 [ext_resource type="Texture2D" uid="uid://brvkr7k82xltp" path="res://icons/speech_bubble.png" id="6_vtaks"]
 [ext_resource type="VideoStream" uid="uid://msmqwi28bm25" path="res://assets/videos/loading.ogv" id="8_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://bi62iidwpbxsk" path="res://icons/completedButton.png" id="8_gee14"]
@@ -62,6 +62,8 @@ corner_radius_top_left = 200
 corner_radius_top_right = 200
 corner_radius_bottom_right = 200
 corner_radius_bottom_left = 200
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ca42v"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ca42v"]
 modulate_color = Color(0.6, 0.6, 0.6, 1)
@@ -171,13 +173,27 @@ icon = ExtResource("4_ir15t")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Personaggio" type="TextureRect" parent="Game"]
+[node name="ContainerNpc" type="Panel" parent="Game"]
 layout_mode = 0
 offset_left = 150.0
-offset_top = 1.0
 offset_right = 550.0
-offset_bottom = 1081.0
-texture = ExtResource("5_trtic")
+offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ca42v")
+
+[node name="Personaggio" type="TextureRect" parent="Game/ContainerNpc"]
+custom_minimum_size = Vector2(400, 1080)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -1080.0
+offset_right = 200.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_ca42v")
 expand_mode = 4
 stretch_mode = 5
 
