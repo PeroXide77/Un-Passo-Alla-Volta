@@ -2,16 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="1_g78a7"]
 [ext_resource type="Script" uid="uid://c3aw0y1jo1l53" path="res://scripts/selezione.gd" id="1_jvqic"]
-[ext_resource type="Texture2D" uid="uid://dqr44kkgua7qk" path="res://icons/scribble3.png" id="2_qcxsp"]
+[ext_resource type="ButtonGroup" uid="uid://c3y33hcc07awi" path="res://assets/buttongroup/levels.tres" id="2_5k8eg"]
 [ext_resource type="FontFile" uid="uid://b6rxc2cd3gq82" path="res://assets/fonts/Indie_Flower/IndieFlower-Regular.ttf" id="3_jvqic"]
 [ext_resource type="FontFile" uid="uid://dmwtstgnkr0oc" path="res://assets/fonts/Anton/Anton-Regular.ttf" id="4_qcxsp"]
-[ext_resource type="Texture2D" uid="uid://ivpscjmkosnj" path="res://icons/settings.png" id="6_4oupi"]
-[ext_resource type="ButtonGroup" uid="uid://c3y33hcc07awi" path="res://assets/bg/levels.tres" id="6_niv7q"]
+[ext_resource type="Texture2D" uid="uid://dqr44kkgua7qk" path="res://icons/scribbles/scribble3.png" id="5_5k8eg"]
+[ext_resource type="Texture2D" uid="uid://ivpscjmkosnj" path="res://icons/buttons/settings.png" id="6_iayb8"]
 [ext_resource type="Script" uid="uid://bnaqpofnsnbg0" path="res://scripts/impostazioni.gd" id="8_77leg"]
-[ext_resource type="Texture2D" uid="uid://bs0ybgvbrdwym" path="res://icons/scribble4 .png" id="9_402k4"]
+[ext_resource type="Texture2D" uid="uid://bs0ybgvbrdwym" path="res://icons/scribbles/scribble4 .png" id="9_5k8eg"]
 [ext_resource type="StyleBox" uid="uid://bvaywvbkfe4rj" path="res://assets/styles/hoverButtons.tres" id="10_5k8eg"]
-[ext_resource type="Texture2D" uid="uid://ds186uo7s2om3" path="res://icons/box_not_checked.png" id="11_iayb8"]
-[ext_resource type="Texture2D" uid="uid://c6gdl5iv5pqms" path="res://icons/check.png" id="12_etslg"]
+[ext_resource type="Texture2D" uid="uid://ds186uo7s2om3" path="res://icons/buttons/box_not_checked.png" id="11_5k8eg"]
+[ext_resource type="Texture2D" uid="uid://c6gdl5iv5pqms" path="res://icons/buttons/check.png" id="12_iayb8"]
 [ext_resource type="Theme" uid="uid://im1kev326hh2" path="res://assets/styles/VScrollBarHide.tres" id="13_5k8eg"]
 [ext_resource type="Texture2D" uid="uid://bbvm1b4qelxh8" path="res://assets/sounds/RiccioPortaFortuna.png" id="14_iayb8"]
 
@@ -349,7 +349,7 @@ offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jvqic")
-levelGroup = ExtResource("6_niv7q")
+levelGroup = ExtResource("2_5k8eg")
 
 [node name="Background" type="TextureRect" parent="Selezione"]
 layout_mode = 1
@@ -390,7 +390,7 @@ offset_top = 19.0
 offset_right = -122.0
 offset_bottom = 239.0
 grow_horizontal = 0
-texture = ExtResource("2_qcxsp")
+texture = ExtResource("5_5k8eg")
 
 [node name="impostazioni" type="Button" parent="Selezione"]
 custom_minimum_size = Vector2(100, 100)
@@ -410,7 +410,7 @@ theme_override_font_sizes/font_size = 84
 theme_override_styles/hover = SubResource("StyleBoxFlat_orxjh")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_phirj")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3rg6s")
-icon = ExtResource("6_4oupi")
+icon = ExtResource("6_iayb8")
 icon_alignment = 1
 expand_icon = true
 
@@ -471,7 +471,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_osl04")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3spg2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_qcxsp")
 toggle_mode = true
-button_group = ExtResource("6_niv7q")
+button_group = ExtResource("2_5k8eg")
 text = "Livello 0 - Tutorial"
 metadata/lv = 0
 
@@ -497,7 +497,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jvqic")
 toggle_mode = true
-button_group = ExtResource("6_niv7q")
+button_group = ExtResource("2_5k8eg")
 text = "Livello 1"
 metadata/lv = 1
 
@@ -524,7 +524,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_niv7q")
 toggle_mode = true
-button_group = ExtResource("6_niv7q")
+button_group = ExtResource("2_5k8eg")
 text = "Livello 2"
 metadata/lv = 2
 
@@ -551,7 +551,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_4oupi")
 toggle_mode = true
-button_group = ExtResource("6_niv7q")
+button_group = ExtResource("2_5k8eg")
 text = "Livello 3"
 metadata/lv = 3
 
@@ -578,7 +578,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_hcfbj")
 toggle_mode = true
-button_group = ExtResource("6_niv7q")
+button_group = ExtResource("2_5k8eg")
 text = "Livello 4"
 metadata/lv = 4
 
@@ -605,7 +605,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8cy15")
 toggle_mode = true
-button_group = ExtResource("6_niv7q")
+button_group = ExtResource("2_5k8eg")
 text = "Livello 5"
 metadata/lv = 5
 
@@ -632,7 +632,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_131la")
 toggle_mode = true
-button_group = ExtResource("6_niv7q")
+button_group = ExtResource("2_5k8eg")
 text = "Livello 6"
 metadata/lv = 6
 
@@ -659,7 +659,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ie5wk")
 toggle_mode = true
-button_group = ExtResource("6_niv7q")
+button_group = ExtResource("2_5k8eg")
 text = "Livello 7"
 metadata/lv = 7
 
@@ -686,7 +686,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_77leg")
 toggle_mode = true
-button_group = ExtResource("6_niv7q")
+button_group = ExtResource("2_5k8eg")
 text = "Livello 8"
 metadata/lv = 8
 
@@ -713,7 +713,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_402k4")
 toggle_mode = true
-button_group = ExtResource("6_niv7q")
+button_group = ExtResource("2_5k8eg")
 text = "Livello 9"
 metadata/lv = 9
 
@@ -740,7 +740,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_74q7a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jmhxh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_5k8eg")
 toggle_mode = true
-button_group = ExtResource("6_niv7q")
+button_group = ExtResource("2_5k8eg")
 text = "Livello 10"
 metadata/lv = 10
 
@@ -922,7 +922,7 @@ ticks_on_borders = true
 
 [node name="Scribble4" type="TextureRect" parent="Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("9_402k4")
+texture = ExtResource("9_5k8eg")
 
 [node name="VideoP" type="Panel" parent="Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
 custom_minimum_size = Vector2(0, 300)
@@ -1000,7 +1000,7 @@ theme_override_styles/pressed = ExtResource("10_5k8eg")
 toggle_mode = true
 action_mode = 0
 text = "SCHERMO INTERO"
-icon = ExtResource("11_iayb8")
+icon = ExtResource("11_5k8eg")
 flat = true
 
 [node name="CheckFS" type="TextureRect" parent="Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen"]
@@ -1010,7 +1010,7 @@ offset_left = -2.0
 offset_top = -5.0
 offset_right = 93.0
 offset_bottom = 82.0
-texture = ExtResource("12_etslg")
+texture = ExtResource("12_iayb8")
 expand_mode = 1
 
 [node name="Ritorna Indietro" type="Button" parent="Impostazioni/SfondoTrasparent/BoxImpostazioni"]

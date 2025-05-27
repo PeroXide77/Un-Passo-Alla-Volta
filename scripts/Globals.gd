@@ -11,9 +11,9 @@ const resolutions = {
 	"854x480": Vector2i(854,480)
 }
 const npcTutorials = {
-	"eyeTrack" : "res://assets/sprites/Belle.png",
-	"regali" : "res://assets/sprites/Giuseppe.png",
-	"school" : "res://assets/sprites/Rita.png"
+	"eyeTrack" : "res://assets/sprites/NPC/Belle.png",
+	"regali" : "res://assets/sprites/NPC/Giuseppe.png",
+	"school" : "res://assets/sprites/NPC/Rita.png"
 }
 var current_scene = null
 var nextScene = null

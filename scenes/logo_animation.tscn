@@ -1,18 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://di5xpmx77tnki"]
+[gd_scene load_steps=3 format=3 uid="uid://di5xpmx77tnki"]
 
 [ext_resource type="Script" uid="uid://dbb6i1hwxpxa4" path="res://scripts/logo_iniziale.gd" id="1_hffep"]
-[ext_resource type="VideoStream" uid="uid://ci48sdv2fc5fk" path="res://icons/Animazione Chandelier Light - Bianco.ogv" id="2_m5opr"]
-
-[sub_resource type="GDScript" id="GDScript_3mj7a"]
-script/source = "extends Node2D
-"
-
-[sub_resource type="GDScript" id="GDScript_wpx6u"]
-script/source = "extends VideoStreamPlayer
-"
+[ext_resource type="VideoStream" uid="uid://ci48sdv2fc5fk" path="res://assets/videos/Animazione Chandelier Light - Bianco.ogv" id="2_wpx6u"]
 
 [node name="Animation_Team" type="Node2D"]
-script = SubResource("GDScript_3mj7a")
 
 [node name="Logo_Iniziale" type="Control" parent="."]
 layout_mode = 3
@@ -34,9 +25,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-stream = ExtResource("2_m5opr")
+stream = ExtResource("2_wpx6u")
 autoplay = true
 expand = true
-script = SubResource("GDScript_wpx6u")
 
 [connection signal="finished" from="Logo_Iniziale/VideoStreamPlayer" to="Logo_Iniziale" method="_on_video_stream_player_finished"]

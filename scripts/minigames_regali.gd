@@ -4,8 +4,8 @@ extends Control
 @onready var preMinigame : Popup = $preMinigame
 
 func _init() -> void:
-	await Globals.set_txtTutorial("Testo prova per il tutorial di minigioco regali")
-	await Globals.set_npcTutorial("res://assets/sprites/Rita.png")
+	Globals.set_txtTutorial("Testo prova per il tutorial di minigioco regali")
+	Globals.set_npcTutorial("res://assets/sprites/NPC/Rita.png")
 
 func _ready() -> void:
 	preMinigame.popup()

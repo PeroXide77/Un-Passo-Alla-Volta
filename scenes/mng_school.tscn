@@ -1,19 +1,18 @@
-[gd_scene load_steps=22 format=3 uid="uid://cvu1yt4it0onx"]
+[gd_scene load_steps=21 format=3 uid="uid://cvu1yt4it0onx"]
 
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="1_1r1m4"]
 [ext_resource type="Script" uid="uid://cxon8uwj2anrb" path="res://scripts/minigames_school.gd" id="1_f5ayh"]
 [ext_resource type="FontFile" uid="uid://b6rxc2cd3gq82" path="res://assets/fonts/Indie_Flower/IndieFlower-Regular.ttf" id="2_f5ayh"]
-[ext_resource type="Texture2D" uid="uid://ivpscjmkosnj" path="res://icons/settings.png" id="3_vxyda"]
 [ext_resource type="FontFile" uid="uid://dmwtstgnkr0oc" path="res://assets/fonts/Anton/Anton-Regular.ttf" id="4_bj11i"]
+[ext_resource type="Texture2D" uid="uid://ivpscjmkosnj" path="res://icons/buttons/settings.png" id="4_k7hxd"]
 [ext_resource type="Script" uid="uid://bnaqpofnsnbg0" path="res://scripts/impostazioni.gd" id="5_k7hxd"]
-[ext_resource type="Texture2D" uid="uid://bs0ybgvbrdwym" path="res://icons/scribble4 .png" id="6_6iamy"]
 [ext_resource type="StyleBox" uid="uid://bvaywvbkfe4rj" path="res://assets/styles/hoverButtons.tres" id="7_x0tsx"]
-[ext_resource type="Texture2D" uid="uid://ds186uo7s2om3" path="res://icons/box_not_checked.png" id="8_u3vfo"]
-[ext_resource type="Texture2D" uid="uid://c6gdl5iv5pqms" path="res://icons/check.png" id="9_6fswv"]
+[ext_resource type="Texture2D" uid="uid://ds186uo7s2om3" path="res://icons/buttons/box_not_checked.png" id="8_k7hxd"]
+[ext_resource type="Texture2D" uid="uid://c6gdl5iv5pqms" path="res://icons/buttons/check.png" id="9_6iamy"]
 [ext_resource type="Script" uid="uid://wsnks8tlquy6" path="res://scripts/pre_minigame.gd" id="11_6iamy"]
-[ext_resource type="Texture2D" uid="uid://cls268hvgtig" path="res://assets/sprites/mamma.png" id="12_x0tsx"]
+[ext_resource type="Texture2D" uid="uid://ckst01muk6v73" path="res://assets/sprites/NPC/Belle.png" id="11_k7hxd"]
 [ext_resource type="Texture2D" uid="uid://brvkr7k82xltp" path="res://icons/speech_bubble.png" id="13_u3vfo"]
-[ext_resource type="Texture2D" uid="uid://bi62iidwpbxsk" path="res://icons/completedButton.png" id="14_6fswv"]
+[ext_resource type="Texture2D" uid="uid://bi62iidwpbxsk" path="res://icons/buttons/completedButton.png" id="13_x0tsx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ru0os"]
 border_width_left = 3
@@ -117,7 +116,7 @@ theme_override_font_sizes/font_size = 84
 theme_override_styles/hover = SubResource("StyleBoxFlat_ru0os")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_37uvj")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jb13w")
-icon = ExtResource("3_vxyda")
+icon = ExtResource("4_k7hxd")
 icon_alignment = 1
 expand_icon = true
 
@@ -232,10 +231,6 @@ grow_horizontal = 2
 grow_vertical = 2
 ticks_on_borders = true
 
-[node name="Scribble4" type="TextureRect" parent="minigames_school/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
-layout_mode = 2
-texture = ExtResource("6_6iamy")
-
 [node name="VideoP" type="Panel" parent="minigames_school/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
@@ -312,7 +307,7 @@ theme_override_styles/pressed = ExtResource("7_x0tsx")
 toggle_mode = true
 action_mode = 0
 text = "SCHERMO INTERO"
-icon = ExtResource("8_u3vfo")
+icon = ExtResource("8_k7hxd")
 flat = true
 
 [node name="CheckFS" type="TextureRect" parent="minigames_school/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen"]
@@ -322,7 +317,7 @@ offset_left = -2.0
 offset_top = -5.0
 offset_right = 93.0
 offset_bottom = 82.0
-texture = ExtResource("9_6fswv")
+texture = ExtResource("9_6iamy")
 expand_mode = 1
 
 [node name="Ritorna Indietro" type="Button" parent="minigames_school/Impostazioni/SfondoTrasparent/BoxImpostazioni"]
@@ -366,7 +361,7 @@ offset_left = 150.0
 offset_top = 1.0
 offset_right = 550.0
 offset_bottom = 1081.0
-texture = ExtResource("12_x0tsx")
+texture = ExtResource("11_k7hxd")
 expand_mode = 4
 stretch_mode = 5
 
@@ -404,7 +399,7 @@ focus_mode = 0
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-icon = ExtResource("14_6fswv")
+icon = ExtResource("13_x0tsx")
 flat = true
 icon_alignment = 1
 expand_icon = true
