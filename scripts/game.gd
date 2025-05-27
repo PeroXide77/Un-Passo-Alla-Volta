@@ -104,7 +104,7 @@ func _on_impostazioni_pressed() -> void:
 func _on_exit_pressed() -> void:
 	obiettivo_page.hide()
 
-func _on_showGoal_toggled(toggled_on: bool) -> void:
+func _on_showGoal_toggled(_toggled_on: bool) -> void:
 	checkGoal.set_visible(true)
 	await get_tree().create_timer(0.5).timeout
 	impost.hide()

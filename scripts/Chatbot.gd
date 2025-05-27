@@ -20,7 +20,7 @@ func set_currentLevel(lv: int):
 	currentLevel = lv
 
 func dataset_caricamento():
-	var file_path := "res://assets/sprites/first_dataset_UnPassoAllaVolta.json"
+	var file_path := "res://assets/sprites/datasets/first_dataset_UnPassoAllaVolta.json"
 	if not FileAccess.file_exists(file_path):
 		push_error("Il file NPC non esiste: " + file_path)
 		return
@@ -46,12 +46,12 @@ func npc_caricamento(level: int, label : RichTextLabel, goal : RichTextLabel, vi
 		goal.set_text(npc_data.get("goal", ""))
 		goal.add_text("\n\nUn esempio di interazione che puoi avere in questo livello:")
 		vignetta.set_texture(load("res://assets/sprites/vignetteGoal/livello"+str(currentLevel)+".png"))
-		npc.set_texture(load("res://assets/sprites/"+npc_name+".png"))
+		npc.set_texture(load("res://assets/sprites/NPC/"+npc_name+".png"))
 	else:
 		push_error("Livello fuori dal range del dataset.")
 
 func dataset_caricamento_TIPS():
-	var file_path := "res://assets/sprites/dataset_TIPS.json"
+	var file_path := "res://assets/sprites/datasets/dataset_TIPS.json"
 	if not FileAccess.file_exists(file_path):
 		push_error("Il file TIPS non esiste: " + file_path)
 		return

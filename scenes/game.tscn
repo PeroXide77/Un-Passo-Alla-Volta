@@ -3,19 +3,19 @@
 [ext_resource type="Script" uid="uid://bji87yhdq6now" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="2_p57ef"]
 [ext_resource type="FontFile" uid="uid://dmwtstgnkr0oc" path="res://assets/fonts/Anton/Anton-Regular.ttf" id="3_u5sy4"]
-[ext_resource type="Texture2D" uid="uid://cuqw0q0lwiugl" path="res://icons/button_send.png" id="4_0tnpc"]
+[ext_resource type="Texture2D" uid="uid://ivpscjmkosnj" path="res://icons/buttons/settings.png" id="4_ca42v"]
 [ext_resource type="FontFile" uid="uid://b6rxc2cd3gq82" path="res://assets/fonts/Indie_Flower/IndieFlower-Regular.ttf" id="4_gee14"]
-[ext_resource type="Texture2D" uid="uid://ivpscjmkosnj" path="res://icons/settings.png" id="4_ir15t"]
-[ext_resource type="Texture2D" uid="uid://pbad25jeojds" path="res://assets/sprites/Giuseppe.png" id="5_ca42v"]
+[ext_resource type="Texture2D" uid="uid://ckst01muk6v73" path="res://assets/sprites/NPC/Belle.png" id="5_ca42v"]
+[ext_resource type="Texture2D" uid="uid://cuqw0q0lwiugl" path="res://icons/buttons/button_send.png" id="6_rysoc"]
 [ext_resource type="Texture2D" uid="uid://brvkr7k82xltp" path="res://icons/speech_bubble.png" id="6_vtaks"]
 [ext_resource type="VideoStream" uid="uid://msmqwi28bm25" path="res://assets/videos/loading.ogv" id="8_0tnpc"]
-[ext_resource type="Texture2D" uid="uid://bi62iidwpbxsk" path="res://icons/completedButton.png" id="8_gee14"]
 [ext_resource type="Theme" uid="uid://im1kev326hh2" path="res://assets/styles/VScrollBarHide.tres" id="9_ca42v"]
+[ext_resource type="Texture2D" uid="uid://bi62iidwpbxsk" path="res://icons/buttons/completedButton.png" id="10_ssvqc"]
 [ext_resource type="Script" uid="uid://bnaqpofnsnbg0" path="res://scripts/impostazioni.gd" id="10_trtic"]
 [ext_resource type="StyleBox" uid="uid://bvaywvbkfe4rj" path="res://assets/styles/hoverButtons.tres" id="12_ca42v"]
-[ext_resource type="Texture2D" uid="uid://cms1xbm5qexg7" path="res://assets/sprites/vignetteGoal/livello1.png" id="12_rysoc"]
-[ext_resource type="Texture2D" uid="uid://ds186uo7s2om3" path="res://icons/box_not_checked.png" id="13_rysoc"]
-[ext_resource type="Texture2D" uid="uid://c6gdl5iv5pqms" path="res://icons/check.png" id="14_ssvqc"]
+[ext_resource type="Texture2D" uid="uid://bsxc668cslxw" path="res://assets/sprites/vignetteGoal/livello1.png" id="12_rysoc"]
+[ext_resource type="Texture2D" uid="uid://ds186uo7s2om3" path="res://icons/buttons/box_not_checked.png" id="15_ca42v"]
+[ext_resource type="Texture2D" uid="uid://c6gdl5iv5pqms" path="res://icons/buttons/check.png" id="16_rysoc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trtic"]
 bg_color = Color(0.340339, 0.340339, 0.340339, 1)
@@ -169,7 +169,7 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_trtic")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ca42v")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rysoc")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ssvqc")
-icon = ExtResource("4_ir15t")
+icon = ExtResource("4_ca42v")
 icon_alignment = 1
 expand_icon = true
 
@@ -205,7 +205,7 @@ offset_right = 1161.0
 offset_bottom = 917.0
 focus_mode = 0
 theme_override_styles/hover = SubResource("StyleBoxTexture_ca42v")
-icon = ExtResource("4_0tnpc")
+icon = ExtResource("6_rysoc")
 flat = true
 icon_alignment = 1
 expand_icon = true
@@ -303,6 +303,7 @@ expand = true
 loop = true
 
 [node name="Completed" type="Button" parent="Game"]
+visible = false
 layout_mode = 0
 offset_left = 1280.0
 offset_top = 116.0
@@ -312,7 +313,7 @@ focus_mode = 0
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-icon = ExtResource("8_gee14")
+icon = ExtResource("10_ssvqc")
 flat = true
 icon_alignment = 1
 expand_icon = true
@@ -514,7 +515,7 @@ theme_override_styles/pressed = ExtResource("12_ca42v")
 toggle_mode = true
 action_mode = 0
 text = "RIVEDI OBIETTIVO"
-icon = ExtResource("13_rysoc")
+icon = ExtResource("15_ca42v")
 flat = true
 
 [node name="CheckGoal" type="TextureRect" parent="Game/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/showGoal"]
@@ -524,7 +525,7 @@ offset_left = -2.0
 offset_top = -5.0
 offset_right = 93.0
 offset_bottom = 82.0
-texture = ExtResource("14_ssvqc")
+texture = ExtResource("16_rysoc")
 expand_mode = 1
 
 [node name="VideoP" type="Panel" parent="Game/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
@@ -605,7 +606,7 @@ theme_override_styles/pressed = ExtResource("12_ca42v")
 toggle_mode = true
 action_mode = 0
 text = "SCHERMO INTERO"
-icon = ExtResource("13_rysoc")
+icon = ExtResource("15_ca42v")
 flat = true
 
 [node name="CheckFS" type="TextureRect" parent="Game/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen"]
@@ -615,7 +616,7 @@ offset_left = -2.0
 offset_top = -5.0
 offset_right = 93.0
 offset_bottom = 82.0
-texture = ExtResource("14_ssvqc")
+texture = ExtResource("16_rysoc")
 expand_mode = 1
 
 [node name="Ritorna Indietro" type="Button" parent="Game/Impostazioni/SfondoTrasparent/BoxImpostazioni"]

@@ -5,7 +5,7 @@ extends Control
 
 func _init() -> void:
 	Globals.set_txtTutorial("Testo prova per il tutorial di minigioco eyeTrack")
-	Globals.set_npcTutorial("res://assets/sprites/Belle.png")
+	Globals.set_npcTutorial("res://assets/sprites/NPC/Belle.png")
 
 func _ready() -> void:
 	preMinigame.popup()
