@@ -19,10 +19,11 @@ var current_scene = null
 var nextScene = null
 var volume: float = 100
 var resIndex = 0
-var gameState: int = 10
+var gameState: int = 1
 var end : bool
 var txtTutorial : String = ""
 var npcTutorial : String = ""
+var flagDiario : bool = false
 
 func get_gameState() -> int:
 	return gameState
@@ -35,6 +36,12 @@ func get_volume() -> float:
 
 func set_volume(v: float):
 	volume = v
+
+func get_flag() -> bool:
+	return flagDiario
+
+func set_flag(f: bool):
+	flagDiario = f
 
 func get_nextScene() -> String:
 	return nextScene

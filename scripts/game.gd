@@ -96,6 +96,7 @@ func completed_level() -> void:
 func _on_completed_pressed() -> void:
 	if Chatbot.get_currentLevel() == Globals.get_gameState():
 		Globals.nextState()
+	Globals.set_flag(false)
 	Globals.goto_load_scene("res://scenes/rinforzo_positivo.tscn")
 
 func _on_impostazioni_pressed() -> void:

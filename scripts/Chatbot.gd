@@ -44,7 +44,7 @@ func npc_caricamento(level: int, label : RichTextLabel, goal : RichTextLabel, vi
 		conversation_history.append({"role": "assistant", "content": npc_data.get("firstLine", "")})
 		label.set_text(npc_data.get("firstLine",""))
 		goal.set_text(npc_data.get("goal", ""))
-		goal.add_text("\n\nUn esempio di interazione che puoi avere in questo livello:")
+		goal.add_text("\n\nUn esempio di interazione che puoi avere in questo livello:\n")
 		vignetta.set_texture(load("res://assets/sprites/vignetteGoal/livello"+str(currentLevel)+".png"))
 		npc.set_texture(load("res://assets/sprites/NPC/"+npc_name+".png"))
 	else:
