@@ -4,6 +4,7 @@ extends Control
 @onready var checkImp = $VBoxContainer/Impostazioni/CheckImp
 @onready var checkExit = $VBoxContainer/Exit/CheckExit
 @onready var checkMng = $VBoxContainer/Minigames/CheckMng
+@onready var checkDPT = $VBoxContainer/Diario/CheckDPT
 @onready var impPopUp = $Impostazioni
 @onready var options = get_tree().get_nodes_in_group("options")
 @onready var scribble2_n : TextureRect = $Background/Scribble2
@@ -46,6 +47,11 @@ func _on_minigames_pressed() -> void:
 	await get_tree().create_timer(0.5).timeout
 	Globals.goto_load_scene("res://scenes/minigames.tscn")
 
+func _on_diario_pressed() -> void:
+	checkDPT.set_visible(true)
+	await get_tree().create_timer(0.5).timeout
+	Globals.set_flag(true)
+	Globals.goto_load_scene("res://scenes/rinforzo_positivo.tscn")
 
 func _on_scribble_2_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:

@@ -14,17 +14,21 @@ func _ready() -> void:
 func _on_return_pressed() -> void:
 	if Chatbot.get_currentLevel() == 10 :
 		Globals.is_end(true)
-	postItLevel.set_self_modulate(Color("ffffff"))
-	Globals.goto_load_scene("res://scenes/selezione_livelli.tscn")
+	if !Globals.get_flag() :
+		postItLevel.set_self_modulate(Color("ffffff"))
+		Globals.goto_load_scene("res://scenes/selezione_livelli.tscn")
+	else :
+		Globals.goto_load_scene("res://scenes/mainmenu.tscn")
 
 func show_postIts() -> void:
 	var gs = Globals.get_gameState()
 	for postIt in postIts:
 		if postIt.get_meta("lv") < gs:
 			postIt.set_visible(true)
-		if postIt.get_meta("lv") == Chatbot.get_currentLevel():
-			postIt.set_self_modulate(Color("7fff00"))
-			postItLevel = postIt
+		if !Globals.get_flag() :
+			if postIt.get_meta("lv") == Chatbot.get_currentLevel():
+				postIt.set_self_modulate(Color("7fff00"))
+				postItLevel = postIt
 
 func _on_postIt_gui_input(event: InputEvent, postIt: TextureRect) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
