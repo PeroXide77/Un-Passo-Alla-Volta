@@ -15,6 +15,15 @@ const npcTutorials = {
 	"regali" : "res://assets/sprites/NPC/Giuseppe.png",
 	"school" : "res://assets/sprites/NPC/Rita.png"
 }
+const eyesId = {
+	0 : "arrabbiato",
+	1 : "felice",
+	2 : "neutro",
+	3 : "sorpreso",
+	4 : "sospettoso",
+	5 : "spaventato",
+	6 : "triste"
+}
 var current_scene = null
 var nextScene = null
 var volume: float = 100
