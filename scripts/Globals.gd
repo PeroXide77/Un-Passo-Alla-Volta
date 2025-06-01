@@ -15,6 +15,15 @@ const npcTutorials = {
 	"regali" : "res://assets/sprites/NPC/Giuseppe.png",
 	"school" : "res://assets/sprites/NPC/Rita.png"
 }
+const eyesId = {
+	0 : "arrabbiato",
+	1 : "felice",
+	2 : "neutro",
+	3 : "sorpreso",
+	4 : "sospettoso",
+	5 : "spaventato",
+	6 : "triste"
+}
 var current_scene = null
 var nextScene = null
 var volume: float = 100
@@ -23,6 +32,7 @@ var gameState: int = 10
 var end : bool
 var txtTutorial : String = ""
 var npcTutorial : String = ""
+var flagMinigameEnd : bool = false
 var flagDiario : bool = false
 
 func get_gameState() -> int:
@@ -66,6 +76,12 @@ func get_npcTutorial() -> String:
 
 func set_npcTutorial(s : String) -> void:
 	npcTutorial = s
+
+func setFlagMinigameEnd(b: bool) -> void:
+	flagMinigameEnd = b
+
+func isMinigameEnded() -> bool:
+	return flagMinigameEnd
 
 func _ready():
 	var root = get_tree().root

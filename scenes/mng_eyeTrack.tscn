@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://chuwiaogvuibx"]
+[gd_scene load_steps=32 format=3 uid="uid://chuwiaogvuibx"]
 
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="1_cusv3"]
 [ext_resource type="Script" uid="uid://dq6ta158kp0ay" path="res://scripts/minigames_eye_track.gd" id="1_u5qg0"]
@@ -9,16 +9,19 @@
 [ext_resource type="StyleBox" uid="uid://bvaywvbkfe4rj" path="res://assets/styles/hoverButtons.tres" id="7_ft4vf"]
 [ext_resource type="Texture2D" uid="uid://ds186uo7s2om3" path="res://icons/buttons/box_not_checked.png" id="8_38vst"]
 [ext_resource type="Texture2D" uid="uid://c6gdl5iv5pqms" path="res://icons/buttons/check.png" id="9_ft4vf"]
-[ext_resource type="Script" uid="uid://wsnks8tlquy6" path="res://scripts/pre_minigame.gd" id="11_38vst"]
 [ext_resource type="Texture2D" uid="uid://ckst01muk6v73" path="res://assets/sprites/NPC/Belle.png" id="11_onpga"]
 [ext_resource type="Texture2D" uid="uid://brvkr7k82xltp" path="res://icons/speech_bubble.png" id="12_38vst"]
+[ext_resource type="Script" uid="uid://bk10uffv0x3da" path="res://scripts/npcMinigames.gd" id="12_ul30a"]
 [ext_resource type="Texture2D" uid="uid://bi62iidwpbxsk" path="res://icons/buttons/completedButton.png" id="13_onpga"]
 [ext_resource type="StyleBox" uid="uid://c2at70f554xs7" path="res://assets/styles/eyeGameEyes.tres" id="14_65phu"]
 [ext_resource type="StyleBox" uid="uid://calhlokhj8v26" path="res://assets/styles/eyeGamesSelected.tres" id="15_4xxjb"]
 [ext_resource type="Texture2D" uid="uid://cfa5fw1v4lx1f" path="res://assets/sprites/eyeMinigame/arrabbiato.jpg" id="15_qnoa5"]
 [ext_resource type="ButtonGroup" uid="uid://th220pwxnr0f" path="res://assets/buttongroup/eyes.tres" id="16_0fi1v"]
+[ext_resource type="StyleBox" uid="uid://shtqua81hai6" path="res://assets/styles/eyeGameCheck.tres" id="16_0hko8"]
+[ext_resource type="StyleBox" uid="uid://cjsaal7fpb7js" path="res://assets/styles/eyeGameDisabled.tres" id="16_3sawx"]
 [ext_resource type="Texture2D" uid="uid://dceyacmn42ud7" path="res://assets/sprites/eyeMinigame/triste.jpg" id="16_4xxjb"]
 [ext_resource type="Texture2D" uid="uid://bk11khogpjj4v" path="res://assets/sprites/eyeMinigame/sorpreso.jpg" id="17_0fi1v"]
+[ext_resource type="StyleBox" uid="uid://dc85ys8e776cx" path="res://assets/styles/eyeGameEmotion.tres" id="18_h54jj"]
 [ext_resource type="ButtonGroup" uid="uid://l3krf2gol6n0" path="res://assets/buttongroup/emotions.tres" id="20_0fi1v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnoa5"]
@@ -75,30 +78,6 @@ corner_radius_top_left = 90
 corner_radius_top_right = 90
 corner_radius_bottom_right = 90
 corner_radius_bottom_left = 90
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3sawx"]
-bg_color = Color(1, 1, 0.262745, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 90
-corner_radius_top_right = 90
-corner_radius_bottom_right = 90
-corner_radius_bottom_left = 90
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ul30a"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
 
 [node name="Node2D" type="Node2D"]
 
@@ -387,68 +366,6 @@ text_overrun_behavior = 2
 icon_alignment = 1
 expand_icon = true
 
-[node name="preMinigame" type="Popup" parent="minigames_eyeTrack"]
-auto_translate_mode = 1
-transparent_bg = true
-size = Vector2i(1920, 1080)
-script = ExtResource("11_38vst")
-
-[node name="SfondoTrasparent" type="Panel" parent="minigames_eyeTrack/preMinigame"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Personaggio" type="TextureRect" parent="minigames_eyeTrack/preMinigame/SfondoTrasparent"]
-layout_mode = 0
-offset_left = 150.0
-offset_top = 1.0
-offset_right = 550.0
-offset_bottom = 1081.0
-texture = ExtResource("11_onpga")
-expand_mode = 4
-stretch_mode = 5
-
-[node name="Speech Bubble Output" type="TextureRect" parent="minigames_eyeTrack/preMinigame/SfondoTrasparent"]
-layout_mode = 0
-offset_left = 539.0
-offset_top = 39.0
-offset_right = 1233.0
-offset_bottom = 465.0
-texture = ExtResource("12_38vst")
-expand_mode = 1
-
-[node name="Speech" type="RichTextLabel" parent="minigames_eyeTrack/preMinigame/SfondoTrasparent/Speech Bubble Output"]
-layout_mode = 0
-offset_left = 37.0
-offset_top = 37.0
-offset_right = 656.0
-offset_bottom = 332.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_constants/line_separation = -5
-theme_override_fonts/normal_font = ExtResource("2_u5qg0")
-theme_override_font_sizes/normal_font_size = 45
-text = "giao
-fiao"
-scroll_following = true
-
-[node name="Completed" type="Button" parent="minigames_eyeTrack/preMinigame/SfondoTrasparent"]
-visible = false
-layout_mode = 0
-offset_left = 1278.0
-offset_top = 609.0
-offset_right = 1668.0
-offset_bottom = 958.0
-focus_mode = 0
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-icon = ExtResource("13_onpga")
-flat = true
-icon_alignment = 1
-expand_icon = true
-
 [node name="Gioco" type="HBoxContainer" parent="minigames_eyeTrack"]
 custom_minimum_size = Vector2(1700, 700)
 layout_mode = 1
@@ -485,8 +402,9 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_u5qg0")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_h54jj")
-theme_override_styles/hover = ExtResource("14_65phu")
+theme_override_styles/disabled = ExtResource("16_3sawx")
+theme_override_styles/hover_pressed = ExtResource("16_0hko8")
+theme_override_styles/hover = ExtResource("18_h54jj")
 theme_override_styles/pressed = ExtResource("15_4xxjb")
 theme_override_styles/normal = ExtResource("14_65phu")
 toggle_mode = true
@@ -494,6 +412,8 @@ button_group = ExtResource("16_0fi1v")
 icon = ExtResource("15_qnoa5")
 icon_alignment = 1
 metadata/lv = 0
+metadata/done = false
+metadata/emotion = ""
 
 [node name="Spazio1" type="TextureRect" parent="minigames_eyeTrack/Gioco/Occhi"]
 custom_minimum_size = Vector2(0, 25)
@@ -512,9 +432,9 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_u5qg0")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/focus = SubResource("StyleBoxFlat_3sawx")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_h54jj")
-theme_override_styles/hover = ExtResource("14_65phu")
+theme_override_styles/disabled = ExtResource("16_3sawx")
+theme_override_styles/hover_pressed = ExtResource("16_0hko8")
+theme_override_styles/hover = ExtResource("18_h54jj")
 theme_override_styles/pressed = ExtResource("15_4xxjb")
 theme_override_styles/normal = ExtResource("14_65phu")
 toggle_mode = true
@@ -522,6 +442,8 @@ button_group = ExtResource("16_0fi1v")
 icon = ExtResource("16_4xxjb")
 icon_alignment = 1
 metadata/lv = 0
+metadata/done = false
+metadata/emotion = ""
 
 [node name="Spazio2" type="TextureRect" parent="minigames_eyeTrack/Gioco/Occhi"]
 custom_minimum_size = Vector2(0, 25)
@@ -540,8 +462,9 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_u5qg0")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_h54jj")
-theme_override_styles/hover = ExtResource("14_65phu")
+theme_override_styles/disabled = ExtResource("16_3sawx")
+theme_override_styles/hover_pressed = ExtResource("16_0hko8")
+theme_override_styles/hover = ExtResource("18_h54jj")
 theme_override_styles/pressed = ExtResource("15_4xxjb")
 theme_override_styles/normal = ExtResource("14_65phu")
 toggle_mode = true
@@ -549,6 +472,8 @@ button_group = ExtResource("16_0fi1v")
 icon = ExtResource("17_0fi1v")
 icon_alignment = 1
 metadata/lv = 0
+metadata/done = false
+metadata/emotion = ""
 
 [node name="Emozioni" type="VBoxContainer" parent="minigames_eyeTrack/Gioco"]
 custom_minimum_size = Vector2(850, 0)
@@ -571,12 +496,16 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_u5qg0")
 theme_override_font_sizes/font_size = 70
-theme_override_styles/normal = SubResource("StyleBoxFlat_ul30a")
+theme_override_styles/disabled = ExtResource("16_3sawx")
+theme_override_styles/hover = ExtResource("14_65phu")
+theme_override_styles/pressed = ExtResource("15_4xxjb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_h54jj")
 toggle_mode = true
 button_group = ExtResource("20_0fi1v")
 text = "RABBIA"
 icon_alignment = 1
 metadata/lv = 0
+metadata/done = false
 
 [node name="Spazio1" type="TextureRect" parent="minigames_eyeTrack/Gioco/Emozioni"]
 custom_minimum_size = Vector2(0, 25)
@@ -595,12 +524,16 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_u5qg0")
 theme_override_font_sizes/font_size = 70
-theme_override_styles/normal = SubResource("StyleBoxFlat_ul30a")
+theme_override_styles/disabled = ExtResource("16_3sawx")
+theme_override_styles/hover = ExtResource("14_65phu")
+theme_override_styles/pressed = ExtResource("15_4xxjb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_h54jj")
 toggle_mode = true
 button_group = ExtResource("20_0fi1v")
 text = "SORPRESO"
 icon_alignment = 1
 metadata/lv = 0
+metadata/done = false
 
 [node name="Spazio2" type="TextureRect" parent="minigames_eyeTrack/Gioco/Emozioni"]
 custom_minimum_size = Vector2(0, 25)
@@ -619,16 +552,88 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_u5qg0")
 theme_override_font_sizes/font_size = 70
-theme_override_styles/normal = SubResource("StyleBoxFlat_ul30a")
+theme_override_styles/disabled = ExtResource("16_3sawx")
+theme_override_styles/hover = ExtResource("14_65phu")
+theme_override_styles/pressed = ExtResource("15_4xxjb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_h54jj")
 toggle_mode = true
 button_group = ExtResource("20_0fi1v")
 text = "TRISTE"
 icon_alignment = 1
 metadata/lv = 0
+metadata/done = false
+
+[node name="Npc" type="Panel" parent="minigames_eyeTrack"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("12_ul30a")
+
+[node name="SfondoTrasparent" type="Panel" parent="minigames_eyeTrack/Npc"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Personaggio" type="TextureRect" parent="minigames_eyeTrack/Npc/SfondoTrasparent"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 1.0
+offset_right = 550.0
+offset_bottom = 1081.0
+texture = ExtResource("11_onpga")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Speech Bubble Output" type="TextureRect" parent="minigames_eyeTrack/Npc/SfondoTrasparent"]
+layout_mode = 0
+offset_left = 539.0
+offset_top = 39.0
+offset_right = 1233.0
+offset_bottom = 465.0
+texture = ExtResource("12_38vst")
+expand_mode = 1
+
+[node name="Speech" type="RichTextLabel" parent="minigames_eyeTrack/Npc/SfondoTrasparent/Speech Bubble Output"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 37.0
+offset_right = 656.0
+offset_bottom = 332.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -5
+theme_override_fonts/normal_font = ExtResource("2_u5qg0")
+theme_override_font_sizes/normal_font_size = 45
+text = "giao
+fiao"
+scroll_following = true
+
+[node name="Completed" type="Button" parent="minigames_eyeTrack/Npc/SfondoTrasparent"]
+visible = false
+layout_mode = 0
+offset_left = 1278.0
+offset_top = 609.0
+offset_right = 1668.0
+offset_bottom = 958.0
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+icon = ExtResource("13_onpga")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [connection signal="pressed" from="minigames_eyeTrack/impostazioni" to="minigames_eyeTrack" method="_on_impostazioni_pressed"]
 [connection signal="pressed" from="minigames_eyeTrack/Ritorna Indietro" to="minigames_eyeTrack" method="_on_ritorna_indietro_pressed"]
 [connection signal="item_selected" from="minigames_eyeTrack/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/OptionButton" to="minigames_eyeTrack/Impostazioni" method="_on_option_button_item_selected"]
 [connection signal="toggled" from="minigames_eyeTrack/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen" to="minigames_eyeTrack/Impostazioni" method="_on_full_screen_toggled"]
 [connection signal="pressed" from="minigames_eyeTrack/Impostazioni/SfondoTrasparent/BoxImpostazioni/Ritorna Indietro" to="minigames_eyeTrack/Impostazioni" method="_on_ritorna_indietro_pressed"]
-[connection signal="pressed" from="minigames_eyeTrack/preMinigame/SfondoTrasparent/Completed" to="minigames_eyeTrack/preMinigame" method="_on_completed_pressed"]
+[connection signal="visibility_changed" from="minigames_eyeTrack/Npc" to="minigames_eyeTrack/Npc" method="_on_visibility_changed"]
+[connection signal="pressed" from="minigames_eyeTrack/Npc/SfondoTrasparent/Completed" to="minigames_eyeTrack/Npc" method="_on_completed_pressed"]

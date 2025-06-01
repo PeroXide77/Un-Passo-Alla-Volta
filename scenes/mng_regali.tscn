@@ -346,7 +346,6 @@ expand_icon = true
 auto_translate_mode = 1
 transparent_bg = true
 size = Vector2i(1920, 1080)
-visible = true
 script = ExtResource("11_e0x7g")
 
 [node name="SfondoTrasparent" type="Panel" parent="minigames_regali/preMinigame"]
@@ -410,4 +409,5 @@ expand_icon = true
 [connection signal="item_selected" from="minigames_regali/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/OptionButton" to="minigames_regali/Impostazioni" method="_on_option_button_item_selected"]
 [connection signal="toggled" from="minigames_regali/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen" to="minigames_regali/Impostazioni" method="_on_full_screen_toggled"]
 [connection signal="pressed" from="minigames_regali/Impostazioni/SfondoTrasparent/BoxImpostazioni/Ritorna Indietro" to="minigames_regali/Impostazioni" method="_on_ritorna_indietro_pressed"]
+[connection signal="about_to_popup" from="minigames_regali/preMinigame" to="minigames_regali/preMinigame" method="_on_about_to_popup"]
 [connection signal="pressed" from="minigames_regali/preMinigame/SfondoTrasparent/Completed" to="minigames_regali/preMinigame" method="_on_completed_pressed"]
