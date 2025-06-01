@@ -276,7 +276,17 @@ corner_radius_bottom_right = 90
 corner_radius_bottom_left = 90
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hhdxh"]
-bg_color = Color(1, 0.921569, 0.803922, 0.941176)
+bg_color = Color(1, 0.921569, 0.803922, 0.980392)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 0.564706, 0.0980392, 1)
+border_blend = true
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3rg6s"]
 
@@ -767,6 +777,24 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_hhdxh")
 
+[node name="Title" type="RichTextLabel" parent="Selezione/gamePopup"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 23.0
+offset_bottom = 173.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 14
+theme_override_constants/line_separation = 0
+theme_override_fonts/normal_font = ExtResource("3_jvqic")
+theme_override_font_sizes/normal_font_size = 100
+text = "prova"
+scroll_active = false
+horizontal_alignment = 1
+
 [node name="back" type="Button" parent="Selezione/gamePopup"]
 layout_mode = 0
 offset_left = -50.0
@@ -789,23 +817,6 @@ text_overrun_behavior = 2
 icon_alignment = 1
 expand_icon = true
 
-[node name="Title" type="RichTextLabel" parent="Selezione/gamePopup"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 53.0
-offset_bottom = 191.0
-grow_horizontal = 2
-mouse_filter = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 14
-theme_override_constants/line_separation = 0
-theme_override_fonts/normal_font = ExtResource("3_jvqic")
-theme_override_font_sizes/normal_font_size = 100
-text = "prova"
-scroll_active = false
-horizontal_alignment = 1
-
 [node name="ScrollContainer" type="ScrollContainer" parent="Selezione/gamePopup"]
 custom_minimum_size = Vector2(800, 500)
 layout_mode = 1
@@ -815,6 +826,7 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -400.0
+offset_top = -523.0
 offset_right = 400.0
 grow_horizontal = 2
 grow_vertical = 0
