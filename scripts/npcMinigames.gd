@@ -1,4 +1,4 @@
-extends Popup
+extends Panel
 
 @onready var talk = $"SfondoTrasparent/Speech Bubble Output/Speech"
 @onready var next = $SfondoTrasparent/Completed
@@ -7,7 +7,11 @@ extends Popup
 
 func _on_completed_pressed() -> void:
 	next.set_visible(false)
-	this.hide()
+	if Globals.isMinigameEnded():
+		Globals.goto_load_scene("res://scenes/minigames.tscn")
+		Globals.setFlagMinigameEnd(false)
+	else: 
+		this.hide()
 
 func npcTalk():
 	await Chatbot.print_txt(Globals.get_txtTutorial(), talk)

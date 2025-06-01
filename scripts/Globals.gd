@@ -32,6 +32,7 @@ var gameState: int = 1
 var end : bool
 var txtTutorial : String = ""
 var npcTutorial : String = ""
+var flagMinigameEnd : bool = false
 var flagDiario : bool = false
 
 func get_gameState() -> int:
@@ -75,6 +76,12 @@ func get_npcTutorial() -> String:
 
 func set_npcTutorial(s : String) -> void:
 	npcTutorial = s
+
+func setFlagMinigameEnd(b: bool) -> void:
+	flagMinigameEnd = b
+
+func isMinigameEnded() -> bool:
+	return flagMinigameEnd
 
 func _ready():
 	var root = get_tree().root

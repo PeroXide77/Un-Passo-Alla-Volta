@@ -3,13 +3,12 @@ extends Control
 @export var eyes: ButtonGroup
 @export var emotions: ButtonGroup
 @onready var popup_imp : Popup = $Impostazioni
-@onready var preMinigame : Popup = $preMinigame
+@onready var npcDialog : Panel = $Npc
 var rand : int
 var eyePressed : BaseButton = null
 
 func _init() -> void:
-	
-	Globals.set_txtTutorial("Testo prova per il tutorial di minigioco eyeTrack")
+	Globals.set_txtTutorial("Benvenuto nel minigame \"EyeTask\"! In questo gioco dovrai associare degli sguardi alle loro emozioni. Inizia cliccando uno sguardo; gli altri sguardi si disattiveranno e dovrai scegliere un'emozione. Non ti preoccupare se sbagli, potrai sempre riprovare! \nUna volta che avrai fatto un'associazione corretta sia lo sguardo che l'emozione diventeranno verdi e potrai proseguire con gli altri. \nOra che sai come si gioca, ti auguro buon divertimento!")
 	Globals.set_npcTutorial("res://assets/sprites/NPC/Belle.png")
 
 func _ready() -> void:
@@ -17,7 +16,7 @@ func _ready() -> void:
 	eyes.pressed.connect(eye_pressed)
 	emotions.pressed.connect(emotion_pressed)
 	set_buttons_disabled(emotions, true)
-	preMinigame.popup()
+	npcDialog.show()
 
 func eye_pressed(b : BaseButton) :
 	b.add_theme_stylebox_override("disabled", load("res://assets/styles/eyeGamesSelected.tres"))
@@ -31,6 +30,16 @@ func emotion_pressed(b: BaseButton) :
 		b.add_theme_stylebox_override("disabled", load("res://assets/styles/eyeGameDone.tres"))
 		eyePressed.set_meta("done", true)
 		b.set_meta("done", true)
+	else :
+		eyePressed.add_theme_stylebox_override("disabled", load("res://assets/styles/eyeGameDisabled.tres"))
+		b.set_pressed_no_signal(false)
+		eyePressed.set_pressed_no_signal(false)
+		Globals.set_txtTutorial("Non hai scelto l'emozione corretta ma non ti preoccupare, riprova!")
+		npcDialog.show()
+	gameEnd()
+	if Globals.isMinigameEnded():
+		Globals.set_txtTutorial("Complimenti, hai finito il gioco! Torna quando vuoi per provare ad associare nuovi sguardi a nuove emozioni!")
+		npcDialog.show()
 	set_buttons_disabled(eyes, false)
 	set_buttons_disabled(emotions, true)
 
@@ -55,7 +64,6 @@ func game_start():
 		if !ids.any(equals):
 			ids[n] = rand
 			n += 1
-	print(ids)
 	
 	var eyesB = eyes.get_buttons()
 	var emotionsB = emotions.get_buttons()
@@ -91,3 +99,12 @@ func game_start():
 
 func equals(i: int) -> bool:
 	return i == rand
+
+func gameEnd() -> void:
+	if eyes.get_buttons().all(isDone):
+		Globals.setFlagMinigameEnd(true)
+	else:
+		Globals.setFlagMinigameEnd(false)
+
+func isDone(button : BaseButton):
+	return button.get_meta("done")
