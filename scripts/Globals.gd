@@ -28,7 +28,7 @@ var current_scene = null
 var nextScene = null
 var volume: float = 100
 var resIndex = 0
-var gameState: int = 10
+var gameState: int = 11
 var end : bool
 var txtTutorial : String = ""
 var npcTutorial : String = ""

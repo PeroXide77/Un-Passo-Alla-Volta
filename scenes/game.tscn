@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://dmwtstgnkr0oc" path="res://assets/fonts/Anton/Anton-Regular.ttf" id="3_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://ivpscjmkosnj" path="res://icons/buttons/settings.png" id="4_ca42v"]
 [ext_resource type="FontFile" uid="uid://b6rxc2cd3gq82" path="res://assets/fonts/Indie_Flower/IndieFlower-Regular.ttf" id="4_gee14"]
-[ext_resource type="Texture2D" uid="uid://pbad25jeojds" path="res://assets/sprites/NPC/Giuseppe.png" id="5_ca42v"]
+[ext_resource type="Texture2D" uid="uid://ckst01muk6v73" path="res://assets/sprites/NPC/Belle.png" id="5_ca42v"]
 [ext_resource type="Texture2D" uid="uid://cuqw0q0lwiugl" path="res://icons/buttons/button_send.png" id="6_rysoc"]
 [ext_resource type="Texture2D" uid="uid://brvkr7k82xltp" path="res://icons/speech_bubble.png" id="6_vtaks"]
 [ext_resource type="VideoStream" uid="uid://msmqwi28bm25" path="res://assets/videos/loading.ogv" id="8_0tnpc"]
@@ -175,7 +175,7 @@ expand_icon = true
 
 [node name="ContainerNpc" type="Panel" parent="Game"]
 layout_mode = 0
-offset_left = 150.0
+offset_left = 20.0
 offset_right = 550.0
 offset_bottom = 1080.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_ca42v")
@@ -189,8 +189,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_ca42v")
-expand_mode = 4
-stretch_mode = 5
+expand_mode = 1
+stretch_mode = 6
 flip_h = true
 
 [node name="Invio" type="Button" parent="Game"]
