@@ -12,12 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://dthxxmlg5ebw7" path="res://assets/sprites/schoolMinigame/astuccio.png" id="10_6iamy"]
 [ext_resource type="Script" uid="uid://bk10uffv0x3da" path="res://scripts/npcMinigames.gd" id="10_k7hxd"]
 [ext_resource type="ButtonGroup" uid="uid://mhcoj0m781gl" path="res://assets/buttongroup/astucci.tres" id="10_u3vfo"]
-[ext_resource type="Texture2D" uid="uid://ckst01muk6v73" path="res://assets/sprites/NPC/Belle.png" id="11_k7hxd"]
 [ext_resource type="Texture2D" uid="uid://cxy4714ytyqni" path="res://assets/sprites/schoolMinigame/Protagonista/portamine.png" id="11_x0tsx"]
 [ext_resource type="ButtonGroup" uid="uid://dfngdr62m35uc" path="res://assets/buttongroup/oggetti.tres" id="12_6fswv"]
 [ext_resource type="Texture2D" uid="uid://c435eo3edby7t" path="res://assets/sprites/schoolMinigame/astuccioGiuseppe.png" id="13_ru0os"]
 [ext_resource type="Texture2D" uid="uid://brvkr7k82xltp" path="res://icons/speech_bubble.png" id="13_u3vfo"]
 [ext_resource type="Texture2D" uid="uid://bi62iidwpbxsk" path="res://icons/buttons/completedButton.png" id="13_x0tsx"]
+[ext_resource type="Texture2D" uid="uid://pbad25jeojds" path="res://assets/sprites/NPC/Giuseppe.png" id="16_ru0os"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ru0os"]
 border_width_left = 3
@@ -652,13 +652,12 @@ grow_vertical = 2
 
 [node name="Personaggio" type="TextureRect" parent="minigames_school/Npc/SfondoTrasparent"]
 layout_mode = 0
-offset_left = 150.0
+offset_left = 100.0
 offset_top = 1.0
-offset_right = 550.0
+offset_right = 576.0
 offset_bottom = 1081.0
-texture = ExtResource("11_k7hxd")
-expand_mode = 4
-stretch_mode = 5
+texture = ExtResource("16_ru0os")
+stretch_mode = 6
 
 [node name="Speech Bubble Output" type="TextureRect" parent="minigames_school/Npc/SfondoTrasparent"]
 layout_mode = 0

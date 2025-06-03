@@ -20,7 +20,7 @@ func _ready():
 	else : 
 		if Globals.get_gameState() == 0 :
 			titlePop.set_text("BENVENUTO!")
-			textPop.set_text("Benvenuto nel gioco! Questo gicoo è stato creato per aiutarti a sentirti più sicuro e autonomo nelle interazioni sociali. Il gioco consiste nel completare una lista di 11 compiti sociali reali. Escludendo il tutorial, ogni livello rappresenta una situazione del quotidiano. Per superare ogni livello, dovrai interagire con i personaggi nel contesto, che trovi sulla sinistra dello schermo, attraverso delle nuvole di dialogo. Detto questo, buona fortuna!")
+			textPop.set_text("Benvenuto nel gioco! Questo gioco è stato creato per aiutarti a sentirti più sicuro e autonomo nelle interazioni sociali. Il gioco consiste nel completare una lista di 11 compiti sociali reali. Escludendo il tutorial, ogni livello rappresenta una situazione del quotidiano. Per superare ogni livello, dovrai interagire con i personaggi nel contesto, che trovi sulla sinistra dello schermo, attraverso delle nuvole di dialogo. Detto questo, buona fortuna!")
 			popupGame.show()
 
 func _on_ritorna_indietro_pressed() -> void:
