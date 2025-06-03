@@ -34,7 +34,7 @@ const stationeryId = {
 	6 : "scolorina"
 }
 var current_scene = null
-var nextScene = null
+var nextScene = null 
 var volume: float = 100
 var resIndex = 0
 var gameState: int = 0

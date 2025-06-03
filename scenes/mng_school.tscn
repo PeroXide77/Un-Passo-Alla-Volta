@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cvu1yt4it0onx"]
+[gd_scene load_steps=31 format=3 uid="uid://cvu1yt4it0onx"]
 
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="1_1r1m4"]
 [ext_resource type="Script" uid="uid://cxon8uwj2anrb" path="res://scripts/minigames_school.gd" id="1_f5ayh"]
@@ -9,9 +9,13 @@
 [ext_resource type="StyleBox" uid="uid://bvaywvbkfe4rj" path="res://assets/styles/hoverButtons.tres" id="7_x0tsx"]
 [ext_resource type="Texture2D" uid="uid://ds186uo7s2om3" path="res://icons/buttons/box_not_checked.png" id="8_k7hxd"]
 [ext_resource type="Texture2D" uid="uid://c6gdl5iv5pqms" path="res://icons/buttons/check.png" id="9_6iamy"]
-[ext_resource type="Texture2D" uid="uid://m7m1btu2w4h4" path="res://assets/sprites/schoolMinigame/astuccio.png" id="10_6iamy"]
+[ext_resource type="Texture2D" uid="uid://dthxxmlg5ebw7" path="res://assets/sprites/schoolMinigame/astuccio.png" id="10_6iamy"]
 [ext_resource type="Script" uid="uid://bk10uffv0x3da" path="res://scripts/npcMinigames.gd" id="10_k7hxd"]
+[ext_resource type="ButtonGroup" uid="uid://mhcoj0m781gl" path="res://assets/buttongroup/astucci.tres" id="10_u3vfo"]
 [ext_resource type="Texture2D" uid="uid://ckst01muk6v73" path="res://assets/sprites/NPC/Belle.png" id="11_k7hxd"]
+[ext_resource type="Texture2D" uid="uid://cxy4714ytyqni" path="res://assets/sprites/schoolMinigame/Protagonista/portamine.png" id="11_x0tsx"]
+[ext_resource type="ButtonGroup" uid="uid://dfngdr62m35uc" path="res://assets/buttongroup/oggetti.tres" id="12_6fswv"]
+[ext_resource type="Texture2D" uid="uid://c435eo3edby7t" path="res://assets/sprites/schoolMinigame/astuccioGiuseppe.png" id="13_ru0os"]
 [ext_resource type="Texture2D" uid="uid://brvkr7k82xltp" path="res://icons/speech_bubble.png" id="13_u3vfo"]
 [ext_resource type="Texture2D" uid="uid://bi62iidwpbxsk" path="res://icons/buttons/completedButton.png" id="13_x0tsx"]
 
@@ -64,6 +68,8 @@ bg_color = Color(1, 0.921569, 0.803922, 0.941176)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x0tsx"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_37uvj"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u3vfo"]
 
 [node name="Node2D" type="Node2D"]
@@ -78,6 +84,8 @@ offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_f5ayh")
+astucci = ExtResource("10_u3vfo")
+oggetti = ExtResource("12_6fswv")
 
 [node name="Background" type="TextureRect" parent="minigames_school"]
 layout_mode = 1
@@ -374,30 +382,34 @@ custom_minimum_size = Vector2(960, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_6fswv")
 
-[node name="AstoccioPro" type="Button" parent="minigames_school/Game/Astucci/AstuccioProtagonistaP"]
-custom_minimum_size = Vector2(700, 170)
+[node name="AstuccioPro" type="Button" parent="minigames_school/Game/Astucci/AstuccioProtagonistaP"]
+custom_minimum_size = Vector2(425, 200)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 4.0
-offset_bottom = 4.0
+offset_left = -215.5
+offset_top = -100.0
+offset_right = 215.5
+offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
+toggle_mode = true
+button_group = ExtResource("10_u3vfo")
 icon = ExtResource("10_6iamy")
 flat = true
+expand_icon = true
+metadata/owner = true
 
 [node name="AstuccioGiuseppeP" type="Panel" parent="minigames_school/Game/Astucci"]
 custom_minimum_size = Vector2(960, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_ru0os")
 
-[node name="AstoccioPro" type="Button" parent="minigames_school/Game/Astucci/AstuccioGiuseppeP"]
-custom_minimum_size = Vector2(700, 170)
+[node name="AstuccioPep" type="Button" parent="minigames_school/Game/Astucci/AstuccioGiuseppeP"]
+custom_minimum_size = Vector2(425, 200)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -410,8 +422,12 @@ offset_right = 4.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-icon = ExtResource("10_6iamy")
+toggle_mode = true
+button_group = ExtResource("10_u3vfo")
+icon = ExtResource("13_ru0os")
 flat = true
+expand_icon = true
+metadata/owner = false
 
 [node name="Cancelleria" type="HBoxContainer" parent="minigames_school/Game"]
 custom_minimum_size = Vector2(0, 500)
@@ -425,30 +441,191 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_x0tsx")
 [node name="OggettoP1" type="Panel" parent="minigames_school/Game/Cancelleria"]
 custom_minimum_size = Vector2(264, 0)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_37uvj")
+
+[node name="Oggetto" type="Button" parent="minigames_school/Game/Cancelleria/OggettoP1"]
+custom_minimum_size = Vector2(254, 490)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+button_group = ExtResource("12_6fswv")
+icon = ExtResource("11_x0tsx")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/owner = false
 
 [node name="OggettoP2" type="Panel" parent="minigames_school/Game/Cancelleria"]
 custom_minimum_size = Vector2(264, 0)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_37uvj")
+
+[node name="Oggetto" type="Button" parent="minigames_school/Game/Cancelleria/OggettoP2"]
+custom_minimum_size = Vector2(254, 490)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+button_group = ExtResource("12_6fswv")
+icon = ExtResource("11_x0tsx")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/owner = false
 
 [node name="OggettoP3" type="Panel" parent="minigames_school/Game/Cancelleria"]
 custom_minimum_size = Vector2(264, 0)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_37uvj")
+
+[node name="Oggetto" type="Button" parent="minigames_school/Game/Cancelleria/OggettoP3"]
+custom_minimum_size = Vector2(254, 490)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+button_group = ExtResource("12_6fswv")
+icon = ExtResource("11_x0tsx")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/owner = false
 
 [node name="OggettoP4" type="Panel" parent="minigames_school/Game/Cancelleria"]
 custom_minimum_size = Vector2(264, 0)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_37uvj")
+
+[node name="Oggetto" type="Button" parent="minigames_school/Game/Cancelleria/OggettoP4"]
+custom_minimum_size = Vector2(254, 490)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+button_group = ExtResource("12_6fswv")
+icon = ExtResource("11_x0tsx")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/owner = false
 
 [node name="OggettoP5" type="Panel" parent="minigames_school/Game/Cancelleria"]
 custom_minimum_size = Vector2(264, 0)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_37uvj")
+
+[node name="Oggetto" type="Button" parent="minigames_school/Game/Cancelleria/OggettoP5"]
+custom_minimum_size = Vector2(254, 490)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+button_group = ExtResource("12_6fswv")
+icon = ExtResource("11_x0tsx")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/owner = false
 
 [node name="OggettoP6" type="Panel" parent="minigames_school/Game/Cancelleria"]
 custom_minimum_size = Vector2(264, 0)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_37uvj")
+
+[node name="Oggetto" type="Button" parent="minigames_school/Game/Cancelleria/OggettoP6"]
+custom_minimum_size = Vector2(254, 490)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+button_group = ExtResource("12_6fswv")
+icon = ExtResource("11_x0tsx")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/owner = false
 
 [node name="OggettoP7" type="Panel" parent="minigames_school/Game/Cancelleria"]
 custom_minimum_size = Vector2(264, 0)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_37uvj")
+
+[node name="Oggetto" type="Button" parent="minigames_school/Game/Cancelleria/OggettoP7"]
+custom_minimum_size = Vector2(254, 490)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+button_group = ExtResource("12_6fswv")
+icon = ExtResource("11_x0tsx")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/owner = false
 
 [node name="End" type="Panel" parent="minigames_school/Game/Cancelleria"]
 custom_minimum_size = Vector2(23, 0)

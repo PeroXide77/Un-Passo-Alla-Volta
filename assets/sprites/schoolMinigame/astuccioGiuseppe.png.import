@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dthxxmlg5ebw7"
-path="res://.godot/imported/astuccio.png-043662638bac88221e7000b9629d4be7.ctex"
+uid="uid://c435eo3edby7t"
+path="res://.godot/imported/astuccioGiuseppe.png-5d1c3b4edba27bfedaa2324dd725c9cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/schoolMinigame/astuccio.png"
-dest_files=["res://.godot/imported/astuccio.png-043662638bac88221e7000b9629d4be7.ctex"]
+source_file="res://assets/sprites/schoolMinigame/astuccioGiuseppe.png"
+dest_files=["res://.godot/imported/astuccioGiuseppe.png-5d1c3b4edba27bfedaa2324dd725c9cf.ctex"]
 
 [params]
 
