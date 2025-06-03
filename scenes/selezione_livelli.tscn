@@ -276,7 +276,17 @@ corner_radius_bottom_right = 90
 corner_radius_bottom_left = 90
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hhdxh"]
-bg_color = Color(1, 0.921569, 0.803922, 0.941176)
+bg_color = Color(1, 0.921569, 0.803922, 0.980392)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 0.564706, 0.0980392, 1)
+border_blend = true
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3rg6s"]
 
@@ -750,7 +760,7 @@ custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 metadata/lv = 10
 
-[node name="end_game" type="Panel" parent="Selezione"]
+[node name="gamePopup" type="Panel" parent="Selezione"]
 visible = false
 custom_minimum_size = Vector2(900, 700)
 layout_mode = 1
@@ -767,7 +777,25 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_hhdxh")
 
-[node name="back" type="Button" parent="Selezione/end_game"]
+[node name="Title" type="RichTextLabel" parent="Selezione/gamePopup"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 23.0
+offset_bottom = 173.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 14
+theme_override_constants/line_separation = 0
+theme_override_fonts/normal_font = ExtResource("3_jvqic")
+theme_override_font_sizes/normal_font_size = 100
+text = "prova"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="back" type="Button" parent="Selezione/gamePopup"]
 layout_mode = 0
 offset_left = -50.0
 offset_top = 85.0
@@ -789,24 +817,7 @@ text_overrun_behavior = 2
 icon_alignment = 1
 expand_icon = true
 
-[node name="Title" type="RichTextLabel" parent="Selezione/end_game"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 53.0
-offset_bottom = 191.0
-grow_horizontal = 2
-mouse_filter = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 14
-theme_override_constants/line_separation = 0
-theme_override_fonts/normal_font = ExtResource("3_jvqic")
-theme_override_font_sizes/normal_font_size = 100
-text = "HAI FINITO IL GIOCO!"
-scroll_active = false
-horizontal_alignment = 1
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Selezione/end_game"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Selezione/gamePopup"]
 custom_minimum_size = Vector2(800, 500)
 layout_mode = 1
 anchors_preset = 7
@@ -815,11 +826,12 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -400.0
+offset_top = -523.0
 offset_right = 400.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="text" type="RichTextLabel" parent="Selezione/end_game/ScrollContainer"]
+[node name="text" type="RichTextLabel" parent="Selezione/gamePopup/ScrollContainer"]
 custom_minimum_size = Vector2(800, 1000)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -827,8 +839,7 @@ theme_override_constants/outline_size = 0
 theme_override_constants/line_separation = -8
 theme_override_fonts/normal_font = ExtResource("3_jvqic")
 theme_override_font_sizes/normal_font_size = 57
-text = "Hai completato il gioco, complimenti! Spero che questa avventura ti abbia aiutato ad essere più sicuro nelle tue interazioni sociali! Se hai bisogno, potrai ripetere i livelli tutte le volte che vorrai finché non ti sentirai tranquillo nel coltivare relazioni sociali con le persone. 
-Buona fortuna!"
+text = "prova"
 horizontal_alignment = 1
 vertical_alignment = 3
 
@@ -1140,7 +1151,7 @@ text = "X"
 [connection signal="gui_input" from="Selezione/Scribble3" to="Selezione" method="_on_scribble_3_gui_input"]
 [connection signal="pressed" from="Selezione/impostazioni" to="Selezione" method="_on_impostazioni_pressed"]
 [connection signal="pressed" from="Selezione/Ritorna Indietro" to="Selezione" method="_on_ritorna_indietro_pressed"]
-[connection signal="pressed" from="Selezione/end_game/back" to="Selezione" method="_on_back_pressed"]
+[connection signal="pressed" from="Selezione/gamePopup/back" to="Selezione" method="_on_back_pressed"]
 [connection signal="gui_input" from="Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/Scribble4" to="Selezione" method="_on_scribble_4_gui_input"]
 [connection signal="item_selected" from="Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/OptionButton" to="Impostazioni" method="_on_option_button_item_selected"]
 [connection signal="toggled" from="Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen" to="Impostazioni" method="_on_full_screen_toggled"]

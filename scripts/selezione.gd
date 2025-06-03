@@ -2,7 +2,9 @@ extends Control
 
 @export var levelGroup: ButtonGroup
 @onready var spaces = get_tree().get_nodes_in_group("spaces")
-@onready var popup_end : Panel = $end_game
+@onready var popupGame : Panel = $gamePopup
+@onready var titlePop : RichTextLabel = $gamePopup/Title
+@onready var textPop : RichTextLabel = $gamePopup/ScrollContainer/text
 @onready var popup_imp : Popup = $"../Impostazioni"
 @onready var scribble3 : TextureRect = $Scribble3
 @onready var crediti : Popup = $"../Impostazioni/crediti"
@@ -11,8 +13,15 @@ func _ready():
 	levelGroup.pressed.connect(buttonGroup_pressed)
 	scribble3.set_self_modulate(Globals.randomizeColor())
 	set_completedLevels()
-	if Globals.get_end() == true :
-		popup_end.show()
+	if Globals.get_end() :
+		titlePop.set_text("HAI FINITO IL GIOCO!")
+		textPop.set_text("Hai completato il gioco, complimenti! Spero che questa avventura ti abbia aiutato ad essere più sicuro nelle tue interazioni sociali! Se hai bisogno, potrai ripetere i livelli tutte le volte che vorrai finché non ti sentirai tranquillo nel coltivare relazioni sociali con le persone. Buona fortuna!")
+		popupGame.show()
+	else : 
+		if Globals.get_gameState() == 0 :
+			titlePop.set_text("BENVENUTO!")
+			textPop.set_text("Benvenuto nel gioco! Questo gicoo è stato creato per aiutarti a sentirti più sicuro e autonomo nelle interazioni sociali. Il gioco consiste nel completare una lista di 11 compiti sociali reali. Escludendo il tutorial, ogni livello rappresenta una situazione del quotidiano. Per superare ogni livello, dovrai interagire con i personaggi nel contesto, che trovi sulla sinistra dello schermo, attraverso delle nuvole di dialogo. Detto questo, buona fortuna!")
+			popupGame.show()
 
 func _on_ritorna_indietro_pressed() -> void:
 	Globals.goto_load_scene("res://scenes/mainmenu.tscn")
@@ -43,7 +52,7 @@ func set_completedLevels():
 			space.set_visible(false)
 
 func _on_back_pressed() -> void:
-	popup_end.hide()
+	popupGame.hide()
 	Globals.is_end(false)
 
 func _on_impostazioni_pressed() -> void:
