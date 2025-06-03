@@ -24,6 +24,15 @@ const eyesId = {
 	5 : "spaventato",
 	6 : "triste"
 }
+const stationeryId = {
+	0 : "forbici",
+	1 : "gomma",
+	2 : "matita",
+	3 : "pastello",
+	4 : "portamine",
+	5 : "riga",
+	6 : "scolorina"
+}
 var current_scene = null
 var nextScene = null
 var volume: float = 100

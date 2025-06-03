@@ -8,8 +8,8 @@ var rand : int
 var eyePressed : BaseButton = null
 
 func _init() -> void:
-	Globals.set_txtTutorial("Benvenuto nel minigame \"EyeTask\"! In questo gioco dovrai associare degli sguardi alle loro emozioni. Inizia cliccando uno sguardo; gli altri sguardi si disattiveranno e dovrai scegliere un'emozione. Non ti preoccupare se sbagli, potrai sempre riprovare! \nUna volta che avrai fatto un'associazione corretta sia lo sguardo che l'emozione diventeranno verdi e potrai proseguire con gli altri. \nOra che sai come si gioca, ti auguro buon divertimento!")
-	Globals.set_npcTutorial("res://assets/sprites/NPC/Belle.png")
+	Globals.set_txtTutorial("Per la lezione di oggi voglio proporvi un piccolo gioco. In questo gioco dovrete associare degli sguardi alle loro emozioni. Inizia cliccando uno sguardo; gli altri sguardi si disattiveranno e dovrai scegliere un'emozione. Non ti preoccupare se sbagli, potrai sempre riprovare! \nUna volta che avrai fatto un'associazione corretta sia lo sguardo che l'emozione diventeranno verdi e potrai proseguire con gli altri. \nOra che sai come si gioca, cominciamo!")
+	Globals.set_npcTutorial("res://assets/sprites/NPC/Caterina.png")
 
 func _ready() -> void:
 	game_start()
