@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://dmwtstgnkr0oc" path="res://assets/fonts/Anton/Anton-Regular.ttf" id="3_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://ivpscjmkosnj" path="res://icons/buttons/settings.png" id="4_ca42v"]
 [ext_resource type="FontFile" uid="uid://b6rxc2cd3gq82" path="res://assets/fonts/Indie_Flower/IndieFlower-Regular.ttf" id="4_gee14"]
-[ext_resource type="Texture2D" uid="uid://ckst01muk6v73" path="res://assets/sprites/NPC/Belle.png" id="5_ca42v"]
+[ext_resource type="Texture2D" uid="uid://baii6lmty1h84" path="res://assets/sprites/NPC/Sofia.png" id="5_ca42v"]
 [ext_resource type="Texture2D" uid="uid://cuqw0q0lwiugl" path="res://icons/buttons/button_send.png" id="6_rysoc"]
 [ext_resource type="Texture2D" uid="uid://brvkr7k82xltp" path="res://icons/speech_bubble.png" id="6_vtaks"]
 [ext_resource type="VideoStream" uid="uid://msmqwi28bm25" path="res://assets/videos/loading.ogv" id="8_0tnpc"]
@@ -186,12 +186,12 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -18.0
+offset_right = 74.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_ca42v")
-expand_mode = 1
-stretch_mode = 6
-flip_h = true
+stretch_mode = 5
 
 [node name="Invio" type="Button" parent="Game"]
 layout_mode = 0

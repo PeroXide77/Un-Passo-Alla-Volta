@@ -9,7 +9,6 @@
 [ext_resource type="StyleBox" uid="uid://bvaywvbkfe4rj" path="res://assets/styles/hoverButtons.tres" id="7_ft4vf"]
 [ext_resource type="Texture2D" uid="uid://ds186uo7s2om3" path="res://icons/buttons/box_not_checked.png" id="8_38vst"]
 [ext_resource type="Texture2D" uid="uid://c6gdl5iv5pqms" path="res://icons/buttons/check.png" id="9_ft4vf"]
-[ext_resource type="Texture2D" uid="uid://ckst01muk6v73" path="res://assets/sprites/NPC/Belle.png" id="11_onpga"]
 [ext_resource type="Texture2D" uid="uid://brvkr7k82xltp" path="res://icons/speech_bubble.png" id="12_38vst"]
 [ext_resource type="Script" uid="uid://bk10uffv0x3da" path="res://scripts/npcMinigames.gd" id="12_ul30a"]
 [ext_resource type="Texture2D" uid="uid://bi62iidwpbxsk" path="res://icons/buttons/completedButton.png" id="13_onpga"]
@@ -23,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://bk11khogpjj4v" path="res://assets/sprites/eyeMinigame/sorpreso.jpg" id="17_0fi1v"]
 [ext_resource type="StyleBox" uid="uid://dc85ys8e776cx" path="res://assets/styles/eyeGameEmotion.tres" id="18_h54jj"]
 [ext_resource type="ButtonGroup" uid="uid://l3krf2gol6n0" path="res://assets/buttongroup/emotions.tres" id="20_0fi1v"]
+[ext_resource type="Texture2D" uid="uid://en2782805a2u" path="res://assets/sprites/NPC/Caterina.png" id="21_h54jj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnoa5"]
 border_width_left = 3
@@ -583,12 +583,11 @@ grow_vertical = 2
 
 [node name="Personaggio" type="TextureRect" parent="minigames_eyeTrack/Npc/SfondoTrasparent"]
 layout_mode = 0
-offset_left = 150.0
+offset_left = 100.0
 offset_top = 1.0
-offset_right = 550.0
+offset_right = 583.0
 offset_bottom = 1081.0
-texture = ExtResource("11_onpga")
-expand_mode = 4
+texture = ExtResource("21_h54jj")
 stretch_mode = 5
 
 [node name="Speech Bubble Output" type="TextureRect" parent="minigames_eyeTrack/Npc/SfondoTrasparent"]
