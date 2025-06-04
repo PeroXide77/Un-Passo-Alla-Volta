@@ -96,7 +96,7 @@ func print_txt(risposta: String, nuvola: RichTextLabel):
 	nuvola.set_text("")
 	var c: int = 0
 	while c < risposta.length():
-		await get_tree().create_timer(0.03).timeout
+		await get_tree().create_timer(0.001).timeout
 		nuvola.text += risposta[c]
 		c += 1
 
