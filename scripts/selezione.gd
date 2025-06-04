@@ -14,7 +14,7 @@ func _ready():
 	scribble3.set_self_modulate(Globals.randomizeColor())
 	set_completedLevels()
 	if Globals.get_end() :
-		titlePop.set_text("HAI FINITO IL GIOCO!")
+		titlePop.set_text("FINE GIOCO!")
 		textPop.set_text("Hai completato il gioco, complimenti! Spero che questa avventura ti abbia aiutato ad essere più sicuro nelle tue interazioni sociali! Se hai bisogno, potrai ripetere i livelli tutte le volte che vorrai finché non ti sentirai tranquillo nel coltivare relazioni sociali con le persone. Buona fortuna!")
 		popupGame.show()
 	else : 

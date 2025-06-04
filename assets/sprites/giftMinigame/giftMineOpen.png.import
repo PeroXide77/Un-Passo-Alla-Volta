@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ymacv0maurk7"
-path="res://.godot/imported/giftMine.png-cf1e25e1b5823835a02e8616c28ea6ea.ctex"
+uid="uid://bapx6ekehytki"
+path="res://.godot/imported/giftMineOpen.png-61850aa3ce81700f7390af13e0c2208e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/giftMinigame/giftMine.png"
-dest_files=["res://.godot/imported/giftMine.png-cf1e25e1b5823835a02e8616c28ea6ea.ctex"]
+source_file="res://assets/sprites/giftMinigame/giftMineOpen.png"
+dest_files=["res://.godot/imported/giftMineOpen.png-61850aa3ce81700f7390af13e0c2208e.ctex"]
 
 [params]
 
