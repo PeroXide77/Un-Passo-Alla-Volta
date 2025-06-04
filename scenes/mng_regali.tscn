@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://db6wupgrtxcoi"]
+[gd_scene load_steps=25 format=3 uid="uid://db6wupgrtxcoi"]
 
 [ext_resource type="Script" uid="uid://chgol5x22wv5i" path="res://scripts/minigames_regali.gd" id="1_s7tfq"]
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="1_vkmk7"]
@@ -9,6 +9,12 @@
 [ext_resource type="StyleBox" uid="uid://bvaywvbkfe4rj" path="res://assets/styles/hoverButtons.tres" id="7_fb5bu"]
 [ext_resource type="Texture2D" uid="uid://ds186uo7s2om3" path="res://icons/buttons/box_not_checked.png" id="8_e0x7g"]
 [ext_resource type="Texture2D" uid="uid://c6gdl5iv5pqms" path="res://icons/buttons/check.png" id="9_fb5bu"]
+[ext_resource type="Texture2D" uid="uid://5vaseq7frd42" path="res://assets/sprites/giftMinigame/giftAny1.png" id="10_e0x7g"]
+[ext_resource type="ButtonGroup" uid="uid://bkonp5ynj5ckc" path="res://assets/buttongroup/regali.tres" id="10_fb5bu"]
+[ext_resource type="Script" uid="uid://bk10uffv0x3da" path="res://scripts/npcMinigames.gd" id="10_y4tam"]
+[ext_resource type="Texture2D" uid="uid://pbad25jeojds" path="res://assets/sprites/NPC/Giuseppe.png" id="11_e0x7g"]
+[ext_resource type="Texture2D" uid="uid://brvkr7k82xltp" path="res://icons/speech_bubble.png" id="12_fb5bu"]
+[ext_resource type="Texture2D" uid="uid://bi62iidwpbxsk" path="res://icons/buttons/completedButton.png" id="13_i3sia"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mi4y"]
 border_width_left = 3
@@ -53,6 +59,10 @@ bg_color = Color(1, 0.921569, 0.803922, 0.941176)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_84gil"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fb5bu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i3sia"]
+
 [node name="Node2D" type="Node2D"]
 
 [node name="minigames_regali" type="Control" parent="."]
@@ -65,6 +75,7 @@ offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_s7tfq")
+regali = ExtResource("10_fb5bu")
 
 [node name="Background" type="TextureRect" parent="minigames_regali"]
 layout_mode = 1
@@ -338,8 +349,354 @@ text_overrun_behavior = 2
 icon_alignment = 1
 expand_icon = true
 
+[node name="Game" type="VBoxContainer" parent="minigames_regali"]
+custom_minimum_size = Vector2(1920, 750)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -770.0
+offset_right = 966.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="RegaliFila1" type="HBoxContainer" parent="minigames_regali/Game"]
+custom_minimum_size = Vector2(0, 370)
+layout_mode = 2
+
+[node name="Start" type="Panel" parent="minigames_regali/Game/RegaliFila1"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fb5bu")
+
+[node name="Regalo1" type="Panel" parent="minigames_regali/Game/RegaliFila1"]
+custom_minimum_size = Vector2(370, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_i3sia")
+
+[node name="Regalo" type="Button" parent="minigames_regali/Game/RegaliFila1/Regalo1"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.5
+offset_top = -185.0
+offset_right = 215.5
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+button_group = ExtResource("10_fb5bu")
+icon = ExtResource("10_e0x7g")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/owner = false
+
+[node name="Spazio1" type="Panel" parent="minigames_regali/Game/RegaliFila1"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fb5bu")
+
+[node name="Regalo2" type="Panel" parent="minigames_regali/Game/RegaliFila1"]
+custom_minimum_size = Vector2(370, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_i3sia")
+
+[node name="Regalo" type="Button" parent="minigames_regali/Game/RegaliFila1/Regalo2"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.5
+offset_top = -185.0
+offset_right = 215.5
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+button_group = ExtResource("10_fb5bu")
+icon = ExtResource("10_e0x7g")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/owner = false
+
+[node name="Spazio2" type="Panel" parent="minigames_regali/Game/RegaliFila1"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fb5bu")
+
+[node name="Regalo3" type="Panel" parent="minigames_regali/Game/RegaliFila1"]
+custom_minimum_size = Vector2(370, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_i3sia")
+
+[node name="Regalo" type="Button" parent="minigames_regali/Game/RegaliFila1/Regalo3"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.5
+offset_top = -185.0
+offset_right = 215.5
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+button_group = ExtResource("10_fb5bu")
+icon = ExtResource("10_e0x7g")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/owner = false
+
+[node name="Spazio3" type="Panel" parent="minigames_regali/Game/RegaliFila1"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fb5bu")
+
+[node name="Regalo4" type="Panel" parent="minigames_regali/Game/RegaliFila1"]
+custom_minimum_size = Vector2(370, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_i3sia")
+
+[node name="Regalo" type="Button" parent="minigames_regali/Game/RegaliFila1/Regalo4"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.5
+offset_top = -185.0
+offset_right = 215.5
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+button_group = ExtResource("10_fb5bu")
+icon = ExtResource("10_e0x7g")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/owner = false
+
+[node name="RegaliFila2" type="HBoxContainer" parent="minigames_regali/Game"]
+custom_minimum_size = Vector2(0, 360)
+layout_mode = 2
+
+[node name="Start" type="Panel" parent="minigames_regali/Game/RegaliFila2"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fb5bu")
+
+[node name="Regalo1" type="Panel" parent="minigames_regali/Game/RegaliFila2"]
+custom_minimum_size = Vector2(370, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_i3sia")
+
+[node name="Regalo" type="Button" parent="minigames_regali/Game/RegaliFila2/Regalo1"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.5
+offset_top = -185.0
+offset_right = 215.5
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+button_group = ExtResource("10_fb5bu")
+icon = ExtResource("10_e0x7g")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/owner = false
+
+[node name="Spazio1" type="Panel" parent="minigames_regali/Game/RegaliFila2"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fb5bu")
+
+[node name="Regalo2" type="Panel" parent="minigames_regali/Game/RegaliFila2"]
+custom_minimum_size = Vector2(370, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_i3sia")
+
+[node name="Regalo" type="Button" parent="minigames_regali/Game/RegaliFila2/Regalo2"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.5
+offset_top = -185.0
+offset_right = 215.5
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+button_group = ExtResource("10_fb5bu")
+icon = ExtResource("10_e0x7g")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/owner = false
+
+[node name="Spazio2" type="Panel" parent="minigames_regali/Game/RegaliFila2"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fb5bu")
+
+[node name="Regalo3" type="Panel" parent="minigames_regali/Game/RegaliFila2"]
+custom_minimum_size = Vector2(370, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_i3sia")
+
+[node name="Regalo" type="Button" parent="minigames_regali/Game/RegaliFila2/Regalo3"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.5
+offset_top = -185.0
+offset_right = 215.5
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+button_group = ExtResource("10_fb5bu")
+icon = ExtResource("10_e0x7g")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/owner = false
+
+[node name="Spazio3" type="Panel" parent="minigames_regali/Game/RegaliFila2"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fb5bu")
+
+[node name="Regalo4" type="Panel" parent="minigames_regali/Game/RegaliFila2"]
+custom_minimum_size = Vector2(370, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_i3sia")
+
+[node name="Regalo" type="Button" parent="minigames_regali/Game/RegaliFila2/Regalo4"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.5
+offset_top = -185.0
+offset_right = 215.5
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+button_group = ExtResource("10_fb5bu")
+icon = ExtResource("10_e0x7g")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/owner = false
+
+[node name="Npc" type="Panel" parent="minigames_regali"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_y4tam")
+
+[node name="SfondoTrasparent" type="Panel" parent="minigames_regali/Npc"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Personaggio" type="TextureRect" parent="minigames_regali/Npc/SfondoTrasparent"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 1.0
+offset_right = 576.0
+offset_bottom = 1081.0
+texture = ExtResource("11_e0x7g")
+stretch_mode = 6
+
+[node name="Speech Bubble Output" type="TextureRect" parent="minigames_regali/Npc/SfondoTrasparent"]
+layout_mode = 0
+offset_left = 539.0
+offset_top = 39.0
+offset_right = 1233.0
+offset_bottom = 465.0
+texture = ExtResource("12_fb5bu")
+expand_mode = 1
+
+[node name="Speech" type="RichTextLabel" parent="minigames_regali/Npc/SfondoTrasparent/Speech Bubble Output"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 37.0
+offset_right = 656.0
+offset_bottom = 332.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -5
+theme_override_fonts/normal_font = ExtResource("2_s7tfq")
+theme_override_font_sizes/normal_font_size = 45
+text = "giao
+fiao"
+scroll_following = true
+
+[node name="Completed" type="Button" parent="minigames_regali/Npc/SfondoTrasparent"]
+visible = false
+layout_mode = 0
+offset_left = 1278.0
+offset_top = 609.0
+offset_right = 1668.0
+offset_bottom = 958.0
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+icon = ExtResource("13_i3sia")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
 [connection signal="pressed" from="minigames_regali/impostazioni" to="minigames_regali" method="_on_impostazioni_pressed"]
 [connection signal="pressed" from="minigames_regali/Ritorna Indietro" to="minigames_regali" method="_on_ritorna_indietro_pressed"]
 [connection signal="item_selected" from="minigames_regali/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/OptionButton" to="minigames_regali/Impostazioni" method="_on_option_button_item_selected"]
 [connection signal="toggled" from="minigames_regali/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen" to="minigames_regali/Impostazioni" method="_on_full_screen_toggled"]
 [connection signal="pressed" from="minigames_regali/Impostazioni/SfondoTrasparent/BoxImpostazioni/Ritorna Indietro" to="minigames_regali/Impostazioni" method="_on_ritorna_indietro_pressed"]
+[connection signal="visibility_changed" from="minigames_regali/Npc" to="minigames_regali/Npc" method="_on_visibility_changed"]
+[connection signal="pressed" from="minigames_regali/Npc/SfondoTrasparent/Completed" to="minigames_regali/Npc" method="_on_completed_pressed"]
