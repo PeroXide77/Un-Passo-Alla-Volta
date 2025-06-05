@@ -5,8 +5,8 @@ extends Control
 @onready var npcDialog : Panel = $Npc
 
 func _init() -> void:
-	Globals.set_txtTutorial("Testo prova per il tutorial di minigioco regali")
-	Globals.set_npcTutorial("res://assets/sprites/NPC/Rita.png")
+	Globals.set_txtTutorial("Guarda quanti regali! ma attenzione: non sono tutti tuoi. I tuoi regali sono quelli con la carta blu e il nastro rosso. Clicca su un regalo per aprirlo solo se pensi che sia uno dei tuoi! Se scegli un altro regalo, non succede nulla: ti avviserò io e potrai riprovare!")
+	Globals.set_npcTutorial("res://assets/sprites/NPC/Belle.png")
 
 func _ready() -> void:
 	game_start()
@@ -42,13 +42,19 @@ func isMine(button : BaseButton):
 
 func gift_pressed(b : BaseButton) :
 	b.release_focus()
-	if b.get_meta("owner"):
-		b.set_button_icon(load("res://assets/sprites/giftMinigame/giftMineOpen.png"))
-		b.set_meta("owner", false)
-	else:
+	if b.get_meta("open"):
 		b.set_pressed_no_signal(false)
-		Globals.set_txtTutorial("Mmh, non penso che sia tuo questo regalo, apro solo i tuoi!")
+		Globals.set_txtTutorial("Quel regalo l hai già aperto, apri gli altri!")
 		npcDialog.show()
+	else:
+		if b.get_meta("owner"):
+			b.set_button_icon(load("res://assets/sprites/giftMinigame/giftMineOpen.png"))
+			b.set_meta("owner", false)
+			b.set_meta("open", true)
+		else:
+			b.set_pressed_no_signal(false)
+			Globals.set_txtTutorial("Mmh, non penso che sia tuo questo regalo, apro solo i tuoi!")
+			npcDialog.show()
 	gameEnd()
 	if Globals.isMinigameEnded():
 		Globals.set_txtTutorial("Spero sei felice dei tuoi regali!")
