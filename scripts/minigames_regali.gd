@@ -5,7 +5,7 @@ extends Control
 @onready var npcDialog : Panel = $Npc
 
 func _init() -> void:
-	Globals.set_txtTutorial("Guarda quanti regali! ma attenzione: non sono tutti tuoi. I tuoi regali sono quelli con la carta blu e il nastro rosso. Clicca su un regalo per aprirlo solo se pensi che sia uno dei tuoi! Se scegli un altro regalo, non succede nulla: ti avviserò io e potrai riprovare!")
+	Globals.set_txtTutorial("Guarda quanti regali! Ma attenzione: non sono tutti tuoi. I tuoi regali sono quelli con la carta blu e il nastro rosso. Clicca su un regalo per aprirlo solo se pensi che sia uno dei tuoi! Se scegli un altro regalo, non succede nulla: ti avviserò io e potrai riprovare!")
 	Globals.set_npcTutorial("res://assets/sprites/NPC/Belle.png")
 
 func _ready() -> void:

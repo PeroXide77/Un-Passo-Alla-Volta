@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://chuwiaogvuibx"]
+[gd_scene load_steps=37 format=3 uid="uid://chuwiaogvuibx"]
 
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="1_cusv3"]
 [ext_resource type="Script" uid="uid://dq6ta158kp0ay" path="res://scripts/minigames_eye_track.gd" id="1_u5qg0"]
@@ -23,6 +23,8 @@
 [ext_resource type="StyleBox" uid="uid://dc85ys8e776cx" path="res://assets/styles/eyeGameEmotion.tres" id="18_h54jj"]
 [ext_resource type="ButtonGroup" uid="uid://l3krf2gol6n0" path="res://assets/buttongroup/emotions.tres" id="20_0fi1v"]
 [ext_resource type="Texture2D" uid="uid://en2782805a2u" path="res://assets/sprites/NPC/Caterina.png" id="21_h54jj"]
+[ext_resource type="AudioStream" uid="uid://iq8ylg523anc" path="res://assets/sounds/eyeGameIntroCaterina.mp3" id="24_ul30a"]
+[ext_resource type="Texture2D" uid="uid://otvny5ni53ha" path="res://icons/buttons/audio.png" id="24_wwitq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnoa5"]
 border_width_left = 3
@@ -78,6 +80,42 @@ corner_radius_top_left = 90
 corner_radius_top_right = 90
 corner_radius_bottom_right = 90
 corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x46a1"]
+bg_color = Color(0.61339, 0.61339, 0.61339, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3suu"]
+bg_color = Color(0.340339, 0.340339, 0.340339, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lwad5"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
 
 [node name="Node2D" type="Node2D"]
 
@@ -629,6 +667,23 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="Speak" type="Button" parent="minigames_eyeTrack/Npc/SfondoTrasparent"]
+offset_left = 1248.0
+offset_top = 81.0
+offset_right = 1348.0
+offset_bottom = 181.0
+focus_mode = 0
+theme_override_styles/disabled = SubResource("StyleBoxFlat_x46a1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x46a1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_x3suu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lwad5")
+icon = ExtResource("24_wwitq")
+icon_alignment = 1
+expand_icon = true
+
+[node name="AudioNpc" type="AudioStreamPlayer2D" parent="minigames_eyeTrack/Npc"]
+stream = ExtResource("24_ul30a")
+
 [connection signal="pressed" from="minigames_eyeTrack/impostazioni" to="minigames_eyeTrack" method="_on_impostazioni_pressed"]
 [connection signal="pressed" from="minigames_eyeTrack/Ritorna Indietro" to="minigames_eyeTrack" method="_on_ritorna_indietro_pressed"]
 [connection signal="item_selected" from="minigames_eyeTrack/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/OptionButton" to="minigames_eyeTrack/Impostazioni" method="_on_option_button_item_selected"]
@@ -636,3 +691,4 @@ expand_icon = true
 [connection signal="pressed" from="minigames_eyeTrack/Impostazioni/SfondoTrasparent/BoxImpostazioni/Ritorna Indietro" to="minigames_eyeTrack/Impostazioni" method="_on_ritorna_indietro_pressed"]
 [connection signal="visibility_changed" from="minigames_eyeTrack/Npc" to="minigames_eyeTrack/Npc" method="_on_visibility_changed"]
 [connection signal="pressed" from="minigames_eyeTrack/Npc/SfondoTrasparent/Completed" to="minigames_eyeTrack/Npc" method="_on_completed_pressed"]
+[connection signal="pressed" from="minigames_eyeTrack/Npc/SfondoTrasparent/Speak" to="minigames_eyeTrack/Npc" method="_on_speak_pressed"]
