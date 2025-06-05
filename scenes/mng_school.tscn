@@ -633,7 +633,6 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_u3vfo")
 
 [node name="Npc" type="Panel" parent="minigames_school"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -657,7 +656,7 @@ offset_top = 1.0
 offset_right = 576.0
 offset_bottom = 1081.0
 texture = ExtResource("16_ru0os")
-stretch_mode = 6
+stretch_mode = 5
 
 [node name="Speech Bubble Output" type="TextureRect" parent="minigames_school/Npc/SfondoTrasparent"]
 layout_mode = 0
