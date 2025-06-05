@@ -8,7 +8,7 @@ var rand: int
 var itemPressed : BaseButton = null
 
 func _init() -> void:
-	Globals.set_txtTutorial("Ciao! È successo un pasticcio! Sono caduti i nostri astucci e adesso le nostre cose sono tutte mischiate. \nPotresti aiutarmi a sistemarle? Per fortuna sulle mie cose ho messo un etichetta col mio nome quindi sarà più semplice.")
+	Globals.set_txtTutorial("Ciao! È successo un bel pasticcio: i nostri astucci sono caduti e tutte le nostre cose si sono mischiate. Per fortuna, sulle mie cose c'è sempre un'etichetta con il mio nome, così possiamo riconoscerle! Per sistemarle, basta cliccare su un oggetto e poi sull’astuccio della persona a cui pensi che appartenga. Non ti preoccupare, ti avviserò io se l'oggetto non è nell'astuccio giusto. Potresti aiutarmi a rimettere apposto?")
 	Globals.set_npcTutorial("res://assets/sprites/NPC/Giuseppe.png")
 
 func _ready() -> void:

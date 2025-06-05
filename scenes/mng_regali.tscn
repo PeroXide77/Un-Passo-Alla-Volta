@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://db6wupgrtxcoi"]
+[gd_scene load_steps=30 format=3 uid="uid://db6wupgrtxcoi"]
 
 [ext_resource type="Script" uid="uid://chgol5x22wv5i" path="res://scripts/minigames_regali.gd" id="1_s7tfq"]
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="1_vkmk7"]
@@ -12,9 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://5vaseq7frd42" path="res://assets/sprites/giftMinigame/giftAny1.png" id="10_e0x7g"]
 [ext_resource type="ButtonGroup" uid="uid://bkonp5ynj5ckc" path="res://assets/buttongroup/regali.tres" id="10_fb5bu"]
 [ext_resource type="Script" uid="uid://bk10uffv0x3da" path="res://scripts/npcMinigames.gd" id="10_y4tam"]
-[ext_resource type="Texture2D" uid="uid://pbad25jeojds" path="res://assets/sprites/NPC/Giuseppe.png" id="11_e0x7g"]
 [ext_resource type="Texture2D" uid="uid://brvkr7k82xltp" path="res://icons/speech_bubble.png" id="12_fb5bu"]
 [ext_resource type="Texture2D" uid="uid://bi62iidwpbxsk" path="res://icons/buttons/completedButton.png" id="13_i3sia"]
+[ext_resource type="Texture2D" uid="uid://en2782805a2u" path="res://assets/sprites/NPC/Caterina.png" id="13_rnyh1"]
+[ext_resource type="AudioStream" uid="uid://b14jyl13gddy8" path="res://assets/sounds/giftGameIntroBelle.mp3" id="16_i3sia"]
+[ext_resource type="Texture2D" uid="uid://otvny5ni53ha" path="res://icons/buttons/audio.png" id="16_rnyh1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mi4y"]
 border_width_left = 3
@@ -62,6 +64,42 @@ bg_color = Color(1, 0.921569, 0.803922, 0.941176)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fb5bu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i3sia"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3mp7n"]
+bg_color = Color(0.61339, 0.61339, 0.61339, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5crnt"]
+bg_color = Color(0.340339, 0.340339, 0.340339, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_84gil"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
 
 [node name="Node2D" type="Node2D"]
 
@@ -657,9 +695,9 @@ grow_vertical = 2
 layout_mode = 0
 offset_left = 100.0
 offset_top = 1.0
-offset_right = 576.0
+offset_right = 583.0
 offset_bottom = 1081.0
-texture = ExtResource("11_e0x7g")
+texture = ExtResource("13_rnyh1")
 stretch_mode = 5
 
 [node name="Speech Bubble Output" type="TextureRect" parent="minigames_regali/Npc/SfondoTrasparent"]
@@ -701,6 +739,23 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="Speak" type="Button" parent="minigames_regali/Npc/SfondoTrasparent"]
+offset_left = 1248.0
+offset_top = 81.0
+offset_right = 1348.0
+offset_bottom = 181.0
+focus_mode = 0
+theme_override_styles/disabled = SubResource("StyleBoxFlat_3mp7n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3mp7n")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5crnt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_84gil")
+icon = ExtResource("16_rnyh1")
+icon_alignment = 1
+expand_icon = true
+
+[node name="AudioNpc" type="AudioStreamPlayer2D" parent="minigames_regali/Npc"]
+stream = ExtResource("16_i3sia")
+
 [connection signal="pressed" from="minigames_regali/impostazioni" to="minigames_regali" method="_on_impostazioni_pressed"]
 [connection signal="pressed" from="minigames_regali/Ritorna Indietro" to="minigames_regali" method="_on_ritorna_indietro_pressed"]
 [connection signal="item_selected" from="minigames_regali/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/OptionButton" to="minigames_regali/Impostazioni" method="_on_option_button_item_selected"]
@@ -708,3 +763,4 @@ expand_icon = true
 [connection signal="pressed" from="minigames_regali/Impostazioni/SfondoTrasparent/BoxImpostazioni/Ritorna Indietro" to="minigames_regali/Impostazioni" method="_on_ritorna_indietro_pressed"]
 [connection signal="visibility_changed" from="minigames_regali/Npc" to="minigames_regali/Npc" method="_on_visibility_changed"]
 [connection signal="pressed" from="minigames_regali/Npc/SfondoTrasparent/Completed" to="minigames_regali/Npc" method="_on_completed_pressed"]
+[connection signal="pressed" from="minigames_regali/Npc/SfondoTrasparent/Speak" to="minigames_regali/Npc" method="_on_speak_pressed"]
