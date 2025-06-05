@@ -37,6 +37,15 @@ func game_start():
 		else:
 			oggettiB.get(i).set_button_icon(load("res://assets/sprites/schoolMinigame/Protagonista/"+Globals.stationeryId[item]+".png"))
 			oggettiB.get(i).set_meta("owner", true)
+		if i == 6:
+			if oggettiB.all(isMine):
+				oggettiB.get(i).set_button_icon(load("res://assets/sprites/schoolMinigame/Giuseppe/"+Globals.stationeryId[item]+"Giuseppe.png"))
+				oggettiB.get(i).set_meta("owner", false)
+			else:
+				oggettiB.get(6).set_meta("owner", false)
+				if !oggettiB.any(isMine):
+					oggettiB.get(i).set_button_icon(load("res://assets/sprites/schoolMinigame/Protagonista/"+Globals.stationeryId[item]+".png"))
+					oggettiB.get(i).set_meta("owner", true)
 
 func item_pressed(b : BaseButton) :
 	b.release_focus()
@@ -75,6 +84,9 @@ func gameEnd() -> void:
 
 func isDone(button : BaseButton):
 	return !button.is_visible()
+
+func isMine(button : BaseButton):
+	return button.get_meta("owner")
 
 func set_buttons_disabled(bg : ButtonGroup , flag: bool):
 	for b in bg.get_buttons():

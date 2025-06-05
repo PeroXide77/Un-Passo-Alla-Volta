@@ -5,6 +5,7 @@ extends Popup
 @onready var fullScreen = $SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen
 @onready var checkFS = $SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen/CheckFS
 @onready var imp = $"."
+@onready var anim = $AnimationPlayer
 
 func _process(_delta: float) -> void:
 	Globals.btn_hover(fullScreen)
@@ -17,6 +18,10 @@ func _ready():
 		resolutionMenu.set_disabled(true)
 		checkFS.set_visible(true)
 		fullScreen.set_pressed_no_signal(true)
+	else :
+		resolutionMenu.set_disabled(false)
+		checkFS.set_visible(false)
+		fullScreen.set_pressed_no_signal(false)
 
 func _on_volume_value_changed(value: float) -> void:
 	Globals.set_volume(value)
@@ -45,4 +50,9 @@ func _on_full_screen_toggled(toggled_on: bool) -> void:
 		checkFS.set_visible(false)
 
 func _on_ritorna_indietro_pressed() -> void:
+	anim.play_backwards("popUp")
+	await anim.animation_finished
 	imp.hide()
+
+func _on_about_to_popup() -> void:
+	anim.play("popUp")
