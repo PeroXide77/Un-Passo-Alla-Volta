@@ -492,7 +492,7 @@ anchor_bottom = 1.0
 offset_left = 660.0
 offset_top = 120.0
 offset_right = -660.0
-offset_bottom = -160.0
+offset_bottom = -960.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_6pj40")
@@ -509,18 +509,24 @@ grow_vertical = 2
 alignment = 1
 
 [node name="VolumeP" type="Panel" parent="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
-custom_minimum_size = Vector2(0, 160)
+custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_wf3n4")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP"]
-custom_minimum_size = Vector2(600, 100)
+custom_minimum_size = Vector2(530, 100)
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 14.0
-offset_bottom = 114.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -265.0
+offset_top = -50.0
+offset_right = 265.0
+offset_bottom = 50.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/selection_color = Color(0.962296, 0.733232, 1, 1)
 theme_override_constants/table_v_separation = 4
 theme_override_constants/text_highlight_h_padding = 6
@@ -533,34 +539,29 @@ theme_override_fonts/normal_font = ExtResource("4_85riq")
 theme_override_font_sizes/bold_italics_font_size = 1
 theme_override_font_sizes/italics_font_size = 1
 theme_override_font_sizes/mono_font_size = 1
-theme_override_font_sizes/normal_font_size = 70
+theme_override_font_sizes/normal_font_size = 65
 theme_override_font_sizes/bold_font_size = 1
 text = "VOLUME"
 scroll_active = false
 tab_size = 1
-horizontal_alignment = 1
 justification_flags = 128
 visible_characters_behavior = 2
 
 [node name="volume" type="HSlider" parent="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP"]
-custom_minimum_size = Vector2(400, 50)
+custom_minimum_size = Vector2(300, 50)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = 4.0
-offset_right = 200.0
-offset_bottom = 54.0
+offset_left = -28.0
+offset_top = -33.0
+offset_right = 272.0
+offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
 ticks_on_borders = true
-
-[node name="Scribble4" type="TextureRect" parent="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
-layout_mode = 2
-texture = ExtResource("11_prb5i")
 
 [node name="VideoP" type="Panel" parent="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
 custom_minimum_size = Vector2(0, 300)
@@ -568,14 +569,14 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_h73c4")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(550, 100)
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 1.0
-offset_top = 97.0
-offset_right = 1.0
-offset_bottom = 197.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -275.0
+offset_right = 275.0
+offset_bottom = 100.0
 grow_horizontal = 2
 theme_override_colors/selection_color = Color(0.962296, 0.733232, 1, 1)
 theme_override_constants/table_v_separation = 4
@@ -589,7 +590,7 @@ theme_override_fonts/normal_font = ExtResource("4_85riq")
 theme_override_font_sizes/bold_italics_font_size = 1
 theme_override_font_sizes/italics_font_size = 1
 theme_override_font_sizes/mono_font_size = 1
-theme_override_font_sizes/normal_font_size = 70
+theme_override_font_sizes/normal_font_size = 60
 theme_override_font_sizes/bold_font_size = 1
 text = "SCHERMO"
 scroll_active = false
@@ -605,10 +606,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -10.0
-offset_top = -32.0
-offset_right = 290.0
-offset_bottom = 18.0
+offset_left = -28.0
+offset_top = -131.0
+offset_right = 272.0
+offset_bottom = -81.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 13
@@ -617,14 +618,17 @@ theme_override_font_sizes/font_size = 50
 
 [node name="FullScreen" type="Button" parent="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP"]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -84.0
-offset_bottom = 13.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -266.0
+offset_top = -48.5
+offset_right = 266.0
+offset_bottom = 48.5
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 focus_mode = 0
 theme_override_constants/outline_size = 13
 theme_override_constants/h_separation = 8
@@ -642,6 +646,7 @@ icon = ExtResource("8_nkpmc")
 flat = true
 
 [node name="CheckFS" type="TextureRect" parent="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen"]
+visible = false
 layout_mode = 0
 offset_left = -2.0
 offset_top = -5.0
@@ -650,8 +655,60 @@ offset_bottom = 82.0
 texture = ExtResource("9_fsdjo")
 expand_mode = 1
 
+[node name="CancellaDati" type="Button" parent="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -266.0
+offset_top = 50.0
+offset_right = 266.0
+offset_bottom = 147.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_constants/outline_size = 13
+theme_override_constants/h_separation = 8
+theme_override_constants/icon_max_width = 5000
+theme_override_constants/align_to_largest_stylebox = 2
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("4_85riq")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = ExtResource("6_h73c4")
+theme_override_styles/pressed = ExtResource("6_h73c4")
+toggle_mode = true
+action_mode = 0
+text = "CANCELLA DATI"
+icon = ExtResource("8_nkpmc")
+flat = true
+
+[node name="CheckCD" type="TextureRect" parent="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/CancellaDati"]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -53.5
+offset_right = 93.0
+offset_bottom = 33.5
+grow_vertical = 2
+texture = ExtResource("9_fsdjo")
+expand_mode = 1
+
+[node name="Scribble4" type="TextureRect" parent="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
+custom_minimum_size = Vector2(500, 190)
+layout_mode = 2
+texture = ExtResource("11_prb5i")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="Ritorna Indietro" type="Button" parent="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni"]
 visible = false
+custom_minimum_size = Vector2(70, 100)
+layout_mode = 0
 offset_left = -36.0
 offset_top = 88.0
 offset_right = 52.0
@@ -788,9 +845,12 @@ libraries = {
 [connection signal="pressed" from="Menu/VBoxContainer/Exit" to="Menu" method="_on_esci_pressed"]
 [connection signal="about_to_popup" from="Menu/Impostazioni" to="Menu/Impostazioni" method="_on_about_to_popup"]
 [connection signal="close_requested" from="Menu/Impostazioni" to="Menu/Impostazioni" method="_on_close_requested"]
+[connection signal="go_back_requested" from="Menu/Impostazioni" to="Menu/Impostazioni" method="_on_go_back_requested"]
 [connection signal="popup_hide" from="Menu/Impostazioni" to="Menu" method="_on_impostazioni_popup_hide"]
-[connection signal="gui_input" from="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/Scribble4" to="Menu" method="_on_scribble_4_gui_input"]
+[connection signal="window_input" from="Menu/Impostazioni" to="Menu/Impostazioni" method="_on_window_input"]
 [connection signal="item_selected" from="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/OptionButton" to="Menu/Impostazioni" method="_on_option_button_item_selected"]
 [connection signal="toggled" from="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen" to="Menu/Impostazioni" method="_on_full_screen_toggled"]
+[connection signal="toggled" from="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/CancellaDati" to="Menu" method="_on_cancella_dati_toggled"]
+[connection signal="gui_input" from="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/Scribble4" to="Menu/Impostazioni" method="_on_scribble_4_gui_input"]
 [connection signal="pressed" from="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/Ritorna Indietro" to="Menu/Impostazioni" method="_on_ritorna_indietro_pressed"]
-[connection signal="pressed" from="Menu/Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel/exit" to="Menu" method="_on_exit_pressed"]
+[connection signal="pressed" from="Menu/Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel/exit" to="Menu/Impostazioni" method="_on_exit_pressed"]

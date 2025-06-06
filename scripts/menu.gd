@@ -9,12 +9,14 @@ extends Control
 @onready var options = get_tree().get_nodes_in_group("options")
 @onready var scribble2_n : TextureRect = $Background/Scribble2
 @onready var scribble2_p : TextureRect = $Background/Scribble2_pressed
-@onready var crediti : Popup = $Impostazioni/crediti
+@onready var cancellaDati = $Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/CancellaDati
+@onready var checkCD = $Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/CancellaDati/CheckCD
 
 func _process(_delta: float) -> void:
 	for option in options:
 		if option is Button:
 			Globals.btn_hover(option)
+	Globals.btn_hover(cancellaDati)
 
 func _on_selezione_livelli_pressed() -> void:
 	checkLvl.set_visible(true)
@@ -53,6 +55,12 @@ func _on_diario_pressed() -> void:
 	Globals.set_flag(true)
 	Globals.goto_load_scene("res://scenes/rinforzo_positivo.tscn")
 
+func _on_cancella_dati_toggled(_toggled_on: bool) -> void:
+	checkCD.set_visible(true)
+	await get_tree().create_timer(0.5).timeout
+	#fai la cancellazione dei dati
+	checkCD.set_visible(false)
+
 func _on_scribble_2_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		scribble2_n.set_visible(false)
@@ -62,10 +70,3 @@ func _on_scribble_2_pressed_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		scribble2_p.set_visible(false)
 		scribble2_n.set_visible(true)
-
-func _on_scribble_4_gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		crediti.popup()
-
-func _on_exit_pressed() -> void:
-	crediti.hide()

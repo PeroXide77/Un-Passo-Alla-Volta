@@ -6,6 +6,7 @@ extends Control
 
 var postItLevel: TextureRect = null
 
+
 func _ready() -> void:
 	show_postIts()
 	for postIt in postIts:
