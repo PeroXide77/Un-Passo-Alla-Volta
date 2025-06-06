@@ -10,11 +10,12 @@ extends Control
 @onready var obiettivo: RichTextLabel = $"Obiettivo/Sfondo Opaco/Obiettivo_Panel/ScrollContainer/VBoxContainer/Obiettivo"
 @onready var obiettivo_page: Popup = $Obiettivo
 @onready var impost: Popup = $Impostazioni
-@onready var checkGoal: TextureRect = $Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/showGoal/CheckGoal
-@onready var showButt: Button = $Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/showGoal
+@onready var checkGoal: TextureRect = $Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/showGoal/CheckGoal
+@onready var showButt: Button = $Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/showGoal
 @onready var imposButton: Button = $Background/impostazioni
 @onready var vignetta : TextureRect = $"Obiettivo/Sfondo Opaco/Obiettivo_Panel/ScrollContainer/VBoxContainer/Vignetta"
 @onready var npc: TextureRect = $ContainerNpc/Personaggio
+@onready var anim = $Impostazioni/AnimationPlayer
 
 func _process(_delta: float) -> void:
 	Globals.btn_hover(showButt)
@@ -108,6 +109,8 @@ func _on_exit_pressed() -> void:
 func _on_showGoal_toggled(_toggled_on: bool) -> void:
 	checkGoal.set_visible(true)
 	await get_tree().create_timer(0.5).timeout
+	anim.play_backwards("popUp")
+	await anim.animation_finished
 	impost.hide()
 	checkGoal.set_visible(false)
 	obiettivo_page.popup()

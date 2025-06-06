@@ -5,6 +5,7 @@ extends Popup
 @onready var fullScreen = $SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen
 @onready var checkFS = $SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen/CheckFS
 @onready var imp = $"."
+@onready var crediti : Popup = $crediti
 @onready var anim = $AnimationPlayer
 
 func _process(_delta: float) -> void:
@@ -54,5 +55,23 @@ func _on_ritorna_indietro_pressed() -> void:
 	await anim.animation_finished
 	imp.hide()
 
+func _on_go_back_requested() -> void:
+	_on_ritorna_indietro_pressed()
+
+func _on_close_requested() -> void:
+	_on_ritorna_indietro_pressed()
+
+func _on_window_input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		if event.pressed and event.keycode == KEY_ESCAPE:
+			_on_ritorna_indietro_pressed()
+
 func _on_about_to_popup() -> void:
 	anim.play("popUp")
+
+func _on_scribble_4_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		crediti.popup()
+
+func _on_exit_pressed() -> void:
+	crediti.hide()

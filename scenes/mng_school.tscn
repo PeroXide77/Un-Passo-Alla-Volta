@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cvu1yt4it0onx"]
+[gd_scene load_steps=49 format=3 uid="uid://cvu1yt4it0onx"]
 
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="1_1r1m4"]
 [ext_resource type="Script" uid="uid://cxon8uwj2anrb" path="res://scripts/minigames_school.gd" id="1_f5ayh"]
@@ -9,14 +9,18 @@
 [ext_resource type="StyleBox" uid="uid://bvaywvbkfe4rj" path="res://assets/styles/hoverButtons.tres" id="7_x0tsx"]
 [ext_resource type="Texture2D" uid="uid://ds186uo7s2om3" path="res://icons/buttons/box_not_checked.png" id="8_k7hxd"]
 [ext_resource type="Texture2D" uid="uid://c6gdl5iv5pqms" path="res://icons/buttons/check.png" id="9_6iamy"]
+[ext_resource type="Texture2D" uid="uid://dj2h60acf1emf" path="res://assets/backgrounds/bgSettings.png" id="9_iusyb"]
 [ext_resource type="Texture2D" uid="uid://dthxxmlg5ebw7" path="res://assets/sprites/schoolMinigame/astuccio.png" id="10_6iamy"]
 [ext_resource type="Script" uid="uid://bk10uffv0x3da" path="res://scripts/npcMinigames.gd" id="10_k7hxd"]
 [ext_resource type="ButtonGroup" uid="uid://mhcoj0m781gl" path="res://assets/buttongroup/astucci.tres" id="10_u3vfo"]
 [ext_resource type="Texture2D" uid="uid://cxy4714ytyqni" path="res://assets/sprites/schoolMinigame/Protagonista/portamine.png" id="11_x0tsx"]
 [ext_resource type="ButtonGroup" uid="uid://dfngdr62m35uc" path="res://assets/buttongroup/oggetti.tres" id="12_6fswv"]
+[ext_resource type="Texture2D" uid="uid://bs0ybgvbrdwym" path="res://icons/scribbles/scribble4 .png" id="13_870a6"]
 [ext_resource type="Texture2D" uid="uid://c435eo3edby7t" path="res://assets/sprites/schoolMinigame/astuccioGiuseppe.png" id="13_ru0os"]
 [ext_resource type="Texture2D" uid="uid://brvkr7k82xltp" path="res://icons/speech_bubble.png" id="13_u3vfo"]
 [ext_resource type="Texture2D" uid="uid://bi62iidwpbxsk" path="res://icons/buttons/completedButton.png" id="13_x0tsx"]
+[ext_resource type="Theme" uid="uid://im1kev326hh2" path="res://assets/styles/VScrollBarHide.tres" id="14_vpnmc"]
+[ext_resource type="Texture2D" uid="uid://bbvm1b4qelxh8" path="res://assets/sounds/RiccioPortaFortuna.png" id="15_offgp"]
 [ext_resource type="Texture2D" uid="uid://en2782805a2u" path="res://assets/sprites/NPC/Caterina.png" id="16_jb13w"]
 [ext_resource type="AudioStream" uid="uid://cb63vnh5ypxv4" path="res://assets/sounds/schoolGameIntroGiuseppe.mp3" id="19_37uvj"]
 [ext_resource type="Texture2D" uid="uid://otvny5ni53ha" path="res://icons/buttons/audio.png" id="19_jb13w"]
@@ -55,14 +59,198 @@ corner_radius_top_right = 200
 corner_radius_bottom_right = 200
 corner_radius_bottom_left = 200
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kf2ic"]
-bg_color = Color(1, 0.921569, 0.803922, 0.941176)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lv5jm"]
+texture = ExtResource("9_iusyb")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ywbyo"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dxm74"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fu74a"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r67sk"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iusyb"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5xti6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_np4kh"]
+bg_color = Color(0.85098, 0.6, 0.458824, 0.94902)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_65jlp"]
+bg_color = Color(0.937255, 0.741176, 0.627451, 0.945098)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rl6ki"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjg8j"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hnq7o"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+
+[sub_resource type="Animation" id="Animation_kait0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SfondoTrasparent:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SfondoTrasparent/BoxImpostazioni:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(600, 800)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SfondoTrasparent/BoxImpostazioni/VBoxContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SfondoTrasparent/BoxImpostazioni/Ritorna Indietro:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SfondoTrasparent/BoxImpostazioni:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_gjjcl"]
+resource_name = "popUp"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SfondoTrasparent:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SfondoTrasparent/BoxImpostazioni:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.333333, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(600, 0), Vector2(600, 800)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SfondoTrasparent/BoxImpostazioni/VBoxContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.7, 0.71),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SfondoTrasparent/BoxImpostazioni/Ritorna Indietro:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.933333, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SfondoTrasparent/BoxImpostazioni:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.06, 0.14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_6pj40"]
+resource_name = "settings"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6pj40"]
+_data = {
+&"RESET": SubResource("Animation_kait0"),
+&"popUp": SubResource("Animation_gjjcl"),
+&"settings": SubResource("Animation_6pj40")
+}
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6fswv"]
 
@@ -207,6 +395,7 @@ transparent = true
 script = ExtResource("5_k7hxd")
 
 [node name="SfondoTrasparent" type="Panel" parent="minigames_school/Impostazioni"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -214,6 +403,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="BoxImpostazioni" type="Panel" parent="minigames_school/Impostazioni/SfondoTrasparent"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -221,12 +411,13 @@ anchor_bottom = 1.0
 offset_left = 660.0
 offset_top = 120.0
 offset_right = -660.0
-offset_bottom = -160.0
+offset_bottom = -960.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_kf2ic")
+theme_override_styles/panel = SubResource("StyleBoxTexture_lv5jm")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="minigames_school/Impostazioni/SfondoTrasparent/BoxImpostazioni"]
+visible = false
 custom_minimum_size = Vector2(400, 300)
 layout_mode = 1
 anchors_preset = 15
@@ -237,69 +428,74 @@ grow_vertical = 2
 alignment = 1
 
 [node name="VolumeP" type="Panel" parent="minigames_school/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
-custom_minimum_size = Vector2(0, 160)
+custom_minimum_size = Vector2(0, 110)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_ywbyo")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dxm74")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="minigames_school/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP"]
-custom_minimum_size = Vector2(600, 100)
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 14.0
-offset_bottom = 114.0
-grow_horizontal = 2
-theme_override_colors/selection_color = Color(0.962296, 0.733232, 1, 1)
-theme_override_constants/table_v_separation = 4
-theme_override_constants/text_highlight_h_padding = 6
-theme_override_constants/outline_size = 13
-theme_override_constants/shadow_offset_y = 8
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_outline_size = 14
-theme_override_constants/line_separation = 5
-theme_override_fonts/normal_font = ExtResource("2_f5ayh")
-theme_override_font_sizes/bold_italics_font_size = 1
-theme_override_font_sizes/italics_font_size = 1
-theme_override_font_sizes/mono_font_size = 1
-theme_override_font_sizes/normal_font_size = 70
-theme_override_font_sizes/bold_font_size = 1
-text = "VOLUME"
-scroll_active = false
-tab_size = 1
-horizontal_alignment = 1
-justification_flags = 128
-visible_characters_behavior = 2
-
-[node name="volume" type="HSlider" parent="minigames_school/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP"]
-custom_minimum_size = Vector2(400, 50)
+custom_minimum_size = Vector2(530, 100)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = 4.0
-offset_right = 200.0
-offset_bottom = 54.0
+offset_left = -265.0
+offset_top = -50.0
+offset_right = 265.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/selection_color = Color(0.962296, 0.733232, 1, 1)
+theme_override_constants/table_v_separation = 4
+theme_override_constants/text_highlight_h_padding = 6
+theme_override_constants/outline_size = 13
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_outline_size = 14
+theme_override_constants/line_separation = 5
+theme_override_fonts/normal_font = ExtResource("2_f5ayh")
+theme_override_font_sizes/bold_italics_font_size = 1
+theme_override_font_sizes/italics_font_size = 1
+theme_override_font_sizes/mono_font_size = 1
+theme_override_font_sizes/normal_font_size = 65
+theme_override_font_sizes/bold_font_size = 1
+text = "VOLUME"
+scroll_active = false
+tab_size = 1
+justification_flags = 128
+visible_characters_behavior = 2
+
+[node name="volume" type="HSlider" parent="minigames_school/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -33.0
+offset_right = 272.0
+offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
 ticks_on_borders = true
 
 [node name="VideoP" type="Panel" parent="minigames_school/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
-custom_minimum_size = Vector2(0, 300)
+custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_fu74a")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_r67sk")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="minigames_school/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(550, 100)
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 1.0
-offset_top = 97.0
-offset_right = 1.0
-offset_bottom = 197.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -275.0
+offset_right = 275.0
+offset_bottom = 100.0
 grow_horizontal = 2
 theme_override_colors/selection_color = Color(0.962296, 0.733232, 1, 1)
 theme_override_constants/table_v_separation = 4
@@ -313,7 +509,7 @@ theme_override_fonts/normal_font = ExtResource("2_f5ayh")
 theme_override_font_sizes/bold_italics_font_size = 1
 theme_override_font_sizes/italics_font_size = 1
 theme_override_font_sizes/mono_font_size = 1
-theme_override_font_sizes/normal_font_size = 70
+theme_override_font_sizes/normal_font_size = 60
 theme_override_font_sizes/bold_font_size = 1
 text = "SCHERMO"
 scroll_active = false
@@ -329,10 +525,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -10.0
-offset_top = -32.0
-offset_right = 290.0
-offset_bottom = 18.0
+offset_left = -28.0
+offset_top = -81.0
+offset_right = 272.0
+offset_bottom = -31.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 13
@@ -341,12 +537,14 @@ theme_override_font_sizes/font_size = 50
 
 [node name="FullScreen" type="Button" parent="minigames_school/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP"]
 layout_mode = 1
-anchors_preset = 12
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_top = -84.0
-offset_bottom = 13.0
+offset_left = -266.0
+offset_top = -97.0
+offset_right = 266.0
 grow_horizontal = 2
 grow_vertical = 0
 focus_mode = 0
@@ -375,7 +573,16 @@ offset_bottom = 82.0
 texture = ExtResource("9_6iamy")
 expand_mode = 1
 
+[node name="Scribble4" type="TextureRect" parent="minigames_school/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
+custom_minimum_size = Vector2(500, 190)
+layout_mode = 2
+texture = ExtResource("13_870a6")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="Ritorna Indietro" type="Button" parent="minigames_school/Impostazioni/SfondoTrasparent/BoxImpostazioni"]
+visible = false
+custom_minimum_size = Vector2(70, 100)
 layout_mode = 0
 offset_left = -36.0
 offset_top = 88.0
@@ -391,11 +598,118 @@ theme_override_constants/line_spacing = 7
 theme_override_fonts/font = ExtResource("2_f5ayh")
 theme_override_font_sizes/font_size = 100
 text = "⤴"
-icon = SubResource("CompressedTexture2D_iusyb")
+icon = SubResource("CompressedTexture2D_5xti6")
 flat = true
 text_overrun_behavior = 2
 icon_alignment = 1
 expand_icon = true
+
+[node name="crediti" type="Popup" parent="minigames_school/Impostazioni"]
+auto_translate_mode = 1
+transparent_bg = true
+size = Vector2i(1920, 1120)
+transparent = true
+
+[node name="Sfondo Opaco" type="Panel" parent="minigames_school/Impostazioni/crediti"]
+custom_minimum_size = Vector2(1000, 800)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -400.0
+offset_right = 500.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_np4kh")
+
+[node name="Obiettivo_Panel" type="Panel" parent="minigames_school/Impostazioni/crediti/Sfondo Opaco"]
+custom_minimum_size = Vector2(950, 730)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -475.0
+offset_top = -195.0
+offset_right = 475.0
+offset_bottom = 195.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_65jlp")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="minigames_school/Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel"]
+custom_minimum_size = Vector2(950, 730)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("14_vpnmc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="minigames_school/Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel/ScrollContainer"]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="minigames_school/Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(900, 120)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_f5ayh")
+theme_override_font_sizes/normal_font_size = 80
+text = "Credits"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="crediti" type="RichTextLabel" parent="minigames_school/Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(950, 50)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_f5ayh")
+theme_override_font_sizes/normal_font_size = 50
+text = " ☆ ☆ Un gioco di Chandelier Light  ☆ ☆ 
+
+Lucia Meliota - programming
+Dario Ungaro - programming
+Natalia Meliota - art
+
+Grazie mille per aver scelto di giocare a questo gioco!"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="immagine" type="TextureRect" parent="minigames_school/Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 420)
+layout_mode = 2
+texture = ExtResource("15_offgp")
+expand_mode = 1
+
+[node name="exit" type="Button" parent="minigames_school/Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -85.0
+offset_bottom = 87.0
+grow_horizontal = 0
+focus_mode = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_f5ayh")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/hover = SubResource("StyleBoxFlat_rl6ki")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gjg8j")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hnq7o")
+text = "X"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="minigames_school/Impostazioni"]
+libraries = {
+&"": SubResource("AnimationLibrary_6pj40")
+}
 
 [node name="Game" type="VBoxContainer" parent="minigames_school"]
 custom_minimum_size = Vector2(1920, 770)
@@ -756,9 +1070,13 @@ stream = ExtResource("19_37uvj")
 
 [connection signal="pressed" from="minigames_school/impostazioni" to="minigames_school" method="_on_impostazioni_pressed"]
 [connection signal="pressed" from="minigames_school/Ritorna Indietro" to="minigames_school" method="_on_ritorna_indietro_pressed"]
+[connection signal="about_to_popup" from="minigames_school/Impostazioni" to="minigames_school/Impostazioni" method="_on_about_to_popup"]
+[connection signal="close_requested" from="minigames_school/Impostazioni" to="minigames_school/Impostazioni" method="_on_close_requested"]
 [connection signal="item_selected" from="minigames_school/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/OptionButton" to="minigames_school/Impostazioni" method="_on_option_button_item_selected"]
 [connection signal="toggled" from="minigames_school/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen" to="minigames_school/Impostazioni" method="_on_full_screen_toggled"]
+[connection signal="gui_input" from="minigames_school/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/Scribble4" to="minigames_school/Impostazioni" method="_on_scribble_4_gui_input"]
 [connection signal="pressed" from="minigames_school/Impostazioni/SfondoTrasparent/BoxImpostazioni/Ritorna Indietro" to="minigames_school/Impostazioni" method="_on_ritorna_indietro_pressed"]
+[connection signal="pressed" from="minigames_school/Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel/exit" to="minigames_school/Impostazioni" method="_on_exit_pressed"]
 [connection signal="visibility_changed" from="minigames_school/Npc" to="minigames_school/Npc" method="_on_visibility_changed"]
 [connection signal="pressed" from="minigames_school/Npc/SfondoTrasparent/Completed" to="minigames_school/Npc" method="_on_completed_pressed"]
 [connection signal="pressed" from="minigames_school/Npc/SfondoTrasparent/Speak" to="minigames_school/Npc" method="_on_speak_pressed"]

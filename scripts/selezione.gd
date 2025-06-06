@@ -5,9 +5,10 @@ extends Control
 @onready var popupGame : Panel = $gamePopup
 @onready var titlePop : RichTextLabel = $gamePopup/Title
 @onready var textPop : RichTextLabel = $gamePopup/ScrollContainer/text
-@onready var popup_imp : Popup = $"../Impostazioni"
+@onready var popup_imp : Popup = $Impostazioni
 @onready var scribble3 : TextureRect = $Scribble3
-@onready var crediti : Popup = $"../Impostazioni/crediti"
+@onready var crediti : Popup = $"Impostazioni/crediti"
+
 
 func _ready():
 	levelGroup.pressed.connect(buttonGroup_pressed)
