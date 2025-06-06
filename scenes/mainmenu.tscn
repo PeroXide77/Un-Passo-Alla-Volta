@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://g886cxu4jrgf"]
+[gd_scene load_steps=28 format=3 uid="uid://g886cxu4jrgf"]
 
 [ext_resource type="Script" uid="uid://c03emyoy2uomi" path="res://scripts/menu.gd" id="1_vh50t"]
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="3_dfy5j"]
@@ -10,12 +10,13 @@
 [ext_resource type="Script" uid="uid://bnaqpofnsnbg0" path="res://scripts/impostazioni.gd" id="7_85riq"]
 [ext_resource type="Texture2D" uid="uid://ds186uo7s2om3" path="res://icons/buttons/box_not_checked.png" id="8_nkpmc"]
 [ext_resource type="Texture2D" uid="uid://c6gdl5iv5pqms" path="res://icons/buttons/check.png" id="9_fsdjo"]
+[ext_resource type="Texture2D" uid="uid://dj2h60acf1emf" path="res://assets/backgrounds/bgSettings.png" id="11_kait0"]
 [ext_resource type="Texture2D" uid="uid://bs0ybgvbrdwym" path="res://icons/scribbles/scribble4 .png" id="11_prb5i"]
 [ext_resource type="Theme" uid="uid://im1kev326hh2" path="res://assets/styles/VScrollBarHide.tres" id="12_gjjcl"]
 [ext_resource type="Texture2D" uid="uid://bbvm1b4qelxh8" path="res://assets/sounds/RiccioPortaFortuna.png" id="13_kait0"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfy5j"]
-bg_color = Color(1, 0.921569, 0.803922, 0.941176)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6pj40"]
+texture = ExtResource("11_kait0")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wf3n4"]
 
@@ -70,6 +71,142 @@ corner_radius_top_left = 200
 corner_radius_top_right = 200
 corner_radius_bottom_right = 200
 corner_radius_bottom_left = 200
+
+[sub_resource type="Animation" id="Animation_kait0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SfondoTrasparent:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SfondoTrasparent/BoxImpostazioni:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(600, 800)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SfondoTrasparent/BoxImpostazioni/VBoxContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SfondoTrasparent/BoxImpostazioni/Ritorna Indietro:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SfondoTrasparent/BoxImpostazioni:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_gjjcl"]
+resource_name = "popUp"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SfondoTrasparent:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SfondoTrasparent/BoxImpostazioni:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.333333, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(600, 0), Vector2(600, 800)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SfondoTrasparent/BoxImpostazioni/VBoxContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.7, 0.71),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SfondoTrasparent/BoxImpostazioni/Ritorna Indietro:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.933333, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SfondoTrasparent/BoxImpostazioni:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.06, 0.14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_6pj40"]
+resource_name = "settings"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6pj40"]
+_data = {
+&"RESET": SubResource("Animation_kait0"),
+&"popUp": SubResource("Animation_gjjcl"),
+&"settings": SubResource("Animation_6pj40")
+}
 
 [node name="MainMenu" type="Node2D"]
 
@@ -339,6 +476,7 @@ transparent = true
 script = ExtResource("7_85riq")
 
 [node name="SfondoTrasparent" type="Panel" parent="Menu/Impostazioni"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -346,6 +484,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="BoxImpostazioni" type="Panel" parent="Menu/Impostazioni/SfondoTrasparent"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -356,9 +495,10 @@ offset_right = -660.0
 offset_bottom = -160.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_dfy5j")
+theme_override_styles/panel = SubResource("StyleBoxTexture_6pj40")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni"]
+visible = false
 custom_minimum_size = Vector2(400, 300)
 layout_mode = 1
 anchors_preset = 15
@@ -502,7 +642,6 @@ icon = ExtResource("8_nkpmc")
 flat = true
 
 [node name="CheckFS" type="TextureRect" parent="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen"]
-visible = false
 layout_mode = 0
 offset_left = -2.0
 offset_top = -5.0
@@ -512,7 +651,7 @@ texture = ExtResource("9_fsdjo")
 expand_mode = 1
 
 [node name="Ritorna Indietro" type="Button" parent="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni"]
-layout_mode = 0
+visible = false
 offset_left = -36.0
 offset_top = 88.0
 offset_right = 52.0
@@ -635,6 +774,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_prb5i")
 theme_override_styles/normal = SubResource("StyleBoxFlat_xwyuh")
 text = "X"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Menu/Impostazioni"]
+libraries = {
+&"": SubResource("AnimationLibrary_6pj40")
+}
+
 [connection signal="gui_input" from="Menu/Background/Scribble2" to="Menu" method="_on_scribble_2_gui_input"]
 [connection signal="gui_input" from="Menu/Background/Scribble2_pressed" to="Menu" method="_on_scribble_2_pressed_gui_input"]
 [connection signal="pressed" from="Menu/VBoxContainer/SelezioneLivelli" to="Menu" method="_on_selezione_livelli_pressed"]
@@ -642,6 +786,8 @@ text = "X"
 [connection signal="pressed" from="Menu/VBoxContainer/Diario" to="Menu" method="_on_diario_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Impostazioni" to="Menu" method="_on_impostazioni_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Exit" to="Menu" method="_on_esci_pressed"]
+[connection signal="about_to_popup" from="Menu/Impostazioni" to="Menu/Impostazioni" method="_on_about_to_popup"]
+[connection signal="close_requested" from="Menu/Impostazioni" to="Menu/Impostazioni" method="_on_close_requested"]
 [connection signal="popup_hide" from="Menu/Impostazioni" to="Menu" method="_on_impostazioni_popup_hide"]
 [connection signal="gui_input" from="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/Scribble4" to="Menu" method="_on_scribble_4_gui_input"]
 [connection signal="item_selected" from="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/OptionButton" to="Menu/Impostazioni" method="_on_option_button_item_selected"]

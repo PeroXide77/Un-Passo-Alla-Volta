@@ -668,6 +668,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Speak" type="Button" parent="minigames_eyeTrack/Npc/SfondoTrasparent"]
+layout_mode = 0
 offset_left = 1248.0
 offset_top = 81.0
 offset_right = 1348.0

@@ -663,7 +663,7 @@ icon = ExtResource("11_x0tsx")
 flat = true
 icon_alignment = 1
 expand_icon = true
-metadata/owner = false
+metadata/owner = true
 
 [node name="End" type="Panel" parent="minigames_school/Game/Cancelleria"]
 custom_minimum_size = Vector2(23, 0)
@@ -737,6 +737,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Speak" type="Button" parent="minigames_school/Npc/SfondoTrasparent"]
+layout_mode = 0
 offset_left = 1248.0
 offset_top = 81.0
 offset_right = 1348.0
