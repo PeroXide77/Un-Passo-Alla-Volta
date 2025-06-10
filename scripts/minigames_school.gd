@@ -67,7 +67,7 @@ func case_pressed(b: BaseButton) :
 		npcDialog.show()
 	gameEnd()
 	if Globals.isMinigameEnded():
-		Globals.set_txtTutorial("Grazie mille per l'aiuto, alla prossima!")
+		Globals.set_txtTutorial("Grazie mille per l'aiuto, alla prossima! Torna quando vuoi per aiutarmi a sistemare ancora, posso sempre contare sul tuo aiuto.")
 		npcDialog.show()
 	else:
 		set_buttons_disabled(astucci, true)

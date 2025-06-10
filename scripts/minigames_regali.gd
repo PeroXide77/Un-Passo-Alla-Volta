@@ -44,7 +44,7 @@ func gift_pressed(b : BaseButton) :
 	b.release_focus()
 	if b.get_meta("open"):
 		b.set_pressed_no_signal(false)
-		Globals.set_txtTutorial("Quel regalo l hai già aperto, apri gli altri!")
+		Globals.set_txtTutorial("Questo regalo è già stato aperto! Prova ad aprirne altri.")
 		npcDialog.show()
 	else:
 		if b.get_meta("owner"):
@@ -53,11 +53,11 @@ func gift_pressed(b : BaseButton) :
 			b.set_meta("open", true)
 		else:
 			b.set_pressed_no_signal(false)
-			Globals.set_txtTutorial("Mmh, non penso che sia tuo questo regalo, apro solo i tuoi!")
+			Globals.set_txtTutorial("Mmh, non penso che questo regalo sia tuo. Ritenta!")
 			npcDialog.show()
 	gameEnd()
 	if Globals.isMinigameEnded():
-		Globals.set_txtTutorial("Spero sei felice dei tuoi regali!")
+		Globals.set_txtTutorial("Hai aperto tutti i tuoi regali! Spero che ti piacciano. Torna quando vuoi per provare ad aprire altri regali.")
 		npcDialog.show()
 
 func gameEnd() -> void:

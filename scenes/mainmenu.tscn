@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://g886cxu4jrgf"]
+[gd_scene load_steps=32 format=3 uid="uid://g886cxu4jrgf"]
 
 [ext_resource type="Script" uid="uid://c03emyoy2uomi" path="res://scripts/menu.gd" id="1_vh50t"]
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="3_dfy5j"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bs0ybgvbrdwym" path="res://icons/scribbles/scribble4 .png" id="11_prb5i"]
 [ext_resource type="Theme" uid="uid://im1kev326hh2" path="res://assets/styles/VScrollBarHide.tres" id="12_gjjcl"]
 [ext_resource type="Texture2D" uid="uid://bbvm1b4qelxh8" path="res://assets/sounds/RiccioPortaFortuna.png" id="13_kait0"]
+[ext_resource type="FontFile" uid="uid://dmwtstgnkr0oc" path="res://assets/fonts/Anton/Anton-Regular.ttf" id="15_6pj40"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6pj40"]
 texture = ExtResource("11_kait0")
@@ -207,6 +208,42 @@ _data = {
 &"popUp": SubResource("Animation_gjjcl"),
 &"settings": SubResource("Animation_6pj40")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6huh"]
+bg_color = Color(0.980392, 0.905882, 0.709804, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.944132, 0.658416, 0.490606, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hn6ym"]
+bg_color = Color(0.945098, 0.658824, 0.490196, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.325441, 0.325441, 0.325441, 1)
+border_blend = true
+
+[sub_resource type="Theme" id="Theme_gr43c"]
+default_font = ExtResource("4_85riq")
+default_font_size = 50
+AcceptDialog/constants/close_v_offset = 23
+AcceptDialog/constants/title_height = 21
+AcceptDialog/constants/title_outline_size = 4
+AcceptDialog/styles/panel = SubResource("StyleBoxFlat_c6huh")
+Button/constants/line_spacing = 8
+Button/constants/outline_size = 10
+Button/font_sizes/font_size = 50
+Button/fonts/font = ExtResource("15_6pj40")
+Button/styles/normal = SubResource("StyleBoxFlat_hn6ym")
+Label/colors/font_color = Color(0, 0, 0, 1)
 
 [node name="MainMenu" type="Node2D"]
 
@@ -492,7 +529,7 @@ anchor_bottom = 1.0
 offset_left = 660.0
 offset_top = 120.0
 offset_right = -660.0
-offset_bottom = -960.0
+offset_bottom = -160.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_6pj40")
@@ -836,6 +873,29 @@ libraries = {
 &"": SubResource("AnimationLibrary_6pj40")
 }
 
+[node name="AcceptDialogBG" type="Panel" parent="Menu"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AcceptDialog" type="AcceptDialog" parent="Menu/AcceptDialogBG"]
+title = " "
+initial_position = 1
+size = Vector2i(640, 283)
+unresizable = true
+borderless = true
+min_size = Vector2i(4, 0)
+content_scale_size = Vector2i(8, 0)
+theme = SubResource("Theme_gr43c")
+ok_button_text = " OK "
+dialog_text = "  I dati sono stati cancellati 
+        correttamente!  "
+dialog_autowrap = true
+
 [connection signal="gui_input" from="Menu/Background/Scribble2" to="Menu" method="_on_scribble_2_gui_input"]
 [connection signal="gui_input" from="Menu/Background/Scribble2_pressed" to="Menu" method="_on_scribble_2_pressed_gui_input"]
 [connection signal="pressed" from="Menu/VBoxContainer/SelezioneLivelli" to="Menu" method="_on_selezione_livelli_pressed"]
@@ -854,3 +914,9 @@ libraries = {
 [connection signal="gui_input" from="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/Scribble4" to="Menu/Impostazioni" method="_on_scribble_4_gui_input"]
 [connection signal="pressed" from="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/Ritorna Indietro" to="Menu/Impostazioni" method="_on_ritorna_indietro_pressed"]
 [connection signal="pressed" from="Menu/Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel/exit" to="Menu/Impostazioni" method="_on_exit_pressed"]
+[connection signal="canceled" from="Menu/AcceptDialogBG/AcceptDialog" to="Menu" method="_on_accept_dialog_canceled"]
+[connection signal="close_requested" from="Menu/AcceptDialogBG/AcceptDialog" to="Menu" method="_on_accept_dialog_close_requested"]
+[connection signal="confirmed" from="Menu/AcceptDialogBG/AcceptDialog" to="Menu" method="_on_accept_dialog_confirmed"]
+[connection signal="custom_action" from="Menu/AcceptDialogBG/AcceptDialog" to="Menu" method="_on_accept_dialog_custom_action"]
+[connection signal="focus_exited" from="Menu/AcceptDialogBG/AcceptDialog" to="Menu" method="_on_accept_dialog_focus_exited"]
+[connection signal="go_back_requested" from="Menu/AcceptDialogBG/AcceptDialog" to="Menu" method="_on_accept_dialog_go_back_requested"]

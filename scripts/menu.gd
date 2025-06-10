@@ -11,6 +11,9 @@ extends Control
 @onready var scribble2_p : TextureRect = $Background/Scribble2_pressed
 @onready var cancellaDati = $Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/CancellaDati
 @onready var checkCD = $Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/CancellaDati/CheckCD
+@onready var popupAvvisoBG = $AcceptDialogBG
+@onready var popupAvviso = $AcceptDialogBG/AcceptDialog
+@onready var anim = $Impostazioni/AnimationPlayer
 
 func _process(_delta: float) -> void:
 	for option in options:
@@ -58,8 +61,9 @@ func _on_diario_pressed() -> void:
 func _on_cancella_dati_toggled(_toggled_on: bool) -> void:
 	checkCD.set_visible(true)
 	await get_tree().create_timer(0.5).timeout
-	#fai la cancellazione dei dati
-	checkCD.set_visible(false)
+	Globals.cancel_data()
+	popupAvvisoBG.show()
+	popupAvviso.show()
 
 func _on_scribble_2_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
@@ -70,3 +74,25 @@ func _on_scribble_2_pressed_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		scribble2_p.set_visible(false)
 		scribble2_n.set_visible(true)
+
+func _on_accept_dialog_canceled() -> void:
+	checkCD.set_visible(false)
+	popupAvvisoBG.hide()
+	anim.play_backwards("popUp")
+	await anim.animation_finished
+
+func _on_accept_dialog_close_requested() -> void:
+	_on_accept_dialog_canceled()
+
+func _on_accept_dialog_custom_action(_action: StringName) -> void:
+	_on_accept_dialog_canceled()
+
+func _on_accept_dialog_go_back_requested() -> void:
+	_on_accept_dialog_canceled()
+
+func _on_accept_dialog_confirmed() -> void:
+	_on_accept_dialog_canceled()
+
+func _on_accept_dialog_focus_exited() -> void:
+	popupAvviso.hide()
+	_on_accept_dialog_canceled()
