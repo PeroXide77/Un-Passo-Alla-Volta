@@ -9,7 +9,6 @@ extends Control
 @onready var scribble3 : TextureRect = $Scribble3
 @onready var crediti : Popup = $"Impostazioni/crediti"
 
-
 func _ready():
 	levelGroup.pressed.connect(buttonGroup_pressed)
 	scribble3.set_self_modulate(Globals.randomizeColor())

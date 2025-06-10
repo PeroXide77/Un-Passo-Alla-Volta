@@ -37,18 +37,49 @@ var current_scene = null
 var nextScene = null 
 var volume: float = 100
 var resIndex = 0
-var gameState: int = 11
+var gameState: int = 0
 var end : bool
 var txtTutorial : String = ""
 var npcTutorial : String = ""
 var flagMinigameEnd : bool = false
 var flagDiario : bool = false
+var save_path = "res://dataSaving/saving.txt"
+
+func _ready() -> void:
+	var root = get_tree().root
+	# Using a negative index counts from the end, so this gets the last child node of `root`.
+	current_scene = root.get_child(-1)
+	load_data()
+
+func save_data():
+	var file = FileAccess.open(save_path, FileAccess.WRITE)
+	file.store_line(str(gameState))
+	file.close()
+
+func load_data():
+	var file = FileAccess.open(save_path, FileAccess.READ)
+	if file:
+		var gameStateFile: String = file.get_as_text()
+		set_gameState(int(gameStateFile))
+		file.close()
+	else:
+		print("Error: Could not open file at " + save_path)
+
+func cancel_data():
+	var file = FileAccess.open(save_path, FileAccess.WRITE)
+	file.store_line("0")
+	set_gameState(0)
+	file.close()
 
 func get_gameState() -> int:
 	return gameState
 
+func set_gameState(g : int) -> void:
+	gameState = g
+
 func nextState() -> void:
 	gameState += 1
+	save_data()
 
 func get_volume() -> float:
 	return volume
@@ -91,11 +122,6 @@ func setFlagMinigameEnd(b: bool) -> void:
 
 func isMinigameEnded() -> bool:
 	return flagMinigameEnd
-
-func _ready():
-	var root = get_tree().root
-	# Using a negative index counts from the end, so this gets the last child node of `root`.
-	current_scene = root.get_child(-1)
 
 func goto_load_scene(scena):
 	nextScene = scena
