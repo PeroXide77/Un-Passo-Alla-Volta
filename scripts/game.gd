@@ -16,6 +16,9 @@ extends Control
 @onready var vignetta : TextureRect = $"Obiettivo/Sfondo Opaco/Obiettivo_Panel/ScrollContainer/VBoxContainer/Vignetta"
 @onready var npc: TextureRect = $ContainerNpc/Personaggio
 @onready var anim = $Impostazioni/AnimationPlayer
+@onready var loser : Panel = $LoseGame
+@onready var returnbuttonlose: Button = $LoseGame/SfondoTrasparent/ReturnButtonLose
+@onready var speech: RichTextLabel = $"LoseGame/SfondoTrasparent/Speech Bubble Output/Speech"
 
 func _process(_delta: float) -> void:
 	Globals.btn_hover(showButt)
@@ -63,10 +66,15 @@ func _on_http_request_request_completed(_result: int, response_code: int, _heade
 	
 	Chatbot.loading_Chat_end(response_label, loading)
 	if "[LIVELLO COMPLETATO]" in npc_reply :
-		await Chatbot.print_txt(npc_reply.replace("[LIVELLO COMPLETATO]", ""), response_label)
+		await Chatbot.print_txt(npc_reply.replace("[LIVELLO COMPLETATO]", "") + "\n", response_label)
 		completedButton.set_visible(true)
 	else :
-		await Chatbot.print_txt(npc_reply, response_label)
+		if "[LIVELLO PERSO]" in npc_reply :
+			await Chatbot.print_txt(npc_reply.replace("[LIVELLO PERSO]", "") + "\n", response_label)
+			await get_tree().create_timer(0.3).timeout
+			loser.show()
+		else :
+			await Chatbot.print_txt(npc_reply + "\n", response_label)
 	response_label.set_scroll_active(true)
 	imposButton.set_disabled(false)
 	back.set_disabled(false)
@@ -114,3 +122,13 @@ func _on_showGoal_toggled(_toggled_on: bool) -> void:
 	impost.hide()
 	checkGoal.set_visible(false)
 	obiettivo_page.popup()
+
+func _on_return_page_pressed() -> void:
+	await get_tree().create_timer(0.2).timeout
+	Globals.goto_load_scene("res://scenes/game.tscn")
+
+func _on_lose_game_visibility_changed() -> void:
+	if loser.is_visible():
+		var string = "Non è una buona idea rubare le caramelle. Ricordati, dobbiamo sempre essere gentili e rispettosi con gli altri. Proviamo di nuovo a fare la scelta giusta, okay?"
+		await Chatbot.print_txt(string + "\n", speech)
+		returnbuttonlose.set_visible(true)

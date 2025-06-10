@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cw0ac88cyi2si"]
+[gd_scene load_steps=46 format=3 uid="uid://cw0ac88cyi2si"]
 
 [ext_resource type="Script" uid="uid://bji87yhdq6now" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="2_p57ef"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://c6gdl5iv5pqms" path="res://icons/buttons/check.png" id="16_rysoc"]
 [ext_resource type="Texture2D" uid="uid://bs0ybgvbrdwym" path="res://icons/scribbles/scribble4 .png" id="18_1kice"]
 [ext_resource type="Texture2D" uid="uid://bbvm1b4qelxh8" path="res://assets/sounds/RiccioPortaFortuna.png" id="19_5newe"]
+[ext_resource type="Texture2D" uid="uid://en2782805a2u" path="res://assets/sprites/NPC/Caterina.png" id="21_37s47"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trtic"]
 bg_color = Color(0.340339, 0.340339, 0.340339, 1)
@@ -960,6 +961,71 @@ libraries = {
 &"": SubResource("AnimationLibrary_6pj40")
 }
 
+[node name="LoseGame" type="Panel" parent="Game"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SfondoTrasparent" type="Panel" parent="Game/LoseGame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Personaggio" type="TextureRect" parent="Game/LoseGame/SfondoTrasparent"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 1.0
+offset_right = 583.0
+offset_bottom = 1081.0
+texture = ExtResource("21_37s47")
+stretch_mode = 5
+
+[node name="Speech Bubble Output" type="TextureRect" parent="Game/LoseGame/SfondoTrasparent"]
+layout_mode = 0
+offset_left = 539.0
+offset_top = 39.0
+offset_right = 1233.0
+offset_bottom = 465.0
+texture = ExtResource("6_vtaks")
+expand_mode = 1
+
+[node name="Speech" type="RichTextLabel" parent="Game/LoseGame/SfondoTrasparent/Speech Bubble Output"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 37.0
+offset_right = 656.0
+offset_bottom = 332.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -5
+theme_override_fonts/normal_font = ExtResource("4_gee14")
+theme_override_font_sizes/normal_font_size = 45
+text = "giao
+fiao"
+scroll_following = true
+
+[node name="ReturnButtonLose" type="Button" parent="Game/LoseGame/SfondoTrasparent"]
+visible = false
+layout_mode = 0
+offset_left = 1278.0
+offset_top = 609.0
+offset_right = 1668.0
+offset_bottom = 958.0
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+icon = ExtResource("10_ssvqc")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
 [connection signal="request_completed" from="Game/HTTPRequest" to="Game" method="_on_http_request_request_completed"]
 [connection signal="pressed" from="Game/Background/impostazioni" to="Game" method="_on_impostazioni_pressed"]
 [connection signal="pressed" from="Game/Invio" to="Game" method="_on_invio_pressed"]
@@ -977,3 +1043,5 @@ libraries = {
 [connection signal="gui_input" from="Game/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/Scribble4" to="Game/Impostazioni" method="_on_scribble_4_gui_input"]
 [connection signal="pressed" from="Game/Impostazioni/SfondoTrasparent/BoxImpostazioni/Ritorna Indietro" to="Game/Impostazioni" method="_on_ritorna_indietro_pressed"]
 [connection signal="pressed" from="Game/Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel/exit" to="Game/Impostazioni" method="_on_exit_pressed"]
+[connection signal="visibility_changed" from="Game/LoseGame" to="Game" method="_on_lose_game_visibility_changed"]
+[connection signal="pressed" from="Game/LoseGame/SfondoTrasparent/ReturnButtonLose" to="Game" method="_on_return_page_pressed"]
