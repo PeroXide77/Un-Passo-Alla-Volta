@@ -27,6 +27,7 @@ func _on_ritorna_indietro_pressed() -> void:
 func game_start():
 	var oggettiB = oggetti.get_buttons()
 	var flagowner : bool
+	var checkLast: bool
 	var item : int
 	for i: int in range(7) :
 		flagowner = randi_range(0,1) == 0
@@ -42,10 +43,13 @@ func game_start():
 				oggettiB.get(i).set_button_icon(load("res://assets/sprites/schoolMinigame/Giuseppe/"+Globals.stationeryId[item]+"Giuseppe.png"))
 				oggettiB.get(i).set_meta("owner", false)
 			else:
+				checkLast = oggettiB.get(6).get_meta("owner")
 				oggettiB.get(6).set_meta("owner", false)
 				if !oggettiB.any(isMine):
 					oggettiB.get(i).set_button_icon(load("res://assets/sprites/schoolMinigame/Protagonista/"+Globals.stationeryId[item]+".png"))
 					oggettiB.get(i).set_meta("owner", true)
+				else:
+					oggettiB.get(i).set_meta("owner", checkLast)
 
 func item_pressed(b : BaseButton) :
 	b.release_focus()

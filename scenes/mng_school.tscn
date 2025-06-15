@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://cvu1yt4it0onx"]
+[gd_scene load_steps=50 format=3 uid="uid://cvu1yt4it0onx"]
 
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="1_1r1m4"]
 [ext_resource type="Script" uid="uid://cxon8uwj2anrb" path="res://scripts/minigames_school.gd" id="1_f5ayh"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://en2782805a2u" path="res://assets/sprites/NPC/Caterina.png" id="16_jb13w"]
 [ext_resource type="AudioStream" uid="uid://cb63vnh5ypxv4" path="res://assets/sounds/schoolGameIntroGiuseppe.mp3" id="19_37uvj"]
 [ext_resource type="Texture2D" uid="uid://otvny5ni53ha" path="res://icons/buttons/audio.png" id="19_jb13w"]
+[ext_resource type="AudioStream" uid="uid://c8oiwpcrgl5u1" path="res://assets/musics/playgame.wav" id="25_870a6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ru0os"]
 border_width_left = 3
@@ -337,7 +338,7 @@ theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_f5ayh")
 theme_override_font_sizes/normal_font_size = 165
-text = "Minigame School"
+text = "Minigame Scuola"
 scroll_active = false
 horizontal_alignment = 1
 
@@ -411,7 +412,7 @@ anchor_bottom = 1.0
 offset_left = 660.0
 offset_top = 120.0
 offset_right = -660.0
-offset_bottom = -960.0
+offset_bottom = -160.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_lv5jm")
@@ -710,6 +711,8 @@ text = "X"
 libraries = {
 &"": SubResource("AnimationLibrary_6pj40")
 }
+
+[node name="ImpostazioniSounds" type="AudioStreamPlayer" parent="minigames_school/Impostazioni"]
 
 [node name="Game" type="VBoxContainer" parent="minigames_school"]
 custom_minimum_size = Vector2(1920, 770)
@@ -1067,6 +1070,9 @@ expand_icon = true
 
 [node name="AudioNpc" type="AudioStreamPlayer2D" parent="minigames_school/Npc"]
 stream = ExtResource("19_37uvj")
+
+[node name="MngMusic" type="AudioStreamPlayer" parent="minigames_school"]
+stream = ExtResource("25_870a6")
 
 [connection signal="pressed" from="minigames_school/impostazioni" to="minigames_school" method="_on_impostazioni_pressed"]
 [connection signal="pressed" from="minigames_school/Ritorna Indietro" to="minigames_school" method="_on_ritorna_indietro_pressed"]

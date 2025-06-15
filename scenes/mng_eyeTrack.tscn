@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://chuwiaogvuibx"]
+[gd_scene load_steps=51 format=3 uid="uid://chuwiaogvuibx"]
 
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="1_cusv3"]
 [ext_resource type="Script" uid="uid://dq6ta158kp0ay" path="res://scripts/minigames_eye_track.gd" id="1_u5qg0"]
@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://en2782805a2u" path="res://assets/sprites/NPC/Caterina.png" id="21_h54jj"]
 [ext_resource type="AudioStream" uid="uid://iq8ylg523anc" path="res://assets/sounds/eyeGameIntroCaterina.mp3" id="24_ul30a"]
 [ext_resource type="Texture2D" uid="uid://otvny5ni53ha" path="res://icons/buttons/audio.png" id="24_wwitq"]
+[ext_resource type="AudioStream" uid="uid://c8oiwpcrgl5u1" path="res://assets/musics/playgame.wav" id="30_nxu12"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnoa5"]
 border_width_left = 3
@@ -344,7 +345,7 @@ theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_u5qg0")
 theme_override_font_sizes/normal_font_size = 165
-text = "Minigame EyeTrack"
+text = "Minigame EyeTask"
 scroll_active = false
 horizontal_alignment = 1
 
@@ -718,6 +719,8 @@ libraries = {
 &"": SubResource("AnimationLibrary_6pj40")
 }
 
+[node name="ImpostazioniSounds" type="AudioStreamPlayer" parent="minigames_eyeTrack/Impostazioni"]
+
 [node name="Gioco" type="HBoxContainer" parent="minigames_eyeTrack"]
 custom_minimum_size = Vector2(1700, 700)
 layout_mode = 1
@@ -998,6 +1001,9 @@ expand_icon = true
 
 [node name="AudioNpc" type="AudioStreamPlayer2D" parent="minigames_eyeTrack/Npc"]
 stream = ExtResource("24_ul30a")
+
+[node name="MngMusic" type="AudioStreamPlayer" parent="minigames_eyeTrack"]
+stream = ExtResource("30_nxu12")
 
 [connection signal="pressed" from="minigames_eyeTrack/impostazioni" to="minigames_eyeTrack" method="_on_impostazioni_pressed"]
 [connection signal="pressed" from="minigames_eyeTrack/Ritorna Indietro" to="minigames_eyeTrack" method="_on_ritorna_indietro_pressed"]

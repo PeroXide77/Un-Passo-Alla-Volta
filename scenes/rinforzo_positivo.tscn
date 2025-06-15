@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cyo4f21gphae6"]
+[gd_scene load_steps=11 format=3 uid="uid://cyo4f21gphae6"]
 
 [ext_resource type="Script" uid="uid://c52fcb01k7si7" path="res://scripts/rinforzo_positivo.gd" id="1_op6lv"]
 [ext_resource type="Texture2D" uid="uid://ctnld8wwlelc0" path="res://icons/rinforzo.png" id="2_aioub"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bg2oj1344ily2" path="res://assets/backgrounds/book_open.png" id="3_sdo8x"]
 [ext_resource type="FontFile" uid="uid://dmwtstgnkr0oc" path="res://assets/fonts/Anton/Anton-Regular.ttf" id="4_2dcyo"]
 [ext_resource type="Texture2D" uid="uid://bi62iidwpbxsk" path="res://icons/buttons/completedButton.png" id="5_sdo8x"]
+[ext_resource type="AudioStream" uid="uid://bi55cxjmsvl4e" path="res://assets/musics/fine.wav" id="8_t25ix"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sdo8x"]
 bg_color = Color(1, 0.921569, 0.803922, 0.941176)
@@ -599,6 +600,10 @@ theme_override_constants/line_separation = -8
 theme_override_fonts/normal_font = ExtResource("3_aioub")
 theme_override_font_sizes/normal_font_size = 57
 text = "Questo è il tutorial quindi non sono presenti dei consigli. Completa i prossimi livelli per avere consigli sull'interazione svolta nel livello e una struttura d'esempio per quel tipo di interazione!"
+
+[node name="EndMusic" type="AudioStreamPlayer" parent="Rinforzo_positivo"]
+stream = ExtResource("8_t25ix")
+autoplay = true
 
 [connection signal="pressed" from="Rinforzo_positivo/Background/Return" to="Rinforzo_positivo" method="_on_return_pressed"]
 [connection signal="pressed" from="Rinforzo_positivo/Tips/Ritorna Indietro" to="Rinforzo_positivo" method="_on_ritorna_indietro_pressed"]

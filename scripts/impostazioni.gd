@@ -2,17 +2,17 @@ extends Popup
 
 @onready var volume = $SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP/volume
 @onready var resolutionMenu = $SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/OptionButton
-@onready var fullScreen = $SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen
+@onready var fullScreen: Button = $SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen
 @onready var checkFS = $SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen/CheckFS
 @onready var imp = $"."
 @onready var crediti : Popup = $crediti
 @onready var anim = $AnimationPlayer
-
-func _process(_delta: float) -> void:
-	Globals.btn_hover(fullScreen)
+@onready var audio : AudioStreamPlayer = $ImpostazioniSounds
 
 func _ready():
-	volume.value = Globals.get_volume();
+	fullScreen.mouse_entered.connect(Globals.btn_hover_enter.bind(fullScreen, audio))
+	fullScreen.mouse_exited.connect(Globals.btn_hover_exit.bind(fullScreen))
+	volume.value = Globals.get_volume()
 	add_resolutions()
 	resolutionMenu.select(Globals.resIndex)
 	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:

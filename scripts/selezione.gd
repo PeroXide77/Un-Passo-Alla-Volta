@@ -2,9 +2,9 @@ extends Control
 
 @export var levelGroup: ButtonGroup
 @onready var spaces = get_tree().get_nodes_in_group("spaces")
-@onready var popupGame : Panel = $gamePopup
-@onready var titlePop : RichTextLabel = $gamePopup/Title
-@onready var textPop : RichTextLabel = $gamePopup/ScrollContainer/text
+@onready var popupGame : Popup = $msgPopup
+@onready var titlePop : RichTextLabel = $msgPopup/gamePopup/Title
+@onready var textPop : RichTextLabel = $msgPopup/gamePopup/ScrollContainer/text
 @onready var popup_imp : Popup = $Impostazioni
 @onready var scribble3 : TextureRect = $Scribble3
 @onready var crediti : Popup = $"Impostazioni/crediti"
@@ -16,7 +16,7 @@ func _ready():
 	if Globals.get_end() :
 		titlePop.set_text("FINE GIOCO!")
 		textPop.set_text("Hai completato il gioco, complimenti! Spero che questa avventura ti abbia aiutato ad essere più sicuro nelle tue interazioni sociali! Se hai bisogno, potrai ripetere i livelli tutte le volte che vorrai finché non ti sentirai tranquillo nel coltivare relazioni sociali con le persone. Buona fortuna!")
-		popupGame.show()
+		popupGame.popup()
 	else : 
 		if Globals.get_gameState() == 0 :
 			titlePop.set_text("BENVENUTO!")

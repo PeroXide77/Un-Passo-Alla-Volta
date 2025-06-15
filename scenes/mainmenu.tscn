@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://g886cxu4jrgf"]
+[gd_scene load_steps=33 format=3 uid="uid://g886cxu4jrgf"]
 
 [ext_resource type="Script" uid="uid://c03emyoy2uomi" path="res://scripts/menu.gd" id="1_vh50t"]
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="3_dfy5j"]
@@ -15,6 +15,7 @@
 [ext_resource type="Theme" uid="uid://im1kev326hh2" path="res://assets/styles/VScrollBarHide.tres" id="12_gjjcl"]
 [ext_resource type="Texture2D" uid="uid://bbvm1b4qelxh8" path="res://assets/sounds/RiccioPortaFortuna.png" id="13_kait0"]
 [ext_resource type="FontFile" uid="uid://dmwtstgnkr0oc" path="res://assets/fonts/Anton/Anton-Regular.ttf" id="15_6pj40"]
+[ext_resource type="AudioStream" uid="uid://rf2k772e6vhr" path="res://assets/musics/menu_selezione_sounds.wav" id="17_fsdjo"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6pj40"]
 texture = ExtResource("11_kait0")
@@ -321,12 +322,6 @@ theme_override_font_sizes/normal_font_size = 165
 text = "Un Passo Alla Volta"
 scroll_active = false
 horizontal_alignment = 1
-
-[node name="AudioInesistentePerOra" type="AudioStreamPlayer2D" parent="Menu"]
-visible = false
-volume_db = -10.0
-autoplay = true
-attenuation = 0.707107
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
 custom_minimum_size = Vector2(744, 800)
@@ -873,6 +868,8 @@ libraries = {
 &"": SubResource("AnimationLibrary_6pj40")
 }
 
+[node name="ImpostazioniSounds" type="AudioStreamPlayer" parent="Menu/Impostazioni"]
+
 [node name="AcceptDialogBG" type="Panel" parent="Menu"]
 visible = false
 layout_mode = 1
@@ -895,6 +892,10 @@ ok_button_text = " OK "
 dialog_text = "  I dati sono stati cancellati 
         correttamente!  "
 dialog_autowrap = true
+
+[node name="MainMenuMusic" type="AudioStreamPlayer" parent="Menu"]
+stream = ExtResource("17_fsdjo")
+autoplay = true
 
 [connection signal="gui_input" from="Menu/Background/Scribble2" to="Menu" method="_on_scribble_2_gui_input"]
 [connection signal="gui_input" from="Menu/Background/Scribble2_pressed" to="Menu" method="_on_scribble_2_pressed_gui_input"]
