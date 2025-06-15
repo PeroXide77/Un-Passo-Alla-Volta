@@ -3,7 +3,7 @@ extends Node
 ## script che viene caricato automaticamente all'avvio del gioco e rimane attivo per tutte le scene.
 ##Per tenere dati condivisi come punteggio, l'audio
 
-
+const BTN_SOUND: AudioStream = preload("res://assets/sounds/markerSound.mp3")
 const loading_screen = "res://scenes/loading_page.tscn"
 const resolutions = {
 	"1920x1080": Vector2i(1920,1080),
@@ -18,11 +18,12 @@ const npcTutorials = {
 const eyesId = {
 	0 : "arrabbiato",
 	1 : "felice",
-	2 : "neutro",
+	2 : "pensieroso",
 	3 : "sorpreso",
-	4 : "sospettoso",
-	5 : "spaventato",
-	6 : "triste"
+	4 : "timido",
+	5 : "preoccupato",
+	6 : "triste",
+	7 : "eccitato"
 }
 const stationeryId = {
 	0 : "forbici",
@@ -140,11 +141,13 @@ func goto_scene(path):
 
 	_deferred_goto_scene.call_deferred(path)
 
-func btn_hover(b: Button):
-	if b.is_hovered():
-		b.set_flat(false)
-	else:
-		b.set_flat(true)
+func btn_hover_enter(b: Button, a:AudioStreamPlayer):
+	a.set_stream(BTN_SOUND)
+	b.set_flat(false)
+	a.play(0)
+
+func btn_hover_exit(b: Button):
+	b.set_flat(true)
 
 func _deferred_goto_scene(path):
 	# It is now safe to remove the current scene.

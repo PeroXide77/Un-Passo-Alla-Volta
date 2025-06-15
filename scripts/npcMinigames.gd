@@ -6,6 +6,7 @@ extends Panel
 @onready var npc : TextureRect = $SfondoTrasparent/Personaggio
 @onready var audio : AudioStreamPlayer2D = $AudioNpc
 @onready var speak : BaseButton = $SfondoTrasparent/Speak
+@onready var music : AudioStreamPlayer = $"../MngMusic"
 
 func _on_completed_pressed() -> void:
 	next.set_visible(false)
@@ -19,6 +20,7 @@ func _on_completed_pressed() -> void:
 		Globals.setFlagMinigameEnd(false)
 	else: 
 		this.hide()
+		music.play(0)
 
 func npcTalk():
 	#if speak.is_visible():

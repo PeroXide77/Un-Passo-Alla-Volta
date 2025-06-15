@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://db6wupgrtxcoi"]
+[gd_scene load_steps=44 format=3 uid="uid://db6wupgrtxcoi"]
 
 [ext_resource type="Script" uid="uid://chgol5x22wv5i" path="res://scripts/minigames_regali.gd" id="1_s7tfq"]
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="1_vkmk7"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bbvm1b4qelxh8" path="res://assets/sounds/RiccioPortaFortuna.png" id="14_84gil"]
 [ext_resource type="AudioStream" uid="uid://b14jyl13gddy8" path="res://assets/sounds/giftGameIntroBelle.mp3" id="16_i3sia"]
 [ext_resource type="Texture2D" uid="uid://otvny5ni53ha" path="res://icons/buttons/audio.png" id="16_rnyh1"]
+[ext_resource type="AudioStream" uid="uid://c8oiwpcrgl5u1" path="res://assets/musics/playgame.wav" id="22_3mp7n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mi4y"]
 border_width_left = 3
@@ -401,7 +402,7 @@ anchor_bottom = 1.0
 offset_left = 660.0
 offset_top = 120.0
 offset_right = -660.0
-offset_bottom = -960.0
+offset_bottom = -160.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_q30fg")
@@ -700,6 +701,8 @@ text = "X"
 libraries = {
 &"": SubResource("AnimationLibrary_6pj40")
 }
+
+[node name="ImpostazioniSounds" type="AudioStreamPlayer" parent="minigames_regali/Impostazioni"]
 
 [node name="Game" type="VBoxContainer" parent="minigames_regali"]
 custom_minimum_size = Vector2(1920, 750)
@@ -1070,6 +1073,9 @@ expand_icon = true
 
 [node name="AudioNpc" type="AudioStreamPlayer2D" parent="minigames_regali/Npc"]
 stream = ExtResource("16_i3sia")
+
+[node name="MngMusic" type="AudioStreamPlayer" parent="minigames_regali"]
+stream = ExtResource("22_3mp7n")
 
 [connection signal="pressed" from="minigames_regali/impostazioni" to="minigames_regali" method="_on_impostazioni_pressed"]
 [connection signal="pressed" from="minigames_regali/Ritorna Indietro" to="minigames_regali" method="_on_ritorna_indietro_pressed"]

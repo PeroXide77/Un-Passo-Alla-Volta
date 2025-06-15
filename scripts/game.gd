@@ -19,11 +19,11 @@ extends Control
 @onready var loser : Panel = $LoseGame
 @onready var returnbuttonlose: Button = $LoseGame/SfondoTrasparent/ReturnButtonLose
 @onready var speech: RichTextLabel = $"LoseGame/SfondoTrasparent/Speech Bubble Output/Speech"
-
-func _process(_delta: float) -> void:
-	Globals.btn_hover(showButt)
+@onready var audio: AudioStreamPlayer = $Impostazioni/ImpostazioniSounds
 
 func _ready():
+	showButt.mouse_entered.connect(Globals.btn_hover_enter.bind(showButt, audio))
+	showButt.mouse_exited.connect(Globals.btn_hover_exit.bind(showButt))
 	Chatbot.dataset_caricamento()
 	Chatbot.npc_caricamento(Chatbot.get_currentLevel(), response_label, obiettivo, vignetta, npc)
 	obiettivo_page.popup()

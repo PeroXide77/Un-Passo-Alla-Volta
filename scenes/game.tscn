@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cw0ac88cyi2si"]
+[gd_scene load_steps=47 format=3 uid="uid://cw0ac88cyi2si"]
 
 [ext_resource type="Script" uid="uid://bji87yhdq6now" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="2_p57ef"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://c6gdl5iv5pqms" path="res://icons/buttons/check.png" id="16_rysoc"]
 [ext_resource type="Texture2D" uid="uid://bs0ybgvbrdwym" path="res://icons/scribbles/scribble4 .png" id="18_1kice"]
 [ext_resource type="Texture2D" uid="uid://bbvm1b4qelxh8" path="res://assets/sounds/RiccioPortaFortuna.png" id="19_5newe"]
+[ext_resource type="AudioStream" uid="uid://c8oiwpcrgl5u1" path="res://assets/musics/playgame.wav" id="21_5newe"]
 [ext_resource type="Texture2D" uid="uid://en2782805a2u" path="res://assets/sprites/NPC/Caterina.png" id="21_37s47"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trtic"]
@@ -961,6 +962,8 @@ libraries = {
 &"": SubResource("AnimationLibrary_6pj40")
 }
 
+[node name="ImpostazioniSounds" type="AudioStreamPlayer" parent="Game/Impostazioni"]
+
 [node name="LoseGame" type="Panel" parent="Game"]
 visible = false
 layout_mode = 1
@@ -1025,6 +1028,10 @@ icon = ExtResource("10_ssvqc")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="GameMusic" type="AudioStreamPlayer" parent="Game"]
+stream = ExtResource("21_5newe")
+autoplay = true
 
 [connection signal="request_completed" from="Game/HTTPRequest" to="Game" method="_on_http_request_request_completed"]
 [connection signal="pressed" from="Game/Background/impostazioni" to="Game" method="_on_impostazioni_pressed"]

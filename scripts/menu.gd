@@ -5,7 +5,7 @@ extends Control
 @onready var checkExit = $VBoxContainer/Exit/CheckExit
 @onready var checkMng = $VBoxContainer/Minigames/CheckMng
 @onready var checkDPT = $VBoxContainer/Diario/CheckDPT
-@onready var impPopUp = $Impostazioni
+@onready var impPopUp: Popup = $Impostazioni
 @onready var options = get_tree().get_nodes_in_group("options")
 @onready var scribble2_n : TextureRect = $Background/Scribble2
 @onready var scribble2_p : TextureRect = $Background/Scribble2_pressed
@@ -14,12 +14,15 @@ extends Control
 @onready var popupAvvisoBG = $AcceptDialogBG
 @onready var popupAvviso = $AcceptDialogBG/AcceptDialog
 @onready var anim = $Impostazioni/AnimationPlayer
+@onready var audio: AudioStreamPlayer = $Impostazioni/ImpostazioniSounds
+@onready var music: AudioStreamPlayer = $MainMenuMusic
 
-func _process(_delta: float) -> void:
-	for option in options:
-		if option is Button:
-			Globals.btn_hover(option)
-	Globals.btn_hover(cancellaDati)
+func _ready() -> void:
+	for option: Button in options:
+		option.mouse_entered.connect(Globals.btn_hover_enter.bind(option, audio))
+		option.mouse_exited.connect(Globals.btn_hover_exit.bind(option))
+	cancellaDati.mouse_entered.connect(Globals.btn_hover_enter.bind(cancellaDati, audio))
+	cancellaDati.mouse_exited.connect(Globals.btn_hover_exit.bind(cancellaDati))
 
 func _on_selezione_livelli_pressed() -> void:
 	checkLvl.set_visible(true)
