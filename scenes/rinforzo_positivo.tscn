@@ -604,6 +604,7 @@ text = "Questo è il tutorial quindi non sono presenti dei consigli. Completa i 
 [node name="EndMusic" type="AudioStreamPlayer" parent="Rinforzo_positivo"]
 stream = ExtResource("8_t25ix")
 autoplay = true
+bus = &"Musica"
 
 [connection signal="pressed" from="Rinforzo_positivo/Background/Return" to="Rinforzo_positivo" method="_on_return_pressed"]
 [connection signal="pressed" from="Rinforzo_positivo/Tips/Ritorna Indietro" to="Rinforzo_positivo" method="_on_ritorna_indietro_pressed"]

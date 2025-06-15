@@ -68,7 +68,7 @@ corner_radius_bottom_left = 200
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ov0a"]
 texture = ExtResource("9_kgggy")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ny2wv"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nxu12"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kw8ns"]
 
@@ -419,7 +419,7 @@ anchor_bottom = 1.0
 offset_left = 660.0
 offset_top = 120.0
 offset_right = -660.0
-offset_bottom = -960.0
+offset_bottom = -160.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_6ov0a")
@@ -436,24 +436,20 @@ grow_vertical = 2
 alignment = 1
 
 [node name="VolumeP" type="Panel" parent="minigames_eyeTrack/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
-custom_minimum_size = Vector2(0, 110)
+custom_minimum_size = Vector2(0, 165)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_ny2wv")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nxu12")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="minigames_eyeTrack/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP"]
 custom_minimum_size = Vector2(530, 100)
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -265.0
-offset_top = -50.0
-offset_right = 265.0
-offset_bottom = 50.0
+offset_left = -275.0
+offset_right = 255.0
+offset_bottom = 100.0
 grow_horizontal = 2
-grow_vertical = 2
 theme_override_colors/selection_color = Color(0.962296, 0.733232, 1, 1)
 theme_override_constants/table_v_separation = 4
 theme_override_constants/text_highlight_h_padding = 6
@@ -483,11 +479,61 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -28.0
-offset_top = -33.0
+offset_top = -65.5
 offset_right = 272.0
-offset_bottom = 17.0
+offset_bottom = -15.5
 grow_horizontal = 2
 grow_vertical = 2
+ticks_on_borders = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="minigames_eyeTrack/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP"]
+custom_minimum_size = Vector2(530, 100)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -275.0
+offset_top = -85.0
+offset_right = 255.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/selection_color = Color(0.962296, 0.733232, 1, 1)
+theme_override_constants/table_v_separation = 4
+theme_override_constants/text_highlight_h_padding = 6
+theme_override_constants/outline_size = 13
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_outline_size = 14
+theme_override_constants/line_separation = 5
+theme_override_fonts/normal_font = ExtResource("2_u5qg0")
+theme_override_font_sizes/bold_italics_font_size = 1
+theme_override_font_sizes/italics_font_size = 1
+theme_override_font_sizes/mono_font_size = 1
+theme_override_font_sizes/normal_font_size = 65
+theme_override_font_sizes/bold_font_size = 1
+text = "SUONI"
+scroll_active = false
+tab_size = 1
+justification_flags = 128
+visible_characters_behavior = 2
+
+[node name="volume2" type="HSlider" parent="minigames_eyeTrack/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -328.0
+offset_top = -65.0
+offset_right = -28.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 0
 ticks_on_borders = true
 
 [node name="VideoP" type="Panel" parent="minigames_eyeTrack/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
@@ -720,6 +766,7 @@ libraries = {
 }
 
 [node name="ImpostazioniSounds" type="AudioStreamPlayer" parent="minigames_eyeTrack/Impostazioni"]
+bus = &"Suoni"
 
 [node name="Gioco" type="HBoxContainer" parent="minigames_eyeTrack"]
 custom_minimum_size = Vector2(1700, 700)
@@ -1004,11 +1051,14 @@ stream = ExtResource("24_ul30a")
 
 [node name="MngMusic" type="AudioStreamPlayer" parent="minigames_eyeTrack"]
 stream = ExtResource("30_nxu12")
+bus = &"Musica"
 
 [connection signal="pressed" from="minigames_eyeTrack/impostazioni" to="minigames_eyeTrack" method="_on_impostazioni_pressed"]
 [connection signal="pressed" from="minigames_eyeTrack/Ritorna Indietro" to="minigames_eyeTrack" method="_on_ritorna_indietro_pressed"]
 [connection signal="about_to_popup" from="minigames_eyeTrack/Impostazioni" to="minigames_eyeTrack/Impostazioni" method="_on_about_to_popup"]
 [connection signal="close_requested" from="minigames_eyeTrack/Impostazioni" to="minigames_eyeTrack/Impostazioni" method="_on_close_requested"]
+[connection signal="value_changed" from="minigames_eyeTrack/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP/volume" to="minigames_eyeTrack/Impostazioni" method="_on_volume_value_changed"]
+[connection signal="value_changed" from="minigames_eyeTrack/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP/volume2" to="minigames_eyeTrack/Impostazioni" method="_on_volume_suono_value_changed"]
 [connection signal="item_selected" from="minigames_eyeTrack/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/OptionButton" to="minigames_eyeTrack/Impostazioni" method="_on_option_button_item_selected"]
 [connection signal="toggled" from="minigames_eyeTrack/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen" to="minigames_eyeTrack/Impostazioni" method="_on_full_screen_toggled"]
 [connection signal="gui_input" from="minigames_eyeTrack/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/Scribble4" to="minigames_eyeTrack/Impostazioni" method="_on_scribble_4_gui_input"]

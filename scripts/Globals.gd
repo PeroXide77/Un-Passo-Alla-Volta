@@ -36,7 +36,8 @@ const stationeryId = {
 }
 var current_scene = null
 var nextScene = null 
-var volume: float = 100
+var volume: float = 50
+var volumeSuono: float = 50
 var resIndex = 0
 var gameState: int = 0
 var end : bool
@@ -82,11 +83,21 @@ func nextState() -> void:
 	gameState += 1
 	save_data()
 
+func set_volume(v: float) -> void:
+	volume = clamp(v, 0.0, 100.0)
+	var linear_volume = volume / 100.0
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Musica"), linear_to_db(linear_volume))
+
 func get_volume() -> float:
 	return volume
 
-func set_volume(v: float):
-	volume = v
+func set_volume_suono(v: float) -> void:
+	volumeSuono = clamp(v, 0.0, 100.0)
+	var linear_volume = volumeSuono / 100.0
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Suoni"), linear_to_db(linear_volume))
+
+func get_volume_suono() -> float:
+	return volumeSuono
 
 func get_flag() -> bool:
 	return flagDiario
@@ -142,6 +153,7 @@ func goto_scene(path):
 	_deferred_goto_scene.call_deferred(path)
 
 func btn_hover_enter(b: Button, a:AudioStreamPlayer):
+	a.bus = "Suoni"
 	a.set_stream(BTN_SOUND)
 	b.set_flat(false)
 	a.play(0)
