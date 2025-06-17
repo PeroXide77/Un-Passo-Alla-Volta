@@ -1079,6 +1079,8 @@ stream = ExtResource("21_5newe")
 autoplay = true
 bus = &"Musica"
 
+[node name="GameSounds" type="AudioStreamPlayer" parent="Game"]
+
 [connection signal="request_completed" from="Game/HTTPRequest" to="Game" method="_on_http_request_request_completed"]
 [connection signal="pressed" from="Game/Background/impostazioni" to="Game" method="_on_impostazioni_pressed"]
 [connection signal="pressed" from="Game/Invio" to="Game" method="_on_invio_pressed"]

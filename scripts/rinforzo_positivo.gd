@@ -4,7 +4,9 @@ extends Control
 @onready var popup : Panel = $Tips
 @onready var text : RichTextLabel = $Tips/ScrollContainer/text
 @onready var popup_imp : Popup = $Impostazioni
+@onready var sounds : AudioStreamPlayer = $EndSounds
 var postItLevel: TextureRect = null
+
 
 func _ready() -> void:
 	show_postIts()
@@ -12,6 +14,8 @@ func _ready() -> void:
 		postIt.gui_input.connect(_on_postIt_gui_input.bind(postIt))
 
 func _on_return_pressed() -> void:
+	Globals.btn_click(sounds)
+	await sounds.finished
 	if Chatbot.get_currentLevel() == 10 :
 		Globals.is_end(true)
 	if !Globals.get_flag() :
@@ -43,4 +47,5 @@ func _on_ritorna_indietro_pressed() -> void:
 	popup.hide()
 
 func _on_impostazioni_pressed() -> void:
+	Globals.btn_click(sounds)
 	popup_imp.popup()

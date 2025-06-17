@@ -4,6 +4,7 @@ extends Node
 ##Per tenere dati condivisi come punteggio, l'audio
 
 const BTN_SOUND: AudioStream = preload("res://assets/sounds/markerSound.mp3")
+const BTN_CLICK: AudioStream = preload("res://assets/sounds/button_click.mp3")
 const loading_screen = "res://scenes/loading_page.tscn"
 const resolutions = {
 	"1920x1080": Vector2i(1920,1080),
@@ -156,6 +157,11 @@ func btn_hover_enter(b: Button, a:AudioStreamPlayer):
 	a.bus = "Suoni"
 	a.set_stream(BTN_SOUND)
 	b.set_flat(false)
+	a.play(0)
+
+func btn_click(a:AudioStreamPlayer):
+	a.set_bus("Suoni")
+	a.set_stream(BTN_CLICK)
 	a.play(0)
 
 func btn_hover_exit(b: Button):

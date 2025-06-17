@@ -4,6 +4,7 @@ extends Control
 @export var emotions: ButtonGroup
 @onready var popup_imp : Popup = $Impostazioni
 @onready var npcDialog : Panel = $Npc
+@onready var sounds : AudioStreamPlayer = $MngSounds
 var rand : int
 var eyePressed : BaseButton = null
 
@@ -51,6 +52,7 @@ func set_buttons_disabled(bg : ButtonGroup , flag: bool):
 			b.set_disabled(flag)
 
 func _on_impostazioni_pressed() -> void:
+	Globals.btn_click(sounds)
 	popup_imp.popup()
 
 func _on_ritorna_indietro_pressed() -> void:

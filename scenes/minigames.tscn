@@ -807,6 +807,8 @@ stream = ExtResource("18_dcml5")
 autoplay = true
 bus = &"Musica"
 
+[node name="MiniGamesSounds" type="AudioStreamPlayer" parent="minigames"]
+
 [connection signal="gui_input" from="minigames/Scribble3" to="minigames" method="_on_scribble_3_gui_input"]
 [connection signal="pressed" from="minigames/impostazioni" to="minigames" method="_on_impostazioni_pressed"]
 [connection signal="pressed" from="minigames/Ritorna Indietro" to="minigames" method="_on_ritorna_indietro_pressed"]

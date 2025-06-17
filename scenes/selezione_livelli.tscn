@@ -1362,6 +1362,8 @@ stream = ExtResource("16_etslg")
 autoplay = true
 bus = &"Musica"
 
+[node name="SelectSounds" type="AudioStreamPlayer" parent="Selezione"]
+
 [connection signal="gui_input" from="Selezione/Scribble3" to="Selezione" method="_on_scribble_3_gui_input"]
 [connection signal="pressed" from="Selezione/impostazioni" to="Selezione" method="_on_impostazioni_pressed"]
 [connection signal="pressed" from="Selezione/Ritorna Indietro" to="Selezione" method="_on_ritorna_indietro_pressed"]

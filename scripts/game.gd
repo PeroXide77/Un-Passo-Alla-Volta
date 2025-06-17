@@ -20,6 +20,7 @@ extends Control
 @onready var returnbuttonlose: Button = $LoseGame/SfondoTrasparent/ReturnButtonLose
 @onready var speech: RichTextLabel = $"LoseGame/SfondoTrasparent/Speech Bubble Output/Speech"
 @onready var audio: AudioStreamPlayer = $Impostazioni/ImpostazioniSounds
+@onready var sounds: AudioStreamPlayer = $GameSounds
 
 func _ready():
 	showButt.mouse_entered.connect(Globals.btn_hover_enter.bind(showButt, audio))
@@ -30,6 +31,7 @@ func _ready():
 	user_input.grab_focus()
 
 func _on_invio_pressed() -> void:
+	Globals.btn_click(sounds)
 	var user_message = user_input.text.strip_edges()
 	if user_message == "":
 		return
@@ -103,12 +105,15 @@ func completed_level() -> void:
 	completedButton.set_visible(true)
 
 func _on_completed_pressed() -> void:
+	Globals.btn_click(sounds)
+	await sounds.finished
 	if Chatbot.get_currentLevel() == Globals.get_gameState():
 		Globals.nextState()
 	Globals.set_flag(false)
 	Globals.goto_load_scene("res://scenes/rinforzo_positivo.tscn")
 
 func _on_impostazioni_pressed() -> void:
+	Globals.btn_click(sounds)
 	impost.popup()
 
 func _on_exit_pressed() -> void:

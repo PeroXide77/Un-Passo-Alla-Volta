@@ -1254,6 +1254,8 @@ stream = ExtResource("8_t25ix")
 autoplay = true
 bus = &"Musica"
 
+[node name="EndSounds" type="AudioStreamPlayer" parent="Rinforzo_positivo"]
+
 [connection signal="pressed" from="Rinforzo_positivo/Background/Panel/Return" to="Rinforzo_positivo" method="_on_return_pressed"]
 [connection signal="pressed" from="Rinforzo_positivo/Background/Panel/impostazioni" to="Rinforzo_positivo" method="_on_impostazioni_pressed"]
 [connection signal="pressed" from="Rinforzo_positivo/Tips/Ritorna Indietro" to="Rinforzo_positivo" method="_on_ritorna_indietro_pressed"]

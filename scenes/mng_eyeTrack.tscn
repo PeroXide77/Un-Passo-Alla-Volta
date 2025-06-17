@@ -1053,6 +1053,8 @@ stream = ExtResource("24_ul30a")
 stream = ExtResource("30_nxu12")
 bus = &"Musica"
 
+[node name="MngSounds" type="AudioStreamPlayer" parent="minigames_eyeTrack"]
+
 [connection signal="pressed" from="minigames_eyeTrack/impostazioni" to="minigames_eyeTrack" method="_on_impostazioni_pressed"]
 [connection signal="pressed" from="minigames_eyeTrack/Ritorna Indietro" to="minigames_eyeTrack" method="_on_ritorna_indietro_pressed"]
 [connection signal="about_to_popup" from="minigames_eyeTrack/Impostazioni" to="minigames_eyeTrack/Impostazioni" method="_on_about_to_popup"]
