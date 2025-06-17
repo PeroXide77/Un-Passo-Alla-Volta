@@ -28,11 +28,11 @@ func _on_ritorna_indietro_pressed() -> void:
 	Globals.goto_load_scene("res://scenes/mainmenu.tscn")
 
 func buttonGroup_pressed(buttonPressed: BaseButton):
+	levelGroup.get_pressed_button().set_pressed_no_signal(false)
 	Globals.btn_click(sounds)
 	await sounds.finished
 	var lv: int = buttonPressed.get_meta("lv")
 	Chatbot.set_currentLevel(lv)
-	levelGroup.get_pressed_button().set_pressed_no_signal(false)
 	Globals.goto_load_scene("res://scenes/game.tscn")
 
 func set_completedLevels():
