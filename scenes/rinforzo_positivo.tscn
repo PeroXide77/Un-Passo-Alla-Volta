@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cyo4f21gphae6"]
+[gd_scene load_steps=37 format=3 uid="uid://cyo4f21gphae6"]
 
 [ext_resource type="Script" uid="uid://c52fcb01k7si7" path="res://scripts/rinforzo_positivo.gd" id="1_op6lv"]
 [ext_resource type="Texture2D" uid="uid://ctnld8wwlelc0" path="res://icons/rinforzo.png" id="2_aioub"]
@@ -7,12 +7,250 @@
 [ext_resource type="Texture2D" uid="uid://bg2oj1344ily2" path="res://assets/backgrounds/book_open.png" id="3_sdo8x"]
 [ext_resource type="FontFile" uid="uid://dmwtstgnkr0oc" path="res://assets/fonts/Anton/Anton-Regular.ttf" id="4_2dcyo"]
 [ext_resource type="Texture2D" uid="uid://bi62iidwpbxsk" path="res://icons/buttons/completedButton.png" id="5_sdo8x"]
+[ext_resource type="Texture2D" uid="uid://ivpscjmkosnj" path="res://icons/buttons/settings.png" id="7_otrit"]
 [ext_resource type="AudioStream" uid="uid://bi55cxjmsvl4e" path="res://assets/musics/fine.wav" id="8_t25ix"]
+[ext_resource type="Script" uid="uid://bnaqpofnsnbg0" path="res://scripts/impostazioni.gd" id="9_cg2je"]
+[ext_resource type="Texture2D" uid="uid://dj2h60acf1emf" path="res://assets/backgrounds/bgSettings.png" id="10_otrit"]
+[ext_resource type="StyleBox" uid="uid://bvaywvbkfe4rj" path="res://assets/styles/hoverButtons.tres" id="11_aejpf"]
+[ext_resource type="Texture2D" uid="uid://ds186uo7s2om3" path="res://icons/buttons/box_not_checked.png" id="12_b5iee"]
+[ext_resource type="Texture2D" uid="uid://c6gdl5iv5pqms" path="res://icons/buttons/check.png" id="13_ca4tr"]
+[ext_resource type="Texture2D" uid="uid://bs0ybgvbrdwym" path="res://icons/scribbles/scribble4 .png" id="14_t0wxj"]
+[ext_resource type="Theme" uid="uid://im1kev326hh2" path="res://assets/styles/VScrollBarHide.tres" id="15_mta4r"]
+[ext_resource type="Texture2D" uid="uid://bbvm1b4qelxh8" path="res://assets/sounds/RiccioPortaFortuna.png" id="16_yhrqa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_otrit"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aejpf"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b5iee"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ca4tr"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sdo8x"]
 bg_color = Color(1, 0.921569, 0.803922, 0.941176)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t25ix"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6yq1f"]
+texture = ExtResource("10_otrit")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iccev"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1k2x2"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i768s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pmhrl"]
+bg_color = Color(0.85098, 0.6, 0.458824, 0.94902)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gmjs"]
+bg_color = Color(0.937255, 0.741176, 0.627451, 0.945098)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgkd4"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c8wb7"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6jum"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+
+[sub_resource type="Animation" id="Animation_kait0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SfondoTrasparent:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SfondoTrasparent/BoxImpostazioni:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(600, 800)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SfondoTrasparent/BoxImpostazioni/VBoxContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SfondoTrasparent/BoxImpostazioni/Ritorna Indietro:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SfondoTrasparent/BoxImpostazioni:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_gjjcl"]
+resource_name = "popUp"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SfondoTrasparent:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SfondoTrasparent/BoxImpostazioni:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.333333, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(600, 0), Vector2(600, 800)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SfondoTrasparent/BoxImpostazioni/VBoxContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.7, 0.71),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SfondoTrasparent/BoxImpostazioni/Ritorna Indietro:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.933333, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SfondoTrasparent/BoxImpostazioni:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.06, 0.14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_6pj40"]
+resource_name = "settings"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6pj40"]
+_data = {
+&"RESET": SubResource("Animation_kait0"),
+&"popUp": SubResource("Animation_gjjcl"),
+&"settings": SubResource("Animation_6pj40")
+}
 
 [node name="Node2D" type="Node2D"]
 
@@ -53,7 +291,8 @@ grow_vertical = 2
 texture = ExtResource("3_sdo8x")
 expand_mode = 1
 
-[node name="Return" type="Button" parent="Rinforzo_positivo/Background"]
+[node name="Panel" type="Panel" parent="Rinforzo_positivo/Background"]
+custom_minimum_size = Vector2(180, 285)
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -61,8 +300,22 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -180.0
-offset_top = -198.0
+offset_top = -285.0
 grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_otrit")
+
+[node name="Return" type="Button" parent="Rinforzo_positivo/Background/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -198.0
+offset_right = 90.0
+grow_horizontal = 2
 grow_vertical = 0
 focus_mode = 0
 theme_override_colors/font_hover_color = Color(0.6, 0.6, 0.6, 1)
@@ -77,6 +330,27 @@ theme_override_font_sizes/font_size = 125
 icon = ExtResource("5_sdo8x")
 flat = true
 text_overrun_behavior = 2
+icon_alignment = 1
+expand_icon = true
+
+[node name="impostazioni" type="Button" parent="Rinforzo_positivo/Background/Panel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_right = 50.0
+offset_bottom = 100.0
+grow_horizontal = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_aioub")
+theme_override_font_sizes/font_size = 84
+theme_override_styles/hover = SubResource("StyleBoxFlat_aejpf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_b5iee")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ca4tr")
+icon = ExtResource("7_otrit")
 icon_alignment = 1
 expand_icon = true
 
@@ -601,9 +875,394 @@ theme_override_fonts/normal_font = ExtResource("3_aioub")
 theme_override_font_sizes/normal_font_size = 57
 text = "Questo è il tutorial quindi non sono presenti dei consigli. Completa i prossimi livelli per avere consigli sull'interazione svolta nel livello e una struttura d'esempio per quel tipo di interazione!"
 
+[node name="Impostazioni" type="Popup" parent="Rinforzo_positivo"]
+auto_translate_mode = 1
+transparent_bg = true
+size = Vector2i(1920, 1080)
+wrap_controls = false
+transparent = true
+script = ExtResource("9_cg2je")
+
+[node name="SfondoTrasparent" type="Panel" parent="Rinforzo_positivo/Impostazioni"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BoxImpostazioni" type="Panel" parent="Rinforzo_positivo/Impostazioni/SfondoTrasparent"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 660.0
+offset_top = 120.0
+offset_right = -660.0
+offset_bottom = -960.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_6yq1f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Rinforzo_positivo/Impostazioni/SfondoTrasparent/BoxImpostazioni"]
+visible = false
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VolumeP" type="Panel" parent="Rinforzo_positivo/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
+custom_minimum_size = Vector2(0, 165)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_iccev")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Rinforzo_positivo/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP"]
+custom_minimum_size = Vector2(530, 100)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -275.0
+offset_right = 255.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme_override_colors/selection_color = Color(0.962296, 0.733232, 1, 1)
+theme_override_constants/table_v_separation = 4
+theme_override_constants/text_highlight_h_padding = 6
+theme_override_constants/outline_size = 13
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_outline_size = 14
+theme_override_constants/line_separation = 5
+theme_override_fonts/normal_font = ExtResource("3_aioub")
+theme_override_font_sizes/bold_italics_font_size = 1
+theme_override_font_sizes/italics_font_size = 1
+theme_override_font_sizes/mono_font_size = 1
+theme_override_font_sizes/normal_font_size = 65
+theme_override_font_sizes/bold_font_size = 1
+text = "VOLUME"
+scroll_active = false
+tab_size = 1
+justification_flags = 128
+visible_characters_behavior = 2
+
+[node name="volume" type="HSlider" parent="Rinforzo_positivo/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -65.5
+offset_right = 272.0
+offset_bottom = -15.5
+grow_horizontal = 2
+grow_vertical = 2
+ticks_on_borders = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Rinforzo_positivo/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP"]
+custom_minimum_size = Vector2(530, 100)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -275.0
+offset_top = -85.0
+offset_right = 255.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/selection_color = Color(0.962296, 0.733232, 1, 1)
+theme_override_constants/table_v_separation = 4
+theme_override_constants/text_highlight_h_padding = 6
+theme_override_constants/outline_size = 13
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_outline_size = 14
+theme_override_constants/line_separation = 5
+theme_override_fonts/normal_font = ExtResource("3_aioub")
+theme_override_font_sizes/bold_italics_font_size = 1
+theme_override_font_sizes/italics_font_size = 1
+theme_override_font_sizes/mono_font_size = 1
+theme_override_font_sizes/normal_font_size = 65
+theme_override_font_sizes/bold_font_size = 1
+text = "SUONI"
+scroll_active = false
+tab_size = 1
+justification_flags = 128
+visible_characters_behavior = 2
+
+[node name="volume2" type="HSlider" parent="Rinforzo_positivo/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -328.0
+offset_top = -65.0
+offset_right = -28.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+ticks_on_borders = true
+
+[node name="VideoP" type="Panel" parent="Rinforzo_positivo/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1k2x2")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Rinforzo_positivo/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP"]
+custom_minimum_size = Vector2(550, 100)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -275.0
+offset_right = 275.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme_override_colors/selection_color = Color(0.962296, 0.733232, 1, 1)
+theme_override_constants/table_v_separation = 4
+theme_override_constants/text_highlight_h_padding = 6
+theme_override_constants/outline_size = 13
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_outline_size = 14
+theme_override_constants/line_separation = 5
+theme_override_fonts/normal_font = ExtResource("3_aioub")
+theme_override_font_sizes/bold_italics_font_size = 1
+theme_override_font_sizes/italics_font_size = 1
+theme_override_font_sizes/mono_font_size = 1
+theme_override_font_sizes/normal_font_size = 60
+theme_override_font_sizes/bold_font_size = 1
+text = "SCHERMO"
+scroll_active = false
+tab_size = 1
+justification_flags = 128
+visible_characters_behavior = 2
+
+[node name="OptionButton" type="OptionButton" parent="Rinforzo_positivo/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -81.0
+offset_right = 272.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("3_aioub")
+theme_override_font_sizes/font_size = 50
+
+[node name="FullScreen" type="Button" parent="Rinforzo_positivo/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -266.0
+offset_top = -97.0
+offset_right = 266.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+theme_override_constants/outline_size = 13
+theme_override_constants/h_separation = 8
+theme_override_constants/icon_max_width = 5000
+theme_override_constants/align_to_largest_stylebox = 2
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("3_aioub")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = ExtResource("11_aejpf")
+theme_override_styles/pressed = ExtResource("11_aejpf")
+toggle_mode = true
+action_mode = 0
+text = "SCHERMO INTERO"
+icon = ExtResource("12_b5iee")
+flat = true
+
+[node name="CheckFS" type="TextureRect" parent="Rinforzo_positivo/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen"]
+visible = false
+layout_mode = 0
+offset_left = -2.0
+offset_top = -5.0
+offset_right = 93.0
+offset_bottom = 82.0
+texture = ExtResource("13_ca4tr")
+expand_mode = 1
+
+[node name="Scribble4" type="TextureRect" parent="Rinforzo_positivo/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
+custom_minimum_size = Vector2(500, 190)
+layout_mode = 2
+texture = ExtResource("14_t0wxj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Ritorna Indietro" type="Button" parent="Rinforzo_positivo/Impostazioni/SfondoTrasparent/BoxImpostazioni"]
+visible = false
+custom_minimum_size = Vector2(70, 100)
+layout_mode = 0
+offset_left = -36.0
+offset_top = 88.0
+offset_right = 52.0
+offset_bottom = 243.0
+rotation = -1.5708
+focus_mode = 0
+theme_override_constants/outline_size = 14
+theme_override_constants/h_separation = 7
+theme_override_constants/icon_max_width = 510
+theme_override_constants/align_to_largest_stylebox = 32
+theme_override_constants/line_spacing = 7
+theme_override_fonts/font = ExtResource("3_aioub")
+theme_override_font_sizes/font_size = 100
+text = "⤴"
+icon = SubResource("CompressedTexture2D_i768s")
+flat = true
+text_overrun_behavior = 2
+icon_alignment = 1
+expand_icon = true
+
+[node name="crediti" type="Popup" parent="Rinforzo_positivo/Impostazioni"]
+auto_translate_mode = 1
+transparent_bg = true
+size = Vector2i(1920, 1120)
+transparent = true
+
+[node name="Sfondo Opaco" type="Panel" parent="Rinforzo_positivo/Impostazioni/crediti"]
+custom_minimum_size = Vector2(1000, 800)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -400.0
+offset_right = 500.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pmhrl")
+
+[node name="Obiettivo_Panel" type="Panel" parent="Rinforzo_positivo/Impostazioni/crediti/Sfondo Opaco"]
+custom_minimum_size = Vector2(950, 730)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -475.0
+offset_top = -195.0
+offset_right = 475.0
+offset_bottom = 195.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7gmjs")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Rinforzo_positivo/Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel"]
+custom_minimum_size = Vector2(950, 730)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("15_mta4r")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Rinforzo_positivo/Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel/ScrollContainer"]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="Rinforzo_positivo/Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(900, 120)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_aioub")
+theme_override_font_sizes/normal_font_size = 80
+text = "Credits"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="crediti" type="RichTextLabel" parent="Rinforzo_positivo/Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(950, 50)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_aioub")
+theme_override_font_sizes/normal_font_size = 50
+text = " ☆ ☆ Un gioco di Chandelier Light  ☆ ☆ 
+
+Lucia Meliota - programming
+Dario Ungaro - programming
+Natalia Meliota - art
+
+Grazie mille per aver scelto di giocare a questo gioco!"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="immagine" type="TextureRect" parent="Rinforzo_positivo/Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 420)
+layout_mode = 2
+texture = ExtResource("16_yhrqa")
+expand_mode = 1
+
+[node name="exit" type="Button" parent="Rinforzo_positivo/Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -85.0
+offset_bottom = 87.0
+grow_horizontal = 0
+focus_mode = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_aioub")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/hover = SubResource("StyleBoxFlat_cgkd4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c8wb7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_i6jum")
+text = "X"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Rinforzo_positivo/Impostazioni"]
+libraries = {
+&"": SubResource("AnimationLibrary_6pj40")
+}
+
+[node name="ImpostazioniSounds" type="AudioStreamPlayer" parent="Rinforzo_positivo/Impostazioni"]
+bus = &"Suoni"
+
 [node name="EndMusic" type="AudioStreamPlayer" parent="Rinforzo_positivo"]
 stream = ExtResource("8_t25ix")
 autoplay = true
+bus = &"Musica"
 
-[connection signal="pressed" from="Rinforzo_positivo/Background/Return" to="Rinforzo_positivo" method="_on_return_pressed"]
+[connection signal="pressed" from="Rinforzo_positivo/Background/Panel/Return" to="Rinforzo_positivo" method="_on_return_pressed"]
+[connection signal="pressed" from="Rinforzo_positivo/Background/Panel/impostazioni" to="Rinforzo_positivo" method="_on_impostazioni_pressed"]
 [connection signal="pressed" from="Rinforzo_positivo/Tips/Ritorna Indietro" to="Rinforzo_positivo" method="_on_ritorna_indietro_pressed"]
+[connection signal="about_to_popup" from="Rinforzo_positivo/Impostazioni" to="Rinforzo_positivo/Impostazioni" method="_on_about_to_popup"]
+[connection signal="close_requested" from="Rinforzo_positivo/Impostazioni" to="Rinforzo_positivo/Impostazioni" method="_on_close_requested"]
+[connection signal="value_changed" from="Rinforzo_positivo/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP/volume" to="Rinforzo_positivo/Impostazioni" method="_on_volume_value_changed"]
+[connection signal="value_changed" from="Rinforzo_positivo/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP/volume2" to="Rinforzo_positivo/Impostazioni" method="_on_volume_suono_value_changed"]
+[connection signal="item_selected" from="Rinforzo_positivo/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/OptionButton" to="Rinforzo_positivo/Impostazioni" method="_on_option_button_item_selected"]
+[connection signal="toggled" from="Rinforzo_positivo/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen" to="Rinforzo_positivo/Impostazioni" method="_on_full_screen_toggled"]
+[connection signal="gui_input" from="Rinforzo_positivo/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/Scribble4" to="Rinforzo_positivo/Impostazioni" method="_on_scribble_4_gui_input"]
+[connection signal="pressed" from="Rinforzo_positivo/Impostazioni/SfondoTrasparent/BoxImpostazioni/Ritorna Indietro" to="Rinforzo_positivo/Impostazioni" method="_on_ritorna_indietro_pressed"]
+[connection signal="pressed" from="Rinforzo_positivo/Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel/exit" to="Rinforzo_positivo/Impostazioni" method="_on_exit_pressed"]

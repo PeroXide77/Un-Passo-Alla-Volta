@@ -1,6 +1,7 @@
 extends Popup
 
 @onready var volume = $SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP/volume
+@onready var volumeSuono = $SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP/volume2
 @onready var resolutionMenu = $SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/OptionButton
 @onready var fullScreen: Button = $SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen
 @onready var checkFS = $SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen/CheckFS
@@ -10,9 +11,11 @@ extends Popup
 @onready var audio : AudioStreamPlayer = $ImpostazioniSounds
 
 func _ready():
+	audio.bus = "Suoni"
 	fullScreen.mouse_entered.connect(Globals.btn_hover_enter.bind(fullScreen, audio))
 	fullScreen.mouse_exited.connect(Globals.btn_hover_exit.bind(fullScreen))
 	volume.value = Globals.get_volume()
+	volumeSuono.value = Globals.get_volume_suono()
 	add_resolutions()
 	resolutionMenu.select(Globals.resIndex)
 	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
@@ -26,7 +29,9 @@ func _ready():
 
 func _on_volume_value_changed(value: float) -> void:
 	Globals.set_volume(value)
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(value / 100));
+
+func _on_volume_suono_value_changed(value: float) -> void:
+	Globals.set_volume_suono(value)
 
 func add_resolutions():
 	var now = DisplayServer.window_get_size()

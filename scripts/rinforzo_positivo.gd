@@ -3,9 +3,8 @@ extends Control
 @onready var postIts = get_tree().get_nodes_in_group("postIt")
 @onready var popup : Panel = $Tips
 @onready var text : RichTextLabel = $Tips/ScrollContainer/text
-
+@onready var popup_imp : Popup = $Impostazioni
 var postItLevel: TextureRect = null
-
 
 func _ready() -> void:
 	show_postIts()
@@ -42,3 +41,6 @@ func _on_postIt_gui_input(event: InputEvent, postIt: TextureRect) -> void:
 
 func _on_ritorna_indietro_pressed() -> void:
 	popup.hide()
+
+func _on_impostazioni_pressed() -> void:
+	popup_imp.popup()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://g886cxu4jrgf"]
+[gd_scene load_steps=34 format=3 uid="uid://g886cxu4jrgf"]
 
 [ext_resource type="Script" uid="uid://c03emyoy2uomi" path="res://scripts/menu.gd" id="1_vh50t"]
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="3_dfy5j"]
@@ -15,6 +15,7 @@
 [ext_resource type="Theme" uid="uid://im1kev326hh2" path="res://assets/styles/VScrollBarHide.tres" id="12_gjjcl"]
 [ext_resource type="Texture2D" uid="uid://bbvm1b4qelxh8" path="res://assets/sounds/RiccioPortaFortuna.png" id="13_kait0"]
 [ext_resource type="FontFile" uid="uid://dmwtstgnkr0oc" path="res://assets/fonts/Anton/Anton-Regular.ttf" id="15_6pj40"]
+[ext_resource type="AudioStream" uid="uid://dem370sw2h3t6" path="res://assets/sounds/markerSound.mp3" id="15_fsdjo"]
 [ext_resource type="AudioStream" uid="uid://rf2k772e6vhr" path="res://assets/musics/menu_selezione_sounds.wav" id="17_fsdjo"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6pj40"]
@@ -136,6 +137,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ImpostazioniSounds:bus")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Master"]
+}
 
 [sub_resource type="Animation" id="Animation_gjjcl"]
 resource_name = "popUp"
@@ -198,6 +211,18 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ImpostazioniSounds:bus")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Master"]
 }
 
 [sub_resource type="Animation" id="Animation_6pj40"]
@@ -540,25 +565,25 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
+[node name="TextureRect" type="TextureRect" parent="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
 [node name="VolumeP" type="Panel" parent="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
-custom_minimum_size = Vector2(0, 90)
+custom_minimum_size = Vector2(0, 165)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_wf3n4")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP"]
 custom_minimum_size = Vector2(530, 100)
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -265.0
-offset_top = -50.0
-offset_right = 265.0
-offset_bottom = 50.0
+offset_left = -275.0
+offset_right = 255.0
+offset_bottom = 100.0
 grow_horizontal = 2
-grow_vertical = 2
 theme_override_colors/selection_color = Color(0.962296, 0.733232, 1, 1)
 theme_override_constants/table_v_separation = 4
 theme_override_constants/text_highlight_h_padding = 6
@@ -588,11 +613,61 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -28.0
-offset_top = -33.0
+offset_top = -65.5
 offset_right = 272.0
-offset_bottom = 17.0
+offset_bottom = -15.5
 grow_horizontal = 2
 grow_vertical = 2
+ticks_on_borders = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP"]
+custom_minimum_size = Vector2(530, 100)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -275.0
+offset_top = -85.0
+offset_right = 255.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/selection_color = Color(0.962296, 0.733232, 1, 1)
+theme_override_constants/table_v_separation = 4
+theme_override_constants/text_highlight_h_padding = 6
+theme_override_constants/outline_size = 13
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_outline_size = 14
+theme_override_constants/line_separation = 5
+theme_override_fonts/normal_font = ExtResource("4_85riq")
+theme_override_font_sizes/bold_italics_font_size = 1
+theme_override_font_sizes/italics_font_size = 1
+theme_override_font_sizes/mono_font_size = 1
+theme_override_font_sizes/normal_font_size = 65
+theme_override_font_sizes/bold_font_size = 1
+text = "SUONI"
+scroll_active = false
+tab_size = 1
+justification_flags = 128
+visible_characters_behavior = 2
+
+[node name="volume2" type="HSlider" parent="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -328.0
+offset_top = -65.0
+offset_right = -28.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 0
 ticks_on_borders = true
 
 [node name="VideoP" type="Panel" parent="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
@@ -731,11 +806,10 @@ texture = ExtResource("9_fsdjo")
 expand_mode = 1
 
 [node name="Scribble4" type="TextureRect" parent="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
-custom_minimum_size = Vector2(500, 190)
+custom_minimum_size = Vector2(500, 160)
 layout_mode = 2
 texture = ExtResource("11_prb5i")
 expand_mode = 1
-stretch_mode = 5
 
 [node name="Ritorna Indietro" type="Button" parent="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni"]
 visible = false
@@ -869,6 +943,7 @@ libraries = {
 }
 
 [node name="ImpostazioniSounds" type="AudioStreamPlayer" parent="Menu/Impostazioni"]
+stream = ExtResource("15_fsdjo")
 
 [node name="AcceptDialogBG" type="Panel" parent="Menu"]
 visible = false
@@ -896,6 +971,7 @@ dialog_autowrap = true
 [node name="MainMenuMusic" type="AudioStreamPlayer" parent="Menu"]
 stream = ExtResource("17_fsdjo")
 autoplay = true
+bus = &"Musica"
 
 [connection signal="gui_input" from="Menu/Background/Scribble2" to="Menu" method="_on_scribble_2_gui_input"]
 [connection signal="gui_input" from="Menu/Background/Scribble2_pressed" to="Menu" method="_on_scribble_2_pressed_gui_input"]
@@ -909,6 +985,8 @@ autoplay = true
 [connection signal="go_back_requested" from="Menu/Impostazioni" to="Menu/Impostazioni" method="_on_go_back_requested"]
 [connection signal="popup_hide" from="Menu/Impostazioni" to="Menu" method="_on_impostazioni_popup_hide"]
 [connection signal="window_input" from="Menu/Impostazioni" to="Menu/Impostazioni" method="_on_window_input"]
+[connection signal="value_changed" from="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP/volume" to="Menu/Impostazioni" method="_on_volume_value_changed"]
+[connection signal="value_changed" from="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VolumeP/volume2" to="Menu/Impostazioni" method="_on_volume_suono_value_changed"]
 [connection signal="item_selected" from="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/OptionButton" to="Menu/Impostazioni" method="_on_option_button_item_selected"]
 [connection signal="toggled" from="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen" to="Menu/Impostazioni" method="_on_full_screen_toggled"]
 [connection signal="toggled" from="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/CancellaDati" to="Menu" method="_on_cancella_dati_toggled"]
