@@ -3,6 +3,7 @@ extends Control
 @export var regali: ButtonGroup
 @onready var popup_imp : Popup = $Impostazioni
 @onready var npcDialog : Panel = $Npc
+@onready var sounds : AudioStreamPlayer = $MngSounds
 
 func _init() -> void:
 	Globals.set_txtTutorial("Guarda quanti regali! Ma attenzione: non sono tutti tuoi. I tuoi regali sono quelli con la carta blu e il nastro rosso. Clicca su un regalo per aprirlo solo se pensi che sia uno dei tuoi! Se scegli un altro regalo, non succede nulla: ti avviserò io e potrai riprovare!")
@@ -14,6 +15,7 @@ func _ready() -> void:
 	npcDialog.show()
 
 func _on_impostazioni_pressed() -> void:
+	Globals.btn_click(sounds)
 	popup_imp.popup()
 
 func _on_ritorna_indietro_pressed() -> void:

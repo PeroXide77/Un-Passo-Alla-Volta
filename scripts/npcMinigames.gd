@@ -7,8 +7,11 @@ extends Panel
 @onready var audio : AudioStreamPlayer2D = $AudioNpc
 @onready var speak : BaseButton = $SfondoTrasparent/Speak
 @onready var music : AudioStreamPlayer = $"../MngMusic"
+@onready var sounds : AudioStreamPlayer = $"../MngSounds"
 
 func _on_completed_pressed() -> void:
+	Globals.btn_click(sounds)
+	await sounds.finished
 	next.set_visible(false)
 	if audio.is_playing():
 		audio.stop()

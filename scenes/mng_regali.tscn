@@ -1125,6 +1125,8 @@ stream = ExtResource("16_i3sia")
 stream = ExtResource("22_3mp7n")
 bus = &"Musica"
 
+[node name="MngSounds" type="AudioStreamPlayer" parent="minigames_regali"]
+
 [connection signal="pressed" from="minigames_regali/impostazioni" to="minigames_regali" method="_on_impostazioni_pressed"]
 [connection signal="pressed" from="minigames_regali/Ritorna Indietro" to="minigames_regali" method="_on_ritorna_indietro_pressed"]
 [connection signal="about_to_popup" from="minigames_regali/Impostazioni" to="minigames_regali/Impostazioni" method="_on_about_to_popup"]

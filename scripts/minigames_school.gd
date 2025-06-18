@@ -4,6 +4,7 @@ extends Control
 @export var oggetti: ButtonGroup
 @onready var popup_imp : Popup = $Impostazioni
 @onready var npcDialog : Panel = $Npc
+@onready var sounds : AudioStreamPlayer = $MngSounds
 var rand: int
 var itemPressed : BaseButton = null
 
@@ -19,6 +20,7 @@ func _ready() -> void:
 	npcDialog.show()
 
 func _on_impostazioni_pressed() -> void:
+	Globals.btn_click(sounds)
 	popup_imp.popup()
 
 func _on_ritorna_indietro_pressed() -> void:

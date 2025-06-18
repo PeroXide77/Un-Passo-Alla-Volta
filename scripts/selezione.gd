@@ -8,6 +8,7 @@ extends Control
 @onready var popup_imp : Popup = $Impostazioni
 @onready var scribble3 : TextureRect = $Scribble3
 @onready var crediti : Popup = $"Impostazioni/crediti"
+@onready var sounds : AudioStreamPlayer = $SelectSounds
 
 func _ready():
 	levelGroup.pressed.connect(buttonGroup_pressed)
@@ -27,9 +28,11 @@ func _on_ritorna_indietro_pressed() -> void:
 	Globals.goto_load_scene("res://scenes/mainmenu.tscn")
 
 func buttonGroup_pressed(buttonPressed: BaseButton):
+	levelGroup.get_pressed_button().set_pressed_no_signal(false)
+	Globals.btn_click(sounds)
+	await sounds.finished
 	var lv: int = buttonPressed.get_meta("lv")
 	Chatbot.set_currentLevel(lv)
-	levelGroup.get_pressed_button().set_pressed_no_signal(false)
 	Globals.goto_load_scene("res://scenes/game.tscn")
 
 func set_completedLevels():
@@ -56,6 +59,7 @@ func _on_back_pressed() -> void:
 	Globals.is_end(false)
 
 func _on_impostazioni_pressed() -> void:
+	Globals.btn_click(sounds)
 	popup_imp.popup()
 
 func _on_scribble_3_gui_input(event: InputEvent) -> void:
