@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://di5xpmx77tnki"]
+[gd_scene load_steps=4 format=3 uid="uid://di5xpmx77tnki"]
 
 [ext_resource type="Script" uid="uid://dbb6i1hwxpxa4" path="res://scripts/logo_iniziale.gd" id="1_hffep"]
 [ext_resource type="VideoStream" uid="uid://ci48sdv2fc5fk" path="res://assets/videos/Animazione Chandelier Light - Bianco.ogv" id="2_wpx6u"]
+[ext_resource type="AudioStream" uid="uid://dtjs5thcaabtu" path="res://assets/sounds/logo_with_sounds.wav" id="3_2yw85"]
 
 [node name="Animation_Team" type="Node2D"]
 
@@ -28,5 +29,9 @@ grow_vertical = 2
 stream = ExtResource("2_wpx6u")
 autoplay = true
 expand = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Logo_Iniziale"]
+stream = ExtResource("3_2yw85")
+autoplay = true
 
 [connection signal="finished" from="Logo_Iniziale/VideoStreamPlayer" to="Logo_Iniziale" method="_on_video_stream_player_finished"]
