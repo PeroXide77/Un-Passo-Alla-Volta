@@ -67,6 +67,7 @@ func _on_http_request_request_completed(_result: int, response_code: int, _heade
 		npc_reply = body_string
 	
 	Chatbot.loading_Chat_end(response_label, loading)
+	
 	if "[LIVELLO COMPLETATO]" in npc_reply :
 		await Chatbot.print_txt(npc_reply.replace("[LIVELLO COMPLETATO]", "") + "\n", response_label)
 		completedButton.set_visible(true)
@@ -82,7 +83,12 @@ func _on_http_request_request_completed(_result: int, response_code: int, _heade
 	back.set_disabled(false)
 	completedButton.set_disabled(false)
 	user_input.grab_focus()
-	user_input.set_editable(true)
+	
+	if "*click*" in npc_reply:
+		user_input.set_editable(false)
+	else :
+		user_input.set_editable(true)
+	
 	var clean_reply := npc_reply.replace("[LIVELLO COMPLETATO]", "").replace("[LIVELLO PERSO]", "").strip_edges()
 	Chatbot.append_conversation("assistant", clean_reply)
 
@@ -107,6 +113,7 @@ func completed_level() -> void:
 func _on_completed_pressed() -> void:
 	Globals.btn_click(sounds)
 	await sounds.finished
+	user_input.set_editable(true)
 	if Chatbot.get_currentLevel() == Globals.get_gameState():
 		Globals.nextState()
 	Globals.set_flag(false)

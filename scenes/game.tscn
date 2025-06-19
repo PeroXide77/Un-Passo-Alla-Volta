@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://cw0ac88cyi2si"]
+[gd_scene load_steps=52 format=3 uid="uid://cw0ac88cyi2si"]
 
 [ext_resource type="Script" uid="uid://bji87yhdq6now" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="2_p57ef"]
@@ -90,6 +90,43 @@ corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pl11u"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37s47"]
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.960784, 0.572549, 0.333333, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bt5mj"]
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.393085, 0.393086, 0.393085, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1j6l"]
+
+[sub_resource type="Theme" id="Theme_pl11u"]
+ScrollContainer/styles/panel = SubResource("StyleBoxFlat_pl11u")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_37s47")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_bt5mj")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_e1j6l")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ir15t"]
 border_width_left = 3
@@ -542,9 +579,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_vtaks")
 [node name="ScrollContainer" type="ScrollContainer" parent="Game/Obiettivo/Sfondo Opaco/Obiettivo_Panel"]
 custom_minimum_size = Vector2(950, 730)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme = ExtResource("9_ca42v")
+offset_right = 950.0
+offset_bottom = 730.0
+theme = SubResource("Theme_pl11u")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Game/Obiettivo/Sfondo Opaco/Obiettivo_Panel/ScrollContainer"]
 layout_mode = 2
