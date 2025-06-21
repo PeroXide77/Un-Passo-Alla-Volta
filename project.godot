@@ -14,7 +14,8 @@ config/name="The-game"
 run/main_scene="uid://di5xpmx77tnki"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/bg_color=Color(0.663804, 0.604621, 0.396768, 1)
-config/icon="res://icon.svg"
+boot_splash/image="uid://b3ttlblr04uwu"
+config/icon="uid://b3ttlblr04uwu"
 
 [audio]
 
