@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://ds186uo7s2om3" path="res://icons/buttons/box_not_checked.png" id="11_5k8eg"]
 [ext_resource type="Texture2D" uid="uid://c6gdl5iv5pqms" path="res://icons/buttons/check.png" id="12_iayb8"]
 [ext_resource type="Theme" uid="uid://im1kev326hh2" path="res://assets/styles/VScrollBarHide.tres" id="13_5k8eg"]
-[ext_resource type="Texture2D" uid="uid://bbvm1b4qelxh8" path="res://assets/sounds/RiccioPortaFortuna.png" id="14_iayb8"]
+[ext_resource type="Texture2D" uid="uid://bxta0hbxs8gel" path="res://assets/sprites/credit_black.png" id="15_etslg"]
 [ext_resource type="AudioStream" uid="uid://rf2k772e6vhr" path="res://assets/musics/menu_selezione_sounds.wav" id="16_etslg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_orxjh"]
@@ -1219,6 +1219,7 @@ expand_mode = 1
 [node name="Scribble4" type="TextureRect" parent="Selezione/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
 custom_minimum_size = Vector2(500, 190)
 layout_mode = 2
+tooltip_text = "CREDITI"
 texture = ExtResource("9_5k8eg")
 expand_mode = 1
 stretch_mode = 5
@@ -1313,12 +1314,9 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_jvqic")
 theme_override_font_sizes/normal_font_size = 50
 text = " ☆ ☆ Un gioco di Chandelier Light  ☆ ☆ 
-
 Lucia Meliota - programming
 Dario Ungaro - programming
-Natalia Meliota - art
-
-Grazie mille per aver scelto di giocare a questo gioco!"
+Natalia Meliota - art"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
@@ -1326,8 +1324,19 @@ horizontal_alignment = 1
 [node name="immagine" type="TextureRect" parent="Selezione/Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 420)
 layout_mode = 2
-texture = ExtResource("14_iayb8")
-expand_mode = 1
+texture = ExtResource("15_etslg")
+expand_mode = 5
+
+[node name="crediti2" type="RichTextLabel" parent="Selezione/Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(950, 50)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_jvqic")
+theme_override_font_sizes/normal_font_size = 50
+text = "Grazie mille per aver scelto di giocare a questo gioco!"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
 
 [node name="exit" type="Button" parent="Selezione/Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel"]
 custom_minimum_size = Vector2(85, 85)
@@ -1375,5 +1384,7 @@ bus = &"Musica"
 [connection signal="item_selected" from="Selezione/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/OptionButton" to="Selezione/Impostazioni" method="_on_option_button_item_selected"]
 [connection signal="toggled" from="Selezione/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen" to="Selezione/Impostazioni" method="_on_full_screen_toggled"]
 [connection signal="gui_input" from="Selezione/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/Scribble4" to="Selezione/Impostazioni" method="_on_scribble_4_gui_input"]
+[connection signal="mouse_entered" from="Selezione/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/Scribble4" to="Selezione/Impostazioni" method="_on_scribble_4_mouse_entered"]
+[connection signal="mouse_exited" from="Selezione/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/Scribble4" to="Selezione/Impostazioni" method="_on_scribble_4_mouse_exited"]
 [connection signal="pressed" from="Selezione/Impostazioni/SfondoTrasparent/BoxImpostazioni/Ritorna Indietro" to="Selezione/Impostazioni" method="_on_ritorna_indietro_pressed"]
 [connection signal="pressed" from="Selezione/Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel/exit" to="Selezione/Impostazioni" method="_on_exit_pressed"]

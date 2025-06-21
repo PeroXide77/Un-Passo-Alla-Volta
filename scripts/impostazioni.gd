@@ -5,6 +5,8 @@ extends Popup
 @onready var resolutionMenu = $SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/OptionButton
 @onready var fullScreen: Button = $SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen
 @onready var checkFS = $SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen/CheckFS
+@onready var scribble4 = $SfondoTrasparent/BoxImpostazioni/VBoxContainer/Scribble4
+@onready var text_crediti = $"crediti/Sfondo Opaco/Obiettivo_Panel/ScrollContainer/VBoxContainer/Title"
 @onready var imp = $"."
 @onready var crediti : Popup = $crediti
 @onready var anim = $AnimationPlayer
@@ -77,6 +79,14 @@ func _on_about_to_popup() -> void:
 func _on_scribble_4_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		crediti.popup()
+		text_crediti.scroll_to_line(0)
+
+func _on_scribble_4_mouse_entered() -> void:
+	Globals.sound_marker(audio)
+	scribble4.set_texture(load("res://icons/scribbles/scribble4_hovered.png"))
+
+func _on_scribble_4_mouse_exited() -> void:
+	scribble4.set_texture(load("res://icons/scribbles/scribble4 .png"))
 
 func _on_exit_pressed() -> void:
 	crediti.hide()

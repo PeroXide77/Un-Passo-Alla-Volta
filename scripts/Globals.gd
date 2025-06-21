@@ -153,6 +153,11 @@ func goto_scene(path):
 
 	_deferred_goto_scene.call_deferred(path)
 
+func sound_marker(a:AudioStreamPlayer):
+	a.bus = "Suoni"
+	a.set_stream(BTN_SOUND)
+	a.play(0)
+
 func btn_hover_enter(b: Button, a:AudioStreamPlayer):
 	a.bus = "Suoni"
 	a.set_stream(BTN_SOUND)

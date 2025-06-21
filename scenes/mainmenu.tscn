@@ -1,10 +1,11 @@
-[gd_scene load_steps=34 format=3 uid="uid://g886cxu4jrgf"]
+[gd_scene load_steps=35 format=3 uid="uid://g886cxu4jrgf"]
 
 [ext_resource type="Script" uid="uid://c03emyoy2uomi" path="res://scripts/menu.gd" id="1_vh50t"]
 [ext_resource type="Texture2D" uid="uid://c8pumrndo3u1b" path="res://assets/backgrounds/paper_bg.jpg" id="3_dfy5j"]
 [ext_resource type="Texture2D" uid="uid://dx1micry2vq1h" path="res://icons/scribbles/scribble1.png" id="3_gjjcl"]
 [ext_resource type="FontFile" uid="uid://b6rxc2cd3gq82" path="res://assets/fonts/Indie_Flower/IndieFlower-Regular.ttf" id="4_85riq"]
 [ext_resource type="Texture2D" uid="uid://bhhwtblqilvur" path="res://icons/scribbles/scribble2.png" id="4_kait0"]
+[ext_resource type="Texture2D" uid="uid://cvqeq2ncbtdxu" path="res://icons/scribbles/scribble1_pressed.png" id="4_prb5i"]
 [ext_resource type="Texture2D" uid="uid://cswofb7u1c87b" path="res://icons/scribbles/scribble2_pressed.png" id="5_6pj40"]
 [ext_resource type="StyleBox" uid="uid://bvaywvbkfe4rj" path="res://assets/styles/hoverButtons.tres" id="6_h73c4"]
 [ext_resource type="Script" uid="uid://bnaqpofnsnbg0" path="res://scripts/impostazioni.gd" id="7_85riq"]
@@ -13,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dj2h60acf1emf" path="res://assets/backgrounds/bgSettings.png" id="11_kait0"]
 [ext_resource type="Texture2D" uid="uid://bs0ybgvbrdwym" path="res://icons/scribbles/scribble4 .png" id="11_prb5i"]
 [ext_resource type="Theme" uid="uid://im1kev326hh2" path="res://assets/styles/VScrollBarHide.tres" id="12_gjjcl"]
-[ext_resource type="Texture2D" uid="uid://bbvm1b4qelxh8" path="res://assets/sounds/RiccioPortaFortuna.png" id="13_kait0"]
+[ext_resource type="Texture2D" uid="uid://bxta0hbxs8gel" path="res://assets/sprites/credit_black.png" id="14_fsdjo"]
 [ext_resource type="FontFile" uid="uid://dmwtstgnkr0oc" path="res://assets/fonts/Anton/Anton-Regular.ttf" id="15_6pj40"]
 [ext_resource type="AudioStream" uid="uid://dem370sw2h3t6" path="res://assets/sounds/markerSound.mp3" id="15_fsdjo"]
 [ext_resource type="AudioStream" uid="uid://rf2k772e6vhr" path="res://assets/musics/menu_selezione_sounds.wav" id="17_fsdjo"]
@@ -296,12 +297,6 @@ grow_vertical = 2
 texture = ExtResource("3_dfy5j")
 expand_mode = 1
 
-[node name="Scribble1" type="TextureRect" parent="Menu/Background"]
-layout_mode = 1
-offset_right = 230.0
-offset_bottom = 170.0
-texture = ExtResource("3_gjjcl")
-
 [node name="Scribble2" type="TextureRect" parent="Menu/Background"]
 layout_mode = 1
 anchors_preset = 3
@@ -347,6 +342,18 @@ theme_override_font_sizes/normal_font_size = 165
 text = "Un Passo Alla Volta"
 scroll_active = false
 horizontal_alignment = 1
+
+[node name="Scribble1" type="TextureRect" parent="Menu"]
+layout_mode = 1
+offset_right = 230.0
+offset_bottom = 170.0
+texture = ExtResource("3_gjjcl")
+
+[node name="Scribble1_pressed" type="TextureRect" parent="Menu"]
+visible = false
+offset_right = 230.0
+offset_bottom = 170.0
+texture = ExtResource("4_prb5i")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
 custom_minimum_size = Vector2(744, 800)
@@ -808,6 +815,7 @@ expand_mode = 1
 [node name="Scribble4" type="TextureRect" parent="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer"]
 custom_minimum_size = Vector2(500, 160)
 layout_mode = 2
+tooltip_text = "CREDITI"
 texture = ExtResource("11_prb5i")
 expand_mode = 1
 
@@ -901,12 +909,9 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("4_85riq")
 theme_override_font_sizes/normal_font_size = 50
 text = " ☆ ☆ Un gioco di Chandelier Light  ☆ ☆ 
-
 Lucia Meliota - programming
 Dario Ungaro - programming
-Natalia Meliota - art
-
-Grazie mille per aver scelto di giocare a questo gioco!"
+Natalia Meliota - art"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
@@ -914,8 +919,19 @@ horizontal_alignment = 1
 [node name="immagine" type="TextureRect" parent="Menu/Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 420)
 layout_mode = 2
-texture = ExtResource("13_kait0")
-expand_mode = 1
+texture = ExtResource("14_fsdjo")
+expand_mode = 5
+
+[node name="crediti2" type="RichTextLabel" parent="Menu/Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(950, 50)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_85riq")
+theme_override_font_sizes/normal_font_size = 50
+text = "Grazie mille per aver scelto di giocare a questo gioco!"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
 
 [node name="exit" type="Button" parent="Menu/Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel"]
 custom_minimum_size = Vector2(85, 85)
@@ -975,6 +991,8 @@ bus = &"Musica"
 
 [connection signal="gui_input" from="Menu/Background/Scribble2" to="Menu" method="_on_scribble_2_gui_input"]
 [connection signal="gui_input" from="Menu/Background/Scribble2_pressed" to="Menu" method="_on_scribble_2_pressed_gui_input"]
+[connection signal="gui_input" from="Menu/Scribble1" to="Menu" method="_on_scribble_1_gui_input"]
+[connection signal="gui_input" from="Menu/Scribble1_pressed" to="Menu" method="_on_scribble_1_pressed_gui_input"]
 [connection signal="pressed" from="Menu/VBoxContainer/SelezioneLivelli" to="Menu" method="_on_selezione_livelli_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Minigames" to="Menu" method="_on_minigames_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Diario" to="Menu" method="_on_diario_pressed"]
@@ -991,6 +1009,8 @@ bus = &"Musica"
 [connection signal="toggled" from="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/FullScreen" to="Menu/Impostazioni" method="_on_full_screen_toggled"]
 [connection signal="toggled" from="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/CancellaDati" to="Menu" method="_on_cancella_dati_toggled"]
 [connection signal="gui_input" from="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/Scribble4" to="Menu/Impostazioni" method="_on_scribble_4_gui_input"]
+[connection signal="mouse_entered" from="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/Scribble4" to="Menu/Impostazioni" method="_on_scribble_4_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/Scribble4" to="Menu/Impostazioni" method="_on_scribble_4_mouse_exited"]
 [connection signal="pressed" from="Menu/Impostazioni/SfondoTrasparent/BoxImpostazioni/Ritorna Indietro" to="Menu/Impostazioni" method="_on_ritorna_indietro_pressed"]
 [connection signal="pressed" from="Menu/Impostazioni/crediti/Sfondo Opaco/Obiettivo_Panel/exit" to="Menu/Impostazioni" method="_on_exit_pressed"]
 [connection signal="canceled" from="Menu/AcceptDialogBG/AcceptDialog" to="Menu" method="_on_accept_dialog_canceled"]

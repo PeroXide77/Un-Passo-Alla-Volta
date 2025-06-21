@@ -9,6 +9,8 @@ extends Control
 @onready var options = get_tree().get_nodes_in_group("options")
 @onready var scribble2_n : TextureRect = $Background/Scribble2
 @onready var scribble2_p : TextureRect = $Background/Scribble2_pressed
+@onready var scribble1_n : TextureRect = $Scribble1
+@onready var scribble1_p : TextureRect = $Scribble1_pressed
 @onready var cancellaDati = $Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/CancellaDati
 @onready var checkCD = $Impostazioni/SfondoTrasparent/BoxImpostazioni/VBoxContainer/VideoP/CancellaDati/CheckCD
 @onready var popupAvvisoBG = $AcceptDialogBG
@@ -67,6 +69,16 @@ func _on_cancella_dati_toggled(_toggled_on: bool) -> void:
 	Globals.cancel_data()
 	popupAvvisoBG.show()
 	popupAvviso.show()
+
+func _on_scribble_1_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		scribble1_n.set_visible(false)
+		scribble1_p.set_visible(true)
+
+func _on_scribble_1_pressed_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		scribble1_p.set_visible(false)
+		scribble1_n.set_visible(true)
 
 func _on_scribble_2_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
