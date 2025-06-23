@@ -351,6 +351,7 @@ texture = ExtResource("3_gjjcl")
 
 [node name="Scribble1_pressed" type="TextureRect" parent="Menu"]
 visible = false
+layout_mode = 0
 offset_right = 230.0
 offset_bottom = 170.0
 texture = ExtResource("4_prb5i")

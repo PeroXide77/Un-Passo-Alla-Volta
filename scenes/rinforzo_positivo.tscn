@@ -427,7 +427,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -10
 theme_override_fonts/normal_font = ExtResource("3_aioub")
 theme_override_font_sizes/normal_font_size = 40
-text = "Hai finito il tutotorial! Ora puoi iniziare a giocare!"
+text = "Hai finito il tutorial! Ora puoi iniziare a giocare!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -936,7 +936,7 @@ anchor_bottom = 1.0
 offset_left = 660.0
 offset_top = 120.0
 offset_right = -660.0
-offset_bottom = -960.0
+offset_bottom = -160.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_6yq1f")
